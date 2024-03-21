@@ -1,0 +1,2137 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@fuse/starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@fuse/starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TabCustomTrackMapComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-tab-custom-track-map</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./tab-custom-track-map.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./tab-custom-track-map.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#centerLocation" >centerLocation</a>
+                            </li>
+                            <li>
+                                <a href="#cloneDsqDetails" >cloneDsqDetails</a>
+                            </li>
+                            <li>
+                                <a href="#cloneDsqDetailsOfUserLocation" >cloneDsqDetailsOfUserLocation</a>
+                            </li>
+                            <li>
+                                <a href="#defaultMapStyles" >defaultMapStyles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog" >dialog</a>
+                            </li>
+                            <li>
+                                <a href="#dsqDetails" >dsqDetails</a>
+                            </li>
+                            <li>
+                                <a href="#dsqDetailsOfUserLocation" >dsqDetailsOfUserLocation</a>
+                            </li>
+                            <li>
+                                <a href="#infoWindow" >infoWindow</a>
+                            </li>
+                            <li>
+                                <a href="#lat" >lat</a>
+                            </li>
+                            <li>
+                                <a href="#lng" >lng</a>
+                            </li>
+                            <li>
+                                <a href="#map" >map</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#mapElement" >mapElement</a>
+                            </li>
+                            <li>
+                                <a href="#mapStyles" >mapStyles</a>
+                            </li>
+                            <li>
+                                <a href="#markers" >markers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#tabDynamicSidebarComponent" >tabDynamicSidebarComponent</a>
+                            </li>
+                            <li>
+                                <a href="#templateResult" >templateResult</a>
+                            </li>
+                            <li>
+                                <a href="#userLocationObj" >userLocationObj</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addMarker" >addMarker</a>
+                            </li>
+                            <li>
+                                <a href="#getDsqObservable" >getDsqObservable</a>
+                            </li>
+                            <li>
+                                <a href="#getTemplateObservable" >getTemplateObservable</a>
+                            </li>
+                            <li>
+                                <a href="#mapApiCall" >mapApiCall</a>
+                            </li>
+                            <li>
+                                <a href="#mapInitialize" >mapInitialize</a>
+                            </li>
+                            <li>
+                                <a href="#markerClick" >markerClick</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#populateData" >populateData</a>
+                            </li>
+                            <li>
+                                <a href="#removeMarkers" >removeMarkers</a>
+                            </li>
+                            <li>
+                                <a href="#setInterval" >setInterval</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSettingsTrackMap" >dataSettingsTrackMap</a>
+                            </li>
+                            <li>
+                                <a href="#value" >value</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#customEvent" >customEvent</a>
+                            </li>
+                            <li>
+                                <a href="#valueChange" >valueChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#value" >value</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dialog: MatDialog, tabCoreHttpService: TabCoreHttpService, router: Router, tabTemplateService: TabTemplateService, tabGetService: TabGetService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:64</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tabCoreHttpService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabCoreHttpService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tabTemplateService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabTemplateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tabGetService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabGetService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSettingsTrackMap"></a>
+                        <b>dataSettingsTrackMap</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:32</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <b>value</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:53</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="customEvent"></a>
+                        <b>customEvent</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:34</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueChange"></a>
+                        <b>valueChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:31</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addMarker"></a>
+                    <span class="name">
+                        <span ><b>addMarker</b></span>
+                        <a href="#addMarker"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addMarker(lat: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, lng: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="188"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:188</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function use to set marker on google map.
+set style,zoom,center location
+Add a listener for the &#39;click&#39; and <code>mouseover/mouseout</code> event marker on map
+Add a google.maps.InfoWindow</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>lat</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>set Marker position</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>lng</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>set Marker position.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDsqObservable"></a>
+                    <span class="name">
+                        <span ><b>getDsqObservable</b></span>
+                        <a href="#getDsqObservable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDsqObservable()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="431"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:431</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function use to call DSQ API</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTemplateObservable"></a>
+                    <span class="name">
+                        <span ><b>getTemplateObservable</b></span>
+                        <a href="#getTemplateObservable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTemplateObservable()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="413"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:413</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function use to call DSQ API for template</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapApiCall"></a>
+                    <span class="name">
+                        <span ><b>mapApiCall</b></span>
+                        <a href="#mapApiCall"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mapApiCall()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="304"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:304</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function use to call DSQ API for  from &#39;dataSettingsTrackMap&#39;</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapInitialize"></a>
+                    <span class="name">
+                        <span ><b>mapInitialize</b></span>
+                        <a href="#mapInitialize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mapInitialize()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function use to google Map initialize.
+set style,zoom,center location
+Add a listener for the <code>center_changed</code> and <code>dragend</code> in map</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="markerClick"></a>
+                    <span class="name">
+                        <span ><b>markerClick</b></span>
+                        <a href="#markerClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>markerClick()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="228"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:228</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function use to onclick marker.
+set marker click configration like urlRedirect ,screenRedirect , postToUrl and customEvent</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="74"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="populateData"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>populateData</b></span>
+                        <a href="#populateData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>populateData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="354"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:354</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function use to retrieve the data for template/customHtml
+declare getTemplateObservable for template
+declare getDsqObservable for DSQ API</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeMarkers"></a>
+                    <span class="name">
+                        <span ><b>removeMarkers</b></span>
+                        <a href="#removeMarkers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeMarkers()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="276"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:276</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function use to remover all marker from the map
+Clear the markers array</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setInterval"></a>
+                    <span class="name">
+                        <span ><b>setInterval</b></span>
+                        <a href="#setInterval"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setInterval()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="287"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:287</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function use to set map refresh time
+if refreshMap == true then map is reload to interval time</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="centerLocation"></a>
+                    <span class="name">
+                        <span ><b>centerLocation</b></span>
+                        <a href="#centerLocation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cloneDsqDetails"></a>
+                    <span class="name">
+                        <span ><b>cloneDsqDetails</b></span>
+                        <a href="#cloneDsqDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cloneDsqDetailsOfUserLocation"></a>
+                    <span class="name">
+                        <span ><b>cloneDsqDetailsOfUserLocation</b></span>
+                        <a href="#cloneDsqDetailsOfUserLocation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="defaultMapStyles"></a>
+                    <span class="name">
+                        <span ><b>defaultMapStyles</b></span>
+                        <a href="#defaultMapStyles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dialog"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>dialog</b></span>
+                        <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatDialog</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dsqDetails"></a>
+                    <span class="name">
+                        <span ><b>dsqDetails</b></span>
+                        <a href="#dsqDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dsqDetailsOfUserLocation"></a>
+                    <span class="name">
+                        <span ><b>dsqDetailsOfUserLocation</b></span>
+                        <a href="#dsqDetailsOfUserLocation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="infoWindow"></a>
+                    <span class="name">
+                        <span ><b>infoWindow</b></span>
+                        <a href="#infoWindow"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lat"></a>
+                    <span class="name">
+                        <span ><b>lat</b></span>
+                        <a href="#lat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>23.051839</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lng"></a>
+                    <span class="name">
+                        <span ><b>lng</b></span>
+                        <a href="#lng"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>72.481382</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="map"></a>
+                    <span class="name">
+                        <span ><b>map</b></span>
+                        <a href="#map"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>google.maps.Map</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapElement"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>mapElement</b></span>
+                        <a href="#mapElement"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;map&#x27;, {static: true})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapStyles"></a>
+                    <span class="name">
+                        <span ><b>mapStyles</b></span>
+                        <a href="#mapStyles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="markers"></a>
+                    <span class="name">
+                        <span ><b>markers</b></span>
+                        <a href="#markers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tabDynamicSidebarComponent"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>tabDynamicSidebarComponent</b></span>
+                        <a href="#tabDynamicSidebarComponent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/TabDynamicSidebarComponent.html" target="_self" >TabDynamicSidebarComponent</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;tabDynamicSidebarComponent&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="templateResult"></a>
+                    <span class="name">
+                        <span ><b>templateResult</b></span>
+                        <a href="#templateResult"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userLocationObj"></a>
+                    <span class="name">
+                        <span ><b>userLocationObj</b></span>
+                        <a href="#userLocationObj"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <span class="name"><b>value</b><a href="#value"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>value()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:62</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>value(v: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/modules/admin/tab-custom-track-map/tab-custom-track-map.component.ts:53</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>v</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    Component,
+    ViewChild,
+    EventEmitter,
+    OnInit,
+    ElementRef,
+    Output,
+    Input,
+} from &#x27;@angular/core&#x27;;
+import {
+    TabAppFunction,
+    TabCoreHttpService,
+    TabGetService,
+    TabRequestResponseFunction,
+    TabTemplateService,
+} from &#x27;@techextensor/tab-service&#x27;;
+import { forkJoin, interval, of, take } from &#x27;rxjs&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import {} from &#x27;googlemaps&#x27;;
+import cloneDeep from &#x27;lodash-es/cloneDeep&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { TabDynamicSidebarComponent } from &#x27;app/shared/templates/tab-dynamic-sidebar/tab-dynamic-sidebar.component&#x27;;
+import { TabDynamicDialogComponent } from &#x27;app/shared/templates/tab-dynamic-dialog/tab-dynamic-dialog.component&#x27;;
+
+@Component({
+    selector: &#x27;app-tab-custom-track-map&#x27;,
+    templateUrl: &#x27;./tab-custom-track-map.component.html&#x27;,
+    styleUrls: [&#x27;./tab-custom-track-map.component.scss&#x27;],
+})
+export class TabCustomTrackMapComponent implements OnInit {
+    @Output() valueChange &#x3D; new EventEmitter&lt;any&gt;();
+    @Input() dataSettingsTrackMap;
+    @ViewChild(&#x27;map&#x27;, { static: true }) mapElement: ElementRef;
+    @Output() customEvent &#x3D; new EventEmitter&lt;any&gt;();
+    @ViewChild(&#x27;tabDynamicSidebarComponent&#x27;)
+    tabDynamicSidebarComponent: TabDynamicSidebarComponent;
+    map: google.maps.Map;
+    centerLocation;
+    lat: number &#x3D; 23.051839;
+    lng: number &#x3D; 72.481382;
+    markers &#x3D; [];
+    mapStyles &#x3D; [];
+    defaultMapStyles &#x3D; [];
+    dsqDetailsOfUserLocation;
+    cloneDsqDetailsOfUserLocation;
+    userLocationObj;
+    dsqDetails;
+    cloneDsqDetails;
+    templateResult;
+    infoWindow;
+
+    @Input()
+    public set value(v: any) {
+        if (v &amp;&amp; v !&#x3D; null) {
+        }
+
+        setTimeout(() &#x3D;&gt; {
+            this.setInterval();
+            this.populateData();
+        }, 100);
+    }
+    public get value(): any {
+        return &#x27;&#x27;;
+    }
+
+    constructor(
+        public dialog: MatDialog,
+        private tabCoreHttpService: TabCoreHttpService,
+        private router: Router,
+        private tabTemplateService: TabTemplateService,
+        private tabGetService: TabGetService
+    ) {}
+
+    ngOnInit(): void {
+        this.mapInitialize();
+    }
+
+    /**
+     * this function use to google Map initialize.
+     * set style,zoom,center location
+     * Add a listener for the &#x60;center_changed&#x60; and &#x60;dragend&#x60; in map
+     */
+    mapInitialize() {
+        this.defaultMapStyles &#x3D; [
+            {
+                featureType: &#x27;administrative.land_parcel&#x27;,
+                elementType: &#x27;labels.text.fill&#x27;,
+                stylers: [{ color: &#x27;#bdbdbd&#x27; }],
+            },
+            {
+                featureType: &#x27;poi&#x27;,
+                elementType: &#x27;geometry&#x27;,
+                stylers: [{ color: &#x27;#eeeeee&#x27; }],
+            },
+            {
+                featureType: &#x27;poi&#x27;,
+                elementType: &#x27;labels.text.fill&#x27;,
+                stylers: [{ color: &#x27;#757575&#x27; }],
+            },
+            {
+                featureType: &#x27;poi.park&#x27;,
+                elementType: &#x27;geometry&#x27;,
+                stylers: [{ color: &#x27;#e5e5e5&#x27; }],
+            },
+            {
+                featureType: &#x27;poi.park&#x27;,
+                elementType: &#x27;labels.text.fill&#x27;,
+                stylers: [{ color: &#x27;#9e9e9e&#x27; }],
+            },
+            {
+                featureType: &#x27;road&#x27;,
+                elementType: &#x27;geometry&#x27;,
+                stylers: [{ color: &#x27;#ffffff&#x27; }],
+            },
+            {
+                featureType: &#x27;road.arterial&#x27;,
+                elementType: &#x27;labels.text.fill&#x27;,
+                stylers: [{ color: &#x27;#757575&#x27; }],
+            },
+            {
+                featureType: &#x27;road.highway&#x27;,
+                elementType: &#x27;geometry&#x27;,
+                stylers: [{ color: &#x27;#dadada&#x27; }],
+            },
+            {
+                featureType: &#x27;road.highway&#x27;,
+                elementType: &#x27;labels.text.fill&#x27;,
+                stylers: [{ color: &#x27;#616161&#x27; }],
+            },
+            {
+                featureType: &#x27;road.local&#x27;,
+                elementType: &#x27;labels.text.fill&#x27;,
+                stylers: [{ color: &#x27;#9e9e9e&#x27; }],
+            },
+            {
+                featureType: &#x27;transit.line&#x27;,
+                elementType: &#x27;geometry&#x27;,
+                stylers: [{ color: &#x27;#e5e5e5&#x27; }],
+            },
+            {
+                featureType: &#x27;transit.station&#x27;,
+                elementType: &#x27;geometry&#x27;,
+                stylers: [{ color: &#x27;#eeeeee&#x27; }],
+            },
+            {
+                featureType: &#x27;water&#x27;,
+                elementType: &#x27;geometry&#x27;,
+                stylers: [{ color: &#x27;#c9c9c9&#x27; }],
+            },
+            {
+                featureType: &#x27;water&#x27;,
+                elementType: &#x27;labels.text.fill&#x27;,
+                stylers: [{ color: &#x27;#9e9e9e&#x27; }],
+            },
+        ];
+
+        this.map &#x3D; new google.maps.Map(this.mapElement.nativeElement, {
+            center: new google.maps.LatLng(this.lat, this.lng),
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true,
+            styles: this.defaultMapStyles,
+        });
+
+        // Add a listener for the &#x27;center_changed&#x27; event
+        this.map.addListener(&#x27;center_changed&#x27;, () &#x3D;&gt; {
+            this.centerLocation &#x3D; this.map.getCenter().toJSON();
+            this.lat &#x3D; this.centerLocation.lat;
+            this.lng &#x3D; this.centerLocation.lng;
+        });
+
+        // Add a listener for the &#x27;dragend&#x27; event
+        this.map.addListener(&#x27;dragend&#x27;, () &#x3D;&gt; {
+            setTimeout(() &#x3D;&gt; {
+                this.mapApiCall(); // Call your desired function here
+            }, 60 * 1000); // 1 minutes expressed in milliseconds
+        });
+    }
+
+    /**
+     * this function use to set marker on google map.
+     * set style,zoom,center location
+     * Add a listener for the &#x27;click&#x27; and &#x60;mouseover/mouseout&#x60; event marker on map
+     * Add a google.maps.InfoWindow
+     * @param {any} lat - set Marker position
+     * @param {any} lng - set Marker position.
+     */
+    addMarker(lat: any, lng: any) {
+        const marker &#x3D; new google.maps.Marker({
+            position: new google.maps.LatLng(lat, lng), // Marker position
+            map: this.map,
+            icon: &#x27;../assets/icons/map1x.png&#x27;, // Provide the path to your custom marker icon
+        });
+
+        this.infoWindow &#x3D; new google.maps.InfoWindow({
+            content: this.templateResult,
+        });
+
+        // Add a listener for the &#x27;click&#x27; event
+        marker.addListener(&#x27;click&#x27;, () &#x3D;&gt; {
+            this.markerClick();
+        });
+
+        // Add a listener for the &#x27;mouseover&#x27; event
+        marker.addListener(&#x27;mouseover&#x27;, () &#x3D;&gt; {
+            if (
+                this.infoWindow.getContent() &#x3D;&#x3D; null ||
+                this.infoWindow.getContent() &#x3D;&#x3D; &#x27;&#x27;
+            ) {
+                this.infoWindow.setContent(this.templateResult);
+            }
+
+            if (this.templateResult) {
+                this.infoWindow.open(this.map, marker);
+            }
+        });
+        marker.addListener(&#x27;mouseout&#x27;, () &#x3D;&gt; {
+            this.infoWindow.close();
+        });
+
+        this.markers.push(marker);
+    }
+
+    /**
+     * this function use to onclick marker.
+     * set marker click configration like urlRedirect ,screenRedirect , postToUrl and customEvent
+     */
+    markerClick() {
+        if (this.dataSettingsTrackMap?.action &#x3D;&#x3D; &#x27;urlRedirect&#x27;) {
+            window.open(this.dataSettingsTrackMap?.linkurl, &#x27;_blank&#x27;);
+        } else if (this.dataSettingsTrackMap?.action &#x3D;&#x3D; &#x27;screenRedirect&#x27;) {
+            if (this.dataSettingsTrackMap?.openScreenAs &#x3D;&#x3D; &#x27;navigation&#x27;) {
+                this.router.navigate([
+                    &#x27;/screen&#x27; + &#x27;/&#x27; + this.dataSettingsTrackMap?.screen,
+                ]);
+            } else if (
+                this.dataSettingsTrackMap?.openScreenAs &#x3D;&#x3D; &#x27;popupModal&#x27;
+            ) {
+                const ref &#x3D; this.dialog.open(TabDynamicDialogComponent, {
+                    width: &#x27;1000px&#x27;,
+                    height: &#x27;1000px&#x27;,
+                    data: {
+                        screenID: this.dataSettingsTrackMap?.screen,
+                        data: [],
+                    },
+                });
+
+                ref.afterClosed().subscribe((result) &#x3D;&gt; {});
+            } else if (this.dataSettingsTrackMap?.openScreenAs &#x3D;&#x3D; &#x27;sidebar&#x27;) {
+                this.tabDynamicSidebarComponent.screenId &#x3D;
+                    this.dataSettingsTrackMap?.screen;
+                this.tabDynamicSidebarComponent.settingsDrawer.toggle();
+            }
+        } else if (this.dataSettingsTrackMap?.action &#x3D;&#x3D; &#x27;postToUrl&#x27;) {
+            var headers &#x3D; TabRequestResponseFunction.getHeaders();
+            if (
+                this.dataSettingsTrackMap?.headers &amp;&amp;
+                this.dataSettingsTrackMap?.headers.length &gt; 0
+            ) {
+                this.dataSettingsTrackMap?.headers.forEach((element) &#x3D;&gt; {
+                    headers.append(element.header, element.value);
+                });
+            }
+            this.tabCoreHttpService
+                .get(this.dataSettingsTrackMap?.postToUrl, headers)
+                .subscribe();
+        } else if (this.dataSettingsTrackMap?.action &#x3D;&#x3D; &#x27;customEvent&#x27;) {
+            this.customEvent.emit(&#x27;&#x27;);
+        }
+    }
+
+    /**
+     * this function use to remover all marker from the map
+     * Clear the markers array
+     */
+    removeMarkers() {
+        for (const marker of this.markers) {
+            marker.setMap(null); // Remove marker from the map
+        }
+        this.markers &#x3D; []; // Clear the markers array
+    }
+
+    /**
+     * this function use to set map refresh time
+     * if refreshMap &#x3D;&#x3D; true then map is reload to interval time
+     */
+    setInterval() {
+        if (this.dataSettingsTrackMap &amp;&amp; this.dataSettingsTrackMap.refreshMap) {
+            let tval &#x3D;
+                60000 *
+                (this.dataSettingsTrackMap.interval &#x3D;&#x3D; null &amp;&amp;
+                this.dataSettingsTrackMap.interval &#x3D;&#x3D; &#x27;&#x27;
+                    ? 5
+                    : this.dataSettingsTrackMap.interval);
+            interval(tval).subscribe(() &#x3D;&gt; {
+                this.mapApiCall();
+            });
+        }
+    }
+
+    /**
+     * this function use to call DSQ API for  from &#x27;dataSettingsTrackMap&#x27;
+     */
+    mapApiCall() {
+        if (this.dataSettingsTrackMap) {
+            // Retrieve the data source query details based on &#x27;dataSourceQuery&#x27; from &#x27;dataSettingsTrackMap&#x27;
+            this.dsqDetailsOfUserLocation &#x3D;
+                TabAppFunction.getDataFromDataSourceQueryID(
+                    this.dataSettingsTrackMap?.dataSourceQuery
+                );
+
+            // Create a deep clone of the data source query details
+            this.cloneDsqDetailsOfUserLocation &#x3D; cloneDeep(
+                this.dsqDetailsOfUserLocation
+            );
+
+            this.tabGetService
+                .executeRAWDSQWithName({
+                    AppObjectName:
+                        TabAppFunction.getAppObjectFromDataSourceQueryID(
+                            this.dataSettingsTrackMap?.dataSourceQuery
+                        ).ObjectName,
+                    DSQName: this.cloneDsqDetailsOfUserLocation.QueryName,
+                    Reqtokens: {},
+                })
+                .subscribe((data) &#x3D;&gt; {
+                    this.userLocationObj &#x3D; data.Result;
+                    this.removeMarkers();
+
+                    data.Result.forEach((element) &#x3D;&gt; {
+                        let lat &#x3D;
+                            element[
+                                this.dataSettingsTrackMap?.latitude?.AppFieldID
+                                    ?.FieldName
+                            ];
+                        let lng &#x3D;
+                            element[
+                                this.dataSettingsTrackMap?.longitude?.AppFieldID
+                                    ?.FieldName
+                            ];
+                        if (lat !&#x3D; null &amp;&amp; lng !&#x3D; null) {
+                            this.addMarker(lat, lng);
+                        }
+                    });
+                });
+        }
+    }
+
+    /**
+     * this function use to retrieve the data for template/customHtml
+     * declare getTemplateObservable for template
+     * declare getDsqObservable for DSQ API
+     */
+    async populateData() {
+        if (
+            this.dataSettingsTrackMap?.dataSourceMode ||
+            this.dataSettingsTrackMap?.templateMode
+        ) {
+            let apiData &#x3D; {};
+            if (this.dataSettingsTrackMap?.dataSourceMode &#x3D;&#x3D; &#x27;data&#x27;) {
+                apiData[&#x27;Templatevariables&#x27;] &#x3D;
+                    this.dataSettingsTrackMap?.Templatevariables;
+            } else if (this.dataSettingsTrackMap?.dataSourceMode &#x3D;&#x3D; &#x27;dsq&#x27;) {
+                if (this.dataSettingsTrackMap?.dataSourceQuery) {
+                    apiData[&#x27;DataSourceQueryID&#x27;] &#x3D;
+                        this.dataSettingsTrackMap?.dataSourceQuery;
+                }
+            }
+            if (this.dataSettingsTrackMap?.templateMode &#x3D;&#x3D; &#x27;customHtml&#x27;) {
+                apiData[&#x27;DataSourceMode&#x27;] &#x3D; 2;
+                apiData[&#x27;Value&#x27;] &#x3D; this.dataSettingsTrackMap?.htmlCode;
+            } else if (this.dataSettingsTrackMap?.templateMode &#x3D;&#x3D; &#x27;template&#x27;) {
+                apiData[&#x27;DataSourceMode&#x27;] &#x3D; 1;
+                apiData[&#x27;Value&#x27;] &#x3D; this.dataSettingsTrackMap?.template;
+            }
+
+            this.dsqDetails &#x3D; TabAppFunction.getDataFromDataSourceQueryID(
+                this.dataSettingsTrackMap?.dataSourceQuery
+            );
+
+            this.cloneDsqDetails &#x3D; cloneDeep(this.dsqDetails);
+
+            forkJoin({
+                templateData: this.getTemplateObservable(),
+                dsqData: this.getDsqObservable(),
+            })
+                .pipe(take(1))
+                .subscribe(({ templateData, dsqData }) &#x3D;&gt; {
+                    if (templateData?.Result?.length &gt; 0) {
+                        apiData[&#x27;Value&#x27;] &#x3D; templateData.Result[0]?.TemplateBody;
+                    }
+                    if (dsqData?.Result) {
+                        apiData[&#x27;Templatevariables&#x27;] &#x3D; JSON.stringify({
+                            data: dsqData.Result,
+                        });
+                    }
+                    this.tabTemplateService
+                        .templateParseUniversal(apiData, true)
+                        ?.subscribe((res) &#x3D;&gt; {
+                            this.templateResult &#x3D; res.Result;
+                        });
+                });
+        }
+
+        this.mapApiCall();
+    }
+
+    /**
+     * this function use to call DSQ API for template
+     *
+     * @returns {Observable}
+     */
+    getTemplateObservable() {
+        if (this.dataSettingsTrackMap?.templateMode &#x3D;&#x3D; &#x27;customHtml&#x27;)
+            return of({});
+
+        return this.tabGetService.executeRAWDSQWithName({
+            DSQName: &#x27;Detail_TemplateInfo&#x27;,
+            AppObjectName: &#x27;TemplateInfo&#x27;,
+            Reqtokens: {
+                ID: this.dataSettingsTrackMap?.template,
+            },
+        });
+    }
+
+    /**
+     * this function use to call DSQ API
+     *
+     * @returns {Observable}
+     */
+    getDsqObservable() {
+        if (this.dataSettingsTrackMap?.dataSourceMode) {
+            if (this.dataSettingsTrackMap?.dataSourceMode &#x3D;&#x3D; &#x27;data&#x27;)
+                return of({});
+
+            const appObject &#x3D; TabAppFunction.getAppObjectFromDataSourceQueryID(
+                this.dataSettingsTrackMap?.dataSourceQuery
+            );
+            const dsqData &#x3D; TabAppFunction.getDataFromDataSourceQueryID(
+                this.dataSettingsTrackMap?.dataSourceQuery
+            );
+
+            const apiData &#x3D; {
+                DSQName: dsqData.QueryName,
+                AppObjectName: appObject.ObjectName,
+            };
+            if (this.dataSettingsTrackMap?.parameters)
+                apiData[&#x27;Reqtokens&#x27;] &#x3D; this.dataSettingsTrackMap?.parameters;
+            return this.tabGetService.executeRAWDSQWithName(apiData);
+        }
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;custom-map-layout&quot;&gt;
+    &lt;div #map style&#x3D;&quot;height: 500px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;app-tab-dynamic-sidebar #tabDynamicSidebarComponent&gt; &lt;/app-tab-dynamic-sidebar&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./tab-custom-track-map.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.custom-map-layout input {
+    background-color: #f8f9fc;
+    color: #333d47;
+    border-radius: 2px;
+    transition: 0.5s;
+    padding: 0.725rem 1.1875rem;
+    height: 44.17px;
+    position: relative;
+    border: none !important;
+    margin-bottom: 1em;
+}
+
+.btn {
+    background-color: var(--fuse-primary-500);
+    border: none;
+    height: 44.17px;
+    width: 44.17px;
+    color: white;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="custom-map-layout">    <div #map style="height: 500px"></div></div><app-tab-dynamic-sidebar #tabDynamicSidebarComponent> </app-tab-dynamic-sidebar></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthConfirmationRequiredComponent', 'selector': 'auth-confirmation-required'},{'name': 'AuthForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'AuthResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'AuthSignInComponent', 'selector': 'auth-sign-in'},{'name': 'AuthSignOutComponent', 'selector': 'auth-sign-out'},{'name': 'AuthSignUpComponent', 'selector': 'auth-sign-up'},{'name': 'AuthUnlockSessionComponent', 'selector': 'auth-unlock-session'},{'name': 'ButtonTemplateComponent', 'selector': 'button-template'},{'name': 'CenteredLayoutComponent', 'selector': 'centered-layout'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ClassicLayoutComponent', 'selector': 'classic-layout'},{'name': 'ClassyLayoutComponent', 'selector': 'classy-layout'},{'name': 'CompactLayoutComponent', 'selector': 'compact-layout'},{'name': 'DenseLayoutComponent', 'selector': 'dense-layout'},{'name': 'EmptyLayoutComponent', 'selector': 'empty-layout'},{'name': 'EnterpriseLayoutComponent', 'selector': 'enterprise-layout'},{'name': 'FuseAlertComponent', 'selector': 'fuse-alert'},{'name': 'FuseCardComponent', 'selector': 'fuse-card'},{'name': 'FuseConfirmationDialogComponent', 'selector': 'fuse-confirmation-dialog'},{'name': 'FuseDrawerComponent', 'selector': 'fuse-drawer'},{'name': 'FuseFullscreenComponent', 'selector': 'fuse-fullscreen'},{'name': 'FuseHighlightComponent', 'selector': 'textarea[fuse-highlight]'},{'name': 'FuseHorizontalNavigationBasicItemComponent', 'selector': 'fuse-horizontal-navigation-basic-item'},{'name': 'FuseHorizontalNavigationBranchItemComponent', 'selector': 'fuse-horizontal-navigation-branch-item'},{'name': 'FuseHorizontalNavigationComponent', 'selector': 'fuse-horizontal-navigation'},{'name': 'FuseHorizontalNavigationDividerItemComponent', 'selector': 'fuse-horizontal-navigation-divider-item'},{'name': 'FuseHorizontalNavigationSpacerItemComponent', 'selector': 'fuse-horizontal-navigation-spacer-item'},{'name': 'FuseLoadingBarComponent', 'selector': 'fuse-loading-bar'},{'name': 'FuseMasonryComponent', 'selector': 'fuse-masonry'},{'name': 'FuseVerticalNavigationAsideItemComponent', 'selector': 'fuse-vertical-navigation-aside-item'},{'name': 'FuseVerticalNavigationBasicItemComponent', 'selector': 'fuse-vertical-navigation-basic-item'},{'name': 'FuseVerticalNavigationCollapsableItemComponent', 'selector': 'fuse-vertical-navigation-collapsable-item'},{'name': 'FuseVerticalNavigationComponent', 'selector': 'fuse-vertical-navigation'},{'name': 'FuseVerticalNavigationDividerItemComponent', 'selector': 'fuse-vertical-navigation-divider-item'},{'name': 'FuseVerticalNavigationGroupItemComponent', 'selector': 'fuse-vertical-navigation-group-item'},{'name': 'FuseVerticalNavigationSpacerItemComponent', 'selector': 'fuse-vertical-navigation-spacer-item'},{'name': 'FuturisticLayoutComponent', 'selector': 'futuristic-layout'},{'name': 'GridCustomHTMLTemplateComponent', 'selector': 'app-grid-custom-htmltemplate'},{'name': 'HomeComponent', 'selector': 'Home'},{'name': 'ImageTemplateComponent', 'selector': 'image-template'},{'name': 'ImageWithNameTemplateComponent', 'selector': 'image-with-name-template'},{'name': 'LandingHomeComponent', 'selector': 'landing-home'},{'name': 'LanguagesComponent', 'selector': 'languages'},{'name': 'LayoutComponent', 'selector': 'layout'},{'name': 'LinkTemplateComponent', 'selector': 'link-template'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapdialogComponent', 'selector': 'app-mapdialog'},{'name': 'MaterialLayoutComponent', 'selector': 'material-layout'},{'name': 'MessagesComponent', 'selector': 'messages'},{'name': 'ModernLayoutComponent', 'selector': 'modern-layout'},{'name': 'NewTabQueryBuilderComponent', 'selector': 'new-tab-core-tab-query-builder'},{'name': 'NotificationsComponent', 'selector': 'notifications'},{'name': 'ScreenFilterComponent', 'selector': 'screen-filter'},{'name': 'SearchComponent', 'selector': 'search'},{'name': 'SettingsComponent', 'selector': 'settings'},{'name': 'ShortcutsComponent', 'selector': 'shortcuts'},{'name': 'StarComponent', 'selector': 'app-star'},{'name': 'TabBasicGridComponent', 'selector': 'tab-basic-grid'},{'name': 'TabBlueprintComponent', 'selector': 'app-tab-blueprint'},{'name': 'TabChildScreenRendererComponent', 'selector': 'tab-core-tab-child-screen-renderer'},{'name': 'TabChipsComponent', 'selector': 'app-tab-chips'},{'name': 'TabColorPickerComponent', 'selector': 'app-tab-color-picker'},{'name': 'TabCommentsComponent', 'selector': 'app-tab-comments'},{'name': 'TabCustomCalenderComponent', 'selector': 'tab-custom-calender'},{'name': 'TabCustomCodeEditorComponent', 'selector': 'tab-core-tab-custom-code-editor'},{'name': 'TabCustomFormBuilderComponent', 'selector': 'tab-custom-form-builder'},{'name': 'TabCustomGanttChartComponent', 'selector': 'app-tab-custom-gantt-chart'},{'name': 'TabCustomImageuploadComponent', 'selector': 'app-tab-custom-imageupload'},{'name': 'TabCustomPivotTableComponent', 'selector': 'app-tab-custom-pivot-table'},{'name': 'TabCustomPlacePickerMapComponent', 'selector': 'app-tab-custom-place-picker-map'},{'name': 'TabCustomRichtextHtmlEditorComponent', 'selector': 'app-tab-custom-richtext-html-editor'},{'name': 'TabCustomTrackMapComponent', 'selector': 'app-tab-custom-track-map'},{'name': 'TabDateRangePickerComponent', 'selector': 'app-tab-date-range-picker'},{'name': 'TabDropDownTreeComponent', 'selector': 'app-tab-dropdown-tree'},{'name': 'TabDynamicDialogComponent', 'selector': 'app-tab-dynamic-dialog'},{'name': 'TabDynamicSidebarComponent', 'selector': 'app-tab-dynamic-sidebar'},{'name': 'TabFilePreviewComponent', 'selector': 'app-tab-file-preview'},{'name': 'TabFormBuilderComponent', 'selector': 'tab-form-builder'},{'name': 'TabFormRendererComponent', 'selector': 'tab-form-renderer'},{'name': 'TabHistoryComponent', 'selector': 'app-tab-history'},{'name': 'TabIframeComponent', 'selector': 'app-tab-iframe'},{'name': 'TabPdfViewerComponent', 'selector': 'app-tab-pdf-viewer'},{'name': 'TabQueryBuilderComponent', 'selector': 'tab-core-tab-query-builder'},{'name': 'TabSkeletonComponent', 'selector': 'app-tab-skeleton'},{'name': 'TabTextBoxComponent', 'selector': 'app-tab-iframe'},{'name': 'TabTimerComponent', 'selector': 'app-tab-timer'},{'name': 'TabTimerComponentComponent', 'selector': 'app-tab-timer-component'},{'name': 'TabTransitionPreviewComponent', 'selector': 'app-tab-transition-preview'},{'name': 'TabTreeViewComponent', 'selector': 'tab-core-tab-tree-view'},{'name': 'TabWidgetComponent', 'selector': 'app-tab-widget'},{'name': 'ThinLayoutComponent', 'selector': 'thin-layout'},{'name': 'UserComponent', 'selector': 'user'},{'name': 'ViewMoreComponent', 'selector': 'view-more-search-list'}];
+    var DIRECTIVES = [{'name': 'FuseScrollbarDirective', 'selector': '[fuseScrollbar]'},{'name': 'FuseScrollResetDirective', 'selector': '[fuseScrollReset]'},{'name': 'SafeHtmlDirective', 'selector': '[appSafeHtml]'}];
+    var ACTUAL_COMPONENT = {'name': 'TabCustomTrackMapComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TabCustomTrackMapComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

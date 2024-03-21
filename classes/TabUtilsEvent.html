@@ -1,0 +1,1317 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@fuse/starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@fuse/starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >TabUtilsEvent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/tab-utils-events.ts</code>
+        </p>
+
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cloneWorkitem" >cloneWorkitem</a>
+                            </li>
+                            <li>
+                                <a href="#copyToClipboard" >copyToClipboard</a>
+                            </li>
+                            <li>
+                                <a href="#deleteRecordUsingAppObjectId" >deleteRecordUsingAppObjectId</a>
+                            </li>
+                            <li>
+                                <a href="#navigateToNewWindowScreen" >navigateToNewWindowScreen</a>
+                            </li>
+                            <li>
+                                <a href="#navigateToScreen" >navigateToScreen</a>
+                            </li>
+                            <li>
+                                <a href="#navigateToScreenWithState" >navigateToScreenWithState</a>
+                            </li>
+                            <li>
+                                <a href="#onDownloadByMediaId" >onDownloadByMediaId</a>
+                            </li>
+                            <li>
+                                <a href="#openDefaultDialog" >openDefaultDialog</a>
+                            </li>
+                            <li>
+                                <a href="#openDefaultSidebar" >openDefaultSidebar</a>
+                            </li>
+                            <li>
+                                <a href="#viewOldCase" >viewOldCase</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cloneWorkitem"></a>
+                    <span class="name">
+                        <span ><b>cloneWorkitem</b></span>
+                        <a href="#cloneWorkitem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cloneWorkitem(eventParams)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="250"
+                                    class="link-to-prism">src/app/tab-utils-events.ts:250</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function is used for clone workitem it&#39;s only for pms</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>eventParams</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>event params where service list is exist from appcomponent</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="copyToClipboard"></a>
+                    <span class="name">
+                        <span ><b>copyToClipboard</b></span>
+                        <a href="#copyToClipboard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>copyToClipboard(eventParams: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="237"
+                                    class="link-to-prism">src/app/tab-utils-events.ts:237</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>eventParams</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteRecordUsingAppObjectId"></a>
+                    <span class="name">
+                        <span ><b>deleteRecordUsingAppObjectId</b></span>
+                        <a href="#deleteRecordUsingAppObjectId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteRecordUsingAppObjectId(eventParams: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="145"
+                                    class="link-to-prism">src/app/tab-utils-events.ts:145</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Deletes a record using the provided AppObjectId and handles the response.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>eventParams</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>An object containing necessary parameters for the operation.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateToNewWindowScreen"></a>
+                    <span class="name">
+                        <span ><b>navigateToNewWindowScreen</b></span>
+                        <a href="#navigateToNewWindowScreen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navigateToNewWindowScreen(eventParams: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="227"
+                                    class="link-to-prism">src/app/tab-utils-events.ts:227</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>navigate to specific screen with state</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>eventParams</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The parameters related to the event triggering the dialog.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateToScreen"></a>
+                    <span class="name">
+                        <span ><b>navigateToScreen</b></span>
+                        <a href="#navigateToScreen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navigateToScreen(eventParams: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/app/tab-utils-events.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>navigate to specific screen.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>eventParams</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The parameters related to the event triggering the dialog.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateToScreenWithState"></a>
+                    <span class="name">
+                        <span ><b>navigateToScreenWithState</b></span>
+                        <a href="#navigateToScreenWithState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navigateToScreenWithState(eventParams: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/app/tab-utils-events.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>navigate to specific screen with state</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>eventParams</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The parameters related to the event triggering the dialog.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDownloadByMediaId"></a>
+                    <span class="name">
+                        <span ><b>onDownloadByMediaId</b></span>
+                        <a href="#onDownloadByMediaId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDownloadByMediaId(eventParams: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="17"
+                                    class="link-to-prism">src/app/tab-utils-events.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Downloads a media file by its unique MediaId and handles the file download process.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>eventParams</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>An object containing necessary parameters for the operation.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openDefaultDialog"></a>
+                    <span class="name">
+                        <span ><b>openDefaultDialog</b></span>
+                        <a href="#openDefaultDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openDefaultDialog(eventParams: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="81"
+                                    class="link-to-prism">src/app/tab-utils-events.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Opens a default dialog using the provided event parameters.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>eventParams</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The parameters related to the event triggering the dialog.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openDefaultSidebar"></a>
+                    <span class="name">
+                        <span ><b>openDefaultSidebar</b></span>
+                        <a href="#openDefaultSidebar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openDefaultSidebar(eventParams: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="115"
+                                    class="link-to-prism">src/app/tab-utils-events.ts:115</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Opens a default sidebar using the provided event parameters.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>eventParams</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The parameters related to the event triggering the sidebar.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="viewOldCase"></a>
+                    <span class="name">
+                        <span ><b>viewOldCase</b></span>
+                        <a href="#viewOldCase"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>viewOldCase(eventParams)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="168"
+                                    class="link-to-prism">src/app/tab-utils-events.ts:168</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>eventParams</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { take } from &#x27;rxjs&#x27;;
+import { TabDynamicDialogComponent } from &#x27;./shared/templates/tab-dynamic-dialog/tab-dynamic-dialog.component&#x27;;
+import { MatSnackBarVerticalPosition } from &#x27;@angular/material/snack-bar&#x27;;
+
+export class TabUtilsEvent {
+    /**
+     * Downloads a media file by its unique MediaId and handles the file download process.
+     *
+     * @param eventParams - An object containing necessary parameters for the operation.
+     * @param eventParams.event - The event that triggered the download operation.
+     * @param eventParams.serviceList.mediaUploadService - The service responsible for retrieving the file.
+     * @param eventParams.event.detail.mediaId - The unique identifier (MediaId) of the media file to be downloaded.
+     *
+     * @returns {void}
+     */
+    // download from URL
+    onDownloadByMediaId(eventParams: any) {
+        const link &#x3D; document.createElement(&#x27;a&#x27;);
+        link.href &#x3D; eventParams?.event.detail.URL;
+        link.download &#x3D; &#x27;&#x27;;
+        link.target &#x3D; &#x27;_blank&#x27;;
+        link.click();
+    }
+    // commenting for preventing the getfile api call
+
+    //  onDownloadByMediaId(eventParams: any) {
+    //         const event &#x3D; eventParams.event;
+    //         eventParams?.serviceList?.mediaUploadService
+    //             .getFileByMediaId(event.detail.mediaId)
+    //             .subscribe((blob: Blob) &#x3D;&gt; {
+    //                 if (blob) {
+    //                     const url &#x3D; window.URL.createObjectURL(blob);
+    //                     const link &#x3D; document.createElement(&#x27;a&#x27;);
+    //                     link.href &#x3D; url;
+    //                     link.download &#x3D; new File(
+    //                         [blob],
+    //                         event.detail.mediaId.toString()
+    //                     ).name;
+    //                     link.click();
+    //                     window.URL.revokeObjectURL(url);
+    //                 }
+    //             });
+    //     }
+
+    /**
+     * navigate to specific screen.
+     * @param {Object} eventParams - The parameters related to the event triggering the dialog.
+     * @param {Event} eventParams.event - The event that triggered the dialog opening.
+     * @param {MatDialog} eventParams.dialogRef - The reference to the MatDialog service.
+     */
+    navigateToScreen(eventParams: any) {
+        eventParams.serviceList._route.navigate(
+            [&#x27;/screen/&#x27; + eventParams.event.detail.screenId],
+            { queryParams: eventParams?.event?.detail?.parameters }
+        );
+    }
+
+    /**
+     * navigate to specific screen with state
+     * @param {Object} eventParams - The parameters related to the event triggering the dialog.
+     * @param {Event} eventParams.event - The event that triggered the dialog opening.
+     * @param {MatDialog} eventParams.event.detail - Navigation details screenId, parameters.
+     */
+    navigateToScreenWithState(eventParams: any) {
+        const queryParams &#x3D; eventParams?.event?.detail?.parameters ?? {};
+        queryParams[&#x27;state&#x27;] &#x3D; encodeURIComponent(
+            JSON.stringify(eventParams?.event?.detail?.state ?? {})
+        );
+        eventParams.serviceList._route.navigate(
+            [&#x27;/screen/&#x27; + eventParams.event.detail.screenId],
+            { queryParams: queryParams }
+        );
+    }
+
+    /**
+     * Opens a default dialog using the provided event parameters.
+     * @param {Object} eventParams - The parameters related to the event triggering the dialog.
+     * @param {Event} eventParams.event - The event that triggered the dialog opening.
+     * @param {MatDialog} eventParams.dialogRef - The reference to the MatDialog service.
+     */
+    openDefaultDialog(eventParams: any) {
+        const fullWidth &#x3D; window.innerWidth; // Get the full width of the window
+        const fullHeight &#x3D; window.innerHeight;
+        const verticalPadding &#x3D; 50;
+        const top &#x3D; &#x60;${verticalPadding}px&#x60;;
+        const left &#x3D; &#x60;${(fullWidth - 500) / 2}px&#x60;;
+
+        const ref &#x3D; eventParams.dialogRef.open(TabDynamicDialogComponent, {
+            height: &#x60;${fullHeight - verticalPadding * 2}px&#x60;,
+            width: &#x27;500px&#x27;,
+            panelClass: &#x27;custom-modalbox&#x27;,
+            position: {
+                left: left,
+                top: top,
+            },
+            data: {
+                data: JSON.stringify({
+                    parameters: {
+                        ...eventParams?.event.detail.parameters,
+                        screenMode: &#x27;Add&#x27;,
+                    },
+                }),
+                screenID: eventParams?.event.detail.screenId,
+                title: eventParams?.event.detail.pageTitle,
+            },
+        });
+    }
+
+    /**
+     * Opens a default sidebar using the provided event parameters.
+     * @param {Object} eventParams - The parameters related to the event triggering the sidebar.
+     * @param {Event} eventParams.event - The event that triggered the sidebar opening.
+     * @param {TabDynamicSidebarComponent} eventParams.sidebarComponent - The reference to the TabDynamicSidebarComponent.
+     */
+    openDefaultSidebar(eventParams: any) {
+        eventParams.sidebarComponent.parameters &#x3D; JSON.stringify({
+            parameters: {
+                ...eventParams?.event.detail.parameters,
+                screenMode: eventParams?.event.detail.screenMode,
+                screenContext: JSON.parse(
+                    sessionStorage.getItem(&#x27;screenContext&#x27;)
+                ),
+                epochTime: new Date().getTime(),
+            },
+        });
+        eventParams.sidebarComponent.screenId &#x3D;
+            eventParams?.event.detail.screenId;
+        eventParams.sidebarComponent.title &#x3D;
+            eventParams?.event.detail.pageTitle;
+        eventParams.sidebarComponent.isShowSidebarSubmit &#x3D;
+            eventParams?.event.detail.showSubmit;
+        eventParams.sidebarComponent.settingsDrawer.toggle();
+    }
+
+    /**
+     * Deletes a record using the provided AppObjectId and handles the response.
+     *
+     * @param eventParams - An object containing necessary parameters for the operation.
+     * @param eventParams.serviceList - An object containing services, such as deleteService and toastrService.
+     * @param eventParams.event.detail.deleteObject - The data object representing the record to be deleted.
+     * @param eventParams.event.detail.appObjectId - The identifier for the AppObject related to the record.
+     *
+     * @returns {void}
+     */
+    deleteRecordUsingAppObjectId(eventParams: any) {
+        eventParams?.serviceList?.deleteService
+            .deleteRecord(
+                &#x27;&#x27;,
+                { data: eventParams?.event.detail.deleteObject },
+                eventParams?.event.detail.appObjectId
+            )
+            ?.pipe(take(1))
+            ?.subscribe((response) &#x3D;&gt; {
+                if (response.StatusCode &#x3D;&#x3D; &#x27;200&#x27; || !response.Errors.length) {
+                    eventParams?.serviceList?.toastrService.showSuccess(
+                        &#x27;Record Deleted Successfully&#x27;,
+                        &#x27;Success&#x27;
+                    );
+                } else {
+                    eventParams?.serviceList?.toastrService.showError(
+                        response.Errors[0],
+                        &#x27;Error&#x27;
+                    );
+                }
+            });
+    }
+
+    viewOldCase(eventParams) {
+        eventParams?.serviceList?.getService
+            .executeRAWDSQWithName({
+                DSQName: &#x27;ViewOldCaseDetail_CaseView&#x27;,
+                AppObjectName: &#x27;CaseView&#x27;,
+                Reqtokens: {
+                    ID: eventParams?.event.detail.caseId,
+                },
+            })
+            ?.pipe(take(1))
+            ?.subscribe(
+                (res) &#x3D;&gt; {
+                    //
+                    if (res.StatusCode &#x3D;&#x3D; &#x27;200&#x27; &amp;&amp; res.Result.length &gt; 0) {
+                        const caseId &#x3D; eventParams?.event.detail.caseId;
+                        var currentURL &#x3D; window.location.href;
+                        const lastSlashIndex &#x3D; currentURL.lastIndexOf(&#x27;/&#x27;);
+                        const urlWithoutLastPath &#x3D; currentURL.substring(
+                            0,
+                            lastSlashIndex
+                        );
+                        if (urlWithoutLastPath) {
+                            const viewCaseScreenId &#x3D;
+                                &#x27;574d343a-480e-4b8b-86f1-697a3130fa7e&#x27;;
+                            const newURL &#x3D; &#x60;${urlWithoutLastPath}/${viewCaseScreenId}?Id&#x3D;${caseId}&#x60;;
+                            const newTab &#x3D; window.open(newURL, &#x27;_blank&#x27;);
+                            if (newTab) {
+                                let screenContext &#x3D; JSON.parse(
+                                    sessionStorage.getItem(&#x27;screenContext&#x27;)
+                                );
+                                if (screenContext) {
+                                    screenContext[&#x27;CaseMaster&#x27;][
+                                        &#x27;activeRowsData&#x27;
+                                    ] &#x3D; res.Result[0];
+                                    newTab.sessionStorage.setItem(
+                                        &#x27;screenContext&#x27;,
+                                        JSON.stringify(screenContext)
+                                    );
+                                }
+                            }
+                        }
+                    } else {
+                        // Error
+                        console.log(&#x27;error while navigating&#x27;, res);
+                    }
+                },
+                (error) &#x3D;&gt; {
+                    // Error
+                    console.log(&#x27;error while navigating&#x27;, error);
+                }
+            );
+    }
+
+    /**
+     * navigate to specific screen with state
+     * @param {Object} eventParams - The parameters related to the event triggering the dialog.
+     * @param {Event} eventParams.event - The event that triggered the dialog opening.
+     * @param {MatDialog} eventParams.event.detail - Navigation details screenId, parameters.
+     */
+    navigateToNewWindowScreen(eventParams: any) {
+        window.open(
+            &#x27;/screen/&#x27; +
+                eventParams.event.detail.screenId +
+                &#x27;?ID&#x3D;&#x27; +
+                eventParams?.event?.detail?.parameters.ID,
+            &#x27;_blank&#x27;
+        );
+    }
+
+    copyToClipboard(eventParams: any) {
+        eventParams.serviceList.snackBar.open(&#x27;Copied to clipboard&#x27;, &#x27;&#x27;, {
+            duration: 2000, // Set the duration for the snackbar
+            horizontalPosition: &#x27;center&#x27;, // Set the horizontal position
+            verticalPosition: &#x27;top&#x27; as MatSnackBarVerticalPosition, // Set the vertical position
+            panelClass: [&#x27;custom-snackbar-copy&#x27;],
+        });
+    }
+
+    /**
+     * this function is used for clone workitem it&#x27;s only for pms
+     * @param eventParams event params where service list is exist from appcomponent
+     */
+    cloneWorkitem(eventParams) {
+        setTimeout(() &#x3D;&gt; {
+            let screenContext &#x3D; sessionStorage.getItem(&#x27;screenContext&#x27;);
+            if (screenContext) {
+                let screenContext1 &#x3D; JSON.parse(screenContext);
+                if (
+                    screenContext1 &amp;&amp;
+                    screenContext1.hasOwnProperty(&#x27;WorkItems&#x27;) &amp;&amp;
+                    screenContext1?.WorkItems
+                ) {
+                    let activeRowData &#x3D;
+                        screenContext1?.WorkItems?.activeRowsData;
+                    eventParams?.serviceList?.getService
+                        .executeRawSql(
+                            &#x27;exec SP_CloneWorkItem @aspnetuserid&#x3D;&quot;&#x27; +
+                                JSON.parse(localStorage.getItem(&#x27;loginData&#x27;))
+                                    ?.Attributes?.Id +
+                                &#x27;&quot;,@workitemid&#x3D;&quot;&#x27; +
+                                activeRowData.ID +
+                                &#x27;&quot;&#x27;
+                        )
+                        ?.pipe(take(1))
+                        ?.subscribe((response) &#x3D;&gt; {
+                            if (
+                                response.StatusCode &#x3D;&#x3D; &#x27;200&#x27; ||
+                                !response.Errors.length
+                            ) {
+                                eventParams?.serviceList?.globalValueService.updatedataSourceInfo(
+                                    {
+                                        component: {
+                                            component: {
+                                                customOptions: {
+                                                    dataSettingsGrid: {
+                                                        dataSourceQueryId:
+                                                            &#x27;79931E29-C6C6-47FC-AA36-809216D9FD89&#x27;.toLowerCase(),
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    }
+                                );
+                                eventParams?.serviceList?.toastrService.showSuccess(
+                                    &#x27;Workitem Cloned Successfully&#x27;,
+                                    &#x27;Success&#x27;
+                                );
+                            } else {
+                                eventParams?.serviceList?.toastrService.showError(
+                                    response.Errors[0],
+                                    &#x27;Error&#x27;
+                                );
+                            }
+                        });
+                }
+            }
+        }, 500);
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'TabUtilsEvent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

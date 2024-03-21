@@ -1,0 +1,1050 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@fuse/starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@fuse/starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  BlueprintScreenConfigurations</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/screen-custom-logic/blueprint-screen.ts</code>
+        </p>
+
+
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#css" 
+>
+                                            css
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#layout" 
+>
+                                            layout
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#layoutType" 
+>
+                                            layoutType
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#screenActionList" 
+>
+                                            screenActionList
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#script" 
+>
+                                            script
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="css"></a>
+                                        <span class="name "><b>css</b>
+                                            <a href="#css">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>css:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="layout"></a>
+                                        <span class="name "><b>layout</b>
+                                            <a href="#layout">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>layout:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="layoutType"></a>
+                                        <span class="name "><b>layoutType</b>
+                                            <a href="#layoutType">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>layoutType:         <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="screenActionList"></a>
+                                        <span class="name "><b>screenActionList</b>
+                                            <a href="#screenActionList">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>screenActionList:         <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="script"></a>
+                                        <span class="name "><b>script</b>
+                                            <a href="#script">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>script:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    IActionExtension,
+    IScreenExtension,
+} from &#x27;@techextensor/tab-interface&#x27;;
+import { TabClasses } from &#x27;@techextensor/tab-service/lib/util/class&#x27;;
+import { Status } from &#x27;app/modules/admin/tab-blueprint/models/status.model&#x27;;
+import { take } from &#x27;rxjs&#x27;;
+
+export interface BlueprintScreenConfigurations {
+    css: string;
+    script: string;
+    layout: string;
+    layoutType: any;
+    screenActionList: any;
+}
+
+export class BlueprintScreen implements IScreenExtension {
+    activeAction: IActionExtension;
+
+    constructor() {}
+
+    screenId &#x3D; &#x27;10948585-dcfb-4aea-83a0-c3d97c45c73f&#x27;;
+
+    onSubmit(event: any) {}
+
+    onRender(event: any) {}
+
+    onBeforeSubmit(screenParameters: any) {
+        console.log(&#x27;BlueprintScreen[onBeforeSubmit] &#x27;, screenParameters);
+        screenParameters.event.data.Criteria &#x3D; JSON.stringify(
+            screenParameters.event.data.Criteria
+        );
+        screenParameters?.event?.callback(null, screenParameters?.event);
+    }
+
+    onChange(screenParameters: any) {
+        console.log(
+            &#x60;BlueprintScreen[onChange][${screenParameters.event.type}]&#x60;,
+            screenParameters
+        );
+
+        // REFERENCE
+        // let criteria;
+        // screenParameters?.formIOObject.formio.components[0].components.forEach(
+        //     (c) &#x3D;&gt; {
+        //         if (c.key &#x3D;&#x3D; &#x27;configurations&#x27;) {
+        //             criteria &#x3D; c.components.find((t) &#x3D;&gt; t.key &#x3D;&#x3D; &#x27;Criteria&#x27;);
+        //         }
+        //     }
+        // );
+
+        if (
+            screenParameters.event?.changed?.component &amp;&amp;
+            screenParameters.event?.changed?.component.key &#x3D;&#x3D; &#x27;appObjectId&#x27;
+        ) {
+            if (screenParameters.event.data.appObjectId)
+                this.getFiltersFromAppObject(
+                    screenParameters.event.data.appObjectId,
+                    screenParameters
+                );
+            else this.clearDSQFilters(screenParameters);
+        }
+
+        if (
+            screenParameters.event?.data?.Id !&#x3D;&#x3D;
+            screenParameters.event?.data?.blueprint?.BluePrintId
+        ) {
+            screenParameters.event &#x3D; {
+                ...screenParameters.event?.data,
+                blueprint: {
+                    blueprint: screenParameters.event.data.blueprint.blueprint,
+                    changed: &#x27;diagram&#x27;,
+                    isRefresh: true,
+                    BluePrintId: screenParameters.event.data.Id,
+                },
+            };
+            this.refreshForm(screenParameters);
+        }
+    }
+
+    onInvalid(event: any) {}
+
+    onNextPage(event: any) {}
+
+    onPrevPage(event: any) {}
+
+    onCustomEvent(screenParameters: any) {
+        console.log(
+            &#x60;BlueprintScreen[onCustomEvent][${
+                screenParameters.event.type ?? screenParameters.event.action
+            }]&#x60;,
+            screenParameters
+        );
+
+        // REFERENCE
+        // Selecting components
+        // let blueprintComponent: any;
+        // let transitionComponent: any;
+        // let infoComponent: any;
+        // screenParameters?.formIOObject.formio.components[0].components.forEach(
+        //     (c) &#x3D;&gt; {
+        //         if (c.key &#x3D;&#x3D; &#x27;blueprint&#x27;) {
+        //             blueprintComponent &#x3D; c.component;
+        //         }
+        //         if (c.key &#x3D;&#x3D; &#x27;transition&#x27;) {
+        //             transitionComponent &#x3D; c;
+        //         }
+        //         if (c.key &#x3D;&#x3D; &#x27;info&#x27;) {
+        //             infoComponent &#x3D; c;
+        //         }
+        //     }
+        // );
+
+        // Saving Blueprint if it&#x27;s not save
+        // FormIo Events
+        if (
+            screenParameters.event.type &#x3D;&#x3D; &#x27;addStatus&#x27; ||
+            screenParameters.event.type &#x3D;&#x3D; &#x27;saveTransition&#x27;
+        ) {
+            if (!screenParameters.event.data.Id) {
+                this.saveBlueprintAndChild(screenParameters);
+            } else {
+                this.handleStatusAndTransitionEvent(screenParameters);
+            }
+        }
+
+        // FOR REFERENCE
+        // load new blueprint
+        // if (screenParameters.event.type &#x3D;&#x3D; &#x27;loadBlueprint&#x27;) {
+        //     screenParameters.event &#x3D; {
+        //         ...screenParameters.formIOObject.formio.data,
+        //         blueprint: {
+        //             blueprint: screenParameters.event.data.blueprint.blueprint,
+        //             changed: &#x27;diagram&#x27;,
+        //             // changed: screenParameters.event.data.BluePrintId,
+        //             isRefresh: true,
+        //             BluePrintId: screenParameters.event.data.Id,
+        //         },
+        //     };
+        //     this.refreshForm(screenParameters);
+        // }
+
+        // Actions
+        if (screenParameters.event.action &#x3D;&#x3D; &#x27;editTransition&#x27;) {
+            const content &#x3D;
+                screenParameters.event.connector.properties?.annotations[0]
+                    ?.properties?.content;
+            screenParameters.event &#x3D; {
+                ...screenParameters.formIOObject.formio.data,
+                menu: &#x27;transition&#x27;,
+                transitionName: content,
+                fromStatus: screenParameters.event.fromStatus,
+                toStatus: screenParameters.event.toStatus,
+                transitionId: screenParameters.event.transitionId,
+            };
+            this.refreshForm(screenParameters);
+        }
+        if (screenParameters.event.action &#x3D;&#x3D; &#x27;editStatus&#x27;) {
+            const status &#x3D; screenParameters.event.status as Status;
+            screenParameters.event &#x3D; {
+                ...screenParameters.formIOObject.formio.data,
+                menu: &#x27;info&#x27;,
+                statusId: status?.Id,
+                statusName: status?.Name,
+                statusColor: status?.Color,
+                type: status?.Type,
+            };
+            this.refreshForm(screenParameters);
+        }
+        if (screenParameters.event.action &#x3D;&#x3D; &#x27;editInfo&#x27;) {
+            screenParameters.event &#x3D; {
+                ...screenParameters.formIOObject.formio.data,
+                menu: &#x27;info&#x27;,
+                statusId: &#x27;&#x27;,
+                statusName: &#x27;&#x27;,
+                statusColor: &#x27;&#x27;,
+                type: &#x27;open&#x27;,
+            };
+            this.refreshForm(screenParameters);
+        }
+    }
+
+    onErrorChange(event: any) {}
+
+    onFormLoad(event: any) {}
+
+    onReady(event: any) {}
+
+    proceedObjectBeforeRender(screenParameters: any) {
+        console.log(
+            &#x27;BlueprintScreen[proceedObjectBeforeRender] &#x27;,
+            screenParameters
+        );
+        if (
+            screenParameters.event.hasOwnProperty(&#x27;Id&#x27;) &amp;&amp;
+            screenParameters.event.Id &amp;&amp;
+            screenParameters.event.Id !&#x3D;&#x3D; &#x27;&#x27;
+        ) {
+            this.refreshForm(screenParameters);
+        }
+    }
+
+    onAfterSubmit(event: any) {}
+
+    saveBlueprintAndChild(screenParameters: any): void {
+        const blueprint: any &#x3D; {
+            Name: screenParameters.event.data.Name,
+            Criteria: screenParameters.event.data.Criteria,
+            Description: screenParameters.event.data.Descriptions,
+            AppObjectId: screenParameters.event.data.appObjectId,
+            TABD_BlueprintStatus: [],
+            TABD_Transitions: [],
+        };
+        if (screenParameters.event.type &#x3D;&#x3D; &#x27;addStatus&#x27;) {
+            blueprint.TABD_BlueprintStatus &#x3D; [
+                {
+                    Name: screenParameters.event.data?.statusName,
+                    Color: screenParameters.event.data?.statusColor,
+                    Type: screenParameters.event.data?.type,
+                },
+            ];
+        } else if (screenParameters.event.type &#x3D;&#x3D; &#x27;saveTransition&#x27;) {
+            blueprint.TABD_Transitions &#x3D; [
+                {
+                    Name: screenParameters.event.data.transitionName,
+                    FromStatus: screenParameters.event.data.fromStatus,
+                    ToStatus: screenParameters.event.data.toStatus,
+                    Transition_Criteria: &#x27;&#x27;,
+                },
+            ];
+        }
+        screenParameters?.serviceList?.insertService
+            .insertByTable(&#x27;Tabd_BluePrints&#x27;, blueprint)
+            ?.pipe(take(1))
+            .subscribe({
+                next: (res) &#x3D;&gt; {
+                    if (res.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                        screenParameters?.serviceList?.toastrService.showSuccess(
+                            &#x27;Blueprint Saved&#x27;,
+                            &#x27;Success&#x27;
+                        );
+                        screenParameters.event &#x3D; {
+                            ...screenParameters.event.data,
+                            statusId: &#x27;&#x27;,
+                            statusName: &#x27;&#x27;,
+                            statusColor: &#x27;&#x27;,
+                            type: &#x27;&#x27;,
+                            transitionName: &#x27;&#x27;,
+                            fromStatus: &#x27;&#x27;,
+                            toStatus: &#x27;&#x27;,
+                            blueprint: {
+                                blueprint:
+                                    screenParameters.event.data.blueprint
+                                        .blueprint,
+                                changed: res.Result,
+                                isRefresh: true,
+                                BluePrintId: res.Result,
+                            },
+                            Id: res.Result,
+                        };
+                        this.refreshForm(screenParameters);
+                    }
+                },
+                error: (res) &#x3D;&gt; {
+                    screenParameters?.serviceList?.toastrService.showError(
+                        res.Errors[0],
+                        &#x27;Error&#x27;
+                    );
+                },
+            });
+    }
+
+    /**
+     * Handle &#x60;addStatus&#x60; and &#x60;saveTransition&#x60; formIo events
+     *
+     * @param {any} screenParameters  The screen parameters.
+     * @returns {void} void
+     */
+    handleStatusAndTransitionEvent(screenParameters: any): void {
+        if (screenParameters.event.type &#x3D;&#x3D; &#x27;addStatus&#x27;) {
+            const status: any &#x3D; {
+                Name: screenParameters.event.data?.statusName,
+                Color: screenParameters.event.data?.statusColor,
+                Type: screenParameters.event.data?.type,
+                BluePrintId: screenParameters.event?.data?.Id,
+            };
+            if (screenParameters.event.data?.statusId) {
+                status.Id &#x3D; screenParameters.event.data?.statusId;
+                this.updateStatus(status, screenParameters);
+            } else {
+                this.addStatus(status, screenParameters);
+            }
+        }
+        if (screenParameters.event.type &#x3D;&#x3D; &#x27;saveTransition&#x27;) {
+            const transition: any &#x3D; {
+                Name: screenParameters.event.data.transitionName,
+                FromStatus: screenParameters.event.data.fromStatus,
+                ToStatus: screenParameters.event.data.toStatus,
+                Transition_Criteria: &#x27;&#x27;,
+                BluePrintId: screenParameters.event.data.Id,
+            };
+            if (screenParameters.event.data.transitionId) {
+                transition.Id &#x3D; screenParameters.event.data?.transitionId;
+                this.updateTransition(transition, screenParameters);
+            } else {
+                this.addTransition(transition, screenParameters);
+            }
+        }
+    }
+
+    /**
+     * Adds a status .
+     * @param {any} status  The status to be added.
+     * @param {any} screenParameters  The screen parameters.
+     *
+     * @returns {void} void
+     */
+    addStatus &#x3D; (status, screenParameters) &#x3D;&gt; {
+        screenParameters?.serviceList?.insertService
+            .insertByTable(&#x27;TABD_BlueprintStatus&#x27;, status)
+            ?.pipe(take(1))
+            .subscribe({
+                next: (res) &#x3D;&gt; {
+                    if (res.StatusCode &#x3D;&#x3D;&#x3D; &#x27;200&#x27;) {
+                        screenParameters?.serviceList?.toastrService.showSuccess(
+                            &#x27;Record Added Successfully&#x27;,
+                            &#x27;Success&#x27;
+                        );
+                        screenParameters.event &#x3D; {
+                            ...screenParameters.event.data,
+                            statusId: &#x27;&#x27;,
+                            statusName: &#x27;&#x27;,
+                            statusColor: &#x27;&#x27;,
+                            type: &#x27;open&#x27;,
+                            blueprint: {
+                                blueprint:
+                                    screenParameters.event.data.blueprint
+                                        .blueprint,
+                                changed: res.Result,
+                                isRefresh: true,
+                                BluePrintId: screenParameters.event.data.Id,
+                            },
+                        };
+                        this.refreshForm(screenParameters);
+                    } else {
+                        screenParameters?.serviceList?.toastrService.showError(
+                            res.Errors[0],
+                            &#x27;Error&#x27;
+                        );
+                    }
+                },
+                error: (res) &#x3D;&gt; {
+                    screenParameters?.serviceList?.toastrService.showError(
+                        res.Errors[0],
+                        &#x27;Error&#x27;
+                    );
+                },
+            });
+    };
+
+    // FOR REFERENCE
+    updateStatus &#x3D; (status, screenParameters) &#x3D;&gt; {
+        let queryFieldsArray: TabClasses.UpdateQueryParameter[] &#x3D; [];
+        queryFieldsArray.push({
+            FieldName: &#x27;ID&#x27;,
+            FieldValue: status.Id,
+        });
+        screenParameters?.serviceList?.updateService
+            .updateUsingDSQ(
+                &#x27;A283D33E-CD45-4AF2-906C-526AD8BFD9E3&#x27;,
+                { data: status },
+                &#x27;Tabd_BlueprintStatus&#x27;,
+                queryFieldsArray
+            )
+            ?.pipe(take(1))
+            .subscribe({
+                next: (res) &#x3D;&gt; {
+                    if (res.StatusCode &#x3D;&#x3D;&#x3D; &#x27;200&#x27;) {
+                        screenParameters?.serviceList?.toastrService.showSuccess(
+                            &#x27;Record Added Successfully&#x27;,
+                            &#x27;Success&#x27;
+                        );
+
+                        screenParameters.event &#x3D; {
+                            ...screenParameters.event.data,
+                            statusId: &#x27;&#x27;,
+                            statusName: &#x27;&#x27;,
+                            statusColor: &#x27;&#x27;,
+                            type: &#x27;open&#x27;,
+                            blueprint: {
+                                blueprint:
+                                    screenParameters.event.data.blueprint
+                                        .blueprint,
+                                changed: &#x27;diagram&#x27;,
+                                temp: status.Id,
+                                isRefresh: true,
+                                BluePrintId: screenParameters.event.data.Id,
+                            },
+                        };
+                        this.refreshForm(screenParameters);
+                    } else {
+                        screenParameters?.serviceList?.toastrService.showError(
+                            res.Errors[0],
+                            &#x27;Error&#x27;
+                        );
+                    }
+                },
+                error: (res) &#x3D;&gt; {
+                    screenParameters?.serviceList?.toastrService.showError(
+                        res.Errors[0],
+                        &#x27;Error&#x27;
+                    );
+                },
+            });
+    };
+
+    /**
+     * Adds a transition .
+     * @param {any} transition The transition to be added.
+     * @param {any} screenParameters The screen parameters.
+     *
+     * @returns {void} void
+     */
+    addTransition &#x3D; (transition, screenParameters): void &#x3D;&gt; {
+        screenParameters?.serviceList?.insertService
+            .insertByTable(&#x27;TABD_Transitions&#x27;, transition)
+            ?.pipe(take(1))
+            .subscribe({
+                next: (res) &#x3D;&gt; {
+                    if (res.Result) {
+                        screenParameters?.serviceList?.toastrService.showSuccess(
+                            &#x27;Record Added Successfully&#x27;,
+                            &#x27;Success&#x27;
+                        );
+                        screenParameters.event &#x3D; {
+                            ...screenParameters.event.data,
+                            transitionName: &#x27;&#x27;,
+                            fromStatus: &#x27;&#x27;,
+                            toStatus: &#x27;&#x27;,
+                            transitionId: &#x27;&#x27;,
+                            blueprint: {
+                                blueprint:
+                                    screenParameters.event.data.blueprint
+                                        .blueprint,
+                                changed: res.Result,
+                                isRefresh: true,
+                                BluePrintId: screenParameters.event.data.Id,
+                            },
+                        };
+                        this.refreshForm(screenParameters);
+                    }
+                },
+                error: (res) &#x3D;&gt; {
+                    screenParameters?.serviceList?.toastrService.showError(
+                        res.Errors[0],
+                        &#x27;Error&#x27;
+                    );
+                },
+            });
+    };
+
+    // FOR REFERENCE
+    updateTransition &#x3D; (transition, screenParameters) &#x3D;&gt; {
+        let queryFieldsArray: TabClasses.UpdateQueryParameter[] &#x3D; [];
+        queryFieldsArray.push({
+            FieldName: &#x27;ID&#x27;,
+            FieldValue: transition.Id,
+        });
+        screenParameters?.serviceList?.updateService
+            .updateUsingDSQ(
+                &#x27;cfac5b55-d4a1-41d7-9e03-22c63549b28a&#x27;,
+                { data: transition },
+                &#x27;TABD_Transitions&#x27;,
+                queryFieldsArray
+            )
+            ?.pipe(take(1))
+            .subscribe({
+                next: (res) &#x3D;&gt; {
+                    if (res.StatusCode &#x3D;&#x3D;&#x3D; &#x27;200&#x27;) {
+                        screenParameters?.serviceList?.toastrService.showSuccess(
+                            &#x27;Record Added Successfully&#x27;,
+                            &#x27;Success&#x27;
+                        );
+
+                        screenParameters.event &#x3D; {
+                            ...screenParameters.event.data,
+                            transitionName: &#x27;&#x27;,
+                            fromStatus: &#x27;&#x27;,
+                            toStatus: &#x27;&#x27;,
+                            transitionId: &#x27;&#x27;,
+                            blueprint: {
+                                blueprint:
+                                    screenParameters.event.data.blueprint
+                                        .blueprint,
+                                changed: &#x27;diagram&#x27;,
+                                temp: transition.Id,
+                                isRefresh: true,
+                                BluePrintId: screenParameters.event.data.Id,
+                            },
+                        };
+                        this.refreshForm(screenParameters);
+                    } else {
+                        screenParameters?.serviceList?.toastrService.showError(
+                            res.Errors[0],
+                            &#x27;Error&#x27;
+                        );
+                    }
+                },
+                error: (res) &#x3D;&gt; {
+                    screenParameters?.serviceList?.toastrService.showError(
+                        res.Errors[0],
+                        &#x27;Error&#x27;
+                    );
+                },
+            });
+    };
+
+    /**
+     * fetch DSQ filters data form AppObjectId and query builder
+     *
+     * @param {string} appObjectId App Object Id
+     * @param {any} screenParameters The screen parameters.
+     * @returns {void} void
+     */
+    getFiltersFromAppObject &#x3D; (
+        appObjectId: string,
+        screenParameters: any
+    ): void &#x3D;&gt; {
+        const apiData &#x3D; {
+            AppObjectName: &#x27;TABMD_DataSourceQueries&#x27;,
+            DSQName: &#x27;FK_TABMD_DataSourceQueries_TABMD_AppObject&#x27;,
+            Reqtokens: {
+                Id: appObjectId,
+            },
+        };
+        screenParameters.serviceList.getService
+            .executeRAWDSQWithName(apiData)
+            ?.pipe(take(1))
+            .subscribe({
+                next: (res) &#x3D;&gt; {
+                    if (res.Result) {
+                        const dsqId &#x3D; res.Result.find((dsq) &#x3D;&gt;
+                            dsq.QueryName.startsWith(&#x27;Default_&#x27;)
+                        )?.ID;
+                        if (dsqId) this.getDSQFilters(dsqId, screenParameters);
+                        else this.clearDSQFilters(screenParameters);
+                    }
+                },
+            });
+    };
+
+    /**
+     * fetch DSQ filters data and query builder
+     *
+     * @param {string} dsqId
+     * @param {any} screenParameters
+     * @returns {void} void
+     */
+    getDSQFilters &#x3D; (dsqId: string, screenParameters: any) &#x3D;&gt; {
+        const reqTokens &#x3D; { ID: dsqId };
+        const apiData &#x3D; {
+            Reqtokens: reqTokens,
+            AppObjectName: &#x27;TABMD_DataSourceQueries_Filters&#x27;,
+            DSQName:
+                &#x27;FK_TABMD_DataSourceQueries_Filters_TABMD_DataSourceQueries&#x27;,
+        };
+        screenParameters.serviceList.getService
+            .executeRAWDSQWithName(apiData)
+            ?.pipe(take(1))
+            .subscribe((response) &#x3D;&gt; {
+                let dsqFilterList;
+                if (!!response.Result &amp;&amp; response.Result.length &gt; 0) {
+                    dsqFilterList &#x3D; response.Result;
+                }
+                screenParameters.event &#x3D; {
+                    ...screenParameters.event.data,
+                    dataSourceQueryId: dsqId,
+                    Criteria: {
+                        filterData: dsqFilterList,
+                        isRefresh: true,
+                        dataSourceQueryId: dsqId,
+                    },
+                };
+                this.refreshForm(screenParameters);
+            });
+    };
+
+    /**
+     * Clear query builder when appObjectId remove.
+     *
+     * @param {any} screenParameters
+     * @returns {void} void
+     */
+    clearDSQFilters &#x3D; (screenParameters: any): void &#x3D;&gt; {
+        screenParameters.event &#x3D; {
+            ...screenParameters.event.data,
+            Criteria: {
+                filterData: [],
+                isRefresh: true,
+                dataSourceQueryId: &#x27;&#x27;,
+            },
+        };
+
+        this.refreshForm(screenParameters);
+    };
+
+    /**
+     * refresh screen
+     *
+     * @param {any} screenParameters
+     * @returns {void} void
+     */
+    refreshForm &#x3D; (screenParameters: any): void &#x3D;&gt; {
+        screenParameters?.formIOObject.refresh.emit({
+            submission: {
+                data: screenParameters.event,
+            },
+        });
+    };
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'BlueprintScreenConfigurations.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

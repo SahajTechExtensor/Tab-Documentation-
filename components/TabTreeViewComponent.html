@@ -1,0 +1,4533 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@fuse/starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@fuse/starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TabTreeViewComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>FormioCustomComponent</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>tab-core-tab-tree-view</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./tab-tree-view.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./tab-tree-view.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_unsubscribeAll" >_unsubscribeAll</a>
+                            </li>
+                            <li>
+                                <a href="#_value" >_value</a>
+                            </li>
+                            <li>
+                                <a href="#allFields" >allFields</a>
+                            </li>
+                            <li>
+                                <a href="#appObjectData" >appObjectData</a>
+                            </li>
+                            <li>
+                                <a href="#appObjectDetails" >appObjectDetails</a>
+                            </li>
+                            <li>
+                                <a href="#checkedNodes" >checkedNodes</a>
+                            </li>
+                            <li>
+                                <a href="#data" >data</a>
+                            </li>
+                            <li>
+                                <a href="#dataSourceQuery" >dataSourceQuery</a>
+                            </li>
+                            <li>
+                                <a href="#dataSourceQueryID" >dataSourceQueryID</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ddfields" >ddfields</a>
+                            </li>
+                            <li>
+                                <a href="#displayTreeView" >displayTreeView</a>
+                            </li>
+                            <li>
+                                <a href="#dsqFields" >dsqFields</a>
+                            </li>
+                            <li>
+                                <a href="#fieldData" >fieldData</a>
+                            </li>
+                            <li>
+                                <a href="#fields" >fields</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#index" >index</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#menuItems" >menuItems</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onFiltering" >onFiltering</a>
+                            </li>
+                            <li>
+                                <a href="#previousLookup" >previousLookup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setTimer" >setTimer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#tabMaskObj" >tabMaskObj</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#tabTreeView" >tabTreeView</a>
+                            </li>
+                            <li>
+                                <a href="#token" >token</a>
+                            </li>
+                            <li>
+                                <a href="#treeViewInstance" >treeViewInstance</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#beforeopen" >beforeopen</a>
+                            </li>
+                            <li>
+                                <a href="#bindAppObjectFieldsToTreeView" >bindAppObjectFieldsToTreeView</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#changeDataSource" >changeDataSource</a>
+                            </li>
+                            <li>
+                                <a href="#checkMandatoryParamsInDSQ" >checkMandatoryParamsInDSQ</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#executeDSQ" >executeDSQ</a>
+                            </li>
+                            <li>
+                                <a href="#getAllAppFields" >getAllAppFields</a>
+                            </li>
+                            <li>
+                                <a href="#getAppFields" >getAppFields</a>
+                            </li>
+                            <li>
+                                <a href="#getAppObjectFields" >getAppObjectFields</a>
+                            </li>
+                            <li>
+                                <a href="#getDSQFields" >getDSQFields</a>
+                            </li>
+                            <li>
+                                <a href="#getDSQFieldss" >getDSQFieldss</a>
+                            </li>
+                            <li>
+                                <a href="#getFilterItems" >getFilterItems</a>
+                            </li>
+                            <li>
+                                <a href="#getLookUpFields" >getLookUpFields</a>
+                            </li>
+                            <li>
+                                <a href="#insertNode" >insertNode</a>
+                            </li>
+                            <li>
+                                <a href="#isShowDropdown" >isShowDropdown</a>
+                            </li>
+                            <li>
+                                <a href="#manageFields" >manageFields</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#menuclick" >menuclick</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#nodeChecked" >nodeChecked</a>
+                            </li>
+                            <li>
+                                <a href="#nodeclicked" >nodeclicked</a>
+                            </li>
+                            <li>
+                                <a href="#nodeDropped" >nodeDropped</a>
+                            </li>
+                            <li>
+                                <a href="#nodeEdited" >nodeEdited</a>
+                            </li>
+                            <li>
+                                <a href="#nodeSelecting" >nodeSelecting</a>
+                            </li>
+                            <li>
+                                <a href="#onFilterDropdownValueChange" >onFilterDropdownValueChange</a>
+                            </li>
+                            <li>
+                                <a href="#populateData" >populateData</a>
+                            </li>
+                            <li>
+                                <a href="#processTreeView" >processTreeView</a>
+                            </li>
+                            <li>
+                                <a href="#removeChildDSQ" >removeChildDSQ</a>
+                            </li>
+                            <li>
+                                <a href="#removeNode" >removeNode</a>
+                            </li>
+                            <li>
+                                <a href="#searchNodes" >searchNodes</a>
+                            </li>
+                            <li>
+                                <a href="#selectFirstNode" >selectFirstNode</a>
+                            </li>
+                            <li>
+                                <a href="#updateNode" >updateNode</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSetting" >dataSetting</a>
+                            </li>
+                            <li>
+                                <a href="#disabled" >disabled</a>
+                            </li>
+                            <li>
+                                <a href="#value" >value</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#formioEvent" >formioEvent</a>
+                            </li>
+                            <li>
+                                <a href="#valueChange" >valueChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#value" >value</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(tabGetService: TabGetService, tabUpdateService: TabUpdateService, tabInsertService: TabInsertService, tabDeleteService: TabDeleteService, toastrNotificationService: <a href="../injectables/ToastrNotificationService.html" target="_self">ToastrNotificationService</a>, globalValueService: GlobalValueService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:81</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>tabGetService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabGetService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tabUpdateService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabUpdateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tabInsertService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabInsertService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tabDeleteService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabDeleteService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastrNotificationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ToastrNotificationService.html" target="_self" >ToastrNotificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>globalValueService</td>
+                                                  
+                                                        <td>
+                                                                    <code>GlobalValueService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSetting"></a>
+                        <b>dataSetting</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:49</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="disabled"></a>
+                        <b>disabled</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:44</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <b>value</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:94</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formioEvent"></a>
+                        <b>formioEvent</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:51</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueChange"></a>
+                        <b>valueChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:50</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="beforeopen"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>beforeopen</b></span>
+                        <a href="#beforeopen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>beforeopen(args: <a href="../undefineds/Event.html" target="_self">BeforeOpenCloseMenuEventArgs</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="204"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:204</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >BeforeOpenCloseMenuEventArgs</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bindAppObjectFieldsToTreeView"></a>
+                    <span class="name">
+                        <span ><b>bindAppObjectFieldsToTreeView</b></span>
+                        <a href="#bindAppObjectFieldsToTreeView"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>bindAppObjectFieldsToTreeView(prefix, item, pid)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="522"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:522</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>prefix</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>item</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>pid</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeDataSource"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>changeDataSource</b></span>
+                        <a href="#changeDataSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changeDataSource(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="825"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:825</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkMandatoryParamsInDSQ"></a>
+                    <span class="name">
+                        <span ><b>checkMandatoryParamsInDSQ</b></span>
+                        <a href="#checkMandatoryParamsInDSQ"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>checkMandatoryParamsInDSQ()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="399"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:399</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>any[]</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="executeDSQ"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>executeDSQ</b></span>
+                        <a href="#executeDSQ"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>executeDSQ(token)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="164"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:164</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>token</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllAppFields"></a>
+                    <span class="name">
+                        <span ><b>getAllAppFields</b></span>
+                        <a href="#getAllAppFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAllAppFields()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="702"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:702</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAppFields"></a>
+                    <span class="name">
+                        <span ><b>getAppFields</b></span>
+                        <a href="#getAppFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAppFields(appObjectId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="637"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:637</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>appObjectId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAppObjectFields"></a>
+                    <span class="name">
+                        <span ><b>getAppObjectFields</b></span>
+                        <a href="#getAppObjectFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAppObjectFields(appObjectId)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="500"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:500</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>appObjectId</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDSQFields"></a>
+                    <span class="name">
+                        <span ><b>getDSQFields</b></span>
+                        <a href="#getDSQFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDSQFields(fieldData: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, dsqID: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="593"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:593</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>fieldData</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>dsqID</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDSQFieldss"></a>
+                    <span class="name">
+                        <span ><b>getDSQFieldss</b></span>
+                        <a href="#getDSQFieldss"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDSQFieldss(dataSourceQueryID)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="465"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:465</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dataSourceQueryID</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFilterItems"></a>
+                    <span class="name">
+                        <span ><b>getFilterItems</b></span>
+                        <a href="#getFilterItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFilterItems(fList, list)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="840"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:840</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>fList</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>list</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>{}</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLookUpFields"></a>
+                    <span class="name">
+                        <span ><b>getLookUpFields</b></span>
+                        <a href="#getLookUpFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getLookUpFields(child: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, parentId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, objectId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="727"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:727</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>child</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>parentId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>objectId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="insertNode"></a>
+                    <span class="name">
+                        <span ><b>insertNode</b></span>
+                        <a href="#insertNode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>insertNode(data, appObject)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="286"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:286</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>appObject</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isShowDropdown"></a>
+                    <span class="name">
+                        <span ><b>isShowDropdown</b></span>
+                        <a href="#isShowDropdown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isShowDropdown(data)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="920"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:920</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="manageFields"></a>
+                    <span class="name">
+                        <span ><b>manageFields</b></span>
+                        <a href="#manageFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>manageFields()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="443"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:443</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuclick"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>menuclick</b></span>
+                        <a href="#menuclick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>menuclick(args: <a href="../undefineds/Event.html" target="_self">MenuEventArgs</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="209"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:209</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >MenuEventArgs</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="956"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:956</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="411"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:411</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nodeChecked"></a>
+                    <span class="name">
+                        <span ><b>nodeChecked</b></span>
+                        <a href="#nodeChecked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nodeChecked(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="864"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:864</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nodeclicked"></a>
+                    <span class="name">
+                        <span ><b>nodeclicked</b></span>
+                        <a href="#nodeclicked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nodeclicked(args: <a href="../undefineds/Event.html" target="_self">NodeClickEventArgs</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="856"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:856</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >NodeClickEventArgs</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nodeDropped"></a>
+                    <span class="name">
+                        <span ><b>nodeDropped</b></span>
+                        <a href="#nodeDropped"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nodeDropped(event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="331"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:331</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nodeEdited"></a>
+                    <span class="name">
+                        <span ><b>nodeEdited</b></span>
+                        <a href="#nodeEdited"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nodeEdited(event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="307"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:307</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nodeSelecting"></a>
+                    <span class="name">
+                        <span ><b>nodeSelecting</b></span>
+                        <a href="#nodeSelecting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nodeSelecting(event, data)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="189"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:189</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFilterDropdownValueChange"></a>
+                    <span class="name">
+                        <span ><b>onFilterDropdownValueChange</b></span>
+                        <a href="#onFilterDropdownValueChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFilterDropdownValueChange(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="925"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:925</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="populateData"></a>
+                    <span class="name">
+                        <span ><b>populateData</b></span>
+                        <a href="#populateData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>populateData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="138"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:138</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="processTreeView"></a>
+                    <span class="name">
+                        <span ><b>processTreeView</b></span>
+                        <a href="#processTreeView"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>processTreeView()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="346"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:346</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeChildDSQ"></a>
+                    <span class="name">
+                        <span ><b>removeChildDSQ</b></span>
+                        <a href="#removeChildDSQ"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeChildDSQ(index)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="948"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:948</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeNode"></a>
+                    <span class="name">
+                        <span ><b>removeNode</b></span>
+                        <a href="#removeNode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeNode(targetNodeId)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="229"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:229</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>targetNodeId</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchNodes"></a>
+                    <span class="name">
+                        <span ><b>searchNodes</b></span>
+                        <a href="#searchNodes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchNodes()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="781"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:781</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectFirstNode"></a>
+                    <span class="name">
+                        <span ><b>selectFirstNode</b></span>
+                        <a href="#selectFirstNode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectFirstNode()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="256"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:256</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateNode"></a>
+                    <span class="name">
+                        <span ><b>updateNode</b></span>
+                        <a href="#updateNode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateNode(data, appObject)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="267"
+                                    class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:267</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>appObject</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_unsubscribeAll"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_unsubscribeAll</b></span>
+                        <a href="#_unsubscribeAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;any&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_value"></a>
+                    <span class="name">
+                        <span ><b>_value</b></span>
+                        <a href="#_value"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allFields"></a>
+                    <span class="name">
+                        <span ><b>allFields</b></span>
+                        <a href="#allFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appObjectData"></a>
+                    <span class="name">
+                        <span ><b>appObjectData</b></span>
+                        <a href="#appObjectData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TabClasses.AppObject | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appObjectDetails"></a>
+                    <span class="name">
+                        <span ><b>appObjectDetails</b></span>
+                        <a href="#appObjectDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkedNodes"></a>
+                    <span class="name">
+                        <span ><b>checkedNodes</b></span>
+                        <a href="#checkedNodes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="data"></a>
+                    <span class="name">
+                        <span ><b>data</b></span>
+                        <a href="#data"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSourceQuery"></a>
+                    <span class="name">
+                        <span ><b>dataSourceQuery</b></span>
+                        <a href="#dataSourceQuery"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSourceQueryID"></a>
+                    <span class="name">
+                        <span ><b>dataSourceQueryID</b></span>
+                        <a href="#dataSourceQueryID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ddfields"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>ddfields</b></span>
+                        <a href="#ddfields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" >Object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ text: &#x27;QueryName&#x27;, value: &#x27;ID&#x27; }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="919" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:919</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayTreeView"></a>
+                    <span class="name">
+                        <span ><b>displayTreeView</b></span>
+                        <a href="#displayTreeView"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dsqFields"></a>
+                    <span class="name">
+                        <span ><b>dsqFields</b></span>
+                        <a href="#dsqFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fieldData"></a>
+                    <span class="name">
+                        <span ><b>fieldData</b></span>
+                        <a href="#fieldData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fields"></a>
+                    <span class="name">
+                        <span ><b>fields</b></span>
+                        <a href="#fields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="index"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>index</b></span>
+                        <a href="#index"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="208" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:208</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuItems"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>menuItems</b></span>
+                        <a href="#menuItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MenuItemModel[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+        { text: &#x27;Add New Item&#x27; },
+        { text: &#x27;Rename Item&#x27; },
+        { text: &#x27;Remove Item&#x27; },
+    ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFiltering"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>onFiltering</b></span>
+                        <a href="#onFiltering"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >EmitType&lt;FilteringEventArgs&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="907" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:907</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previousLookup"></a>
+                    <span class="name">
+                        <span ><b>previousLookup</b></span>
+                        <a href="#previousLookup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTimer"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>setTimer</b></span>
+                        <a href="#setTimer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tabMaskObj"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>tabMaskObj</b></span>
+                        <a href="#tabMaskObj"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MaskedTextBoxComponent | any</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;tabMaskObj&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tabTreeView"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>tabTreeView</b></span>
+                        <a href="#tabTreeView"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TreeViewComponent | any</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;tabTreeView&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="token"></a>
+                    <span class="name">
+                        <span ><b>token</b></span>
+                        <a href="#token"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="treeViewInstance"></a>
+                    <span class="name">
+                        <span ><b>treeViewInstance</b></span>
+                        <a href="#treeViewInstance"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+        isReloadTreeView: true,
+        selectedNode: {},
+        parameters: {},
+    }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <span class="name"><b>value</b><a href="#value"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>value()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:133</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>value(v: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/app/modules/admin/tab-tree-view/tab-tree-view.component.ts:94</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>v</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ToastrNotificationService } from &#x27;app/layout/common/notifications/toastr.service&#x27;;
+import {
+    Component,
+    EventEmitter,
+    Input,
+    OnInit,
+    Output,
+    ViewChild,
+} from &#x27;@angular/core&#x27;;
+import { FormioCustomComponent, FormioEvent } from &#x27;@formio/angular&#x27;;
+import { MaskedTextBoxComponent } from &#x27;@syncfusion/ej2-angular-inputs&#x27;;
+import {
+    BeforeOpenCloseMenuEventArgs,
+    MenuEventArgs,
+    MenuItemModel,
+    NodeClickEventArgs,
+    TreeViewComponent,
+} from &#x27;@syncfusion/ej2-angular-navigations&#x27;;
+import { DataManager, Predicate, Query } from &#x27;@syncfusion/ej2-data&#x27;;
+import {
+    GlobalValueService,
+    TabAppFunction,
+    TabClasses,
+    TabDeleteService,
+    TabGetService,
+    TabInsertService,
+    TabUpdateService,
+} from &#x27;@techextensor/tab-service&#x27;;
+import { each, filter, find } from &#x27;lodash&#x27;;
+import { FilteringEventArgs } from &#x27;@syncfusion/ej2-angular-dropdowns&#x27;;
+import { EmitType } from &#x27;@syncfusion/ej2-base&#x27;;
+import { Subject, takeUntil, take } from &#x27;rxjs&#x27;;
+
+@Component({
+    selector: &#x27;tab-core-tab-tree-view&#x27;,
+    templateUrl: &#x27;./tab-tree-view.component.html&#x27;,
+    styleUrls: [&#x27;./tab-tree-view.component.css&#x27;],
+})
+export class TabTreeViewComponent
+    implements OnInit, FormioCustomComponent&lt;any&gt;
+{
+    @ViewChild(&#x27;tabTreeView&#x27;) tabTreeView: TreeViewComponent | any;
+    @ViewChild(&#x27;tabMaskObj&#x27;) tabMaskObj: MaskedTextBoxComponent | any;
+    @Input() disabled: boolean &#x3D; false;
+    // @Input() appObjectId: any;
+    // @Input() parameters: any;
+    // @Input() showCheckBox: any;
+    // @Input() isGetFieldFromAppObject: any;
+    @Input() dataSetting: any;
+    @Output() valueChange &#x3D; new EventEmitter&lt;any&gt;();
+    @Output() formioEvent &#x3D; new EventEmitter&lt;FormioEvent&gt;();
+
+    dataSourceQuery: any;
+    appObjectDetails: any;
+    data: any[] &#x3D; [];
+
+    fields: any &#x3D; {};
+    fieldData: any[] &#x3D; [];
+    allFields: any;
+    checkedNodes: any &#x3D; [];
+    dataSourceQueryID: any;
+    dsqFields: any &#x3D; [];
+    displayTreeView &#x3D; false;
+
+    previousLookup: any &#x3D; {};
+    appObjectData: TabClasses.AppObject | undefined;
+    treeViewInstance: any &#x3D; {
+        isReloadTreeView: true,
+        selectedNode: {},
+        parameters: {},
+    };
+    private setTimer: any;
+    private _unsubscribeAll: Subject&lt;any&gt; &#x3D; new Subject&lt;any&gt;();
+
+    token: any;
+
+    public menuItems: MenuItemModel[] &#x3D; [
+        { text: &#x27;Add New Item&#x27; },
+        { text: &#x27;Rename Item&#x27; },
+        { text: &#x27;Remove Item&#x27; },
+    ];
+
+    constructor(
+        private tabGetService: TabGetService,
+        private tabUpdateService: TabUpdateService,
+        private tabInsertService: TabInsertService,
+        private tabDeleteService: TabDeleteService,
+        private toastrNotificationService: ToastrNotificationService,
+        private globalValueService: GlobalValueService
+    ) {}
+
+    _value: any;
+    @Input()
+    public set value(v: any) {
+        // console.log(&#x27;tree view seter&#x27;, v);
+        if (v &amp;&amp; v !&#x3D; null) {
+            this._value &#x3D; v;
+            this.treeViewInstance &#x3D; this._value;
+            if (
+                this.dataSetting?.hasOwnProperty(&#x27;allowAutoCheck&#x27;) &amp;&amp;
+                this.dataSetting?.allowAutoCheck
+            ) {
+                this.tabTreeView.autoCheck &#x3D; true;
+            } else {
+                this.tabTreeView.autoCheck &#x3D; false;
+            }
+            // console.log(&#x27;treeViewInstance&#x27;, this.treeViewInstance);
+        }
+        if (
+            this.treeViewInstance?.isReloadTreeView &amp;&amp;
+            !this.treeViewInstance?.fromJSON
+        ) {
+            this.setTimer &#x3D; setTimeout(() &#x3D;&gt; {
+                this.populateData();
+            }, 100);
+        } else if (this.treeViewInstance?.fromJSON) {
+            this.fieldData &#x3D; this.treeViewInstance.fieldData;
+            // this.checkedNodes &#x3D; this.treeViewInstance.checkedNodes;
+            this.fields &#x3D; {
+                dataSource: this.fieldData,
+                id: &#x27;id&#x27;,
+                text: &#x27;name&#x27;,
+                child: &#x27;child&#x27;,
+                parentID: &#x27;parentID&#x27;,
+                hasChildren: &#x27;hasChildren&#x27;,
+                selected: &#x27;isSelected&#x27;,
+            };
+            this.tabTreeView?.refresh();
+            this.displayTreeView &#x3D; true;
+            this.treeViewInstance.treeViewValue &#x3D; this.fields;
+        }
+    }
+    public get value(): any {
+        let abc &#x3D; JSON.stringify(this.treeViewInstance);
+        return JSON.parse(abc);
+    }
+
+    populateData() {
+        if (this.dataSetting?.dataSourceQueryId) {
+            this.dataSourceQuery &#x3D; TabAppFunction.getDataFromDataSourceQueryID(
+                this.dataSetting?.dataSourceQueryId
+            );
+            const mandatoryParams &#x3D; this.checkMandatoryParamsInDSQ();
+            if (mandatoryParams.length &#x3D;&#x3D;&#x3D; 0) {
+                let token &#x3D; {};
+                if (this.treeViewInstance?.parameters) {
+                    token &#x3D; this.treeViewInstance?.parameters;
+                }
+                this.executeDSQ(token);
+            } else {
+                if (
+                    this.treeViewInstance?.parameters &amp;&amp;
+                    Object.keys(this.treeViewInstance?.parameters).length
+                ) {
+                    let token &#x3D; {};
+                    token &#x3D; this.treeViewInstance?.parameters;
+                    if (this.treeViewInstance?.parameters)
+                        this.executeDSQ(token);
+                }
+            }
+        }
+    }
+
+    async executeDSQ(token) {
+        // console.log(&#x27;token&#x27;, token);
+        this.data &#x3D; [];
+        this.appObjectDetails &#x3D;
+            TabAppFunction.getAppObjectFromDataSourceQueryID(
+                this.dataSetting?.dataSourceQueryId
+            );
+
+        let apiData &#x3D; {
+            AppObjectName: this.appObjectDetails.ObjectName,
+            DSQName: this.dataSourceQuery.QueryName,
+            Reqtokens: token,
+        };
+        this.tabGetService
+            .executeRAWDSQWithName(apiData)
+            .pipe(take(1))
+            ?.subscribe((res: any) &#x3D;&gt; {
+                if (res?.Result) {
+                    this.data &#x3D; res.Result;
+                    // console.log(&#x27;data&#x27;, this.data);
+                    this.processTreeView();
+                }
+            });
+    }
+
+    nodeSelecting(event, data) {
+        console.log(&#x27;event-node selevted&#x27;, event);
+        // adding this condition when child reltion ship dsq dropdown added
+        // it will help to prevent refesh when you click on dsq selection dropdown
+        // it&#x27;s kind of patch condition we need to make it proper in future
+        // for now to dsq dropdown blink issue and menu click work will fine
+        if (data &amp;&amp; data.length) {
+            this.treeViewInstance.isReloadTreeView &#x3D; false;
+            this.treeViewInstance.selectedNode &#x3D; event.nodeData;
+            this.value &#x3D; this.treeViewInstance;
+            let abc &#x3D; JSON.stringify(this.treeViewInstance);
+            this.valueChange.emit(JSON.parse(abc));
+        }
+    }
+
+    public beforeopen(args: BeforeOpenCloseMenuEventArgs) {
+        // console.log(this.tabTreeView.selectedNodes[0]);
+    }
+
+    public index: number &#x3D; 1;
+    public menuclick(args: MenuEventArgs) {
+        let targetNodeId: string &#x3D; this.tabTreeView.selectedNodes[0];
+        if (args.item.text &#x3D;&#x3D; &#x27;Add New Item&#x27;) {
+            let nodeId: string &#x3D; &#x27;tree_&#x27; + this.index;
+            let item: { [key: string]: Object } &#x3D; {
+                id: nodeId,
+                name: &#x27;&#x27;,
+            };
+            this.tabTreeView.addNodes([item], targetNodeId, null);
+            this.index++;
+            this.fieldData.push(item);
+            this.tabTreeView.beginEdit(nodeId);
+        } else if (args.item.text &#x3D;&#x3D; &#x27;Remove Item&#x27;) {
+            this.tabTreeView.removeNodes([targetNodeId]);
+            this.removeNode(targetNodeId);
+        } else if (args.item.text &#x3D;&#x3D; &#x27;Rename Item&#x27;) {
+            this.tabTreeView.beginEdit(targetNodeId);
+        }
+    }
+
+    removeNode(targetNodeId) {
+        let appObject: TabClasses.AppObject &#x3D;
+            TabAppFunction.getDataFromDataSourceQueryID(
+                this.dataSetting?.dataSourceQueryId
+            );
+        if (appObject) {
+            let data &#x3D; { data: {} };
+            data.data[this.dataSetting?.valueField] &#x3D; targetNodeId;
+            this.tabDeleteService
+                .deleteRecord(&#x27;&#x27;, data, appObject.ObjectID_Tosave)
+                .pipe(take(1))
+                ?.subscribe((response) &#x3D;&gt; {
+                    if (response.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                        this.toastrNotificationService.showSuccess(
+                            &#x27;Record Deleted Successfully&#x27;,
+                            &#x27;Success&#x27;
+                        );
+                    } else {
+                        this.toastrNotificationService.showError(
+                            response.Errors[0],
+                            &#x27;Error&#x27;
+                        );
+                    }
+                });
+        }
+    }
+
+    selectFirstNode() {
+        if (
+            this.tabTreeView?.treeData &amp;&amp;
+            this.tabTreeView?.treeData.length &gt; 0
+        ) {
+            this.tabTreeView.selectedNodes &#x3D; [
+                this.tabTreeView?.treeData[0]?.id,
+            ];
+        }
+    }
+
+    updateNode(data, appObject) {
+        this.tabUpdateService
+            .updateUsingScreenId(&#x27;&#x27;, data, appObject.ObjectID_Tosave)
+            .pipe(take(1))
+            ?.subscribe((response) &#x3D;&gt; {
+                if (response.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                    this.toastrNotificationService.showSuccess(
+                        &#x27;Record Updated Successfully&#x27;,
+                        &#x27;Success&#x27;
+                    );
+                } else {
+                    this.toastrNotificationService.showError(
+                        response.Errors[0],
+                        &#x27;Error&#x27;
+                    );
+                }
+            });
+    }
+
+    insertNode(data, appObject) {
+        this.tabInsertService
+            .insertByObjectId(appObject.ObjectID_Tosave, data)
+            .pipe(take(1))
+            ?.subscribe((response) &#x3D;&gt; {
+                if (response.StatusCode &#x3D;&#x3D; &#x27;200&#x27; || !response.Errors.length) {
+                    this.toastrNotificationService.showSuccess(
+                        &#x27;Record Added Successfully&#x27;,
+                        &#x27;Success&#x27;
+                    );
+                    this.populateData();
+                    return response.Result;
+                } else {
+                    this.toastrNotificationService.showError(
+                        response.Errors[0],
+                        &#x27;Error&#x27;
+                    );
+                }
+            });
+    }
+
+    nodeEdited(event) {
+        if (event.newText !&#x3D;&#x3D; null &amp;&amp; event.newText !&#x3D;&#x3D; &#x27;&#x27;) {
+            let appObject: TabClasses.AppObject &#x3D;
+                TabAppFunction.getDataFromDataSourceQueryID(
+                    this.dataSetting?.dataSourceQueryId
+                );
+            if (appObject) {
+                let data &#x3D; { data: {} };
+                if (event.nodeData.id.toString().includes(&#x27;tree_&#x27;)) {
+                    data.data[this.dataSetting?.displayField] &#x3D; event.newText;
+                    data.data[this.dataSetting?.groupByField] &#x3D;
+                        event.nodeData.parentID;
+                    event.nodeData.id &#x3D; this.insertNode(data, appObject);
+                } else {
+                    data.data[this.dataSetting?.valueField] &#x3D; event.nodeData.id;
+                    data.data[this.dataSetting?.displayField] &#x3D; event.newText;
+                    this.updateNode(data, appObject);
+                }
+            }
+        } else {
+            this.tabTreeView?.refresh();
+        }
+    }
+
+    nodeDropped(event) {
+        let appObject: TabClasses.AppObject &#x3D;
+            TabAppFunction.getDataFromDataSourceQueryID(
+                this.dataSetting?.dataSourceQueryId
+            );
+        if (appObject) {
+            let data &#x3D; { data: {} };
+            data.data[this.dataSetting?.valueField] &#x3D; event.draggedNodeData.id;
+            data.data[this.dataSetting?.sortOrderField] &#x3D; event.dropIndex + 1;
+            data.data[this.dataSetting?.groupByField] &#x3D;
+                event?.dropTarget?.dataset?.uid;
+            this.updateNode(data, appObject);
+        }
+    }
+
+    processTreeView() {
+        this.fieldData &#x3D; [];
+        // console.log(&#x27;before Sort&#x27;, this.data);
+
+        this.data.sort((a, b) &#x3D;&gt;
+            a[this.dataSetting?.sortOrderField] !&#x3D;&#x3D; null &amp;&amp;
+            a[this.dataSetting?.sortOrderField] !&#x3D;&#x3D; undefined &amp;&amp;
+            b[this.dataSetting?.sortOrderField] !&#x3D;&#x3D; null &amp;&amp;
+            b[this.dataSetting?.sortOrderField] !&#x3D;&#x3D; undefined &amp;&amp;
+            a[this.dataSetting?.sortOrderField] &gt;
+                b[this.dataSetting?.sortOrderField]
+                ? 1
+                : -1
+        );
+        // console.log(&#x27;after Sort&#x27;, this.data);
+        this.data.forEach((item) &#x3D;&gt; {
+            let fieldData &#x3D; {
+                id: item[this.dataSetting?.valueField],
+                name: item[this.dataSetting?.displayField],
+                expanded: false,
+                hasChildren: this.data?.find(
+                    (x) &#x3D;&gt;
+                        x[this.dataSetting?.groupByField] &#x3D;&#x3D;&#x3D;
+                        item[this.dataSetting?.valueField]
+                )
+                    ? true
+                    : false,
+                parentID: item[this.dataSetting?.groupByField],
+                icon:
+                    this.dataSetting?.displayWith &amp;&amp;
+                    this.dataSetting?.displayWith &#x3D;&#x3D;&#x3D; &#x27;icon&#x27;
+                        ? item[&#x27;Icon&#x27;]
+                        : &#x27;&#x27;,
+            };
+            this.fieldData.push(fieldData);
+        });
+
+        this.fields &#x3D; {
+            dataSource: this.fieldData,
+            id: &#x27;id&#x27;,
+            text: &#x27;name&#x27;,
+            child: &#x27;child&#x27;,
+            parentID: &#x27;parentID&#x27;,
+            hasChildren: &#x27;hasChildren&#x27;,
+            isChecked: &#x27;isChecked&#x27;,
+        };
+        this.displayTreeView &#x3D; true;
+        var proxy &#x3D; this;
+        this.setTimer &#x3D; setTimeout(function (this) {
+            proxy.tabTreeView.expandAll();
+        }, 100);
+    }
+
+    checkMandatoryParamsInDSQ(): any[] {
+        let result &#x3D; [];
+        if (this.dataSourceQuery) {
+            // console.log(&#x27;dataSourceQuery&#x27;, this.dataSourceQuery);
+            result &#x3D; filter(this.dataSourceQuery?.Parameters, {
+                IsMandatory: true,
+            });
+        }
+        // console.log(&#x27;result&#x27;, result);
+        return result;
+    }
+
+    ngOnInit(): void {
+        // setTimeout(() &#x3D;&gt; {
+        //     if (this.parameters) {
+        //         const isJsonString &#x3D; TabCommonFunction.validateJSON(
+        //             this.parameters
+        //         );
+        //         if (isJsonString) {
+        //             if (this.isGetFieldFromAppObject) {
+        //                 this.appObjectId &#x3D; JSON.parse(this.parameters);
+        //             } else {
+        //                 this.dataSourceQueryID &#x3D; JSON.parse(this.parameters);
+        //             }
+        //             this.getAllAppFields();
+        //         } else {
+        //             if (this.isGetFieldFromAppObject) {
+        //                 this.appObjectId &#x3D; this.parameters;
+        //             } else {
+        //                 this.dataSourceQueryID &#x3D; this.parameters;
+        //             }
+        //             this.getAllAppFields();
+        //         }
+        //     } else if (this.appObjectId) {
+        //         this.getAllAppFields();
+        //     }
+        // }, 0);
+        this.globalValueService.getdataSourceInfo
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe((value) &#x3D;&gt; {
+                this.populateData();
+            });
+    }
+
+    manageFields() {
+        this.tabMaskObj.placeholder &#x3D; &#x27;Search&#x27;;
+        this.previousLookup &#x3D; {};
+        if (
+            this.treeViewInstance &amp;&amp;
+            this.treeViewInstance?.parameters?.appObjectId
+        ) {
+            this.getAppObjectFields(
+                this.treeViewInstance?.parameters?.appObjectId
+            );
+            this.dataSourceQueryID &#x3D;
+                this.treeViewInstance?.parameters?.dataSourceQueryId;
+            if (this.dataSourceQueryID) {
+                this.getDSQFieldss(this.dataSourceQueryID);
+            }
+        } else {
+            if (this.dataSetting?.appObjectId) {
+                this.getAppObjectFields(this.dataSetting?.appObjectId);
+            }
+        }
+    }
+
+    getDSQFieldss(dataSourceQueryID) {
+        let dsqData &#x3D;
+            TabAppFunction.getDataFromDataSourceQueryID(dataSourceQueryID);
+        if (dsqData?.Fields) {
+            this.fieldData.forEach((dsqField: any) &#x3D;&gt; {
+                if (
+                    dsqData?.Fields.find(
+                        (a: any) &#x3D;&gt;
+                            a.Field.ID.toLowerCase() &#x3D;&#x3D;&#x3D;
+                            dsqField.id.toLowerCase()
+                    )
+                ) {
+                    dsqField.isChecked &#x3D; true;
+                    dsqField.dsqFieldID &#x3D; dsqData?.Fields.find(
+                        (a: any) &#x3D;&gt;
+                            a.Field.ID.toLowerCase() &#x3D;&#x3D;&#x3D;
+                            dsqField.id.toLowerCase()
+                    ).ID;
+                    this.checkedNodes.push(dsqField.id);
+                }
+            });
+            this.fields &#x3D; {
+                dataSource: this.fieldData,
+                id: &#x27;id&#x27;,
+                text: &#x27;name&#x27;,
+                child: &#x27;child&#x27;,
+                parentID: &#x27;parentID&#x27;,
+                hasChildren: &#x27;hasChildren&#x27;,
+                isChecked: &#x27;isChecked&#x27;,
+                dsqFieldID: &#x27;dsqFieldID&#x27;,
+                lookUPText: &#x27;lookUPText&#x27;,
+            };
+        }
+    }
+
+    getAppObjectFields(appObjectId) {
+        this.fieldData &#x3D; [];
+        this.fields &#x3D; [];
+        this.appObjectData &#x3D; TabAppFunction.getAppObject(appObjectId);
+        if (this.appObjectData?.Fields) {
+            each(this.appObjectData.Fields, (f) &#x3D;&gt; {
+                this.bindAppObjectFieldsToTreeView(&#x27;&#x27;, f, &#x27;&#x27;);
+            });
+            this.fields &#x3D; {
+                dataSource: this.fieldData,
+                id: &#x27;id&#x27;,
+                text: &#x27;name&#x27;,
+                lookUPText: &#x27;lookUPText&#x27;,
+                parentID: &#x27;parentID&#x27;,
+                hasChildren: &#x27;hasChild&#x27;,
+                isChecked: &#x27;isChecked&#x27;,
+                dsqFieldID: &#x27;dsqFieldID&#x27;,
+            };
+            this.displayTreeView &#x3D; true;
+        }
+    }
+
+    bindAppObjectFieldsToTreeView(prefix, item, pid) {
+        let fieldData &#x3D; {
+            id: item.ID,
+            name: item.SystemDBFieldName,
+            expanded: false,
+            hasChildren: false,
+            parentID: pid !&#x3D;&#x3D; &#x27;&#x27; ? pid : undefined,
+            lookUPText: prefix
+                ? prefix + &#x27;.&#x27; + item.SystemDBFieldName
+                : item.SystemDBFieldName,
+        };
+        this.fieldData.push(fieldData);
+        if (item.hasOwnProperty(&#x27;LookUpDetails&#x27;) &amp;&amp; item.LookUpDetails) {
+            fieldData.hasChildren &#x3D; true;
+            let lookupAppObjectData &#x3D;
+                TabAppFunction.getAppObjectFromSystemDBTableName(
+                    item.LookUpDetails.LookupObject
+                );
+            if (lookupAppObjectData) {
+                if (Object.keys(this.previousLookup).length &gt; 0) {
+                    if (
+                        this.previousLookup.LookupObject &#x3D;&#x3D;
+                        item.LookUpDetails.LookupObject
+                    ) {
+                        return;
+                    }
+                }
+                this.previousLookup &#x3D; item.LookUpDetails;
+                let nprefix &#x3D; fieldData.lookUPText;
+                if (lookupAppObjectData?.Fields) {
+                    each(lookupAppObjectData.Fields, (ff) &#x3D;&gt; {
+                        this.bindAppObjectFieldsToTreeView(
+                            nprefix,
+                            ff,
+                            item.ID
+                        );
+                    });
+                }
+            }
+        }
+    }
+
+    // manageFields1() {
+    //     if (this.dataSetting?.parameters) {
+    //         const isJsonString &#x3D; TabCommonFunction.validateJSON(
+    //             this.dataSetting?.parameters
+    //         );
+    //         if (isJsonString) {
+    //             if (this.dataSetting?.isGetFieldFromAppObject) {
+    //                 this.dataSetting.appObjectId &#x3D; JSON.parse(
+    //                     this.dataSetting?.parameters
+    //                 );
+    //             } else {
+    //                 this.dataSourceQueryID &#x3D; JSON.parse(
+    //                     this.dataSetting?.parameters
+    //                 );
+    //             }
+    //             this.getAllAppFields();
+    //         } else {
+    //             if (this.dataSetting?.isGetFieldFromAppObject) {
+    //                 this.dataSetting.appObjectId &#x3D; this.dataSetting?.parameters;
+    //             } else {
+    //                 this.dataSourceQueryID &#x3D; this.dataSetting?.parameters;
+    //             }
+    //             this.getAllAppFields();
+    //         }
+    //     } else if (this.dataSetting?.appObjectId) {
+    //         this.getAllAppFields();
+    //     }
+    // }
+
+    getDSQFields(fieldData: any, dsqID: string) {
+        this.dsqFields &#x3D; [];
+        let apiData &#x3D; {
+            Reqtokens: { ID: dsqID },
+            AppObjectName: &#x27;TABMD_DataSourceQueries_Fields&#x27;,
+            DSQName:
+                &#x27;FK_TABMD_DataSourceQueries_Fields_TABMD_DataSourceQueries&#x27;,
+        };
+        this.tabGetService
+            .executeRAWDSQWithName(apiData)
+            .pipe(take(1))
+            ?.subscribe((response) &#x3D;&gt; {
+                if (!!response.Result &amp;&amp; response.Result.length &gt; 0) {
+                    this.dsqFields &#x3D; response.Result;
+                    fieldData.forEach((dsqField: any) &#x3D;&gt; {
+                        if (
+                            this.dsqFields.find(
+                                (a: any) &#x3D;&gt;
+                                    a.AppFieldID.toLowerCase() &#x3D;&#x3D;
+                                    dsqField.id.toLowerCase()
+                            )
+                        ) {
+                            dsqField.isChecked &#x3D; true;
+                            dsqField.dsqFieldID &#x3D; this.dsqFields.find(
+                                (a: any) &#x3D;&gt; a.AppFieldID &#x3D;&#x3D; dsqField.id
+                            ).ID;
+                            this.checkedNodes.push(dsqField.id);
+                        }
+                    });
+                    this.fields &#x3D; {
+                        dataSource: fieldData,
+                        id: &#x27;id&#x27;,
+                        text: &#x27;name&#x27;,
+                        child: &#x27;child&#x27;,
+                        parentID: &#x27;pid&#x27;,
+                        hasChildren: &#x27;hasChild&#x27;,
+                        isChecked: &#x27;isChecked&#x27;,
+                        dsqFieldID: &#x27;dsqFieldID&#x27;,
+                        lookUPText: &#x27;lookUPText&#x27;,
+                    };
+                }
+            });
+    }
+
+    getAppFields(appObjectId: string) {
+        let apiData &#x3D; {
+            Reqtokens: { ID: appObjectId },
+            AppObjectName: &#x27;TABMD_AppFields&#x27;,
+            DSQName: &#x27;AppObjectWise_TABMD_AppFields&#x27;,
+        };
+        this.tabGetService
+            .executeRAWDSQWithName(apiData)
+            .pipe(take(1))
+            ?.subscribe((response) &#x3D;&gt; {
+                if (!!response.Result &amp;&amp; response.Result.length &gt; 0) {
+                    let appFields &#x3D; response.Result;
+                    let fieldData: any &#x3D; [];
+                    appFields.forEach((element: any) &#x3D;&gt; {
+                        if (
+                            element.hasOwnProperty(&#x27;LookUpDetails&#x27;) &amp;&amp;
+                            element.LookUpDetails
+                        ) {
+                            const lookUpDetails &#x3D; JSON.parse(
+                                element.LookUpDetails
+                            );
+                            fieldData.push({
+                                id: element.Id,
+                                name: element.DisplayName,
+                                // child: this.getLookUpFields(&#x27;first&#x27;, element.Id, lookUpDetails.AppObjectId),
+                                expanded: false,
+                                hasChild: true,
+                            });
+                            fieldData &#x3D; fieldData.concat(
+                                this.getLookUpFields(
+                                    &#x27;first&#x27;,
+                                    element.Id,
+                                    lookUpDetails.AppObjectId
+                                )
+                            );
+                        } else {
+                            fieldData.push({
+                                id: element.Id,
+                                name: element.DisplayName,
+                            });
+                        }
+                    });
+                    if (this.dataSourceQueryID) {
+                        this.getDSQFields(fieldData, this.dataSourceQueryID);
+                    }
+                    this.setTimer &#x3D; setTimeout(() &#x3D;&gt; {
+                        if (this.dsqFields?.length &#x3D;&#x3D; 0) {
+                            this.fields &#x3D; {
+                                dataSource: fieldData,
+                                id: &#x27;id&#x27;,
+                                text: &#x27;name&#x27;,
+                                child: &#x27;child&#x27;,
+                                parentID: &#x27;pid&#x27;,
+                                hasChildren: &#x27;hasChild&#x27;,
+                                isChecked: &#x27;isChecked&#x27;,
+                                dsqFieldID: &#x27;dsqFieldID&#x27;,
+                                lookUPText: &#x27;lookUPText&#x27;,
+                            };
+                        }
+                        this.displayTreeView &#x3D; true;
+                    }, 1000);
+                }
+            });
+    }
+
+    getAllAppFields() {
+        let apiData &#x3D; {
+            Reqtokens: {},
+            AppObjectName: &#x27;TABMD_AppFields&#x27;,
+            DSQName: &#x27;Default_TABMD_AppFields&#x27;,
+        };
+        this.tabGetService
+            .executeRAWDSQWithName(apiData)
+            .pipe(take(1))
+            ?.subscribe((response) &#x3D;&gt; {
+                if (!!response.Result &amp;&amp; response.Result.length &gt; 0) {
+                    this.allFields &#x3D; response.Result;
+                    if (this.dataSourceQueryID) {
+                        const appObject &#x3D;
+                            TabAppFunction.getAppObjectFromDataSourceQueryID(
+                                this.dataSourceQueryID
+                            );
+                        this.getAppFields(appObject.ID);
+                    } else {
+                        this.getAppFields(this.dataSetting?.appObjectId);
+                    }
+                }
+            });
+    }
+
+    getLookUpFields(child: any, parentId: string, objectId: string) {
+        let fds &#x3D; this.allFields.filter(
+            (field: any) &#x3D;&gt;
+                field.AppObjectId.toLowerCase() &#x3D;&#x3D; objectId.toLowerCase()
+        );
+        let fieldArray: any &#x3D; [];
+        if (fds &amp;&amp; fds.length) {
+            fds.forEach((element: any) &#x3D;&gt; {
+                if (
+                    element.hasOwnProperty(&#x27;LookUpDetails&#x27;) &amp;&amp;
+                    element.LookUpDetails
+                ) {
+                    let fjson &#x3D; JSON.parse(element.LookUpDetails);
+                    if (
+                        child !&#x3D; &#x27;first&#x27; &amp;&amp;
+                        objectId.toLowerCase() &#x3D;&#x3D;
+                            fjson.AppObjectId.toLowerCase()
+                    ) {
+                        fieldArray.push({
+                            id: element.Id,
+                            pid: parentId,
+                            name: element.SystemDBFieldName,
+                            expanded: false,
+                        });
+                    } else {
+                        fieldArray.push({
+                            id: element.Id,
+                            pid: parentId,
+                            name: element.SystemDBFieldName,
+                            expanded: false,
+                            hasChild: true,
+                            // child: this.getLookUpFields(&#x27;second&#x27;, element.Id, fjson.AppObjectId)
+                        });
+                        fieldArray &#x3D; fieldArray.concat(
+                            this.getLookUpFields(
+                                &#x27;second&#x27;,
+                                element.Id,
+                                fjson.AppObjectId
+                            )
+                        );
+                    }
+                } else {
+                    fieldArray.push({
+                        id: element.Id,
+                        pid: parentId,
+                        name: element.SystemDBFieldName,
+                    });
+                }
+            });
+        }
+        return fieldArray;
+    }
+
+    //Filtering the TreeNodes
+    searchNodes() {
+        let text &#x3D; this.tabMaskObj.element.value;
+        let predicats &#x3D; [],
+            array &#x3D; [],
+            filter &#x3D; [];
+        if (text &#x3D;&#x3D; &#x27;&#x27;) {
+            this.changeDataSource(this.fieldData);
+        } else {
+            let predicate &#x3D; new Predicate(&#x27;name&#x27;, &#x27;contains&#x27;, text, true);
+            let filteredList &#x3D; new DataManager(this.fieldData).executeLocal(
+                new Query().where(predicate)
+            );
+            for (var j &#x3D; 0; j &lt; filteredList.length; j++) {
+                filter.push(filteredList[j][&#x27;id&#x27;]);
+                var filters &#x3D; this.getFilterItems(
+                    filteredList[j],
+                    this.fieldData
+                );
+                for (var i &#x3D; 0; i &lt; filters.length; i++) {
+                    if (array.indexOf(filters[i]) &#x3D;&#x3D; -1 &amp;&amp; filters[i] !&#x3D; null) {
+                        array.push(filters[i]);
+                        predicats.push(
+                            new Predicate(&#x27;id&#x27;, &#x27;equal&#x27;, filters[i], false)
+                        );
+                    }
+                }
+            }
+            if (predicats.length &#x3D;&#x3D; 0) {
+                this.changeDataSource([]);
+            } else {
+                let query &#x3D; new Query().where(Predicate.or(predicats));
+                let newList &#x3D; new DataManager(this.fieldData).executeLocal(
+                    query
+                );
+                this.changeDataSource(newList);
+                var proxy &#x3D; this;
+                this.setTimer &#x3D; setTimeout(function (this) {
+                    proxy.tabTreeView.expandAll();
+                }, 100);
+            }
+        }
+    }
+
+    //Change the dataSource for TreeView
+    public changeDataSource(data: any) {
+        this.fields &#x3D; {
+            dataSource: data,
+            id: &#x27;id&#x27;,
+            text: &#x27;name&#x27;,
+            parentID: &#x27;parentID&#x27;,
+            child: &#x27;child&#x27;,
+            hasChildren: &#x27;hasChildren&#x27;,
+            isChecked: &#x27;isChecked&#x27;,
+            dsqFieldID: &#x27;dsqFieldID&#x27;,
+            lookUPText: &#x27;lookUPText&#x27;,
+        };
+    }
+
+    //Find the Parent Nodes for corresponding childs
+    getFilterItems(fList, list) {
+        let nodes &#x3D; [];
+        nodes.push(fList[&#x27;id&#x27;]);
+        let query2 &#x3D; new Query().where(&#x27;id&#x27;, &#x27;equal&#x27;, fList[&#x27;parentID&#x27;], false);
+        let fList1 &#x3D; new DataManager(list).executeLocal(query2);
+        if (fList1.length !&#x3D; 0) {
+            let pNode &#x3D; this.getFilterItems(fList1[0], list);
+            for (var i &#x3D; 0; i &lt; pNode.length; i++) {
+                if (nodes.indexOf(pNode[i]) &#x3D;&#x3D; -1 &amp;&amp; pNode[i] !&#x3D; null)
+                    nodes.push(pNode[i]);
+            }
+            return nodes;
+        }
+        return nodes;
+    }
+
+    nodeclicked(args: NodeClickEventArgs) {
+        if (args.event.which &#x3D;&#x3D;&#x3D; 3) {
+            this.tabTreeView.selectedNodes &#x3D; [
+                args.node.getAttribute(&#x27;data-uid&#x27;),
+            ];
+        }
+    }
+
+    nodeChecked(event: any): void {
+        if (event.data &amp;&amp; event.data.length &gt; 0) {
+            event.data?.forEach((element) &#x3D;&gt; {
+                const crrentNodeIndex &#x3D; this.fields?.dataSource.findIndex(
+                    (a: any) &#x3D;&gt; a.id.toLowerCase() &#x3D;&#x3D; element.id.toLowerCase()
+                );
+                if (crrentNodeIndex !&#x3D;&#x3D; -1) {
+                    this.fields.dataSource[crrentNodeIndex].isChecked &#x3D;
+                        element.isChecked;
+                }
+                if (event?.action &#x3D;&#x3D;&#x3D; &#x27;uncheck&#x27;) {
+                    this.removeChildDSQ(crrentNodeIndex);
+                }
+            });
+            this.treeViewInstance.treeViewValue &#x3D; this.fields;
+        }
+        // this.formioEvent.emit({
+        //     eventName: &#x27;customEvent&#x27;,
+        //     data: {
+        //         state: &#x27;nodeChecked&#x27;,
+        //         data: event.data[0],
+        //         action: event.action,
+        //         deleteFieldId: this.fields?.dataSource.find(
+        //             (a: any) &#x3D;&gt;
+        //                 a.id.toLowerCase() &#x3D;&#x3D; event.data[0].id.toLowerCase()
+        //         )?.dsqFieldID,
+        //         appObjectId: this.dataSetting?.appObjectId,
+        //         dataSourceQueryID: this.dataSourceQueryID,
+        //     },
+        // });
+    }
+
+    // saveFields(): void {
+    //     this.formioEvent.emit({
+    //         eventName: &#x27;customEvent&#x27;,
+    //         data: {
+    //             fields: this.fields,
+    //             action: &#x27;saveDSQFields&#x27;,
+    //             dsqID: this.dataSourceQueryID,
+    //         },
+    //     });
+    // }
+
+    public onFiltering: EmitType&lt;FilteringEventArgs&gt; &#x3D; (
+        e: FilteringEventArgs
+    ) &#x3D;&gt; {
+        let query: Query &#x3D; new Query();
+        //frame the query based on search string with filter type.
+        query &#x3D;
+            e.text !&#x3D;&#x3D; &#x27;&#x27;
+                ? query.where(&#x27;Name&#x27;, &#x27;startswith&#x27;, e.text, true)
+                : query;
+        //pass the filter data source, filter query to updateData method.
+        e.updateData(this.data, query);
+    };
+    public ddfields: Object &#x3D; { text: &#x27;QueryName&#x27;, value: &#x27;ID&#x27; };
+    isShowDropdown(data) {
+        if (data &amp;&amp; data.name &amp;&amp; data.name.indexOf(&#x27;#&#x27;) !&#x3D;&#x3D; -1) {
+            return true;
+        }
+    }
+    onFilterDropdownValueChange(event: any, data: any): void {
+        console.log(event);
+        console.log(data);
+        let ff &#x3D; this.fields?.dataSource?.find(
+            (f) &#x3D;&gt; f.id.toLowerCase() &#x3D;&#x3D; data.id.toLowerCase()
+        );
+
+        if (ff) {
+            let newlookUPText &#x3D; ff?.lookUPText;
+            if (ff?.lookUPText &amp;&amp; ff?.lookUPText.includes(&#x27;:&#x27;)) {
+                newlookUPText &#x3D; ff.lookUPText.substring(
+                    0,
+                    ff.lookUPText.indexOf(&#x27;:&#x27;)
+                );
+            }
+
+            ff.lookUPText &#x3D; newlookUPText + &#x27;:&#x27; + event.itemData.QueryName;
+            ff[&#x27;dsqIDForChildRelationship&#x27;] &#x3D; event.itemData.ID;
+        }
+        console.log(ff);
+    }
+
+    // Remove Child Relationship DSQ Selection
+    removeChildDSQ(index) {
+        if (index &gt; -1) {
+            this.fields.dataSource[index][&#x27;dsqIDForChildRelationship&#x27;] &#x3D; null;
+            this.fields.dataSource[index][&#x27;lookUPText&#x27;] &#x3D;
+                this.fields.dataSource[index][&#x27;name&#x27;];
+            this.tabTreeView?.refresh();
+        }
+    }
+    ngOnDestroy(): void {
+        clearTimeout(this.setTimer);
+        // Unsubscribe from all subscriptions
+        this._unsubscribeAll.next(null);
+        this._unsubscribeAll.complete();
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div id&#x3D;&quot;treeparent&quot; [hidden]&#x3D;&quot;!displayTreeView&quot; class&#x3D;&quot;custom-treeview pb-8&quot;&gt;
+    &lt;ejs-maskedtextbox
+        #tabMaskObj
+        id&#x3D;&quot;search&quot;
+        (change)&#x3D;&quot;searchNodes()&quot;
+        placeholder&#x3D;&quot;Search Text&quot;
+    &gt;&lt;/ejs-maskedtextbox&gt;
+    &lt;ejs-treeview
+        #tabTreeView
+        id&#x3D;&quot;tabTreeView&quot;
+        [showCheckBox]&#x3D;&quot;
+            this.dataSetting?.displayWith &amp;&amp;
+            this.dataSetting?.displayWith &#x3D;&#x3D;&#x3D; &#x27;checkBox&#x27;
+        &quot;
+        [fields]&#x3D;&quot;fields&quot;
+        [checkedNodes]&#x3D;&quot;checkedNodes&quot;
+        (nodeSelecting)&#x3D;&quot;nodeSelecting($event, data)&quot;
+        (nodeChecked)&#x3D;&quot;nodeChecked($event)&quot;
+        [allowMultiSelection]&#x3D;&quot;false&quot;
+        [allowDragAndDrop]&#x3D;&quot;dataSetting?.allowDragAndDrop&quot;
+        (nodeDropped)&#x3D;&quot;nodeDropped($event)&quot;
+        (nodeEdited)&#x3D;&quot;nodeEdited($event)&quot;
+    &gt;
+        &lt;ng-template #nodeTemplate&#x3D;&quot;&quot; let-data&#x3D;&quot;&quot;&gt;
+            &lt;div class&#x3D;&quot;icon_wrap&quot;&gt;
+                &lt;mat-icon
+                    *ngIf&#x3D;&quot;
+                        this.dataSetting?.displayWith &amp;&amp;
+                        this.dataSetting?.displayWith &#x3D;&#x3D;&#x3D; &#x27;icon&#x27;
+                    &quot;
+                    &gt;{{ data.icon }}&lt;/mat-icon
+                &gt;
+                &lt;div class&#x3D;&quot;ename&quot;&gt;{{ data.name }}&lt;/div&gt;
+
+                &lt;div *ngIf&#x3D;&quot;isShowDropdown(data)&quot; class&#x3D;&quot;control-section&quot;&gt;
+                    &lt;div
+                        class&#x3D;&quot;content&quot;
+                        style&#x3D;&quot;width: 200px; margin: 0 auto; margin-left: 20px&quot;
+                    &gt;
+                        &lt;ejs-dropdownlist
+                            id&#x3D;&quot;{{ data.id }}&quot;
+                            [dataSource]&#x3D;&quot;data.childAppObjectDsqArray&quot;
+                            [fields]&#x3D;&quot;ddfields&quot;
+                            (filtering)&#x3D;&quot;onFiltering($event)&quot;
+                            [filterBarPlaceholder]&#x3D;&quot;&#x27;search&#x27;&quot;
+                            [popupHeight]&#x3D;&quot;&#x27;220px&#x27;&quot;
+                            [allowFiltering]&#x3D;&quot;true&quot;
+                            [placeholder]&#x3D;&quot;&#x27;select a DSQ&#x27;&quot;
+                            (change)&#x3D;&quot;onFilterDropdownValueChange($event, data)&quot;
+                            value&#x3D;&quot;{{ data.dsqIDForChildRelationship }}&quot;
+                        &gt;&lt;/ejs-dropdownlist&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/ng-template&gt;
+        &lt;ng-template #ddTemplate&#x3D;&quot;&quot; let-data&#x3D;&quot;&quot;&gt;
+            &lt;div class&#x3D;&quot;control-section&quot;&gt;
+                &lt;div
+                    class&#x3D;&quot;content&quot;
+                    style&#x3D;&quot;width: 280px; margin: 0 auto; padding-top: 40px&quot;
+                &gt;
+                    &lt;ejs-dropdownlist
+                        id&#x3D;&quot;country&quot;
+                        [dataSource]&#x3D;&quot;dddata&quot;
+                        [fields]&#x3D;&quot;ddfields&quot;
+                        (filtering)&#x3D;&quot;onFiltering($event)&quot;
+                        [filterBarPlaceholder]&#x3D;&quot;&#x27;search&#x27;&quot;
+                        [popupHeight]&#x3D;&quot;&#x27;220px&#x27;&quot;
+                        [allowFiltering]&#x3D;&quot;true&quot;
+                        [placeholder]&#x3D;&quot;&#x27;select dsq&#x27;&quot;
+                    &gt;&lt;/ejs-dropdownlist&gt;
+                &lt;/div&gt;
+            &lt;/div&gt; &lt;/ng-template
+    &gt;&lt;/ejs-treeview&gt;
+&lt;/div&gt;
+
+&lt;ejs-contextmenu
+    #contentmenutree
+    id&#x3D;&quot;contentmenutree&quot;
+    target&#x3D;&quot;#tabTreeView&quot;
+    [items]&#x3D;&quot;menuItems&quot;
+    (beforeOpen)&#x3D;&quot;beforeopen($event)&quot;
+    (select)&#x3D;&quot;menuclick($event)&quot;
+&gt;&lt;/ejs-contextmenu&gt;
+
+&lt;!-- &lt;div class&#x3D;&quot;pt-8&quot;&gt;
+    &lt;button
+        class&#x3D;&quot;btn btn-primary btn-md&quot;
+        [hidden]&#x3D;&quot;!displayTreeView&quot;
+        type&#x3D;&quot;button&quot;
+        (click)&#x3D;&quot;saveFields()&quot;
+    &gt;
+        Save Fields
+    &lt;/button&gt;
+&lt;/div&gt; --&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./tab-tree-view.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.custom-treeview {
+    max-height: 100vh !important;
+    overflow: scroll;
+}
+
+#treeparent {
+    width: auto;
+    background-color: white;
+    /* overflow-x: scroll; */
+}
+.icon_wrap {
+    display: flex;
+    align-items: center;
+}
+.icon_wrap .ename {
+    margin-left: 10px;
+}
+
+/*mange the treview width */
+.custom-treeview {
+    max-height: 100vh !important;
+    overflow: scroll;
+    min-height: 250px;
+    max-height: auto;
+}
+
+#treeparent {
+    width: auto;
+    /* overflow-x: scroll; */
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div id="treeparent" [hidden]="!displayTreeView" class="custom-treeview pb-8">    <ejs-maskedtextbox        #tabMaskObj        id="search"        (change)="searchNodes()"        placeholder="Search Text"    ></ejs-maskedtextbox>    <ejs-treeview        #tabTreeView        id="tabTreeView"        [showCheckBox]="            this.dataSetting?.displayWith &&            this.dataSetting?.displayWith === \'checkBox\'        "        [fields]="fields"        [checkedNodes]="checkedNodes"        (nodeSelecting)="nodeSelecting($event, data)"        (nodeChecked)="nodeChecked($event)"        [allowMultiSelection]="false"        [allowDragAndDrop]="dataSetting?.allowDragAndDrop"        (nodeDropped)="nodeDropped($event)"        (nodeEdited)="nodeEdited($event)"    >        <ng-template #nodeTemplate="" let-data="">            <div class="icon_wrap">                <mat-icon                    *ngIf="                        this.dataSetting?.displayWith &&                        this.dataSetting?.displayWith === \'icon\'                    "                    >{{ data.icon }}</mat-icon                >                <div class="ename">{{ data.name }}</div>                <div *ngIf="isShowDropdown(data)" class="control-section">                    <div                        class="content"                        style="width: 200px; margin: 0 auto; margin-left: 20px"                    >                        <ejs-dropdownlist                            id="{{ data.id }}"                            [dataSource]="data.childAppObjectDsqArray"                            [fields]="ddfields"                            (filtering)="onFiltering($event)"                            [filterBarPlaceholder]="\'search\'"                            [popupHeight]="\'220px\'"                            [allowFiltering]="true"                            [placeholder]="\'select a DSQ\'"                            (change)="onFilterDropdownValueChange($event, data)"                            value="{{ data.dsqIDForChildRelationship }}"                        ></ejs-dropdownlist>                    </div>                </div>            </div>        </ng-template>        <ng-template #ddTemplate="" let-data="">            <div class="control-section">                <div                    class="content"                    style="width: 280px; margin: 0 auto; padding-top: 40px"                >                    <ejs-dropdownlist                        id="country"                        [dataSource]="dddata"                        [fields]="ddfields"                        (filtering)="onFiltering($event)"                        [filterBarPlaceholder]="\'search\'"                        [popupHeight]="\'220px\'"                        [allowFiltering]="true"                        [placeholder]="\'select dsq\'"                    ></ejs-dropdownlist>                </div>            </div> </ng-template    ></ejs-treeview></div><ejs-contextmenu    #contentmenutree    id="contentmenutree"    target="#tabTreeView"    [items]="menuItems"    (beforeOpen)="beforeopen($event)"    (select)="menuclick($event)"></ejs-contextmenu><!-- <div class="pt-8">    <button        class="btn btn-primary btn-md"        [hidden]="!displayTreeView"        type="button"        (click)="saveFields()"    >        Save Fields    </button></div> --></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthConfirmationRequiredComponent', 'selector': 'auth-confirmation-required'},{'name': 'AuthForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'AuthResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'AuthSignInComponent', 'selector': 'auth-sign-in'},{'name': 'AuthSignOutComponent', 'selector': 'auth-sign-out'},{'name': 'AuthSignUpComponent', 'selector': 'auth-sign-up'},{'name': 'AuthUnlockSessionComponent', 'selector': 'auth-unlock-session'},{'name': 'ButtonTemplateComponent', 'selector': 'button-template'},{'name': 'CenteredLayoutComponent', 'selector': 'centered-layout'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ClassicLayoutComponent', 'selector': 'classic-layout'},{'name': 'ClassyLayoutComponent', 'selector': 'classy-layout'},{'name': 'CompactLayoutComponent', 'selector': 'compact-layout'},{'name': 'DenseLayoutComponent', 'selector': 'dense-layout'},{'name': 'EmptyLayoutComponent', 'selector': 'empty-layout'},{'name': 'EnterpriseLayoutComponent', 'selector': 'enterprise-layout'},{'name': 'FuseAlertComponent', 'selector': 'fuse-alert'},{'name': 'FuseCardComponent', 'selector': 'fuse-card'},{'name': 'FuseConfirmationDialogComponent', 'selector': 'fuse-confirmation-dialog'},{'name': 'FuseDrawerComponent', 'selector': 'fuse-drawer'},{'name': 'FuseFullscreenComponent', 'selector': 'fuse-fullscreen'},{'name': 'FuseHighlightComponent', 'selector': 'textarea[fuse-highlight]'},{'name': 'FuseHorizontalNavigationBasicItemComponent', 'selector': 'fuse-horizontal-navigation-basic-item'},{'name': 'FuseHorizontalNavigationBranchItemComponent', 'selector': 'fuse-horizontal-navigation-branch-item'},{'name': 'FuseHorizontalNavigationComponent', 'selector': 'fuse-horizontal-navigation'},{'name': 'FuseHorizontalNavigationDividerItemComponent', 'selector': 'fuse-horizontal-navigation-divider-item'},{'name': 'FuseHorizontalNavigationSpacerItemComponent', 'selector': 'fuse-horizontal-navigation-spacer-item'},{'name': 'FuseLoadingBarComponent', 'selector': 'fuse-loading-bar'},{'name': 'FuseMasonryComponent', 'selector': 'fuse-masonry'},{'name': 'FuseVerticalNavigationAsideItemComponent', 'selector': 'fuse-vertical-navigation-aside-item'},{'name': 'FuseVerticalNavigationBasicItemComponent', 'selector': 'fuse-vertical-navigation-basic-item'},{'name': 'FuseVerticalNavigationCollapsableItemComponent', 'selector': 'fuse-vertical-navigation-collapsable-item'},{'name': 'FuseVerticalNavigationComponent', 'selector': 'fuse-vertical-navigation'},{'name': 'FuseVerticalNavigationDividerItemComponent', 'selector': 'fuse-vertical-navigation-divider-item'},{'name': 'FuseVerticalNavigationGroupItemComponent', 'selector': 'fuse-vertical-navigation-group-item'},{'name': 'FuseVerticalNavigationSpacerItemComponent', 'selector': 'fuse-vertical-navigation-spacer-item'},{'name': 'FuturisticLayoutComponent', 'selector': 'futuristic-layout'},{'name': 'GridCustomHTMLTemplateComponent', 'selector': 'app-grid-custom-htmltemplate'},{'name': 'HomeComponent', 'selector': 'Home'},{'name': 'ImageTemplateComponent', 'selector': 'image-template'},{'name': 'ImageWithNameTemplateComponent', 'selector': 'image-with-name-template'},{'name': 'LandingHomeComponent', 'selector': 'landing-home'},{'name': 'LanguagesComponent', 'selector': 'languages'},{'name': 'LayoutComponent', 'selector': 'layout'},{'name': 'LinkTemplateComponent', 'selector': 'link-template'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapdialogComponent', 'selector': 'app-mapdialog'},{'name': 'MaterialLayoutComponent', 'selector': 'material-layout'},{'name': 'MessagesComponent', 'selector': 'messages'},{'name': 'ModernLayoutComponent', 'selector': 'modern-layout'},{'name': 'NewTabQueryBuilderComponent', 'selector': 'new-tab-core-tab-query-builder'},{'name': 'NotificationsComponent', 'selector': 'notifications'},{'name': 'ScreenFilterComponent', 'selector': 'screen-filter'},{'name': 'SearchComponent', 'selector': 'search'},{'name': 'SettingsComponent', 'selector': 'settings'},{'name': 'ShortcutsComponent', 'selector': 'shortcuts'},{'name': 'StarComponent', 'selector': 'app-star'},{'name': 'TabBasicGridComponent', 'selector': 'tab-basic-grid'},{'name': 'TabBlueprintComponent', 'selector': 'app-tab-blueprint'},{'name': 'TabChildScreenRendererComponent', 'selector': 'tab-core-tab-child-screen-renderer'},{'name': 'TabChipsComponent', 'selector': 'app-tab-chips'},{'name': 'TabColorPickerComponent', 'selector': 'app-tab-color-picker'},{'name': 'TabCommentsComponent', 'selector': 'app-tab-comments'},{'name': 'TabCustomCalenderComponent', 'selector': 'tab-custom-calender'},{'name': 'TabCustomCodeEditorComponent', 'selector': 'tab-core-tab-custom-code-editor'},{'name': 'TabCustomFormBuilderComponent', 'selector': 'tab-custom-form-builder'},{'name': 'TabCustomGanttChartComponent', 'selector': 'app-tab-custom-gantt-chart'},{'name': 'TabCustomImageuploadComponent', 'selector': 'app-tab-custom-imageupload'},{'name': 'TabCustomPivotTableComponent', 'selector': 'app-tab-custom-pivot-table'},{'name': 'TabCustomPlacePickerMapComponent', 'selector': 'app-tab-custom-place-picker-map'},{'name': 'TabCustomRichtextHtmlEditorComponent', 'selector': 'app-tab-custom-richtext-html-editor'},{'name': 'TabCustomTrackMapComponent', 'selector': 'app-tab-custom-track-map'},{'name': 'TabDateRangePickerComponent', 'selector': 'app-tab-date-range-picker'},{'name': 'TabDropDownTreeComponent', 'selector': 'app-tab-dropdown-tree'},{'name': 'TabDynamicDialogComponent', 'selector': 'app-tab-dynamic-dialog'},{'name': 'TabDynamicSidebarComponent', 'selector': 'app-tab-dynamic-sidebar'},{'name': 'TabFilePreviewComponent', 'selector': 'app-tab-file-preview'},{'name': 'TabFormBuilderComponent', 'selector': 'tab-form-builder'},{'name': 'TabFormRendererComponent', 'selector': 'tab-form-renderer'},{'name': 'TabHistoryComponent', 'selector': 'app-tab-history'},{'name': 'TabIframeComponent', 'selector': 'app-tab-iframe'},{'name': 'TabPdfViewerComponent', 'selector': 'app-tab-pdf-viewer'},{'name': 'TabQueryBuilderComponent', 'selector': 'tab-core-tab-query-builder'},{'name': 'TabSkeletonComponent', 'selector': 'app-tab-skeleton'},{'name': 'TabTextBoxComponent', 'selector': 'app-tab-iframe'},{'name': 'TabTimerComponent', 'selector': 'app-tab-timer'},{'name': 'TabTimerComponentComponent', 'selector': 'app-tab-timer-component'},{'name': 'TabTransitionPreviewComponent', 'selector': 'app-tab-transition-preview'},{'name': 'TabTreeViewComponent', 'selector': 'tab-core-tab-tree-view'},{'name': 'TabWidgetComponent', 'selector': 'app-tab-widget'},{'name': 'ThinLayoutComponent', 'selector': 'thin-layout'},{'name': 'UserComponent', 'selector': 'user'},{'name': 'ViewMoreComponent', 'selector': 'view-more-search-list'}];
+    var DIRECTIVES = [{'name': 'FuseScrollbarDirective', 'selector': '[fuseScrollbar]'},{'name': 'FuseScrollResetDirective', 'selector': '[fuseScrollReset]'},{'name': 'SafeHtmlDirective', 'selector': '[appSafeHtml]'}];
+    var ACTUAL_COMPONENT = {'name': 'TabTreeViewComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TabTreeViewComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

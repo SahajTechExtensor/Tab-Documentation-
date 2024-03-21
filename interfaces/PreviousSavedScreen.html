@@ -1,0 +1,3812 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@fuse/starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@fuse/starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  PreviousSavedScreen</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/modules/admin/tab-form-renderer/tab-form-renderer.component.ts</code>
+        </p>
+
+
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#event" 
+>
+                                            event
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#formJson" 
+>
+                                            formJson
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#screenId" 
+>
+                                            screenId
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#state" 
+>
+                                            state
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#updatedOn" 
+>
+                                            updatedOn
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="event"></a>
+                                        <span class="name "><b>event</b>
+                                            <a href="#event">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>event:     <code>any | null</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>any | null</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="formJson"></a>
+                                        <span class="name "><b>formJson</b>
+                                            <a href="#formJson">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>formJson:     <code>any | null</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>any | null</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="screenId"></a>
+                                        <span class="name "><b>screenId</b>
+                                            <a href="#screenId">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>screenId:     <code>string | null</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>string | null</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="state"></a>
+                                        <span class="name "><b>state</b>
+                                            <a href="#state">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>state:         <code><a href="../miscellaneous/typealiases.html#savedScreenType" target="_self" >savedScreenType</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#savedScreenType" target="_self" >savedScreenType</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="updatedOn"></a>
+                                        <span class="name "><b>updatedOn</b>
+                                            <a href="#updatedOn">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>updatedOn:     <code>Date | null</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>Date | null</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ToastrNotificationService } from &#x27;./../../../layout/common/notifications/toastr.service&#x27;;
+import {
+    AfterViewInit,
+    Component,
+    ElementRef,
+    EventEmitter,
+    Input,
+    OnChanges,
+    OnDestroy,
+    OnInit,
+    SimpleChanges,
+    ViewChild,
+} from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, NavigationExtras, Router } from &#x27;@angular/router&#x27;;
+import { FormioUtils } from &#x27;@formio/angular&#x27;;
+// import { DialogComponent } from &#x27;@syncfusion/ej2-angular-popups&#x27;;
+import { EmitType } from &#x27;@syncfusion/ej2-base&#x27;;
+import {
+    IScreenExtension,
+    IScreenExtensionRegistry,
+} from &#x27;@techextensor/tab-interface&#x27;;
+import {
+    TabAppFunction,
+    TabAppService,
+    TabClasses,
+    TabCommonFunction,
+    TabConstant,
+    TabDeleteService,
+    TabFormService,
+    TabGetService,
+    TabInsertService,
+    TabPluginService,
+    TabRequestResponseFunction,
+    TabScreenFunction,
+    TabUpdateService,
+    GlobalValueService,
+    TabWorkflowService,
+    TabMediaUploadService,
+    TabCoreHttpService,
+} from &#x27;@techextensor/tab-service&#x27;;
+import { cloneDeep, filter, isEmpty } from &#x27;lodash&#x27;;
+import { Location, DatePipe } from &#x27;@angular/common&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { Store } from &#x27;@ngrx/store&#x27;;
+import { environment } from &#x27;environments/environment&#x27;;
+import {
+    FormRenderSyncFieldLogic,
+    TABComponentProcessor,
+} from &#x27;./tab-component-processor&#x27;;
+
+import { Components, Utils } from &#x27;formiojs&#x27;;
+import { Subject, take, takeUntil } from &#x27;rxjs&#x27;;
+import { Buffer } from &#x27;buffer&#x27;;
+import { PhoenixUserService } from &#x27;app/screen-custom-logic/Phoenix/phoenix-user.service&#x27;;
+declare var $: any;
+
+type savedScreenType &#x3D; &#x27;idle&#x27; | &#x27;submitting&#x27; | &#x27;submitted&#x27; | &#x27;error&#x27;;
+export interface PreviousSavedScreen {
+    event: any | null;
+    screenId: string | null;
+    formJson: any | null;
+    state: savedScreenType;
+    updatedOn: Date | null;
+}
+@Component({
+    selector: &#x27;tab-form-renderer&#x27;,
+    templateUrl: &#x27;./tab-form-renderer.component.html&#x27;,
+    styleUrls: [&#x27;./tab-form-renderer.component.css&#x27;],
+})
+export class TabFormRendererComponent
+    implements OnDestroy, OnChanges, AfterViewInit, OnInit
+{
+    @ViewChild(&#x27;tabFormRenderer&#x27;) tabFormRenderer: any;
+    // @ViewChild(&#x27;ejDialog&#x27;) ejDialog: DialogComponent | any;
+    // Create element reference for dialog target element.
+    @ViewChild(&#x27;container&#x27;, { read: ElementRef, static: true }) container:
+        | ElementRef
+        | any;
+    @Input() formJson: any;
+    @Input() screenId!: string;
+    @Input() screenRenderingMode: string;
+    @Input() parameters: any;
+    latestForm: any;
+    refreshForm &#x3D; new EventEmitter();
+    formSubmission: any &#x3D; { data: {} };
+    formData: any;
+    currentScreen: IScreenExtension | any;
+    targetElement: HTMLElement | any;
+    // quickViewScreenId: string &#x3D; &#x27;&#x27;;
+    // isDialog &#x3D; false;
+    // popupJson: any;
+    isEditScreen &#x3D; new EventEmitter&lt;boolean&gt;();
+    editScreenEvent: any;
+    showLoader &#x3D; new EventEmitter&lt;boolean&gt;();
+    screenType &#x3D; 1;
+    screen: any;
+    beforeSyncSubmission: any &#x3D; {};
+    screensDataArray &#x3D; [];
+
+    recordInfo: any;
+    isloading: any &#x3D; false;
+    private _unsubscribeAll: Subject&lt;any&gt; &#x3D; new Subject&lt;any&gt;();
+    savedScreen: PreviousSavedScreen &#x3D; {
+        event: null,
+        screenId: null,
+        formJson: null,
+        state: &#x27;idle&#x27;,
+        updatedOn: null,
+    };
+    // isShowOverlyLoaderWhileSubmit &#x3D; false;
+
+    // Use this approach to use async task in onBeforeSubmit
+    options &#x3D; {
+        hooks: {
+            beforeSubmit: this.onBeforeSubmit.bind(this),
+        },
+    };
+    currentQueryParamsState: any;
+
+    // &#x27;hooks&#x27; allows you to add formIojs hooks with are not available directly in angular formIo component
+    // below &#x27;hooks&#x27; are different from above options hooks.
+    // REFERENCE: https://help.form.io/developers/form-development/form-renderer#hooks
+    hooks &#x3D; {
+        beforeNext: this.onBeforeNextPage.bind(this),
+        beforePrev: this.onBeforePrevPage.bind(this),
+    };
+    isprimarykeyID: boolean &#x3D; false;
+
+    constructor(
+        private tabGetService: TabGetService,
+        private tabInsertService: TabInsertService,
+        private router: Router,
+        private route: ActivatedRoute,
+        private tabUpdateService: TabUpdateService,
+        private tabFormService: TabFormService,
+        private tabDeleteService: TabDeleteService,
+        private tabPluginService: TabPluginService,
+        private tabMediaUploadService: TabMediaUploadService,
+        private _activatedRoute: ActivatedRoute,
+        private _location: Location,
+        private tabAppService: TabAppService,
+        public datePipe: DatePipe,
+        private toastrNotificationService: ToastrNotificationService,
+        public dialog: MatDialog,
+        private globalValueService: GlobalValueService,
+        private store: Store,
+        private tabWorkflowService: TabWorkflowService,
+        private phoenixUserService: PhoenixUserService,
+        private tabCoreHttpService: TabCoreHttpService
+    ) {}
+
+    load() {}
+
+    ngOnInit() {
+        // setTimeout(() &#x3D;&gt; {
+        //     this._activatedRoute.params.subscribe((res) &#x3D;&gt; {
+        //         // urlParams &#x3D; res;
+        //         // if (Object.keys(urlParams).length &amp;&amp; res[&#x27;screen&#x27;]) {
+        //         //     this.currentRouteScreenId &#x3D; res[&#x27;screen&#x27;];
+        //         //     if (this.isMultipleTabs) {
+        //         //         //we can configure this if we want in that way or not
+        //         //         this.processTabs(res[&#x27;screen&#x27;]);
+        //         //         this.findScreenIndex(res[&#x27;screen&#x27;]);
+        //         //     }
+        //         // }
+        //     });
+        // }, 3000);
+    }
+
+    ngAfterViewInit() {}
+
+    // this method will execute when any input property will change in form-rendered
+    async ngOnChanges(changes: SimpleChanges): Promise&lt;any&gt; {
+        const stateParam &#x3D; this.route.snapshot.queryParamMap.get(&#x27;state&#x27;);
+        this.currentQueryParamsState &#x3D; JSON.parse(
+            decodeURIComponent(stateParam)
+        );
+        const layout &#x3D; localStorage.getItem(TabConstant.Storage.layoutScreenId);
+        // if screen id will change this will execute
+        if (
+            this.screenId &amp;&amp;
+            changes?.screenId?.currentValue !&#x3D;&#x3D; changes?.screenId?.previousValue
+        ) {
+            if (layout) {
+                this.manageScreenWithoutLayout();
+            } else {
+                // get active screen container
+                let screenContainer: any &#x3D; await this.getContainer(
+                    this.screenId
+                );
+                if (screenContainer) {
+                    this.screen &#x3D; screenContainer;
+                    this.setLatestRenderedScreenInStorage();
+                    let isLayoutScreenExist &#x3D;
+                        screenContainer.ScreenConfiguration &amp;&amp;
+                        !!JSON.parse(screenContainer.ScreenConfiguration)
+                            ?.layout;
+                    // check if screen have layout
+                    if (isLayoutScreenExist) {
+                        this.manageScreenWithLayout(screenContainer, changes);
+                    } else {
+                        this.manageScreenWithoutLayout();
+                    }
+                }
+            }
+        }
+
+        //will be used when parameters will be changed for screen
+
+        if (
+            this.screenId &amp;&amp;
+            changes?.parameters?.currentValue !&#x3D;&#x3D;
+                changes?.parameters?.previousValue
+        ) {
+            if (layout) {
+                // check do we have queryparams in url
+                let parameterValue &#x3D; this.getParametersFromURL();
+                if (parameterValue &amp;&amp; !isEmpty(parameterValue)) {
+                    // when we have layout then get params from the route
+                    const layoutScreen &#x3D; TabScreenFunction.getScreen(
+                        this.screenId
+                    );
+                    if (layoutScreen) {
+                        let screenDataSource &#x3D;
+                            this.getScreenDatasourceQueryDetails(layoutScreen);
+                        // check screen dsq has parameters configured or not
+                        if (
+                            screenDataSource &amp;&amp;
+                            screenDataSource.Parameters.length
+                        ) {
+                            let screenDSQParams &#x3D;
+                                screenDataSource.Parameters.find(
+                                    (a) &#x3D;&gt;
+                                        a.ParameterName?.toLowerCase() &#x3D;&#x3D; &#x27;id&#x27;
+                                );
+                            let screenConfiguredParams &#x3D; {};
+                            if (screenDSQParams &amp;&amp; parameterValue) {
+                                screenConfiguredParams &#x3D; {
+                                    [screenDSQParams.ParameterName]:
+                                        parameterValue,
+                                };
+                            }
+                            this.processScreen(
+                                this.screenId,
+                                screenConfiguredParams
+                            );
+                        }
+                    }
+                }
+            } else {
+                this.processScreen(this.screenId, this.parameters);
+            }
+        }
+    }
+
+    /**
+     * storing the last redered screen detail with screen id
+     */
+    setLatestRenderedScreenInStorage() {
+        const tabScreen &#x3D; {
+            screenId: this.screenId,
+            screen: this.screen,
+        };
+        localStorage.setItem(
+            TabConstant.Storage.tabScreen,
+            JSON.stringify(tabScreen)
+        );
+    }
+    /**
+     *
+     * @param screenContainer screen container for existing screen
+    we are updating current screenid and current form json with layout screen
+     */
+    async manageScreenWithLayout(screenContainer, changes) {
+        this.screenId &#x3D; JSON.parse(screenContainer.ScreenConfiguration).layout;
+        // get layoutscreen details
+        const layoutScreen: any &#x3D; await this.getContainer(this.screenId);
+        if (!!layoutScreen) {
+            if (!!layoutScreen.Container) {
+                this.formJson &#x3D; JSON.parse(layoutScreen.Container);
+                this.mapScreenInlayoutAsChildScreen(changes);
+                this.setLayoutScreenInLocalStorage();
+            }
+        }
+    }
+    /**
+     *
+     * @param changes screen id and params changes
+    assigning the main screen id into the layout screen&#x3D;&gt;screen rendered component as childscreen id
+
+     */
+    mapScreenInlayoutAsChildScreen(changes) {
+        FormioUtils.eachComponent(
+            this.formJson.components,
+            function (component: any, path: any) {
+                if (component.type &#x3D;&#x3D; &#x27;childscreen&#x27;) {
+                    if (
+                        component.customOptions?.dataSetting.hasOwnProperty(
+                            &#x27;childScreenId&#x27;
+                        )
+                    ) {
+                        component.customOptions.dataSetting.childScreenId &#x3D;
+                            changes.screenId.currentValue;
+                    }
+                }
+            }
+        );
+    }
+
+    /**
+     * storing layout screenid in localstoarge
+     */
+    setLayoutScreenInLocalStorage() {
+        localStorage.setItem(TabConstant.Storage.layoutScreenId, this.screenId);
+    }
+
+    /**
+     * managaing screen when we don&#x27;t have layout screen configured
+     */
+    async manageScreenWithoutLayout() {
+        // getting last rendered screen from loaclstoage
+        let tabScreen: any &#x3D; localStorage.getItem(
+            TabConstant.Storage.tabScreen
+        );
+        //avoid multiple call for layout and it&#x27;s child screen rendering
+        if (tabScreen) {
+            tabScreen &#x3D; JSON.parse(tabScreen);
+            // checking last renderd screen and curret screen is same we are getting detials from local
+            // if not exist we will make api call from screenid
+            if (tabScreen.screenId &#x3D;&#x3D; this.screenId) {
+                this.screen &#x3D; tabScreen.screen;
+            } else {
+                this.screen &#x3D; await this.getContainer(this.screenId);
+            }
+
+            //remove layout screen id to avoid multiple call issue and assign active formjson data of latest rendered screen
+            if (this.screen &amp;&amp; this.screen.Container) {
+                localStorage.removeItem(TabConstant.Storage.layoutScreenId);
+                this.formJson &#x3D; JSON.parse(this.screen.Container);
+            }
+            this.manageDataComponentFromScreen(this.screen);
+            this.manageChipsCompoentFromScreen();
+        }
+    }
+
+    /**
+     * manage chips component once screen is renderd
+     */
+    manageChipsCompoentFromScreen() {
+        FormioUtils.eachComponent(
+            this.formJson.components,
+            function (component: any, path: any) {
+                if (component.type &#x3D;&#x3D;&#x3D; &#x27;customChips&#x27;) {
+                    component[&#x27;customOptions&#x27;][&#x27;dataSetting&#x27;][&#x27;key&#x27;] &#x3D;
+                        component.key;
+                }
+            }
+        );
+    }
+
+    getParametersFromURL() {
+        let parameterValue &#x3D; {};
+        parameterValue &#x3D; this._activatedRoute.snapshot.queryParams[&#x27;ID&#x27;];
+        if (!parameterValue) {
+            parameterValue &#x3D; this._activatedRoute.snapshot.queryParams[&#x27;Id&#x27;];
+        }
+        return parameterValue;
+    }
+
+    getScreenDatasourceQueryDetails(layoutScreen) {
+        return TabAppFunction.getDataFromDataSourceQueryID(
+            layoutScreen?.DataSourceQuery
+        );
+    }
+
+    async ngOnChanges1(changes: SimpleChanges): Promise&lt;any&gt; {
+        // will be used for rendering screen
+        // getting the layout screen if exist in storage means we have screen with layout
+        const stateParam &#x3D; this.route.snapshot.queryParamMap.get(&#x27;state&#x27;);
+        this.currentQueryParamsState &#x3D; JSON.parse(
+            decodeURIComponent(stateParam)
+        );
+        const layout &#x3D; localStorage.getItem(TabConstant.Storage.layoutScreenId);
+        if (this.screenId) {
+            if (
+                changes?.screenId?.currentValue !&#x3D;
+                changes?.screenId?.previousValue
+            ) {
+                // this.showLoader.emit(true);
+                if (!layout) {
+                    let screen: any &#x3D; await this.getContainer(this.screenId);
+                    this.manageDataComponentFromScreen(screen);
+                    if (!!screen) {
+                        this.screen &#x3D; screen;
+                        this.isloading &#x3D; true;
+                        const tabScreen &#x3D; {
+                            screenId: this.screenId,
+                            screen: this.screen,
+                        };
+                        localStorage.setItem(
+                            TabConstant.Storage.tabScreen,
+                            JSON.stringify(tabScreen)
+                        );
+                        if (
+                            screen.ScreenConfiguration &amp;&amp;
+                            !!JSON.parse(screen.ScreenConfiguration)?.layout
+                        ) {
+                            this.screenId &#x3D; JSON.parse(
+                                screen.ScreenConfiguration
+                            ).layout;
+                            const layoutScreen: any &#x3D; await this.getContainer(
+                                this.screenId
+                            );
+                            if (!!layoutScreen) {
+                                if (!!layoutScreen.Container) {
+                                    this.formJson &#x3D; JSON.parse(
+                                        layoutScreen.Container
+                                    );
+                                }
+                            }
+                            FormioUtils.eachComponent(
+                                this.formJson.components,
+                                function (component: any, path: any) {
+                                    if (component.type &#x3D;&#x3D; &#x27;childscreen&#x27;) {
+                                        if (
+                                            component.customOptions?.dataSetting.hasOwnProperty(
+                                                &#x27;childScreenId&#x27;
+                                            )
+                                        ) {
+                                            component.customOptions.dataSetting.childScreenId &#x3D;
+                                                changes.screenId.currentValue;
+                                        }
+                                    }
+                                }
+                            );
+                            localStorage.setItem(
+                                TabConstant.Storage.layoutScreenId,
+                                this.screenId
+                            );
+                            this.showLoader.emit(false);
+                            // return;
+                            // return Promise.resolve({
+                            //     formJson: this.formJson,
+                            //     screenObject: layoutScreen,
+                            // });
+                        } else {
+                            this.getFormJsonDataWithScreenId(this.screenId);
+                        }
+                    }
+                } else {
+                    this.getFormJsonDataWithScreenId(this.screenId);
+                }
+                // this.getFormJsonDataWithScreenId(this.screenId);
+            }
+
+            //will be used when parameters will be changed for data screen
+            if (
+                changes?.parameters?.currentValue !&#x3D;
+                changes?.parameters?.previousValue
+            ) {
+                // this.showLoader.emit(true);
+                if (layout) {
+                    // when we have layout then get params from the route
+                    let parameterValue &#x3D;
+                        this._activatedRoute.snapshot.queryParams[&#x27;ID&#x27;];
+                    const layoutScreen &#x3D; TabScreenFunction.getScreen(
+                        this.screenId
+                    );
+                    if (!parameterValue) {
+                        parameterValue &#x3D;
+                            this._activatedRoute.snapshot.queryParams[&#x27;Id&#x27;];
+                    }
+                    let screenDataSource &#x3D;
+                        TabAppFunction.getDataFromDataSourceQueryID(
+                            layoutScreen?.DataSourceQuery
+                        );
+                    if (
+                        screenDataSource &amp;&amp;
+                        screenDataSource.Parameters.length
+                    ) {
+                        let parms &#x3D; screenDataSource.Parameters.find(
+                            (a) &#x3D;&gt; a.ParameterName?.toLowerCase() &#x3D;&#x3D; &#x27;id&#x27;
+                        );
+                        let qp;
+                        if (parms &amp;&amp; parameterValue) {
+                            qp &#x3D; {
+                                [parms.ParameterName]: parameterValue,
+                            };
+                        }
+                        this.processScreen(this.screenId, qp);
+                    }
+                } else {
+                    this.processScreen(this.screenId, this.parameters);
+                }
+
+                // this.processScreen(this.screenId, this.parameters);
+            }
+        }
+    }
+    /**
+     * this function will get the grid component form whole screen
+    and manage the screen datasourcecontext
+     * @param screen it will get active screen data with container
+
+     */
+    manageDataComponentFromScreen(screen) {
+        let screenContainer &#x3D; JSON.parse(screen.Container);
+        let that &#x3D; this;
+        FormioUtils.eachComponent(
+            screenContainer.components,
+            function (component: any, path: any) {
+                if (component.type &#x3D;&#x3D; &#x27;customGrid&#x27;) {
+                    that.manageGridDataComponent(component);
+                }
+            }
+        );
+    }
+
+    /**
+     *
+     * @param component this will get grid component from formutils
+    this funciton will get grid dsq, from dsq it will get app object
+    then create datasource conter which is stored in localstorage
+     */
+    manageGridDataComponent(component) {
+        let gdsq &#x3D;
+            component?.customOptions?.dataSettingsGrid?.dataSourceQueryId;
+        let appObjectDetailsOfGrid &#x3D;
+            TabAppFunction.getAppObjectFromDataSourceQueryID(gdsq);
+        let viewAppObjectDetailsOfGrid &#x3D; this.getViewAppObjectDetails(
+            appObjectDetailsOfGrid
+        );
+        let screenContext &#x3D; JSON.parse(sessionStorage.getItem(&#x27;screenContext&#x27;));
+        if (screenContext) {
+            if (!screenContext[viewAppObjectDetailsOfGrid?.SystemDBTableName]) {
+                screenContext[viewAppObjectDetailsOfGrid?.SystemDBTableName] &#x3D;
+                    {};
+            }
+            if (
+                !screenContext[viewAppObjectDetailsOfGrid?.SystemDBTableName]
+                    .dataComponentList
+            ) {
+                screenContext[
+                    viewAppObjectDetailsOfGrid?.SystemDBTableName
+                ].dataComponentList &#x3D; [];
+            }
+            if (
+                !screenContext[
+                    viewAppObjectDetailsOfGrid?.SystemDBTableName
+                ].dataComponentList.includes(component.key)
+            ) {
+                screenContext[
+                    viewAppObjectDetailsOfGrid?.SystemDBTableName
+                ].dataComponentList.push(component.key);
+            }
+            sessionStorage.setItem(
+                &#x27;screenContext&#x27;,
+                JSON.stringify(screenContext)
+            );
+        } else {
+            screenContext &#x3D; {};
+            screenContext[viewAppObjectDetailsOfGrid?.SystemDBTableName] &#x3D; {
+                dataComponentList: [component.key],
+            };
+            sessionStorage.setItem(
+                &#x27;screenContext&#x27;,
+                JSON.stringify(screenContext)
+            );
+        }
+    }
+
+    getFormJsonDataWithScreenId(screenId: string, parameters &#x3D; {}) {
+        this.formSubmission.data &#x3D; {};
+        if (!isEmpty(parameters)) {
+            this.formSubmission.data &#x3D; parameters;
+        }
+        return this.getFormJSON(screenId).then();
+    }
+
+    async getFormJSON(screenId: string) {
+        let screen: any;
+        localStorage.setItem(TabConstant.Storage.screenId, this.screenId);
+        let tabScreen: any &#x3D; localStorage.getItem(
+            TabConstant.Storage.tabScreen
+        );
+        //avoid multiple call for layout and it&#x27;s child screen rendering
+        if (tabScreen) {
+            tabScreen &#x3D; JSON.parse(tabScreen);
+            if (tabScreen.screenId &#x3D;&#x3D; screenId) {
+                this.screen &#x3D; tabScreen.screen;
+            }
+        }
+        if (!this.screen) {
+            screen &#x3D; await this.getContainer(screenId);
+        } else {
+            screen &#x3D; this.screen;
+        }
+        if (!!screen) {
+            if (!!screen.Container) {
+                localStorage.removeItem(TabConstant.Storage.layoutScreenId);
+                // this condition was added by jaimin to render form in popup but
+                // for now hardik is commenting this code as it is now required for now
+                // if (isPopup) {
+                //     this.screenType &#x3D; screen.ScreenType;
+                //     this.popupJson &#x3D; JSON.parse(screen.Container);
+                //     return Promise.resolve({
+                //         formJson: this.popupJson,
+                //         screenObject: screen,
+                //     });
+                // } else {
+                // css load dynamically screen wise
+                // if (screen.ScreenConfiguration) {
+                //     const isJsonString &#x3D; TabCommonFunction.validateJSON(screen.ScreenConfiguration);
+                //     if (isJsonString) {
+                //         if (JSON.parse(screen.ScreenConfiguration).css) {
+                //             document.getElementsByTagName(&#x27;style&#x27;)[document.getElementsByTagName(&#x27;style&#x27;).length - 1].append(JSON.parse(screen.ScreenConfiguration).css);
+                //         }
+                //     } else {
+                //         if (screen.ScreenConfiguration.css) {
+                //             document.getElementsByTagName(&#x27;style&#x27;)[document.getElementsByTagName(&#x27;style&#x27;).length - 1].append(screen.ScreenConfiguration.css);
+                //         }
+                //     }
+                // }
+                this.screenType &#x3D; screen.ScreenType;
+                this.formJson &#x3D; JSON.parse(screen.Container);
+                // passing chips compoent key in component customoption datasetting
+                FormioUtils.eachComponent(
+                    this.formJson.components,
+                    function (component: any, path: any) {
+                        if (component.type &#x3D;&#x3D;&#x3D; &#x27;customChips&#x27;) {
+                            component[&#x27;customOptions&#x27;][&#x27;dataSetting&#x27;][&#x27;key&#x27;] &#x3D;
+                                component.key;
+                        }
+                    }
+                );
+                this.showLoader.emit(false);
+                return Promise.resolve({
+                    formJson: this.formJson,
+                    screenObject: screen,
+                });
+                // }
+            }
+        }
+        this.showLoader.emit(false);
+        return null;
+    }
+    processScreen1(screenId: string, screenParams: any) {
+        let screen &#x3D; TabScreenFunction.getScreen(screenId);
+        let appObjectDetailsofScreen &#x3D;
+            TabAppFunction.getAppObjectFromDataSourceQueryID(
+                screen?.DataSourceQuery
+            );
+        if (screen?.ScreenType &#x3D;&#x3D; 1) {
+        } else if (screen?.ScreenType &#x3D;&#x3D; 2) {
+        } else if (screen?.ScreenType &#x3D;&#x3D; 3) {
+        }
+    }
+    processScreen(screenId: string, queryParams: any) {
+        let screen &#x3D; TabScreenFunction.getScreen(screenId);
+        let appObjectDetailsofScreen &#x3D;
+            TabAppFunction.getAppObjectFromDataSourceQueryID(
+                screen?.DataSourceQuery
+            );
+        if (screen?.ScreenType &#x3D;&#x3D; 1) {
+            this.getFormJsonDataWithScreenId(this.screenId, queryParams);
+        } else if (screen?.ScreenType &#x3D;&#x3D; 3) {
+            if (!isEmpty(queryParams)) {
+                this.globalValueService.getUpdatedRecordInfo
+                    .pipe(takeUntil(this._unsubscribeAll))
+                    .subscribe((value) &#x3D;&gt; {
+                        if (value) {
+                            // this.setFormData(value, screenId);
+                            this.updateCurrentScreenInstance(this.screenId);
+                            // this.formData &#x3D; this.tabFormService.setFormData(response);
+                            let recondInfoAndScreen &#x3D; {};
+                            recondInfoAndScreen[&#x27;RecordInfo&#x27;] &#x3D; value;
+                            recondInfoAndScreen[&#x27;screen&#x27;] &#x3D; this.screen;
+                            this.proceedObjectBeforeRender(recondInfoAndScreen);
+                            this.refreshFormData({
+                                ...value,
+                                DataSourceQueryID: this.screen.DataSourceQuery,
+                            });
+                        }
+                    });
+            } else {
+                this.updateCurrentScreenInstance(this.screenId);
+                this.proceedObjectBeforeRender({});
+            }
+        } else {
+            this.isloading &#x3D; true;
+            if (!isEmpty(queryParams)) {
+                let tempParams &#x3D; queryParams;
+                const isJsonString &#x3D;
+                    TabCommonFunction.validateJSON(queryParams);
+                if (isJsonString) {
+                    tempParams &#x3D; Object.assign(queryParams);
+                    tempParams &#x3D; JSON.parse(tempParams);
+                }
+                // if (typeof tempParams &#x3D;&#x3D; &#x27;string&#x27;) {
+                //     tempParams &#x3D; Object.assign(queryParams);
+                //     tempParams &#x3D; JSON.parse(tempParams);
+                // }
+
+                if (
+                    tempParams?.parameters?.hasOwnProperty(&#x27;screenMode&#x27;) &amp;&amp;
+                    tempParams.parameters.screenMode &#x3D;&#x3D; &#x27;Add&#x27;
+                ) {
+                    // checking for custom params exist in add new screen with custom params
+                    // it is used for like left grid selected any record and
+                    if (
+                        appObjectDetailsofScreen &amp;&amp;
+                        appObjectDetailsofScreen?.Fields
+                    ) {
+                        if (
+                            tempParams &amp;&amp;
+                            tempParams.hasOwnProperty(&#x27;parameters&#x27;) &amp;&amp;
+                            tempParams?.parameters.hasOwnProperty(
+                                &#x27;screenContext&#x27;
+                            ) &amp;&amp;
+                            tempParams?.parameters?.screenContext
+                        ) {
+                            let appObjectKey &#x3D; Object.keys(
+                                tempParams?.parameters?.screenContext
+                            );
+
+                            appObjectDetailsofScreen?.Fields.forEach((ap) &#x3D;&gt; {
+                                let lpindex &#x3D; appObjectKey.indexOf(
+                                    ap?.LookUpDetails?.LookupObject
+                                );
+                                if (lpindex &gt; -1) {
+                                    let lpdata &#x3D;
+                                        tempParams?.parameters?.screenContext[
+                                            appObjectKey[lpindex]
+                                        ];
+                                    let lpparams &#x3D; {};
+                                    if (
+                                        lpdata &amp;&amp;
+                                        lpdata.hasOwnProperty(&#x27;activeRowsData&#x27;)
+                                    ) {
+                                        // if lookupfield is binede in lookup configuration
+                                        // it will generate json structre for same
+                                        // else it will show plain object format
+                                        if (ap?.LookUpDetails?.LookupField) {
+                                            lpparams[ap.SystemDBFieldName] &#x3D; {
+                                                [ap?.LookUpDetails
+                                                    ?.LookupField]:
+                                                    lpdata?.activeRowsData[
+                                                        ap?.LookUpDetails
+                                                            ?.LookupField
+                                                    ],
+                                            };
+                                        } else {
+                                            lpparams[ap.SystemDBFieldName] &#x3D;
+                                                lpdata?.activeRowsData[
+                                                    ap?.LookUpDetails?.LookupField
+                                                ];
+                                        }
+                                    }
+                                    Object.assign(
+                                        tempParams?.parameters,
+                                        lpparams
+                                    );
+                                }
+                            });
+                        }
+                    }
+                    if (tempParams?.screenContext?.URL) {
+                        Object.assign(
+                            tempParams?.parameters,
+                            tempParams?.screenContext?.URL
+                        );
+                    }
+                    this.updateCurrentScreenInstance(this.screenId);
+                    this.proceedObjectBeforeRender(tempParams);
+                    this.renderScreenDataWithCustomParameters(
+                        this.screenId,
+                        tempParams
+                    );
+                } else {
+                    this.renderScreenDataWithParameters(
+                        this.screenId,
+                        queryParams
+                    );
+                }
+            } else {
+                this.updateCurrentScreenInstance(this.screenId);
+                this.proceedObjectBeforeRender(queryParams);
+            }
+        }
+    }
+
+    async getContainer(screenId: string) {
+        return new Promise((resolve, reject) &#x3D;&gt; {
+            if (environment.name !&#x3D;&#x3D; &#x27;DEV&#x27;) {
+                let appObject &#x3D;
+                    TabAppFunction.getAppObjectFromSystemDBTableName(
+                        &#x27;TABMD_AppScreen&#x27;
+                    );
+                const data &#x3D; {
+                    appObjectID: appObject.ID,
+                    recordID: screenId,
+                    version: JSON.parse(localStorage.getItem(&#x27;applicationData&#x27;))
+                        ?.AppVersion,
+                };
+                this.tabGetService
+                    .getRecord(data)
+                    ?.pipe(take(1))
+                    ?.subscribe((res: any) &#x3D;&gt; {
+                        if (!!res.Result &amp;&amp; res.Result.length &gt; 0) {
+                            if (
+                                res.Result[0].hasOwnProperty(
+                                    &#x27;AuditLog_RecordID_ChangeLog&#x27;
+                                )
+                            ) {
+                                const screenDetails: any &#x3D; JSON.parse(
+                                    res.Result[0].AuditLog_RecordID_ChangeLog
+                                );
+                                resolve(screenDetails);
+                            }
+                        }
+                    });
+            } else {
+                // Old code for Get Screen container - before shared DB implementation
+
+                // const screen &#x3D; {
+                //     AppObjectName: &#x27;TABMD_AppScreen&#x27;,
+                //     DSQName: &#x27;Detail_TABMD_AppScreen&#x27;,
+                //     Reqtokens: { ID: screenId },
+                // };
+                // this.tabGetService
+                //     .executeRAWDSQWithName(screen)
+                //     ?.subscribe((res: any) &#x3D;&gt; {
+                //         if (!!res.Result &amp;&amp; res.Result.length &gt; 0) {
+                //             const screenDetails: any &#x3D; res.Result[0];
+                //             resolve(screenDetails);
+                //         }
+                //     });
+
+                // New API call for gte Screen after shared DB
+                const data &#x3D; {
+                    screenId: screenId,
+                };
+                this.tabAppService
+                    .getScreen(data)
+                    ?.pipe(takeUntil(this._unsubscribeAll))
+                    ?.subscribe((res: any) &#x3D;&gt; {
+                        if (!!res.Result) {
+                            let screenDetail: any &#x3D;
+                                TabScreenFunction.getScreen(screenId);
+
+                            const screenDetailWithContainer &#x3D; {
+                                ...screenDetail,
+                                Container: res.Result,
+                            };
+                            resolve(screenDetailWithContainer);
+                        }
+                    });
+            }
+        });
+    }
+
+    onChange(event: any) {
+        if (event.hasOwnProperty(&#x27;data&#x27;)) {
+            this.latestForm &#x3D; event.data;
+        }
+        this.callCustomEvent(&#x27;onChange&#x27;, event);
+    }
+
+    onRender(event: any) {
+        this.currentScreen &#x3D; null;
+        this.updateCurrentScreenInstance(this.screenId);
+        /**
+         * Registers an event listener for the &#x27;tabHTMLEvent&#x27; event on the window object.
+         * @param tabHTMLEvent - The event object passed to the event listener.
+         *                      It contains information about the &#x27;tabHTMLEvent&#x27; event.
+         */
+        window.addEventListener(&#x27;tabHTMLEvent&#x27;, this.tabHTMLEventListener);
+        this.callCustomEvent(&#x27;onRender&#x27;, event);
+    }
+
+    /**
+     * Event listener for the &#x27;tabHTMLEvent&#x27; event.
+     * @param tabHTMLEvent - The event object for &#x27;tabHTMLEvent&#x27;.
+     */
+    tabHTMLEventListener &#x3D; (tabHTMLEvent) &#x3D;&gt; {
+        this.updateCurrentScreenInstance(this.screenId);
+        this.callCustomEvent(&#x27;onCustomHTMLTemplateEvent&#x27;, {
+            data: this.formSubmission.data,
+            tabHTMLEvent: tabHTMLEvent,
+        });
+    };
+
+    /**
+     *
+     * @param event this var will return form event with form data
+    this function will call when form will load
+     */
+    onFormLoad(event: any) {
+        if (
+            this.screenId.toLowerCase() &#x3D;&#x3D;
+            &#x27;bc7d4e1d-e976-49a1-be33-e53fc6943d7c&#x27;
+        ) {
+            this.addConfigTabInFormioComponent();
+        }
+    }
+
+    callCustomEvent(funName: string, event: any) {
+        if (this.currentScreen !&#x3D;&#x3D; undefined &amp;&amp; this.currentScreen !&#x3D;&#x3D; null) {
+            let screenparms &#x3D; new TabClasses.ScreenParameter();
+            screenparms.event &#x3D; event;
+            screenparms.formJson &#x3D; this.formJson;
+            screenparms.formIOObject &#x3D; this.tabFormRenderer;
+            screenparms.dailogRef &#x3D; this.dialog;
+            // need to change this approach
+            screenparms.serviceList &#x3D; {
+                insertService: this.tabInsertService,
+                updateService: this.tabUpdateService,
+                deleteService: this.tabDeleteService,
+                plugInService: this.tabPluginService,
+                getService: this.tabGetService,
+                // Added mediaUploadService to upload and download files
+                mediaUploadService: this.tabMediaUploadService,
+                toastrService: this.toastrNotificationService,
+                appService: this.tabAppService,
+                DatePipe: this.datePipe,
+                Store: this.store,
+                tabWorkflowService: this.tabWorkflowService,
+                router: this.router,
+                route: this.route,
+                location: this._location,
+                userService: this.phoenixUserService,
+                tabCoreHttpService: this.tabCoreHttpService,
+                globalValueService: this.globalValueService,
+            };
+            this.currentScreen[funName](screenparms, this.tabPluginService);
+        }
+    }
+
+    onBeforeSubmit(event: any, callback: any) {
+        const sd &#x3D; this.isScreenEdit(event);
+        event.screenData &#x3D; sd;
+        event.isEdit &#x3D; sd?.recordId;
+        event.callback &#x3D; callback;
+        this.callCustomEvent(&#x27;onBeforeSubmit&#x27;, event);
+        this.saveCurrentScreenSubmissionState(event, &#x27;submitting&#x27;);
+        if (this.currentScreen &#x3D;&#x3D;&#x3D; undefined || this.currentScreen &#x3D;&#x3D;&#x3D; null) {
+            callback(null, event);
+        }
+    }
+
+    onAfterSubmit(event, res) {
+        let ad &#x3D; {
+            event: event,
+            res: res,
+            formSubmission: this.beforeSyncSubmission,
+        };
+        this.callCustomEvent(&#x27;onAfterSubmit&#x27;, ad);
+    }
+
+    /**
+     * Triggers a custom event named &#x27;onBeforeNextPage&#x27; before moving to the next page in a wizard.
+     * @param currentPage The current page
+     * @param submission The data submitted so far.
+     * @param next callback &#x60;function(err): void&#x60;.
+     */
+    onBeforeNextPage(currentPage: any, submission: any, next: any) {
+        const event &#x3D; { currentPage, submission, next };
+        this.callCustomEvent(&#x27;onBeforeNextPage&#x27;, event);
+    }
+
+    /**
+     * Triggers a custom event named &#x27;onBeforePrevPage&#x27; before moving to the prev page in a wizard.
+     * @param currentPage The current page
+     * @param submission The data submitted so far.
+     * @param next callback &#x60;function(err): void&#x60;.
+     */
+    onBeforePrevPage(currentPage: any, submission: any, next: any) {
+        const event &#x3D; { currentPage, submission, next };
+        this.callCustomEvent(&#x27;onBeforePrevPage&#x27;, event);
+    }
+
+    onCustomEvent(event: any) {
+        this.updateCurrentScreenInstance(this.screenId);
+        this.callCustomEvent(&#x27;onCustomEvent&#x27;, event);
+        this.gridActions(event);
+        this.treeViewActions(event);
+        this.queryBuilderActions(event);
+    }
+
+    isScreenEdit(event: any) {
+        const screen: TabClasses.AppScreen &#x3D; TabScreenFunction.getScreen(
+            this.screenId
+        );
+        if (
+            screen?.DataSourceQuery &amp;&amp;
+            screen.DataSourceQuery !&#x3D; &#x27;00000000-0000-0000-0000-000000000000&#x27;
+        ) {
+            const screenDataSource &#x3D;
+                TabAppFunction.getDataFromDataSourceQueryID(
+                    screen?.DataSourceQuery
+                );
+            const appObject &#x3D; TabAppFunction.getAppObject(
+                screenDataSource?.ObjectID_Tosave
+            );
+            const primaryKeyField &#x3D;
+                TabRequestResponseFunction.getPrimaryKeyFields(appObject);
+            const recordId &#x3D; TabRequestResponseFunction.getEditRecordId(
+                event.data,
+                primaryKeyField[0]?.FieldName
+            );
+            return {
+                recordId,
+                PrimaryKeyFieldName: primaryKeyField[0]?.FieldName,
+            };
+        } else {
+            alert(&#x27;You dont have dsq so you can not save this form&#x27;);
+            return;
+        }
+    }
+
+    onSubmit(event: any) {
+        // this.isShowOverlyLoaderWhileSubmit &#x3D; true;
+        // Object.assign(this.beforeSyncSubmission, event.data);
+        this.beforeSyncSubmission &#x3D; cloneDeep(event.data);
+        if (event.data.hasOwnProperty(&#x27;submit&#x27;) &amp;&amp; event.data.submit) {
+            // commenting(hardik) below code as of now becuase it is not valid coding standerd
+            // for plugin this code can be written in custom logic or processobjectbeforerender method
+            // this could should not be here like this way
+
+            // if (event.data?.FileName?.length &gt; 0) {
+            //     this.callCustomEvent(&#x27;onButtonCustomEvent&#x27;, event);
+            // }
+            delete event.data.submit;
+            // TABComponentProcessor.DataConverterForSubmit(event, this.formJson);
+            this.processChildScreen(event);
+        }
+        // this both condtion we are not using in new tab version
+        // once we do optimization we will remove this code
+        if (event.data.hasOwnProperty(&#x27;apply&#x27;) &amp;&amp; event.data.apply) {
+            delete event.data[&#x27;apply&#x27;];
+            this.applyFilter(event);
+        }
+        if (event.data.hasOwnProperty(&#x27;clear&#x27;) &amp;&amp; event.data.clear) {
+            delete event.data[&#x27;clear&#x27;];
+            this.router.navigate([&#x27;/screen&#x27; + &#x27;/&#x27; + this.screenId]);
+        }
+    }
+
+    // this is the old tab code function to applu the filter for grid
+    // in new system as of now we are not using this
+    private applyFilter(event: any) {
+        let filterArray &#x3D; [];
+        for (let key in event.data) {
+            if (event.data.hasOwnProperty(key)) {
+                if (event.data[key]) {
+                    filterArray.push({ key: key, value: event.data[key] });
+                }
+            }
+        }
+        let dynamicQueryParams: any &#x3D; {};
+        filterArray.forEach((element) &#x3D;&gt; {
+            dynamicQueryParams[element.key] &#x3D; element.value;
+        });
+        this.router.navigate([&#x27;/screen&#x27; + &#x27;/&#x27; + this.screenId], {
+            queryParams: dynamicQueryParams,
+        });
+    }
+
+    async processChildScreen(event: any) {
+        const childScreenComponentArray: any[] &#x3D; [];
+        // checking childscreen is exist and submit is allowed in child screen or not
+        FormioUtils.eachComponent(
+            this.formJson.components,
+            function (component: any, path: any) {
+                if (component.type &#x3D;&#x3D; &#x27;childscreen&#x27;) {
+                    if (
+                        component.customOptions.hasOwnProperty(
+                            &#x27;isAllowToSubmit&#x27;
+                        ) &amp;&amp;
+                        component.customOptions.isAllowToSubmit
+                    ) {
+                        childScreenComponentArray.push(component);
+                    }
+                }
+            }
+        );
+        // if childscreen and child screen submit allow then below code will execute
+        // else normal screen submit will work
+        if (childScreenComponentArray.length) {
+            for (const element of childScreenComponentArray) {
+                const data: any &#x3D; { data: {} };
+                data[&#x27;data&#x27;] &#x3D; event.data[element.key];
+                if (!data.data) {
+                    data.data &#x3D; element;
+                }
+                this.saveCurrentScreenSubmissionState(event, &#x27;submitting&#x27;);
+                const response: any &#x3D; await this.submitChildScreen(
+                    element.customOptions.childScreenId,
+                    data
+                );
+                this.saveCurrentScreenSubmissionState(event, &#x27;submitted&#x27;);
+                if (response.Result) {
+                    const dob &#x3D; { ID: response.Result };
+                    this.refreshForm.emit({
+                        submission: {
+                            data: dob,
+                        },
+                    });
+                }
+            }
+        } else {
+            const recordId &#x3D; event.screenData?.recordId;
+            // this.syncFields(event, this.formJson);
+            let serviceList &#x3D; {
+                insertService: this.tabInsertService,
+                updateService: this.tabUpdateService,
+                deleteService: this.tabDeleteService,
+                plugInService: this.tabPluginService,
+                getService: this.tabGetService,
+                // Added mediaUploadService to upload and download files
+                mediaUploadService: this.tabMediaUploadService,
+                toastrService: this.toastrNotificationService,
+                appService: this.tabAppService,
+                DatePipe: this.datePipe,
+                Store: this.store,
+                tabWorkflowService: this.tabWorkflowService,
+            };
+            FormRenderSyncFieldLogic.syncFields(
+                event,
+                this.formJson,
+                this.screenId,
+                serviceList
+            );
+            // var path: any[] &#x3D; [];
+            // path.push(&#x27;Root&#x27;);
+            // FormRenderSyncFieldLogic.FindTheDifferencesFromTwoObjects(
+            //     storedDataObject,
+            //     event.data,
+            //     path
+            // );
+            let storedDataObject &#x3D; localStorage.getItem(&#x27;dataObject&#x27;);
+            if (
+                storedDataObject &amp;&amp;
+                storedDataObject !&#x3D; null &amp;&amp;
+                storedDataObject !&#x3D; undefined &amp;&amp;
+                storedDataObject !&#x3D; &#x27;undefined&#x27;
+            ) {
+                storedDataObject &#x3D; JSON.parse(storedDataObject);
+            }
+
+            if (recordId &amp;&amp; storedDataObject) {
+                let obj1 &#x3D; this.extractIds(storedDataObject);
+                let obj2 &#x3D; this.extractIds(event.data);
+
+                let deletedData &#x3D; this.findDifferentRecords(obj1, obj2);
+                if (deletedData) {
+                    Object.keys(deletedData).forEach((key) &#x3D;&gt; {
+                        let foundComponent &#x3D; false;
+                        let cmp &#x3D; FormioUtils.eachComponent(
+                            this.formJson.components,
+                            (component, path) &#x3D;&gt; {
+                                if (
+                                    (component.type &#x3D;&#x3D;&#x3D; &#x27;datagrid&#x27; ||
+                                        component.type &#x3D;&#x3D;&#x3D; &#x27;editgrid&#x27;) &amp;&amp;
+                                    key &#x3D;&#x3D;&#x3D; component.key
+                                ) {
+                                    foundComponent &#x3D; true;
+                                }
+                            }
+                        );
+
+                        if (!foundComponent) {
+                            delete deletedData[key];
+                        }
+                    });
+                    this.deleteDataFromBackendForChildStructure(deletedData);
+                }
+            }
+            // remove unchanged data from grid
+            // FormRenderSyncFieldLogic.removeUnchangedValueFromArray(event.data);
+            this.saveCurrentScreenSubmissionState(event, &#x27;submitting&#x27;);
+
+            // if recoed id is found means update the record (update functionality will work)
+            // else we will add new record (insert functionality will work)
+            if (recordId) {
+                // this.editRecord(event);
+                //------Jaimin old code for file purpose -------
+                // this.edit(event);
+                // jigisha old code
+                // condtion for pluigin file component which wrong if anything will not work
+                // hardik will take care but for code optimization i have to remove this code
+                // for now i am commenting this code
+                // if (!event.data?.File) {
+                //     this.editRecord(event);
+                // } else {
+                //     this.router.navigate([
+                //         &#x27;/screen/4D091E72-81B7-4594-9A96-2AFC55D89158&#x27;,
+                //     ]);
+                // }
+                // new code by hardik
+                this.editRecord(event);
+            } else {
+                // this.addRecord(event);
+                // --------jaimin old code for some file purpose ----------
+                // same as above if condition comment
+                // if (!event.data?.File) {
+                //     this.addRecord(event);
+                // } else {
+                //     this.router.navigate([
+                //         &#x27;/screen/4D091E72-81B7-4594-9A96-2AFC55D89158&#x27;,
+                //     ]);
+                // }
+
+                // hardik new code
+                this.addRecord(event);
+            }
+        }
+    }
+
+    extractIds(obj, idMap &#x3D; {}) {
+        for (const key in obj) {
+            if (Array.isArray(obj[key])) {
+                // If the key is an array, initialize an empty array in the &#x27;idMap&#x27; if it doesn&#x27;t exist.
+                if (!idMap[key]) {
+                    idMap[key] &#x3D; [];
+                }
+                // Iterate through each item in the array.
+
+                obj[key].forEach((item) &#x3D;&gt; {
+                    // Push the &#x27;Id&#x27; value of the item to the &#x27;idMap&#x27; array for the current key.
+                    if (item.ID) this.isprimarykeyID &#x3D; true;
+                    idMap[key].push(this.isprimarykeyID ? item.ID : item.Id);
+
+                    // Recursively call the &#x27;extractIds&#x27; function to process nested objects.
+
+                    this.extractIds(item, idMap);
+                });
+            } else if (typeof obj[key] &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; obj[key] !&#x3D;&#x3D; null) {
+                // If the value of the key is an object (not an array) and not null,
+                // recursively call the &#x27;extractIds&#x27; function to process nested objects.
+                this.extractIds(obj[key], idMap);
+            }
+        }
+        return idMap;
+    }
+
+    // This function compares arrays of the same keys between two objects, &#x27;obj1&#x27; and &#x27;obj2&#x27;,
+    // and returns an object containing the differing records.
+    findDifferentRecords(obj1, obj2) {
+        // Initialize an empty object to store the differing records.
+        const differentRecords &#x3D; {};
+
+        for (const key in obj1) {
+            if (Array.isArray(obj1[key])) {
+                // Get the arrays for the current key from both &#x27;obj1&#x27; and &#x27;obj2&#x27;.
+                const arr1 &#x3D; obj1[key];
+                const arr2 &#x3D; obj2[key];
+                if (arr2) {
+                    // Filter the array from &#x27;obj1&#x27; to find the elements not present in &#x27;obj2&#x27;.
+                    const diff &#x3D; arr1.filter((item) &#x3D;&gt; !arr2.includes(item));
+                    // If there are differing elements, add them to the &#x27;differentRecords&#x27; object.
+                    if (diff.length &gt; 0) {
+                        differentRecords[key] &#x3D; diff;
+                    }
+                }
+            }
+        }
+        // Return the &#x27;differentRecords&#x27; object containing the differing records.
+        return differentRecords;
+    }
+
+    addRecord(event: any) {
+        this.tabInsertService
+            .insertByScreenId(this.screenId, event)
+            ?.pipe(take(1))
+            ?.subscribe(
+                (res) &#x3D;&gt; {
+                    this.onAfterSubmit(event, res);
+                    if (res?.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                        // this.router.navigate([
+                        //     &#x27;/screen/4D091E72-81B7-4594-9A96-2AFC55D89158&#x27;,
+                        // ]);
+                        // this._location.back();
+                        this.afterSubmitRedirect(&#x27;add&#x27;);
+                        this.saveCurrentScreenSubmissionState(
+                            event,
+                            &#x27;submitted&#x27;,
+                            res
+                        );
+                        this.toastrNotificationService.showSuccess(
+                            &#x27;Record Added Successfully&#x27;,
+                            &#x27;Success&#x27;
+                        );
+                    } else {
+                        this.saveCurrentScreenSubmissionState(
+                            event,
+                            &#x27;error&#x27;,
+                            res
+                        );
+                        this.toastrNotificationService.showError(
+                            res.Errors[0],
+                            &#x27;Error&#x27;
+                        );
+                    }
+                },
+                (error) &#x3D;&gt; {
+                    this.onAfterSubmit(event, error?.error);
+                    this.saveCurrentScreenSubmissionState(
+                        event,
+                        &#x27;error&#x27;,
+                        error
+                    );
+                }
+            );
+    }
+
+    submitChildScreen(screenId: string, event: any) {
+        return new Promise((resolve) &#x3D;&gt; {
+            this.tabInsertService
+                .insertByScreenId(screenId, event)
+                ?.pipe(take(1))
+                ?.subscribe((res: any) &#x3D;&gt; {
+                    resolve(res);
+                });
+        });
+    }
+
+    // this funciton will manage the form json filed and appobject field
+    // this will also handle the .key field for dropdown
+    // like PersonId.id then it will only pass the one field not full person object
+    syncFields(event: any, formData: any) {
+        // remove the container key from submission data
+        event.data &#x3D; this.removeContainer(event.data);
+        TABComponentProcessor.DataConverterForSubmit(event, this.formJson);
+        let dotKeysArray: any[] &#x3D; [];
+        const normalKeysArray: any[] &#x3D; [];
+        const dataObj &#x3D; event.data;
+        // get dots key and normal key from formjson
+        FormioUtils.eachComponent(
+            formData.components,
+            function (component: any) {
+                if (component.key.includes(&#x27;.&#x27;)) {
+                    dotKeysArray.push(component.key);
+                } else {
+                    normalKeysArray.push(component.key);
+                }
+            }
+        );
+        // adding primary key for edit screen form submission data
+        normalKeysArray.push(event.screenData.PrimaryKeyFieldName);
+        // getting appobject details from screenid to dsq to appobject to appobjectfields
+        let screen &#x3D; TabScreenFunction.getScreen(this.screenId);
+        let appObjectDetailsofScreen &#x3D;
+            TabAppFunction.getAppObjectFromDataSourceQueryID(
+                screen?.DataSourceQuery
+            );
+
+        // checking for childrelationship keys from appobject
+        if (
+            appObjectDetailsofScreen.hasOwnProperty(&#x27;ChildRelationShips&#x27;) &amp;&amp;
+            appObjectDetailsofScreen[&#x27;ChildRelationShips&#x27;] !&#x3D;&#x3D; null &amp;&amp;
+            appObjectDetailsofScreen[&#x27;ChildRelationShips&#x27;].length &gt; 0
+        ) {
+            var childRelationshipKeys &#x3D; appObjectDetailsofScreen[
+                &#x27;ChildRelationShips&#x27;
+            ].map((x) &#x3D;&gt; x.childDetails.LookupObject);
+        }
+
+        // checking data keys from appobject fields keys
+        Object.keys(dataObj).forEach((key) &#x3D;&gt; {
+            let findInAppobjectField &#x3D; appObjectDetailsofScreen?.Fields.filter(
+                (x) &#x3D;&gt; x.SystemDBFieldName &#x3D;&#x3D;&#x3D; key
+            );
+            // mathcing fields and keys
+            if (findInAppobjectField &amp;&amp; findInAppobjectField.length) {
+                // checking submission data key if is it object or not
+                // like select dropdown data which is binded as object for lookup data
+                if (dataObj[key] &amp;&amp; typeof dataObj[key] &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+                    // this is patchy condition when any screen does not have dots array like
+                    // screen.screentype dropddown than this will not work
+                    // for now enetity save sync is working fine becuse of it has dot array
+                    // custom view screen is not working so i added if condition for schemaconfing
+                    if (dotKeysArray &amp;&amp; dotKeysArray.length) {
+                        for (const v of dotKeysArray) {
+                            const dotIndex &#x3D; v.indexOf(&#x27;.&#x27;);
+                            const afterDotString &#x3D; v.substring(
+                                dotIndex + 1,
+                                v.length
+                            );
+                            const beforeDotString &#x3D; v.substring(0, dotIndex);
+                            if (beforeDotString &#x3D;&#x3D;&#x3D; key) {
+                                // delete afterdotkey if it is not mathcing with object.key
+                                const insideObj &#x3D; dataObj[key];
+                                Object.keys(insideObj).forEach((ikey) &#x3D;&gt; {
+                                    if (afterDotString !&#x3D;&#x3D; ikey) {
+                                        delete insideObj[ikey];
+                                    }
+                                });
+
+                                // Changes for Dropdown to send direct values for look up fields // 11/04/2023 (Jigisha)
+                                var findComp &#x3D; FormioUtils.getComponent(
+                                    formData.components,
+                                    v,
+                                    true
+                                );
+                                if (findComp &amp;&amp; findComp.type &#x3D;&#x3D;&#x3D; &#x27;select&#x27;) {
+                                    dataObj[beforeDotString] &#x3D;
+                                        insideObj[afterDotString];
+                                }
+                                dotKeysArray.splice(dotKeysArray.indexOf(v), 1);
+                            }
+                            // commeting this commnet because when key is not found
+                            // for first time it is deleting the key even that exist in next value
+                            // else {
+                            //     if (!normalKeysArray.includes(key)) {
+                            //         delete dataObj[key];
+                            //     }
+                            // }
+                        }
+                    }
+                    // removing the extra dropdown which is not appfields
+                    else {
+                        if (!normalKeysArray.includes(key)) {
+                            delete dataObj[key];
+                        }
+                    }
+                    // else {
+                    //     if (key &#x3D;&#x3D;&#x3D; &#x27;SchemaConfig&#x27;) {
+                    //     } else {
+                    //         delete dataObj[key];
+                    //     }
+                    // }
+                } else {
+                    if (!normalKeysArray.includes(key)) {
+                        delete dataObj[key];
+                    }
+                }
+            }
+            // checking for childrelationship object keys
+            else if (
+                childRelationshipKeys &amp;&amp;
+                childRelationshipKeys.filter(
+                    (x) &#x3D;&gt; x.toLowerCase() &#x3D;&#x3D;&#x3D; key.toLowerCase()
+                ).length &gt; 0
+            ) {
+                // getting data component which is binded as child relationship lookup object with that key
+                let cmp &#x3D; FormioUtils.getComponent(
+                    formData.components,
+                    key,
+                    true
+                );
+                // checking that component is data grid or not
+                // syncchilddata fields function will check for component which is added in data grid
+                if (cmp &amp;&amp; cmp.type &#x3D;&#x3D;&#x3D; &#x27;datagrid&#x27;) {
+                    this.syncChildDataFields(
+                        key,
+                        dataObj[key],
+                        FormioUtils.getComponent(formData.components, key, true)
+                    );
+                }
+            }
+            // removing without appobject fields and relationship lookup fileds which are not matching
+            else {
+                delete dataObj[key];
+            }
+        });
+    }
+
+    // To Sync Child Object Fields At a time of Insert/Update
+    // key:data grid component key
+    // data : data of that grid component
+    // childformdata : formdata of data grid component
+    syncChildDataFields(key: any, data: any, childFormData: any) {
+        let dotKeysArray: any[] &#x3D; [];
+        const normalKeysArray: any[] &#x3D; [];
+        // gettig data grid component inside component dot and normal keys array
+        FormioUtils.eachComponent(
+            childFormData.components,
+            function (component: any) {
+                if (component.key.includes(&#x27;.&#x27;)) {
+                    dotKeysArray.push(component.key);
+                } else {
+                    normalKeysArray.push(component.key);
+                }
+            }
+        );
+        // getting data grid component binded key&#x27;s appobject
+        let childAppObject &#x3D;
+            TabAppFunction.getAppObjectFromSystemDBTableName(key);
+
+        if (childAppObject) {
+            // crud appobject of binded child relation ship&#x27;s appobject
+            let crudAppObject &#x3D; TabAppFunction.getAppObject(
+                childAppObject?.CRUDAppObjectId
+            );
+
+            if (crudAppObject) {
+                if (
+                    crudAppObject.hasOwnProperty(&#x27;ChildRelationShips&#x27;) &amp;&amp;
+                    crudAppObject[&#x27;ChildRelationShips&#x27;] !&#x3D;&#x3D; null &amp;&amp;
+                    crudAppObject[&#x27;ChildRelationShips&#x27;].length &gt; 0
+                ) {
+                    var childRelationshipKeys &#x3D; crudAppObject[
+                        &#x27;ChildRelationShips&#x27;
+                    ].map((x) &#x3D;&gt; x.childDetails.LookupObject);
+                }
+
+                data.forEach((element) &#x3D;&gt; {
+                    this.manageChildDataKey(
+                        element,
+                        crudAppObject,
+                        childRelationshipKeys,
+                        childFormData,
+                        normalKeysArray,
+                        dotKeysArray
+                    );
+                });
+            }
+        }
+    }
+    manageChildDataKey(
+        element,
+        crudAppObject,
+        childRelationshipKeys,
+        childFormData,
+        normalKeysArray,
+        dotKeysArray
+    ) {
+        Object.keys(element).forEach((key) &#x3D;&gt; {
+            // checking dataobj key is in field or not
+            let findInAppobjectField &#x3D; crudAppObject?.Fields.find(
+                (x) &#x3D;&gt; x.SystemDBFieldName &#x3D;&#x3D;&#x3D; key
+            );
+            // if appobjectfield is exist
+            if (findInAppobjectField) {
+                // if datafield is object then it could be like dropdown component and lookup data
+                if (element[key] &amp;&amp; typeof element[key] &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+                    let objectTypeJson &#x3D; {};
+                    if (dotKeysArray &amp;&amp; dotKeysArray.length) {
+                        // let matchedDotKey &#x3D;
+                        //     this.checkObjectKeyisExistInDotsKeyArray(
+                        //         dotKeysArray,
+                        //         key
+                        //     );
+                        // if (matchedDotKey) {
+                        //     const dotIndex &#x3D; matchedDotKey.indexOf(&#x27;.&#x27;);
+                        //     const afterDotString &#x3D; matchedDotKey.substring(
+                        //         dotIndex + 1,
+                        //         matchedDotKey.length
+                        //     );
+                        //     const beforeDotString &#x3D; matchedDotKey.substring(
+                        //         0,
+                        //         dotIndex
+                        //     );
+                        //     if (beforeDotString &#x3D;&#x3D;&#x3D; key) {
+                        //         const insideObj &#x3D; element[key];
+                        //         this.changeDropdownKeys(
+                        //             element,
+                        //             childFormData,
+                        //             beforeDotString,
+                        //             afterDotString,
+                        //             matchedDotKey,
+                        //             insideObj
+                        //         );
+                        //     }
+                        // } else {
+                        //     if (!normalKeysArray.includes(key)) {
+                        //         delete element[key];
+                        //     }
+                        // }
+
+                        for (const v of dotKeysArray) {
+                            let dotKeySplitValue &#x3D; v.split(&#x27;.&#x27;);
+                            if (dotKeySplitValue.length &lt; 3) {
+                                if (dotKeySplitValue[0] &#x3D;&#x3D;&#x3D; key) {
+                                    const insideObj &#x3D; element[key];
+                                    for (const ikey of Object.keys(insideObj)) {
+                                        if (dotKeySplitValue[1] &#x3D;&#x3D; ikey) {
+                                            var findComp &#x3D;
+                                                FormioUtils.getComponent(
+                                                    childFormData.components[0]
+                                                        .components,
+                                                    v,
+                                                    true
+                                                );
+                                            if (
+                                                findComp &amp;&amp;
+                                                findComp.type &#x3D;&#x3D;&#x3D; &#x27;select&#x27;
+                                            ) {
+                                                objectTypeJson &#x3D;
+                                                    insideObj[
+                                                        dotKeySplitValue[1]
+                                                    ];
+                                            } else {
+                                                objectTypeJson[
+                                                    dotKeySplitValue[1]
+                                                ] &#x3D;
+                                                    insideObj[
+                                                        dotKeySplitValue[1]
+                                                    ];
+                                            }
+                                        }
+                                    }
+                                }
+                            } else {
+                                if (dotKeySplitValue[0] &#x3D;&#x3D;&#x3D; key) {
+                                    const insideObj &#x3D;
+                                        element[key][dotKeySplitValue[1]];
+                                    for (const ikey of Object.keys(insideObj)) {
+                                        if (dotKeySplitValue[2] &#x3D;&#x3D; ikey) {
+                                            var findComp1 &#x3D;
+                                                FormioUtils.getComponent(
+                                                    childFormData.components[0]
+                                                        .components,
+                                                    v,
+                                                    true
+                                                );
+                                            if (
+                                                findComp1 &amp;&amp;
+                                                findComp1.type &#x3D;&#x3D;&#x3D; &#x27;select&#x27;
+                                            ) {
+                                                // let valObj &#x3D; {
+                                                //     [dotKeySplitValue[1]]:
+                                                //         insideObj[
+                                                //             dotKeySplitValue[2]
+                                                //         ],
+                                                // };
+                                                objectTypeJson[
+                                                    dotKeySplitValue[1]
+                                                ] &#x3D;
+                                                    insideObj[
+                                                        dotKeySplitValue[2]
+                                                    ];
+                                            } else {
+                                                let valObj &#x3D; {
+                                                    [dotKeySplitValue[1][
+                                                        dotKeySplitValue[2]
+                                                    ]]:
+                                                        insideObj[
+                                                            dotKeySplitValue[2]
+                                                        ],
+                                                };
+                                                objectTypeJson &#x3D; valObj;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            // element[key] &#x3D; objectTypeJson;
+                            // const dotIndex &#x3D; v.indexOf(&#x27;.&#x27;);
+                            // const afterDotString &#x3D; v.substring(
+                            //     dotIndex + 1,
+                            //     v.length
+                            // );
+                            // const beforeDotString &#x3D; v.substring(0, dotIndex);
+                            // if (beforeDotString &#x3D;&#x3D;&#x3D; key) {
+                            //     const insideObj &#x3D; element[key];
+
+                            // Object.keys(insideObj).forEach((ikey) &#x3D;&gt; {
+                            //     if (afterDotString !&#x3D;&#x3D; ikey) {
+                            //         delete insideObj[ikey];
+                            //     }
+                            // });
+
+                            // Object.keys(insideObj).forEach((ikey) &#x3D;&gt; {
+                            // for (const ikey of Object.keys(insideObj)) {
+                            //     if (afterDotString &#x3D;&#x3D; ikey) {
+                            //         // Object.assign(
+                            //         //     objectTypeJson,
+                            //         //     insideObj[afterDotString]
+                            //         // );
+                            //         objectTypeJson[afterDotString] &#x3D;
+                            //             insideObj[afterDotString];
+                            //         break;
+                            //     } else {
+                            //         if (
+                            //             insideObj[ikey] &amp;&amp;
+                            //             typeof insideObj[ikey] &#x3D;&#x3D;&#x3D; &#x27;object&#x27;
+                            //         ) {
+                            //             const insdieDotIndex &#x3D;
+                            //                 afterDotString.indexOf(&#x27;.&#x27;);
+                            //             const insideAfterDotString &#x3D;
+                            //                 v.substring(
+                            //                     insdieDotIndex + 1,
+                            //                     v.length
+                            //                 );
+                            //             const insideBeforeDotString &#x3D;
+                            //                 v.substring(0, insdieDotIndex);
+                            //             var findComp &#x3D;
+                            //                 FormioUtils.getComponent(
+                            //                     childFormData.components,
+                            //                     v,
+                            //                     true
+                            //                 );
+                            //             if (
+                            //                 findComp &amp;&amp;
+                            //                 findComp.type &#x3D;&#x3D;&#x3D; &#x27;select&#x27;
+                            //             ) {
+                            //                 insideObj[
+                            //                     insideBeforeDotString
+                            //                 ] &#x3D;
+                            //                     insideObj[
+                            //                         insideAfterDotString
+                            //                     ];
+                            //             }
+                            //             objectTypeJson[
+                            //                 insideBeforeDotString
+                            //             ] &#x3D; insideObj[insideAfterDotString];
+                            //         }
+                            //     }
+                            // }
+                            // });
+                            // this.changeDropdownKeys(
+                            //     element,
+                            //     childFormData,
+                            //     beforeDotString,
+                            //     afterDotString,
+                            //     v,
+                            //     insideObj
+                            // );
+                            // }
+                            // else {
+                            //     if (!normalKeysArray.includes(key)) {
+                            //         delete element[key];
+                            //     }
+                            // }
+                        }
+                    }
+                    element[key] &#x3D; objectTypeJson;
+                }
+                // if it is not object and not in normal key&#x27;s array then removing that key
+                else {
+                    if (!normalKeysArray.includes(key)) {
+                        delete element[key];
+                    }
+                }
+            }
+            // checking for childrelationship object key
+            // if any child relationship key is exist make this recursive function
+            else if (
+                childRelationshipKeys &amp;&amp;
+                childRelationshipKeys.find(
+                    (x) &#x3D;&gt; x.toLowerCase() &#x3D;&#x3D;&#x3D; key.toLowerCase()
+                )
+            ) {
+                this.checkDataGridComponetAndSyncChildData(
+                    childFormData,
+                    key,
+                    element
+                );
+            }
+            // if key is not exist in appfield and not in child relationship just remove it
+            else {
+                delete element[key];
+            }
+        });
+    }
+    checkObjectKeyisExistInDotsKeyArray(arr, key) {
+        let val &#x3D; arr.find((item) &#x3D;&gt; {
+            if (item.includes(key)) {
+                const prefix &#x3D; item.split(&#x27;.&#x27;)[0];
+                return prefix &#x3D;&#x3D;&#x3D; key;
+            } else {
+                return false;
+            }
+        });
+        return val;
+    }
+    checkDataGridComponetAndSyncChildData(childFormData, key, element) {
+        let cmp &#x3D; FormioUtils.getComponent(
+            childFormData.components[0].components,
+            key,
+            false
+        );
+        if (cmp &amp;&amp; cmp.type &#x3D;&#x3D;&#x3D; &#x27;datagrid&#x27;) {
+            this.syncChildDataFields(
+                key,
+                element[key],
+                FormioUtils.getComponent(
+                    childFormData.components[0].components,
+                    key,
+                    false
+                )
+            );
+        }
+    }
+
+    changeDropdownKeys(
+        element,
+        childFormData,
+        beforeDotString,
+        afterDotString,
+        v,
+        insideObj
+    ) {
+        var findComp &#x3D; FormioUtils.getComponent(
+            childFormData.components[0].components,
+            v,
+            true
+        );
+        if (findComp &amp;&amp; findComp.type &#x3D;&#x3D;&#x3D; &#x27;select&#x27;) {
+            element[beforeDotString] &#x3D; insideObj[afterDotString];
+        }
+    }
+
+    removeContainer(obj: any): any {
+        if (Array.isArray(obj)) {
+            // If the input is an array, recursively remove container from each item in the array
+            return obj.map(this.removeContainer.bind(this));
+        } else if (typeof obj &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; obj !&#x3D;&#x3D; null) {
+            // If the input is an object, remove container from each key-value pair
+            const result: any &#x3D; {};
+            for (const [key, value] of Object.entries(obj)) {
+                if (
+                    Array.isArray(value) &amp;&amp;
+                    value.length &gt; 0 &amp;&amp;
+                    value[0] &amp;&amp;
+                    &#x27;container&#x27; in value[0]
+                ) {
+                    // If the value is an array and its first item has a container key, remove the container and unwrap the item
+                    result[key] &#x3D; value.map((item) &#x3D;&gt;
+                        this.removeContainer(item.container)
+                    );
+                } else if (
+                    typeof value &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp;
+                    value !&#x3D;&#x3D; null &amp;&amp;
+                    &#x27;container&#x27; in value
+                ) {
+                    // If the value is a nested object and has a container key, remove the container
+                    result[key] &#x3D; this.removeContainer(value[&#x27;container&#x27;]);
+                } else {
+                    // If the value is a non-array object or a primitive value, keep the key-value pair as is
+                    result[key] &#x3D; value;
+                }
+            }
+            return result;
+        } else {
+            // If the input is a primitive value, just return it as is
+            return obj;
+        }
+    }
+
+    getDeletedRecords(obj1, obj2) {
+        const deletedRecords &#x3D; {};
+        processObject(obj1, obj2);
+
+        function processObject(object1, object2, path &#x3D; &#x27;&#x27;) {
+            for (let key in object1) {
+                const nestedPath &#x3D; path + key;
+                if (object1[key] &#x3D;&#x3D;&#x3D; null || object2[key] &#x3D;&#x3D;&#x3D; null) {
+                    if (!object2[key]) {
+                        const nestedKeys &#x3D; nestedPath.split(&#x27;.&#x27;);
+                        const missingKey &#x3D; nestedKeys[nestedKeys.length - 2];
+                        if (!deletedRecords[missingKey]) {
+                            deletedRecords[missingKey] &#x3D; [];
+                        }
+                        deletedRecords[missingKey].push(object1[key]);
+                    }
+                } else if (
+                    typeof object1[key] &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp;
+                    typeof object2[key] &#x3D;&#x3D;&#x3D; &#x27;object&#x27;
+                ) {
+                    processObject(object1[key], object2[key], nestedPath + &#x27;.&#x27;);
+                } else if (object1[key] !&#x3D;&#x3D; object2[key]) {
+                    const nestedKeys &#x3D; nestedPath.split(&#x27;.&#x27;);
+                    const missingKey &#x3D; nestedKeys[nestedKeys.length - 2];
+                    if (!deletedRecords[missingKey]) {
+                        deletedRecords[missingKey] &#x3D; [];
+                    }
+                    deletedRecords[missingKey].push(object1[key]);
+                }
+            }
+        }
+
+        return deletedRecords;
+    }
+    // createObject will return the value based on key Id and ID
+    createObjectforDeleteData(v: any) {
+        const idKey &#x3D; this.isprimarykeyID ? &#x27;ID&#x27; : &#x27;Id&#x27;;
+        const obj: { [key: string]: any } &#x3D; {};
+        obj[idKey] &#x3D; v;
+        return obj;
+    }
+    deleteDataFromBackendForChildStructure(deletedData) {
+        Object.keys(deletedData).forEach((key) &#x3D;&gt; {
+            let appObjectData &#x3D;
+                TabAppFunction.getAppObjectFromSystemDBTableName(key);
+            if (appObjectData) {
+                this.tabDeleteService
+                    .deleteMultipleRecordByTable(
+                        key,
+                        deletedData[key].map((v) &#x3D;&gt;
+                            this.createObjectforDeleteData(v)
+                        )
+                    )
+                    ?.subscribe((response) &#x3D;&gt; {
+                        if (response.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                            this.toastrNotificationService.showSuccess(
+                                &#x27;Record Deleted Successfully&#x27;,
+                                &#x27;Success&#x27;
+                            );
+                        } else {
+                            this.toastrNotificationService.showError(
+                                response.Errors[0],
+                                &#x27;Error&#x27;
+                            );
+                        }
+                    });
+            }
+        });
+    }
+
+    gridActions(event: any) {
+        if (
+            event.action &#x3D;&#x3D; &#x27;add&#x27; ||
+            event.action &#x3D;&#x3D; &#x27;edit&#x27; ||
+            event.action &#x3D;&#x3D; &#x27;view&#x27; ||
+            event.action &#x3D;&#x3D; &#x27;linkView&#x27;
+        ) {
+            if (event.action &#x3D;&#x3D; &#x27;edit&#x27;) {
+                this.isEditScreen.emit(true);
+            }
+            this.addEditAction(event);
+        } else if (event.action &#x3D;&#x3D; &#x27;dblclick&#x27;) {
+            if (event.screenId) {
+            } else {
+            }
+        } else if (event.action &#x3D;&#x3D; &#x27;saveState&#x27;) {
+            let formJsonInstance &#x3D; FormioUtils.getComponent(
+                this.formJson.components,
+                event.component.key,
+                true
+            );
+            if (formJsonInstance) {
+                formJsonInstance.customOptions.dataSettingsGrid.defaultState &#x3D;
+                    event.data;
+                formJsonInstance?.customOptions?.dataSettingsGrid?.defaultState?.columns?.forEach(
+                    (element) &#x3D;&gt; {
+                        if (
+                            element?.isLookupField &amp;&amp;
+                            element.isLookupField &#x3D;&#x3D; true &amp;&amp;
+                            element?.columnData &amp;&amp;
+                            element?.columnData.length &gt; 0
+                        ) {
+                            delete element.columnData;
+                        }
+                    }
+                );
+            }
+
+            const screenData &#x3D; {
+                Id: this.screenId,
+                Container: JSON.stringify(this.formJson),
+            };
+            this.tabUpdateService
+                .updateScreen(this.screenId, screenData)
+                ?.pipe(take(1))
+                ?.subscribe((response) &#x3D;&gt; {
+                    if (response.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                        this.insertDSQFields(event);
+                        this.toastrNotificationService.showSuccess(
+                            &#x27;State data has been saved Successfully&#x27;,
+                            &#x27;Success&#x27;
+                        );
+                    } else {
+                        this.toastrNotificationService.showError(
+                            response.Errors[0],
+                            &#x27;Error&#x27;
+                        );
+                    }
+                });
+        } else if (event.action &#x3D;&#x3D; &#x27;removeState&#x27;) {
+            let formJsonInstance &#x3D; FormioUtils.getComponent(
+                this.formJson.components,
+                event.component.key,
+                true
+            );
+            if (formJsonInstance) {
+                formJsonInstance.customOptions.dataSettingsGrid.defaultState &#x3D;
+                    {};
+            }
+            const screenData &#x3D; {
+                Id: this.screenId,
+                Container: JSON.stringify(this.formJson),
+            };
+            this.tabUpdateService
+                .updateScreen(this.screenId, screenData)
+                ?.pipe(take(1))
+                ?.subscribe((response) &#x3D;&gt; {
+                    if (response.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                        this.insertDSQFields(event);
+                        this.toastrNotificationService.showSuccess(
+                            &#x27;State data has been removed Successfully&#x27;,
+                            &#x27;Success&#x27;
+                        );
+                    } else {
+                        this.toastrNotificationService.showError(
+                            response.Errors[0],
+                            &#x27;Error&#x27;
+                        );
+                    }
+                });
+        } else if (event.action &#x3D;&#x3D; &#x27;saveGanttChartState&#x27;) {
+            this.saveGanttChart(event);
+        } else if (event.action &#x3D;&#x3D; &#x27;savePivotState&#x27;) {
+            this.savePivotState(event);
+        } else if (event.action &#x3D;&#x3D; &#x27;removePivotState&#x27;) {
+            this.removePivotState(event);
+        }
+    }
+
+    treeViewActions(event: any) {
+        if (event.action &#x3D;&#x3D; &#x27;saveDSQFields&#x27;) {
+            this.tabDeleteService
+                .deleteRecordByTable(
+                    &#x27;TABMD_DataSourceQueries_Fields&#x27;,
+                    &#x27;DataSourceQueryID&#x27;,
+                    event.dsqID
+                )
+                ?.pipe(take(1))
+                ?.subscribe((response) &#x3D;&gt; {
+                    if (response.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                        this.insertDSQFields(event);
+                        this.toastrNotificationService.showSuccess(
+                            &#x27;Record Deleted Successfully&#x27;,
+                            &#x27;Success&#x27;
+                        );
+                    } else {
+                        this.toastrNotificationService.showError(
+                            response.Errors[0],
+                            &#x27;Error&#x27;
+                        );
+                    }
+                });
+        }
+
+        // delete field if exist
+        // if (event.action &#x3D;&#x3D; &#x27;uncheck&#x27;) {
+        //     this.tabDeleteService
+        //         .deleteRecordByTable(
+        //             &#x27;TABMD_DataSourceQueries_Fields&#x27;,
+        //             &#x27;ID&#x27;,
+        //             event.deleteFieldId
+        //         )
+        //         ?.subscribe((response) &#x3D;&gt; {
+        //             if (response.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+        //             } else {
+        //             }
+        //         });
+        // }
+        // // insert field
+        // else if (event.action &#x3D;&#x3D; &#x27;check&#x27;) {
+        //     if (event.dataSourceQueryID) {
+        //         let data: any &#x3D; {
+        //             DataSourceQueryID: event.dataSourceQueryID,
+        //             AppFieldID: event.data.id,
+        //             FieldType: &#x27;1&#x27;,
+        //         };
+        //         if (event.data.parentID) {
+        //             data[&#x27;LookUpDetail&#x27;] &#x3D; event.data.text;
+        //             data[&#x27;FieldType&#x27;] &#x3D; &#x27;2&#x27;;
+        //         }
+        //         this.tabInsertService
+        //             .insertByTable(&#x27;TABMD_DataSourceQueries_Fields&#x27;, data)
+        //             ?.subscribe((response) &#x3D;&gt; {
+        //                 if (
+        //                     response.StatusCode &#x3D;&#x3D; &#x27;200&#x27; ||
+        //                     !response.Errors.length
+        //                 ) {
+        //                 } else {
+        //                 }
+        //             });
+        //     }
+        // }
+    }
+
+    insertDSQFields(event: any) {
+        let childList &#x3D; [];
+        event.fields?.dataSource?.forEach((element) &#x3D;&gt; {
+            if (element.isChecked &#x3D;&#x3D;&#x3D; &#x27;true&#x27; || element.isChecked &#x3D;&#x3D;&#x3D; true) {
+                let data: any &#x3D; {
+                    DataSourceQueryID: event.dsqID,
+                    AppFieldID: element.id,
+                    FieldType: &#x27;1&#x27;,
+                };
+                if (element.parentID) {
+                    data[&#x27;LookUpDetail&#x27;] &#x3D; element.lookUPText;
+                    data[&#x27;FieldType&#x27;] &#x3D; &#x27;2&#x27;;
+                }
+                this.tabInsertService
+                    .insertByTable(&#x27;TABMD_DataSourceQueries_Fields&#x27;, data)
+                    ?.pipe(take(1))
+                    ?.subscribe((response) &#x3D;&gt; {
+                        if (
+                            response.StatusCode &#x3D;&#x3D; &#x27;200&#x27; ||
+                            !response.Errors.length
+                        ) {
+                            if (
+                                element.hasChildren &#x3D;&#x3D;&#x3D; &#x27;true&#x27; ||
+                                element.hasChildren &#x3D;&#x3D;&#x3D; true
+                            ) {
+                                const childList &#x3D;
+                                    event.fields?.dataSource?.filter(
+                                        (x) &#x3D;&gt; x.parentID &#x3D;&#x3D;&#x3D; element.id
+                                    );
+                                if (childList.length &gt; 0) {
+                                    const childListDeleteSet &#x3D; new Set(
+                                        childList
+                                    );
+
+                                    event.fields.dataSource &#x3D;
+                                        event.fields.dataSource.filter(
+                                            (ele) &#x3D;&gt; {
+                                                // return those elements not in the childListDeleteSet
+                                                return !childListDeleteSet.has(
+                                                    ele
+                                                );
+                                            }
+                                        );
+                                }
+                            }
+                        } else {
+                        }
+                    });
+            }
+        });
+        // this.rebuildApp();
+    }
+
+    queryBuilderActions(event: any) {
+        // delete field if exist
+        if (event.action &#x3D;&#x3D; &#x27;saveDSQFilters&#x27;) {
+            this.tabDeleteService
+                .deleteRecordByTable(
+                    &#x27;TABMD_DataSourceQueries_Filters&#x27;,
+                    &#x27;DataSourceQueryID&#x27;,
+                    event.dsqID
+                )
+                ?.pipe(take(1))
+                ?.subscribe((response) &#x3D;&gt; {
+                    if (response.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                        event.filters?.WhereClause.Filters.forEach(
+                            (element: any) &#x3D;&gt; {
+                                let data: any &#x3D; {
+                                    DataSourceQueryID: event.dsqID,
+                                    ConjuctionClause: element.ConjuctionClause,
+                                    FieldID: element.FieldID,
+                                    RelationalOperator:
+                                        element.RelationalOperator,
+                                    FilterValueType:
+                                        TabCommonFunction.getFilterValueTypeInInt(
+                                            element.ValueType
+                                        ),
+                                    Value: element.Value,
+                                    GroupID:
+                                        !element.group || element.group &#x3D;&#x3D; 0
+                                            ? 1
+                                            : element.group,
+                                };
+                                if (
+                                    element.label &amp;&amp;
+                                    element.label.indexOf(&#x27;.&#x27;) &gt; -1
+                                ) {
+                                    data[&#x27;LookUpDetail&#x27;] &#x3D; element.label;
+                                    data[&#x27;FieldType&#x27;] &#x3D; &#x27;2&#x27;;
+                                }
+                                this.tabInsertService
+                                    .insertByTable(
+                                        &#x27;TABMD_DataSourceQueries_Filters&#x27;,
+                                        data
+                                    )
+                                    ?.pipe(take(1))
+                                    ?.subscribe();
+                            }
+                        );
+                        this.toastrNotificationService.showSuccess(
+                            &#x27;Record Deleted Successfully&#x27;,
+                            &#x27;Success&#x27;
+                        );
+                        // this.rebuildApp();
+                    } else {
+                        this.toastrNotificationService.showError(
+                            response.Errors[0],
+                            &#x27;Error&#x27;
+                        );
+                    }
+                });
+        }
+    }
+
+    setDefaultParams(event: any) {
+        if (event.appObject.Filters.Filters.length) {
+            let cmpkey &#x3D; event.appObject.Filters.Filters[0].Field.FieldName;
+            this.formSubmission.data[cmpkey] &#x3D; event.parameters;
+        }
+    }
+
+    updateCurrentScreenInstance(screenId: string) {
+        var screens &#x3D; IScreenExtensionRegistry.GetImplementations();
+        for (var x &#x3D; 0; x &lt; screens.length; x++) {
+            const screen &#x3D; new screens[x]();
+            if (screen.screenId &#x3D;&#x3D; screenId) {
+                this.currentScreen &#x3D; screen;
+            }
+            // else {
+            //     this.currentScreen &#x3D; screen;
+            // }
+        }
+    }
+
+    private addEditAction(event: any) {
+        if (!!event.screenId) {
+            const parentScreenId &#x3D; this.screenId;
+            this.screenId &#x3D; event.screenId;
+            this.formSubmission.data &#x3D; {};
+            this.formJson &#x3D; null;
+            this.renderScreen(event.screenId, parentScreenId, event);
+        }
+    }
+
+    private renderScreen(screenId: any, parentScreenId: any, event?: any) {
+        let qparams &#x3D; {};
+        // Replace Screen Id to add Preview in screen designer
+        // Old Screen Designer Id &#x3D; &#x27;bc7d4e1d-e976-49a1-be33-e53fc6943d7c&#x27;
+        // changes reverted because of duplication issue - db6cf17d-3e68-4298-ac93-8beab694f375
+        if (
+            screenId &#x3D;&#x3D; &#x27;BC7D4E1D-E976-49A1-BE33-E53FC6943D7C&#x27; ||
+            screenId &#x3D;&#x3D; &#x27;bc7d4e1d-e976-49a1-be33-e53fc6943d7c&#x27;
+        ) {
+            qparams &#x3D; { mode: &#x27;designer&#x27; };
+        }
+        let screen &#x3D; TabScreenFunction.getScreen(screenId);
+        let screenDataSource &#x3D; TabAppFunction.getDataFromDataSourceQueryID(
+            screen?.DataSourceQuery
+        );
+        if (event &amp;&amp; (event.action &#x3D;&#x3D; &#x27;edit&#x27; || event.action &#x3D;&#x3D; &#x27;view&#x27;)) {
+            if (screenDataSource &amp;&amp; screenDataSource.Parameters.length) {
+                let parms &#x3D; screenDataSource.Parameters.find(
+                    (a) &#x3D;&gt; a.ParameterName?.toLowerCase() &#x3D;&#x3D; &#x27;id&#x27;
+                );
+                if (parms) {
+                    const qp &#x3D; {
+                        [parms.ParameterName]:
+                            event.data[parms.MappingFieldName],
+                    };
+                    localStorage.setItem(
+                        TabConstant.Storage.editScreenQueryParam,
+                        JSON.stringify(qp)
+                    );
+                    Object.assign(qparams, qp);
+                    this.router.navigate(
+                        [
+                            &#x27;/screen&#x27; +
+                                &#x27;/&#x27; +
+                                parentScreenId +
+                                &#x27;/&#x27; +
+                                this.screenId,
+                        ],
+                        {
+                            queryParams: qparams,
+                        }
+                    );
+                } else {
+                    alert(
+                        &#x27;Looks like datasource query is not availble for this screen. Please add one and try later&#x27;
+                    );
+                }
+            } else {
+                this.router.navigate(
+                    [&#x27;/screen&#x27; + &#x27;/&#x27; + parentScreenId + &#x27;/&#x27; + this.screenId],
+                    {
+                        queryParams: qparams,
+                    }
+                );
+            }
+        } else if (event &amp;&amp; event.action &#x3D;&#x3D; &#x27;add&#x27;) {
+            this.router.navigate(
+                [&#x27;/screen&#x27; + &#x27;/&#x27; + parentScreenId + &#x27;/&#x27; + this.screenId],
+                {
+                    queryParams: qparams,
+                }
+            );
+            this.setDefaultParams(event);
+        }
+    }
+
+    private editRecord(event: any) {
+        //data update
+        if (!event.data?.Container) {
+            this.tabUpdateService
+                .updateUsingScreenId(this.screenId, event)
+                ?.pipe(take(1))
+                ?.subscribe(
+                    (res) &#x3D;&gt; {
+                        if (res?.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                            this.onAfterSubmit(event, res);
+                            this.afterSubmitRedirect(&#x27;update&#x27;);
+                            this.saveCurrentScreenSubmissionState(
+                                event,
+                                &#x27;submitted&#x27;,
+                                res
+                            );
+                            this.toastrNotificationService.showSuccess(
+                                &#x27;Record Updated Successfully&#x27;,
+                                &#x27;Success&#x27;
+                            );
+                            // this._location.back();
+                        } else {
+                            this.saveCurrentScreenSubmissionState(
+                                event,
+                                &#x27;error&#x27;,
+                                res
+                            );
+                            this.toastrNotificationService.showError(
+                                res.Errors[0],
+                                &#x27;Error&#x27;
+                            );
+                        }
+                    },
+                    (error) &#x3D;&gt; {
+                        this.onAfterSubmit(event, error?.error);
+                        this.saveCurrentScreenSubmissionState(
+                            event,
+                            &#x27;error&#x27;,
+                            error
+                        );
+                    }
+                );
+        }
+        //screen update
+        else {
+            if (event.data?.DataSourceQueryID?.ID) {
+                this.tabUpdateService
+                    .updateUsingScreenId(this.screenId, event)
+                    ?.pipe(take(1))
+                    ?.subscribe(
+                        (res) &#x3D;&gt; {
+                            if (res?.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                                //default redirect to screen list
+                                // this.router.navigate([
+                                //     &#x27;/screen/4D091E72-81B7-4594-9A96-2AFC55D89158&#x27;,
+                                // ]);
+                                this.onAfterSubmit(event, res);
+                                this.afterSubmitRedirect(&#x27;update&#x27;);
+                                this.saveCurrentScreenSubmissionState(
+                                    event,
+                                    &#x27;submitted&#x27;,
+                                    res
+                                );
+                                this.toastrNotificationService.showSuccess(
+                                    &#x27;Record Updated Successfully&#x27;,
+                                    &#x27;Success&#x27;
+                                );
+                                // this._location.back();
+                            } else {
+                                this.saveCurrentScreenSubmissionState(
+                                    event,
+                                    &#x27;error&#x27;,
+                                    res
+                                );
+                                this.toastrNotificationService.showError(
+                                    res.Errors[0],
+                                    &#x27;Error&#x27;
+                                );
+                            }
+                        },
+                        (error) &#x3D;&gt; {
+                            this.saveCurrentScreenSubmissionState(
+                                event,
+                                &#x27;error&#x27;,
+                                error
+                            );
+                        }
+                    );
+            } else {
+                this.tabUpdateService
+                    .updateScreen(event.data.Id, event.data)
+                    ?.pipe(take(1))
+                    ?.subscribe(
+                        (res) &#x3D;&gt; {
+                            if (res?.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                                //default redirect to screen list
+                                // this.router.navigate([
+                                //     &#x27;/screen/4D091E72-81B7-4594-9A96-2AFC55D89158&#x27;,
+                                // ]);
+                                // this._location.back();
+                                this.onAfterSubmit(event, res);
+                                this.afterSubmitRedirect(&#x27;update&#x27;);
+                                this.saveCurrentScreenSubmissionState(
+                                    event,
+                                    &#x27;submitted&#x27;,
+                                    res
+                                );
+                                this.toastrNotificationService.showSuccess(
+                                    &#x27;Record Updated Successfully&#x27;,
+                                    &#x27;Success&#x27;
+                                );
+                            } else {
+                                this.saveCurrentScreenSubmissionState(
+                                    event,
+                                    &#x27;error&#x27;,
+                                    res
+                                );
+                                this.toastrNotificationService.showError(
+                                    res.Errors[0],
+                                    &#x27;Error&#x27;
+                                );
+                            }
+                        },
+                        (error) &#x3D;&gt; {
+                            this.saveCurrentScreenSubmissionState(
+                                event,
+                                &#x27;error&#x27;,
+                                error
+                            );
+                        }
+                    );
+            }
+        }
+    }
+
+    checkMandatoryParamsInDSQ(datasourceQuery: any): any[] {
+        let result &#x3D; [];
+        if (datasourceQuery) {
+            result &#x3D; filter(datasourceQuery?.Parameters, {
+                IsMandatory: true,
+            });
+        }
+        return result;
+    }
+
+    doesQueryparamshaverequiredData(mandatoryParameters, queryParameters) {
+        for (const param of mandatoryParameters) {
+            const paramName &#x3D; param.MappingFieldName;
+            if (
+                !(paramName in queryParameters) ||
+                queryParameters[paramName] &#x3D;&#x3D;&#x3D; null ||
+                queryParameters[paramName] &#x3D;&#x3D;&#x3D; undefined
+            ) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    renderScreenDataWithParameters(screenId: string, queryParams: any) {
+        // if (!this.isDialog) {
+        const isJsonString &#x3D; TabCommonFunction.validateJSON(queryParams);
+        if (isJsonString) {
+            queryParams &#x3D; JSON.parse(queryParams);
+        } else {
+            queryParams &#x3D; queryParams;
+        }
+        // } else {
+        //     queryParams &#x3D; queryParams;
+        // }
+        this.formSubmission.data &#x3D; {};
+        let screen &#x3D; TabScreenFunction.getScreen(screenId);
+        if (screen) {
+            let appObjectDetailsOfDSQ &#x3D;
+                TabAppFunction.getAppObjectFromDataSourceQueryID(
+                    screen?.DataSourceQuery
+                );
+            if (appObjectDetailsOfDSQ) {
+                let dsqDetails &#x3D; TabAppFunction.getDataFromDataSourceQueryID(
+                    screen.DataSourceQuery
+                );
+
+                const mandatoryParams: any &#x3D;
+                    this.checkMandatoryParamsInDSQ(dsqDetails);
+                const isMandatoryParamsExist &#x3D;
+                    this.doesQueryparamshaverequiredData(
+                        mandatoryParams,
+                        queryParams
+                    );
+
+                if (isMandatoryParamsExist) {
+                    let apiData &#x3D; {
+                        AppObjectName: appObjectDetailsOfDSQ?.ObjectName,
+                        DSQName: dsqDetails?.QueryName,
+                        Reqtokens: queryParams,
+                    };
+                    this.tabGetService
+                        .executeRAWDSQWithName(apiData)
+                        ?.pipe(take(1))
+                        ?.subscribe((response) &#x3D;&gt; {
+                            if (
+                                !!response.Result &amp;&amp;
+                                response.Result.length &gt; 0
+                            ) {
+                                this.setFormData(
+                                    response,
+                                    screenId,
+                                    queryParams
+                                );
+                            } else {
+                                this.showLoader.emit(false);
+                            }
+                        });
+                }
+            }
+        }
+    }
+
+    renderScreenDataWithCustomParameters(screenId: string, queryParams: any) {
+        this.refreshForm.emit({
+            submission: {
+                data: queryParams.parameters,
+            },
+        });
+        if (this.tabFormRenderer &amp;&amp; this.tabFormRenderer.formio) {
+            this.tabFormRenderer.formio._data &#x3D; queryParams;
+        }
+        this.showLoader.emit(false);
+    }
+
+    private setFormData(response: any, screenId: string, customParams?) {
+        this.screenId &#x3D; screenId;
+        this.updateCurrentScreenInstance(this.screenId);
+        this.formData &#x3D; this.tabFormService.setFormData(response);
+        if (customParams &amp;&amp; Object.keys(customParams).length) {
+            this.formData[&#x27;customParams&#x27;] &#x3D; customParams;
+        }
+
+        let isEdit &#x3D; { isEdit: true };
+        Object.assign(this.formData, isEdit);
+        let abc &#x3D; this.proceedObjectBeforeRender(this.formData);
+        this.refreshFormData(abc);
+    }
+
+    proceedObjectBeforeRender(event: any) {
+        if (
+            event &amp;&amp;
+            Object.keys(event).length &amp;&amp;
+            event.hasOwnProperty(&#x27;parameters&#x27;) &amp;&amp;
+            event.parameters.hasOwnProperty(&#x27;screenMode&#x27;) &amp;&amp;
+            event.parameters.screenMode &#x3D;&#x3D; &#x27;Add&#x27; &amp;&amp;
+            event.parameters.hasOwnProperty(&#x27;storedDataObject&#x27;)
+        ) {
+            // preventing store dataobject again and again when you click add everytime
+            // it&#x27;s preventing looping store in localstorage when you click on add sidebar again close and again click on add
+        } else {
+            localStorage.setItem(&#x27;dataObject&#x27;, JSON.stringify(event));
+        }
+        // localStorage.setItem(&#x27;dataObject&#x27;, JSON.stringify(event));
+        let isDataGridExistInForm &#x3D; false;
+        let isMultiSelectExistInForm &#x3D; false;
+        let multiSelectDropDownKeyList &#x3D; [];
+        let dateTimeComponentKeyList &#x3D; [];
+        if (this.formJson) {
+            FormioUtils.eachComponent(
+                this.formJson.components,
+                function (component: any, path: any) {
+                    if (
+                        component.type &#x3D;&#x3D;&#x3D; &#x27;select&#x27; &amp;&amp;
+                        component.multiple &#x3D;&#x3D;&#x3D; true
+                    ) {
+                        isMultiSelectExistInForm &#x3D; true;
+                        multiSelectDropDownKeyList.push(component.key);
+                    }
+                    if (component.type &#x3D;&#x3D;&#x3D; &#x27;datagrid&#x27;) {
+                        isDataGridExistInForm &#x3D; true;
+                    }
+                    if (component.type &#x3D;&#x3D;&#x3D; &#x27;datetime&#x27;) {
+                        dateTimeComponentKeyList.push(component.key);
+
+                        // Object.keys(event).forEach((key) &#x3D;&gt; {
+                        //     if (key &#x3D;&#x3D; component.key) {
+                        //         event[key] &#x3D; moment(
+                        //             event[key],
+                        //             &#x27;DD-MM-YYYY hh:mm:ss A&#x27;
+                        //         );
+                        //     }
+                        // });
+                    }
+                    // if (component.type &#x3D;&#x3D;&#x3D; &#x27;customChips&#x27;) {
+                    //     Object.keys(event).forEach((key) &#x3D;&gt; {
+                    //         let splitKey &#x3D; component.key.split(&#x27;.&#x27;);
+                    //         if (key &#x3D;&#x3D; splitKey[0]) {
+                    //             event[component.key] &#x3D; {
+                    //                 selectedChips: event[key],
+                    //                 component: component,
+                    //                 isRefreshComponent: true,
+                    //             };
+                    //         }
+                    //     });
+                    // }
+
+                    if (component.type &#x3D;&#x3D;&#x3D; &#x27;customChips&#x27;) {
+                        let splitKey &#x3D; component.key.split(&#x27;.&#x27;);
+                        let keyIndex &#x3D; Object.keys(event).indexOf(splitKey[0]);
+                        if (keyIndex &gt; -1) {
+                            event[component.key] &#x3D; {
+                                selectedChips: event[splitKey[0]],
+                                component: component,
+                                isRefreshComponent: true,
+                            };
+                        } else {
+                            event[component.key] &#x3D; {
+                                selectedChips: [],
+                                component: component,
+                                isRefreshComponent: true,
+                            };
+                        }
+                    }
+                }
+            );
+            if (
+                dateTimeComponentKeyList &amp;&amp;
+                dateTimeComponentKeyList.length &gt; 0
+            ) {
+                FormRenderSyncFieldLogic.manageDateTimeFormat(
+                    event,
+                    dateTimeComponentKeyList
+                );
+            }
+            if (isMultiSelectExistInForm) {
+                // this.convertMultiSelectDropdownData(
+                //     event,
+                //     multiSelectDropDownKeyList
+                // );
+                multiSelectDropDownKeyList.forEach((element) &#x3D;&gt; {
+                    FormRenderSyncFieldLogic.ProcessJson(event, element, true);
+                });
+            }
+            if (isDataGridExistInForm) {
+                // To Convert Child Data into required format
+                event &#x3D; this.convertObj1ToObj2(event);
+            }
+        }
+        this.callCustomEvent(&#x27;proceedObjectBeforeRender&#x27;, event);
+        return event;
+    }
+
+    manageURLState() {
+        let activeParams &#x3D; sessionStorage.getItem(&#x27;activeRouteParams&#x27;);
+        if (activeParams) {
+            const tabs &#x3D;
+                this.currentQueryParamsState?.tabClick?.split(&#x27;/&#x27;) ?? [];
+            if (tabs.length &gt; 0) {
+                var elementToClick &#x3D; $(&#x60;button:contains(${tabs[0]})&#x60;);
+                if (elementToClick.length &gt; 0) {
+                    elementToClick.click();
+                    // Removing state from URL to avoid change detection overriding
+                    const currentQueryParams &#x3D; {
+                        ...this.route.snapshot.queryParams,
+                    };
+                    delete currentQueryParams.state;
+                    const navigationExtras: NavigationExtras &#x3D; {
+                        queryParams: currentQueryParams,
+                    };
+                    this.router.navigate([], navigationExtras);
+                }
+            }
+        }
+    }
+
+    // convertMultiSelectDropdownData(event, keyList) {
+    //     Object.keys(event).forEach((key) &#x3D;&gt; {
+    //         if (Array.isArray(event[key])) {
+    //             let matchKey &#x3D; this.checkObjectKeyisExistInDotsKeyArray(
+    //                 keyList,
+    //                 key
+    //             );
+    //             if (matchKey) {
+    //                 // this logic needs improvment this will work in only case where 3 dots key containts
+    //                 const parentKey &#x3D; matchKey.split(&#x27;.&#x27;)[0];
+    //                 const childKey &#x3D; matchKey.split(&#x27;.&#x27;)[1];
+    //                 const grandChildKey &#x3D; matchKey.split(&#x27;.&#x27;)[2];
+    //                 let multiSelectDropdownData &#x3D; event[parentKey];
+    //                 const outputArray &#x3D; [];
+    //                 if (
+    //                     multiSelectDropdownData &amp;&amp;
+    //                     multiSelectDropdownData.length
+    //                 ) {
+    //                     for (const obj of multiSelectDropdownData) {
+    //                         if (obj.hasOwnProperty(childKey)) {
+    //                             const idValue &#x3D; obj[childKey];
+    //                             const fvalue &#x3D; idValue[grandChildKey];
+    //                             outputArray.push(fvalue);
+    //                         }
+    //                     }
+    //                     let ids &#x3D; {
+    //                         [childKey]: { [grandChildKey]: outputArray },
+    //                     };
+    //                     event[parentKey] &#x3D; ids;
+    //                 }
+    //             }
+    //         }
+    //     });
+    // }
+
+    convertObj1ToObj2(obj: any): any {
+        if (Array.isArray(obj)) {
+            // If the input is an array, recursively convert each item in the array
+            return obj.map(this.convertObj1ToObj2);
+        } else if (typeof obj &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; obj !&#x3D;&#x3D; null) {
+            // If the input is an object, convert each key-value pair
+            const result: any &#x3D; {};
+            for (const [key, value] of Object.entries(obj)) {
+                if (Array.isArray(value)) {
+                    // If the value is an array, recursively convert each item in the array and wrap it in a container object
+                    result[key] &#x3D; value.map((item) &#x3D;&gt; {
+                        if (typeof item &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; item !&#x3D;&#x3D; null) {
+                            // this.addDirtyFlagInArrayFormatData(item);
+                            return { container: this.convertObj1ToObj2(item) };
+                        } else {
+                            return item;
+                        }
+                    });
+                } else {
+                    // If the value is a non-array object or a primitive value, keep the key-value pair as is
+                    result[key] &#x3D; value;
+                }
+            }
+            return result;
+        } else {
+            // If the input is a primitive value, just return it as is
+            return obj;
+        }
+    }
+    addDirtyFlagInArrayFormatData(item) {
+        let abc &#x3D; { hashValue: this.getObjectHash(item) };
+        Object.assign(item, abc);
+    }
+
+    getObjectHash(obj: any): string {
+        const values: string[] &#x3D; [];
+
+        // Iterate through the object&#x27;s properties
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key) &amp;&amp; key !&#x3D; &#x27;hashValue&#x27;) {
+                const value &#x3D; obj[key];
+                if (typeof value !&#x3D;&#x3D; &#x27;object&#x27;) {
+                    // Convert property value to string and add to values array
+                    values.push(key + &#x27;:&#x27; + value);
+                } else {
+                    // Handle nested objects or arrays recursively
+                    values.push(key + &#x27;:&#x27; + this.getObjectHash(value));
+                }
+            }
+        }
+
+        // Sort the values to ensure consistent hash generation
+        values.sort();
+        const encodedText &#x3D; Buffer.from(values.join(&#x27;|&#x27;)).toString(&#x27;base64&#x27;);
+        // Create a hash using the collected values
+        return encodedText;
+    }
+    addContainerInArrayFormatComponent(event) {
+        // let abc &#x3D; {};
+        // abc &#x3D; Object.freeze(event);
+        Object.keys(event).forEach((key) &#x3D;&gt; {
+            if (Array.isArray(event[key])) {
+                let val &#x3D; [];
+                val &#x3D; event[key];
+                // delete event[key];
+                // event[key].splice(0, 1);
+                // val.push({ container: event[key] });
+                let blankVal &#x3D; [];
+                blankVal.push({ container: val[0] });
+                event[key] &#x3D; blankVal;
+                event[key].splice(0, 1);
+                // this.addContainerInArrayFormatComponent(
+                //     event[key][0][&#x27;container&#x27;]
+                // );
+                // delete event[key];
+            }
+        });
+    }
+    updateObjectProps(obj1: any, obj2: any): void {
+        for (let key in obj1) {
+            if (obj1.hasOwnProperty(key)) {
+                if (obj2.hasOwnProperty(key)) {
+                    if (
+                        typeof obj1[key] &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp;
+                        typeof obj2[key] &#x3D;&#x3D;&#x3D; &#x27;object&#x27;
+                    ) {
+                        this.updateObjectProps(obj1[key], obj2[key]);
+                    } else {
+                        obj2[key] &#x3D; obj1[key];
+                    }
+                }
+            }
+        }
+    }
+
+    public refreshFormData(dataObj: {}) {
+        this.isloading &#x3D; true;
+        if (dataObj?.hasOwnProperty(&#x27;RecordInfo&#x27;) &amp;&amp; dataObj[&#x27;RecordInfo&#x27;]) {
+            this.recordInfo &#x3D; dataObj[&#x27;RecordInfo&#x27;];
+            // let d1 &#x3D; {};
+            // d1[&#x27;RecordInfo&#x27;] &#x3D; dataObj[&#x27;RecordInfo&#x27;];
+            this.globalValueService.updateRecordInfo({
+                ...this.recordInfo,
+                parentScreenData: dataObj,
+            });
+            // this.globalValueService.updateRecordInfo(d1);
+        }
+
+        // added logic for rendering file
+        // added time out because of file rendering part and plugin load with api call
+        // this.callCustomEvent(&#x27;renderFile&#x27;, dataObj);
+        this.formSubmission.data &#x3D; dataObj;
+        // This is temporory solution for dropdown Id issue
+        // setTimeout(() &#x3D;&gt; {
+        this.refreshForm.emit({
+            submission: {
+                data: dataObj,
+            },
+        });
+        // this.showLoader.emit(false);
+        // setTimeout(() &#x3D;&gt; {
+        this.manageURLState();
+        // }, 2000);
+        // }, 1000);
+    }
+
+    ngOnDestroy(): void {
+        this.showLoader.next(null);
+        this.showLoader.complete();
+        localStorage.removeItem(TabConstant.Storage.screenId);
+        localStorage.removeItem(TabConstant.Storage.layoutScreenId);
+        localStorage.removeItem(TabConstant.Storage.tabScreen);
+        localStorage.removeItem(&#x27;screenDataArray&#x27;);
+        // Unsubscribe from all subscriptions
+        this._unsubscribeAll.next(null);
+        this._unsubscribeAll.complete();
+        // Remove listner on destory
+        window.removeEventListener(&#x27;tabHTMLEvent&#x27;, this.tabHTMLEventListener);
+    }
+
+    private initializeTarget: EmitType&lt;object&gt; &#x3D; () &#x3D;&gt; {
+        this.targetElement &#x3D; this.container.nativeElement.parentElement;
+    };
+
+    //Grid related stuff
+    // public onOverlayClick: EmitType&lt;object&gt; &#x3D; () &#x3D;&gt; {
+    //     this.ejDialog?.hide();
+    // };
+
+    // rebuildApp() {
+    //     this.tabAppService.rebuildApp({})?.subscribe((data) &#x3D;&gt; {
+    //         if (data.Result) {
+    //             this.tabAppService.getSchema({
+    //                 version: TabConstant.Common.releaseVersion,
+    //             });
+    //         }
+    //     });
+    // }
+
+    async afterSubmitRedirect(type) {
+        if (this.screenRenderingMode &#x3D;&#x3D; &#x27;SidebarScreen&#x27;) {
+            this.globalValueService.updateCloseSidebarInfo(false);
+            this.refreshForm.emit({
+                submission: {},
+            });
+            this.formSubmission.data &#x3D; {};
+            // return;
+        }
+        let activeParams &#x3D; sessionStorage.getItem(&#x27;activeRouteParams&#x27;);
+        activeParams &#x3D; JSON.parse(activeParams);
+        let currentRouteScreenId &#x3D; activeParams[&#x27;screen&#x27;];
+        let screen: any &#x3D; await this.getContainer(currentRouteScreenId);
+        let mainScrenContainer &#x3D; JSON.parse(screen.Container);
+        if (currentRouteScreenId.toLowerCase() !&#x3D; this.screenId.toLowerCase()) {
+            this.checkFormIOComponent(mainScrenContainer);
+        } else {
+            if (
+                screen.ScreenConfiguration &amp;&amp;
+                !!JSON.parse(screen.ScreenConfiguration)?.layout
+            ) {
+                let layoutScreenId &#x3D; JSON.parse(
+                    screen.ScreenConfiguration
+                ).layout;
+                const layoutScreen: any &#x3D; await this.getContainer(
+                    layoutScreenId
+                );
+                if (!!layoutScreen) {
+                    if (
+                        screen.ScreenConfiguration &amp;&amp;
+                        !!JSON.parse(layoutScreen.ScreenConfiguration)
+                    ) {
+                        let layoutScreenConfig &#x3D; JSON.parse(
+                            layoutScreen.ScreenConfiguration
+                        );
+                        // Added Mode &#x3D; Designer condition to prevent redirection at a time of Screen Submit.
+                        if (
+                            layoutScreenConfig.layoutType &#x3D;&#x3D; 2 &amp;&amp;
+                            !(
+                                this.parameters.hasOwnProperty(&#x27;mode&#x27;) &amp;&amp;
+                                this.parameters.mode &#x3D;&#x3D;&#x3D; &#x27;designer&#x27;
+                            )
+                        ) {
+                            this._location.back();
+                        }
+                    }
+                }
+            } else if (screen?.ScreenType &#x3D;&#x3D;&#x3D; 2) {
+                this._location.back();
+            }
+        }
+        const btnElemt &#x3D; document.getElementsByClassName(&#x27;button-icon-right&#x27;);
+        btnElemt[0]?.remove();
+        // this.isShowOverlyLoaderWhileSubmit &#x3D; false;
+    }
+    checkFormIOComponent(mainScrenContainer) {
+        var that &#x3D; this;
+        // when we have main screen with wizard with child screen
+        if (
+            mainScrenContainer &amp;&amp;
+            mainScrenContainer.hasOwnProperty(&#x27;display&#x27;) &amp;&amp;
+            mainScrenContainer.display &#x3D;&#x3D; &#x27;wizard&#x27;
+        ) {
+            let activeWizardName &#x3D; this.getActiveWizardDetails();
+            let activeWizardScreenData;
+            mainScrenContainer.components.forEach((element) &#x3D;&gt; {
+                // if (element.title &#x3D;&#x3D; activeWizardName) {
+                //     activeWizardScreenData &#x3D; element;
+                // }
+                if (activeWizardName.includes(element.title)) {
+                    activeWizardScreenData &#x3D; element;
+                }
+            });
+            if (activeWizardScreenData) {
+                FormioUtils.eachComponent(
+                    activeWizardScreenData.components,
+                    async function (component: any, path: any) {
+                        if (component.type &#x3D;&#x3D; &#x27;childscreen&#x27;) {
+                            if (
+                                component &amp;&amp;
+                                component?.customOptions?.dataSetting
+                                    ?.childScreenId
+                            ) {
+                                let chid &#x3D;
+                                    component?.customOptions?.dataSetting
+                                        ?.childScreenId;
+                                let childScreen: any &#x3D; await that.getContainer(
+                                    chid
+                                );
+                                let childScrenContainer &#x3D; JSON.parse(
+                                    childScreen.Container
+                                );
+                                // after submit this will call binded dsq of that screen
+                                that.processScreen(
+                                    that.screenId,
+                                    that.parameters
+                                );
+                                that.checkFormIOComponent(childScrenContainer);
+                            }
+                        }
+                        if (component.type &#x3D;&#x3D; &#x27;customGrid&#x27;) {
+                            // that.tabFormRenderer?.formio.triggerRedraw();
+                            that.updateGridDatasource(component);
+                        }
+                    }
+                );
+            }
+        }
+        // when we don&#x27;t have child screen as in wizard
+        else {
+            FormioUtils.eachComponent(
+                mainScrenContainer.components,
+                async function (component: any, path: any) {
+                    if (component.type &#x3D;&#x3D; &#x27;childscreen&#x27;) {
+                        if (
+                            component &amp;&amp;
+                            component?.customOptions?.dataSetting?.childScreenId
+                        ) {
+                            let chid &#x3D;
+                                component?.customOptions?.dataSetting
+                                    ?.childScreenId;
+                            if (
+                                chid &amp;&amp;
+                                chid.toLowerCase() &#x3D;&#x3D;
+                                    that.screenId.toLowerCase()
+                            ) {
+                                if (
+                                    component?.customOptions?.dataSetting
+                                        ?.allowToRedirectAfterSubmit
+                                ) {
+                                    that._location.back();
+                                }
+                                // else {
+                                //     that.processScreen(
+                                //         that.screenId,
+                                //         that.parameters
+                                //     );
+                                // }
+                            } else {
+                                let childScreen: any &#x3D; await that.getContainer(
+                                    chid
+                                );
+                                let childScrenContainer &#x3D; JSON.parse(
+                                    childScreen.Container
+                                );
+                                // after submit this will call binded dsq of that screen
+                                that.processScreen(
+                                    that.screenId,
+                                    that.parameters
+                                );
+                                that.checkFormIOComponent(childScrenContainer);
+                            }
+                        }
+                    }
+                    if (component.type &#x3D;&#x3D; &#x27;customGrid&#x27;) {
+                        // that.tabFormRenderer?.formio.triggerRedraw();
+                        that.updateGridDatasource(component);
+                    }
+                    if (component.type &#x3D;&#x3D; &#x27;customtreeview&#x27;) {
+                    }
+                }
+            );
+        }
+    }
+    getActiveWizardDetails() {
+        let activeWizardName &#x3D; [];
+        $(&#x27;.pagination li.active&#x27;).each((id, elem) &#x3D;&gt; {
+            activeWizardName.push(elem.innerText);
+        });
+        return activeWizardName;
+    }
+    /**
+     *
+     * @param component it will get grid component
+    this function will get all component from screen and comapre with
+    same datasource context and refresh the respective grid data
+     */
+    updateGridDatasource(component) {
+        let appObjectDetailsOfGrid &#x3D;
+            TabAppFunction.getAppObjectFromDataSourceQueryID(
+                this.screen.DataSourceQuery
+            );
+        let viewAppObjectDetailsOfGrid &#x3D; this.getViewAppObjectDetails(
+            appObjectDetailsOfGrid
+        );
+        let storedDataSourceContext &#x3D; JSON.parse(
+            sessionStorage.getItem(&#x27;screenContext&#x27;)
+        );
+
+        if (storedDataSourceContext) {
+            let refreshGrid &#x3D;
+                storedDataSourceContext[
+                    viewAppObjectDetailsOfGrid.SystemDBTableName
+                ].dataComponentList;
+            if (
+                refreshGrid &amp;&amp;
+                refreshGrid.find((item) &#x3D;&gt; item &#x3D;&#x3D;&#x3D; component.key)
+            ) {
+                this.globalValueService.updatedataSourceInfo({
+                    updatedSingleData: this?.tabFormRenderer?.formio?._data,
+                    component: component,
+                });
+            }
+        }
+    }
+
+    /**
+     * this function will add new configuration tab in formoi specific component in settings
+     */
+    addConfigTabInFormioComponent() {
+        this.extendAllComponentFormIoSettings();
+        // this.extendButtonComponentSetting();
+    }
+
+    extendButtonComponentSetting() {
+        // const buttonEditForm &#x3D; Components.components.button.editForm();
+        // this.checkConfigTabIsExist(buttonEditForm);
+
+        const editForm &#x3D; Components.components.button.editForm;
+        const form &#x3D; editForm();
+        const tabs &#x3D; Utils.getComponent(form.components, &#x27;tabs&#x27;, true);
+        let data &#x3D; tabs.components.find((item) &#x3D;&gt; {
+            return item.key &#x3D;&#x3D;&#x3D; &#x27;Tab_Configuration&#x27;;
+        });
+        const buttonFormIOScreenId &#x3D; &#x27;95b6a9d5-dc1d-4749-9d91-ae930ace80d1&#x27;;
+        if (!data) {
+            Components.components.button.editForm &#x3D; function () {
+                // const form &#x3D; editForm();
+                const tabs &#x3D; Utils.getComponent(form.components, &#x27;tabs&#x27;, true);
+                tabs.components.push({
+                    key: &#x27;Tab_Configuration&#x27;,
+                    label: &#x27;Tab Configuration&#x27;,
+                    components: [
+                        {
+                            label: &#x27;Setting&#x27;,
+                            hideLabel: true,
+                            tableView: false,
+                            key: &#x27;customOptions.configuration&#x27;,
+                            customOptions: {
+                                dataSetting: {
+                                    childScreenId: buttonFormIOScreenId,
+                                    parameters: &#x27;&#x27;,
+                                    submissionData: &#x27;&#x27;,
+                                },
+                            },
+                            type: &#x27;childscreen&#x27;,
+                            id: &#x27;e109bec&#x27;,
+                        },
+                    ],
+                });
+                return form;
+            };
+        }
+    }
+    checkConfigTabIsExist(editForm) {
+        const settingTabs &#x3D; Utils.getComponent(
+            editForm.components,
+            &#x27;tabs&#x27;,
+            true
+        );
+        let data &#x3D; settingTabs.components.find((item) &#x3D;&gt; {
+            return item.key &#x3D;&#x3D;&#x3D; &#x27;Tab_Configuration&#x27;;
+        });
+        const buttonFormIOScreenId &#x3D; &#x27;95b6a9d5-dc1d-4749-9d91-ae930ace80d1&#x27;;
+        if (!data || data &#x3D;&#x3D; undefined) {
+            editForm &#x3D; function () {
+                const form &#x3D; editForm();
+                const tabs &#x3D; Utils.getComponent(form.components, &#x27;tabs&#x27;, true);
+                tabs.components.push({
+                    key: &#x27;Tab_Configuration&#x27;,
+                    label: &#x27;Tab Configuration&#x27;,
+                    components: [
+                        {
+                            label: &#x27;Setting&#x27;,
+                            hideLabel: true,
+                            tableView: false,
+                            key: &#x27;customOptions.configuration&#x27;,
+                            customOptions: {
+                                dataSetting: {
+                                    childScreenId:
+                                        buttonFormIOScreenId.toLowerCase(),
+                                    parameters: &#x27;&#x27;,
+                                    submissionData: &#x27;&#x27;,
+                                },
+                            },
+                            type: &#x27;childscreen&#x27;,
+                            id: &#x27;e109bec&#x27;,
+                        },
+                    ],
+                });
+                return form;
+            };
+        }
+    }
+
+    extendAllComponentFormIoSettings() {
+        const permissionFormIOScreenId &#x3D; &#x27;9f5acfc4-7e92-4c97-bdc7-216bbb10e85d&#x27;;
+        const allFormControlsKeys &#x3D; Object.keys(Components.components);
+        if (allFormControlsKeys &amp;&amp; allFormControlsKeys.length) {
+            allFormControlsKeys.forEach((element) &#x3D;&gt; {
+                const editForm &#x3D; Components.components[element].editForm;
+                if (editForm) {
+                    const form &#x3D; editForm();
+                    const tabs &#x3D; Utils.getComponent(
+                        form.components,
+                        &#x27;tabs&#x27;,
+                        true
+                    );
+                    let data &#x3D; tabs.components.find((item) &#x3D;&gt; {
+                        return item.key &#x3D;&#x3D;&#x3D; &#x27;Permission&#x27;;
+                    });
+                    if (!data) {
+                        Components.components[element].editForm &#x3D; function () {
+                            const form &#x3D; editForm();
+                            const tabs &#x3D; Utils.getComponent(
+                                form.components,
+                                &#x27;tabs&#x27;,
+                                true
+                            );
+                            tabs.components.push({
+                                key: &#x27;Permission&#x27;,
+                                label: &#x27;Tab Permission&#x27;,
+                                components: [
+                                    {
+                                        label: &#x27;Setting&#x27;,
+                                        hideLabel: true,
+                                        tableView: false,
+                                        key: &#x27;customOptions&#x27;,
+                                        customOptions: {
+                                            dataSetting: {
+                                                childScreenId:
+                                                    permissionFormIOScreenId,
+                                                parameters: &#x27;&#x27;,
+                                                submissionData: &#x27;&#x27;,
+                                            },
+                                        },
+                                        type: &#x27;childscreen&#x27;,
+                                        id: &#x27;e109bec&#x27;,
+                                    },
+                                ],
+                            });
+                            return form;
+                        };
+                    }
+                }
+            });
+        }
+    }
+    getViewAppObjectDetails(appObjectDetailsOfGrid) {
+        let viewAppObjectDetailsOfGrid &#x3D; appObjectDetailsOfGrid;
+        // check appobject is table or view
+        if (appObjectDetailsOfGrid &amp;&amp; appObjectDetailsOfGrid.ObjectType &#x3D;&#x3D; 2) {
+            viewAppObjectDetailsOfGrid &#x3D; TabAppFunction.getAppObject(
+                appObjectDetailsOfGrid.CRUDAppObjectId
+            );
+        }
+        return viewAppObjectDetailsOfGrid;
+    }
+
+    // gantt chart settings save....
+    saveGanttChart(event: any) {
+        let formJsonInstance &#x3D; FormioUtils.getComponent(
+            this.formJson.components,
+            event.component.key,
+            true
+        );
+        if (formJsonInstance) {
+            formJsonInstance.customOptions.dataSettingsGanttChart.defaultState &#x3D;
+                event.data;
+        }
+        const screenData &#x3D; {
+            Id: this.screenId,
+            Container: JSON.stringify(this.formJson),
+        };
+
+        this.tabUpdateService
+            .updateScreen(this.screenId, screenData)
+            ?.pipe(take(1))
+            .subscribe((response) &#x3D;&gt; {
+                if (response.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                    this.insertDSQFields(event);
+                    this.toastrNotificationService.showSuccess(
+                        &#x27;State data has been saved Successfully&#x27;,
+                        &#x27;Success&#x27;
+                    );
+                } else {
+                    this.toastrNotificationService.showError(
+                        response.Errors[0],
+                        &#x27;Error&#x27;
+                    );
+                }
+            });
+    }
+
+    /**
+     * Saves the current screen&#x27;s submission state and related information to local storage.
+     *
+     * @param data - event.
+     * @param state - submission state &#x60;&#x27;error&#x27;,&#x27;submitting&#x27;,&#x27;submitted&#x27;&#x60;.
+     * @param res - api response (optional)
+     */
+    saveCurrentScreenSubmissionState(
+        data: any,
+        state: savedScreenType,
+        res?: any
+    ) {
+        const event &#x3D; {
+            data: data,
+            res: res,
+        };
+        this.savedScreen.event &#x3D; event;
+        this.savedScreen.screenId &#x3D; this.screenId;
+        this.savedScreen.formJson &#x3D; this.formJson;
+        this.savedScreen.state &#x3D; state;
+        this.savedScreen.updatedOn &#x3D; new Date();
+        localStorage.setItem(
+            &#x27;previousSavedScreen&#x27;,
+            JSON.stringify(this.savedScreen)
+        );
+    }
+
+    /**
+     * This method is responsible for saving the state of a form component and updating the corresponding screen data.
+     *
+     * @param event - The event object containing information about the form component and its data.
+     *
+     */
+    savePivotState(event: any) {
+        // Retrieve the form component instance using its key from the formJson object.
+
+        let formJsonInstance &#x3D; FormioUtils.getComponent(
+            this.formJson.components,
+            event.component.key,
+            true
+        );
+
+        // If the form component instance is found, update its defaultState with the provided data.
+
+        if (formJsonInstance) {
+            formJsonInstance.customOptions.dataSettingsPivot.defaultState &#x3D;
+                event.data;
+        }
+
+        // Prepare screen data for updating, including the screen ID and the serialized formJson.
+
+        const screenData &#x3D; {
+            Id: this.screenId,
+            Container: JSON.stringify(this.formJson),
+        };
+
+        // Call the tabUpdateService to update the screen data on the server.
+
+        this.tabUpdateService
+            .updateScreen(this.screenId, screenData)
+            .subscribe((response) &#x3D;&gt; {
+                // Check if the server response is successful (status code 200).
+
+                if (response.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                    // If successful, insert DSQ (Data Source Query) fields and show a success notification.
+                    this.insertDSQFields(event);
+                    this.toastrNotificationService.showSuccess(
+                        &#x27;State data has been saved Successfully&#x27;,
+                        &#x27;Success&#x27;
+                    );
+                } else {
+                    // If not successful, show an error notification with the first error from the server response.
+
+                    this.toastrNotificationService.showError(
+                        response.Errors[0],
+                        &#x27;Error&#x27;
+                    );
+                }
+            });
+    }
+
+    /**
+     * This method is responsible for removing the state of a form component, updating the corresponding screen data,
+     * and handling the server response accordingly.
+     *
+     * @param event - The event object containing information about the form component and its data.
+     */
+
+    removePivotState(event: any) {
+        // Retrieve the form component instance using its key from the formJson object.
+
+        let formJsonInstance &#x3D; FormioUtils.getComponent(
+            this.formJson.components,
+            event.component.key,
+            true
+        );
+
+        // If the form component instance is found, update its defaultState with the provided data.
+
+        if (formJsonInstance) {
+            formJsonInstance.customOptions.dataSettingsPivot.defaultState &#x3D;
+                event.data;
+        }
+
+        // Prepare screen data for updating, including the screen ID and the serialized formJson.
+
+        const screenData &#x3D; {
+            Id: this.screenId,
+            Container: JSON.stringify(this.formJson),
+        };
+
+        // Call the tabUpdateService to update the screen data on the server.
+
+        this.tabUpdateService
+            .updateScreen(this.screenId, screenData)
+            ?.subscribe((response) &#x3D;&gt; {
+                // Check if the server response is successful (status code 200).
+
+                if (response.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                    // If successful, insert DSQ (Data Source Query) fields and show a success notification.
+
+                    this.insertDSQFields(event);
+                    this.toastrNotificationService.showSuccess(
+                        &#x27;State data has been removed Successfully&#x27;,
+                        &#x27;Success&#x27;
+                    );
+                } else {
+                    // If not successful, show an error notification with the first error from the server response.
+
+                    this.toastrNotificationService.showError(
+                        response.Errors[0],
+                        &#x27;Error&#x27;
+                    );
+                }
+            });
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'PreviousSavedScreen.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,3493 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@fuse/starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@fuse/starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  NewTabQueryBuilderComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>FormioCustomComponent</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>new-tab-core-tab-query-builder</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./new-tab-query-builder.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./new-tab-query-builder.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_unsubscribeAll" >_unsubscribeAll</a>
+                            </li>
+                            <li>
+                                <a href="#columnFieldList" >columnFieldList</a>
+                            </li>
+                            <li>
+                                <a href="#controlValue" >controlValue</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#debounceSubject" >debounceSubject</a>
+                            </li>
+                            <li>
+                                <a href="#fieldList" >fieldList</a>
+                            </li>
+                            <li>
+                                <a href="#fieldMode" >fieldMode</a>
+                            </li>
+                            <li>
+                                <a href="#finalRules" >finalRules</a>
+                            </li>
+                            <li>
+                                <a href="#globalValues" >globalValues</a>
+                            </li>
+                            <li>
+                                <a href="#importRules" >importRules</a>
+                            </li>
+                            <li>
+                                <a href="#isShowBuilder" >isShowBuilder</a>
+                            </li>
+                            <li>
+                                <a href="#parameterList" >parameterList</a>
+                            </li>
+                            <li>
+                                <a href="#previousLookup" >previousLookup</a>
+                            </li>
+                            <li>
+                                <a href="#properties" >properties</a>
+                            </li>
+                            <li>
+                                <a href="#separator" >separator</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setTimer" >setTimer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setTimerAssignAPI" >setTimerAssignAPI</a>
+                            </li>
+                            <li>
+                                <a href="#supportedFilterTypeList" >supportedFilterTypeList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#tabQueryBuilder" >tabQueryBuilder</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#assignAPIValueTosaveControl" >assignAPIValueTosaveControl</a>
+                            </li>
+                            <li>
+                                <a href="#bindAppObjectFieldsToQueryBuilder" >bindAppObjectFieldsToQueryBuilder</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createColumns" >createColumns</a>
+                            </li>
+                            <li>
+                                <a href="#deleteKey" >deleteKey</a>
+                            </li>
+                            <li>
+                                <a href="#getAppFieldId" >getAppFieldId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getDSQDetails" >getDSQDetails</a>
+                            </li>
+                            <li>
+                                <a href="#getGroupByRule" >getGroupByRule</a>
+                            </li>
+                            <li>
+                                <a href="#getLabel" >getLabel</a>
+                            </li>
+                            <li>
+                                <a href="#getParameterListOFDSQ" >getParameterListOFDSQ</a>
+                            </li>
+                            <li>
+                                <a href="#getTypeAndValue" >getTypeAndValue</a>
+                            </li>
+                            <li>
+                                <a href="#groupArrayOfObjects" >groupArrayOfObjects</a>
+                            </li>
+                            <li>
+                                <a href="#isGuidValid" >isGuidValid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#manageAppObjectFields" >manageAppObjectFields</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#manageQueryBuilderData" >manageQueryBuilderData</a>
+                            </li>
+                            <li>
+                                <a href="#manageQueryBuilderRules" >manageQueryBuilderRules</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onFilterDropdownValueChange" >onFilterDropdownValueChange</a>
+                            </li>
+                            <li>
+                                <a href="#onRuleChange" >onRuleChange</a>
+                            </li>
+                            <li>
+                                <a href="#updateGroupRules" >updateGroupRules</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#controlSetting" >controlSetting</a>
+                            </li>
+                            <li>
+                                <a href="#disabled" >disabled</a>
+                            </li>
+                            <li>
+                                <a href="#value" >value</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#valueChange" >valueChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#value" >value</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(tabGetService: TabGetService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:83</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>tabGetService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabGetService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="controlSetting"></a>
+                        <b>controlSetting</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:45</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="disabled"></a>
+                        <b>disabled</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:42</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <b>value</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:125</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueChange"></a>
+                        <b>valueChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:43</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="assignAPIValueTosaveControl"></a>
+                    <span class="name">
+                        <span ><b>assignAPIValueTosaveControl</b></span>
+                        <a href="#assignAPIValueTosaveControl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>assignAPIValueTosaveControl()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="401"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:401</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bindAppObjectFieldsToQueryBuilder"></a>
+                    <span class="name">
+                        <span ><b>bindAppObjectFieldsToQueryBuilder</b></span>
+                        <a href="#bindAppObjectFieldsToQueryBuilder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>bindAppObjectFieldsToQueryBuilder(prefix, item, parentId)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="254"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:254</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this funciton willl create array of all the fields with configured lookup fields</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>prefix</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>prefix for lookup fields , it is field name</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>item</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>fields detail
+this funciton willl create array of all the fields with configured lookup fields</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>parentId</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createColumns"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createColumns</b></span>
+                        <a href="#createColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createColumns(fields: any[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="313"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:313</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function will generate formated array from all the field list and make structued as
+querybuilder required</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>fields</td>
+                                            <td>
+                                                        <code>any[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>field list array</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>it will return formated array which query builder required for treeview
+this function will generate formated array from all the field list and make structued as
+querybuilder required</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteKey"></a>
+                    <span class="name">
+                        <span ><b>deleteKey</b></span>
+                        <a href="#deleteKey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteKey(arr: any[], keyToDelete: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="350"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:350</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function will delete the colums key which does not have value
+so data type issue is resolved , everytime it was taking object data type for all fields</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>arr</td>
+                                            <td>
+                                                        <code>any[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>converted formated array of querybuilder</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>keyToDelete</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>&#39;columns&#39; field which you want to delete from json array
+this function will delete the colums key which does not have value
+so data type issue is resolved , everytime it was taking object data type for all fields</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>any[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAppFieldId"></a>
+                    <span class="name">
+                        <span ><b>getAppFieldId</b></span>
+                        <a href="#getAppFieldId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAppFieldId(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="627"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:627</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDSQDetails"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getDSQDetails</b></span>
+                        <a href="#getDSQDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDSQDetails()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="211"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:211</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getGroupByRule"></a>
+                    <span class="name">
+                        <span ><b>getGroupByRule</b></span>
+                        <a href="#getGroupByRule"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getGroupByRule(singleGroupArray: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="416"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:416</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>singleGroupArray</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLabel"></a>
+                    <span class="name">
+                        <span ><b>getLabel</b></span>
+                        <a href="#getLabel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getLabel(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="644"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:644</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getParameterListOFDSQ"></a>
+                    <span class="name">
+                        <span ><b>getParameterListOFDSQ</b></span>
+                        <a href="#getParameterListOFDSQ"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getParameterListOFDSQ(dataSourceQueryID)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="365"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:365</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dataSourceQueryID</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>dsq id to get parameter list</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTypeAndValue"></a>
+                    <span class="name">
+                        <span ><b>getTypeAndValue</b></span>
+                        <a href="#getTypeAndValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTypeAndValue(element)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="660"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:660</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>element</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupArrayOfObjects"></a>
+                    <span class="name">
+                        <span ><b>groupArrayOfObjects</b></span>
+                        <a href="#groupArrayOfObjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>groupArrayOfObjects(list: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="410"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:410</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>list</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>key</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isGuidValid"></a>
+                    <span class="name">
+                        <span ><b>isGuidValid</b></span>
+                        <a href="#isGuidValid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isGuidValid(guid)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="654"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:654</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>guid</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="manageAppObjectFields"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>manageAppObjectFields</b></span>
+                        <a href="#manageAppObjectFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>manageAppObjectFields(appObjectDetailsOfDSQ)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="237"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:237</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function will manage the appobject fields with lookup fields and create proper array
+which query builder required with same format</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>appObjectDetailsOfDSQ</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>this will get full app object details for specific dsq
+this function will manage the appobject fields with lookup fields and create proper array
+which query builder required with same format</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="manageQueryBuilderData"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>manageQueryBuilderData</b></span>
+                        <a href="#manageQueryBuilderData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>manageQueryBuilderData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="150"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:150</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this funciton will manage the query builder data
+this will get data from dsq to appobject and from appobject to fileds and bind that fields in querybuilder</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="manageQueryBuilderRules"></a>
+                    <span class="name">
+                        <span ><b>manageQueryBuilderRules</b></span>
+                        <a href="#manageQueryBuilderRules"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>manageQueryBuilderRules(filterData)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="387"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:387</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>filterData</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="672"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:672</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="135"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:135</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFilterDropdownValueChange"></a>
+                    <span class="name">
+                        <span ><b>onFilterDropdownValueChange</b></span>
+                        <a href="#onFilterDropdownValueChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFilterDropdownValueChange(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, ruleID: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="574"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:574</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>ruleID</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>type</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onRuleChange"></a>
+                    <span class="name">
+                        <span ><b>onRuleChange</b></span>
+                        <a href="#onRuleChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onRuleChange(args: <a href="../undefineds/Event.html" target="_self">RuleChangeEventArgs</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="476"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:476</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function will triggers when changing the condition(AND/OR), field, value, operator is changed.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >RuleChangeEventArgs</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>args of rulechange
+this function will triggers when changing the condition(AND/OR), field, value, operator is changed.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateGroupRules"></a>
+                    <span class="name">
+                        <span ><b>updateGroupRules</b></span>
+                        <a href="#updateGroupRules"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateGroupRules(groupData: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, groupCount: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="528"
+                                    class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:528</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>groupData</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>groupCount</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_unsubscribeAll"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_unsubscribeAll</b></span>
+                        <a href="#_unsubscribeAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;any&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="columnFieldList"></a>
+                    <span class="name">
+                        <span ><b>columnFieldList</b></span>
+                        <a href="#columnFieldList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ColumnsModel[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="controlValue"></a>
+                    <span class="name">
+                        <span ><b>controlValue</b></span>
+                        <a href="#controlValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+        isRefresh: true,
+        value: [],
+    }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="debounceSubject"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>debounceSubject</b></span>
+                        <a href="#debounceSubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fieldList"></a>
+                    <span class="name">
+                        <span ><b>fieldList</b></span>
+                        <a href="#fieldList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fieldMode"></a>
+                    <span class="name">
+                        <span ><b>fieldMode</b></span>
+                        <a href="#fieldMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FieldMode</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;DropdownTree&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="finalRules"></a>
+                    <span class="name">
+                        <span ><b>finalRules</b></span>
+                        <a href="#finalRules"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="globalValues"></a>
+                    <span class="name">
+                        <span ><b>globalValues</b></span>
+                        <a href="#globalValues"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+        &#x27;${{CURRENTDATE}}&#x27;,
+        &#x27;{{LOGGEDINUSER}}&#x27;,
+        &#x27;{{LOGGEDINUSER_ROLES}}&#x27;,
+        &#x27;{{LOGGEDINUSER_TEAMS}}&#x27;,
+    ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="importRules"></a>
+                    <span class="name">
+                        <span ><b>importRules</b></span>
+                        <a href="#importRules"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>RuleModel</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isShowBuilder"></a>
+                    <span class="name">
+                        <span ><b>isShowBuilder</b></span>
+                        <a href="#isShowBuilder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:56</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="parameterList"></a>
+                    <span class="name">
+                        <span ><b>parameterList</b></span>
+                        <a href="#parameterList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previousLookup"></a>
+                    <span class="name">
+                        <span ><b>previousLookup</b></span>
+                        <a href="#previousLookup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="properties"></a>
+                    <span class="name">
+                        <span ><b>properties</b></span>
+                        <a href="#properties"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="separator"></a>
+                    <span class="name">
+                        <span ><b>separator</b></span>
+                        <a href="#separator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;.&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTimer"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>setTimer</b></span>
+                        <a href="#setTimer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTimerAssignAPI"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>setTimerAssignAPI</b></span>
+                        <a href="#setTimerAssignAPI"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="supportedFilterTypeList"></a>
+                    <span class="name">
+                        <span ><b>supportedFilterTypeList</b></span>
+                        <a href="#supportedFilterTypeList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+        &#x27;Literal&#x27;,
+        &#x27;Parameter&#x27;,
+        &#x27;Property&#x27;,
+        &#x27;Global&#x27;,
+    ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tabQueryBuilder"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>tabQueryBuilder</b></span>
+                        <a href="#tabQueryBuilder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>QueryBuilderComponent | undefined</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;tabQueryBuilder&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <span class="name"><b>value</b><a href="#value"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>value()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:119</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>value(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/app/modules/admin/new-tab-query-builder/new-tab-query-builder.component.ts:125</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { each } from &#x27;lodash&#x27;;
+import { Subject, debounceTime, take, takeUntil } from &#x27;rxjs&#x27;;
+import {
+    Component,
+    EventEmitter,
+    Input,
+    OnDestroy,
+    OnInit,
+    Output,
+    ViewChild,
+} from &#x27;@angular/core&#x27;;
+import { FormioCustomComponent } from &#x27;@formio/angular&#x27;;
+import {
+    QueryBuilderComponent,
+    FieldMode,
+    RuleModel,
+    ColumnsModel,
+    RuleChangeEventArgs,
+} from &#x27;@syncfusion/ej2-angular-querybuilder&#x27;;
+import {
+    TabAppFunction,
+    TabClasses,
+    TabCommonFunction,
+    TabGetService,
+} from &#x27;@techextensor/tab-service&#x27;;
+
+// interface Column {
+//     field: string;
+//     label: string;
+//     type?: string;
+//     columns?: Column[];
+// }
+
+@Component({
+    selector: &#x27;new-tab-core-tab-query-builder&#x27;,
+    templateUrl: &#x27;./new-tab-query-builder.component.html&#x27;,
+    styleUrls: [&#x27;./new-tab-query-builder.component.css&#x27;],
+})
+export class NewTabQueryBuilderComponent
+    implements OnInit, FormioCustomComponent&lt;any&gt;, OnDestroy
+{
+    @Input() disabled: boolean;
+    @Output() valueChange &#x3D; new EventEmitter&lt;any&gt;();
+
+    @Input() controlSetting: any;
+    controlValue &#x3D; {
+        isRefresh: true,
+        value: [],
+    };
+
+    @ViewChild(&#x27;tabQueryBuilder&#x27;) tabQueryBuilder:
+        | QueryBuilderComponent
+        | undefined;
+
+    private debounceSubject &#x3D; new Subject();
+    isShowBuilder &#x3D; false;
+    previousLookup: any &#x3D; {};
+    separator: string &#x3D; &#x27;.&#x27;;
+    fieldMode: FieldMode &#x3D; &#x27;DropdownTree&#x27;;
+
+    fieldList &#x3D; [];
+    columnFieldList: ColumnsModel[] &#x3D; [];
+    importRules: RuleModel &#x3D; {};
+
+    supportedFilterTypeList: string[] &#x3D; [
+        &#x27;Literal&#x27;,
+        &#x27;Parameter&#x27;,
+        &#x27;Property&#x27;,
+        &#x27;Global&#x27;,
+    ];
+
+    parameterList &#x3D; [];
+    properties &#x3D; [];
+    finalRules: any &#x3D; [];
+    globalValues: string[] &#x3D; [
+        &#x27;${{CURRENTDATE}}&#x27;,
+        &#x27;{{LOGGEDINUSER}}&#x27;,
+        &#x27;{{LOGGEDINUSER_ROLES}}&#x27;,
+        &#x27;{{LOGGEDINUSER_TEAMS}}&#x27;,
+    ];
+    private setTimer: any;
+    private setTimerAssignAPI: any;
+    private _unsubscribeAll: Subject&lt;any&gt; &#x3D; new Subject&lt;any&gt;();
+    // filterTypeTemplate: TemplateColumn &#x3D; {
+    //     create: () &#x3D;&gt; {
+    //         return createElement(&#x27;input&#x27;, { attrs: { type: &#x27;text&#x27; } });
+    //     },
+    //     destroy: (args: { elementId: string }) &#x3D;&gt; {
+    //         let dropdown: DropDownList &#x3D; getComponent(
+    //             document.getElementById(args.elementId),
+    //             &#x27;dropdownlist&#x27;
+    //         ) as DropDownList;
+    //         if (dropdown) {
+    //             dropdown.destroy();
+    //         }
+    //     },
+    //     write: (args: {
+    //         elements: Element;
+    //         values: string[] | string;
+    //         operator: string;
+    //     }) &#x3D;&gt; {
+    //         let ds: string[] &#x3D; this.supportedFilterTypeList;
+    //         let dropDownObj: DropDownList &#x3D; new DropDownList({
+    //             dataSource: ds,
+    //             value: args.values as string,
+    //             // change: this.onFilterDropdownValueChange,
+    //             change: (e: any) &#x3D;&gt; {
+    //                 this.tabQueryBuilder.notifyChange(
+    //                     e.itemData.value,
+    //                     e.element
+    //                 );
+    //             },
+    //         });
+    //         dropDownObj.appendTo(&#x27;#&#x27; + args.elements.id);
+    //     },
+    // };
+    constructor(private tabGetService: TabGetService) {}
+
+    public get value(): any {
+        let val &#x3D; JSON.stringify(this.controlValue);
+        return JSON.parse(val);
+    }
+
+    @Input()
+    public set value(value: any) {
+        // console.log(&#x27;setter new querybuilder with control value &#x27;, value);
+        if (value &amp;&amp; value !&#x3D; null) {
+            this.controlValue &#x3D; value;
+        } else {
+            this.isShowBuilder &#x3D; false;
+        }
+        this.debounceSubject.next(1000);
+    }
+
+    ngOnInit(): void {
+        this.debounceSubject
+            .pipe(debounceTime(1000))
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(() &#x3D;&gt; {
+                if (this.controlValue?.isRefresh) {
+                    this.manageQueryBuilderData();
+                }
+            });
+    }
+
+    /**
+     * this funciton will manage the query builder data
+    this will get data from dsq to appobject and from appobject to fileds and bind that fields in querybuilder
+     */
+    async manageQueryBuilderData() {
+        // console.log(&#x27;control settings&#x27;, this.controlSetting);
+        // console.log(&#x27;control value &#x27;, this.controlValue);
+        this.isShowBuilder &#x3D; false;
+        this.fieldList &#x3D; [];
+        this.properties &#x3D; [];
+        this.parameterList &#x3D; [];
+        if (
+            this.controlValue &amp;&amp;
+            this.controlValue.hasOwnProperty(&#x27;dataSourceQueryId&#x27;) &amp;&amp;
+            this.controlValue[&#x27;dataSourceQueryId&#x27;]
+        ) {
+            const dsqDetails: any &#x3D; await this.getDSQDetails();
+            if (dsqDetails) {
+                let appObjectDetailsOfDSQ &#x3D; TabAppFunction.getAppObject(
+                    dsqDetails?.AppObject?.ID
+                );
+                if (appObjectDetailsOfDSQ) {
+                    this.manageAppObjectFields(appObjectDetailsOfDSQ);
+                }
+            }
+            this.getParameterListOFDSQ(this.controlValue[&#x27;dataSourceQueryId&#x27;]);
+            if (
+                this.controlValue &amp;&amp;
+                this.controlValue.hasOwnProperty(&#x27;filterData&#x27;) &amp;&amp;
+                this.controlValue[&#x27;filterData&#x27;]
+            ) {
+                this.manageQueryBuilderRules(this.controlValue[&#x27;filterData&#x27;]);
+            }
+            this.setTimer &#x3D; setTimeout(() &#x3D;&gt; {
+                this.isShowBuilder &#x3D; true;
+                this.assignAPIValueTosaveControl();
+            }, 100);
+        }
+
+        // this will work when we dont have optoin to pass dsq and we have to manage through appobjet only
+        if (
+            this.controlValue &amp;&amp;
+            this.controlValue.hasOwnProperty(&#x27;appObjectId&#x27;) &amp;&amp;
+            this.controlValue[&#x27;appObjectId&#x27;]
+        ) {
+            let appObjectDetails &#x3D; TabAppFunction.getAppObject(
+                this.controlValue[&#x27;appObjectId&#x27;]
+            );
+            if (appObjectDetails) {
+                this.manageAppObjectFields(appObjectDetails);
+            }
+            if (
+                this.controlValue &amp;&amp;
+                this.controlValue.hasOwnProperty(&#x27;filterData&#x27;) &amp;&amp;
+                this.controlValue[&#x27;filterData&#x27;]
+            ) {
+                this.manageQueryBuilderRules(this.controlValue[&#x27;filterData&#x27;]);
+            }
+            this.setTimerAssignAPI &#x3D; setTimeout(() &#x3D;&gt; {
+                this.isShowBuilder &#x3D; true;
+                this.assignAPIValueTosaveControl();
+            }, 100);
+        }
+    }
+
+    async getDSQDetails() {
+        return new Promise((resolve) &#x3D;&gt; {
+            let paramData &#x3D; {
+                Reqtokens: { ID: this.controlValue[&#x27;dataSourceQueryId&#x27;] },
+                AppObjectName: &#x27;TABMD_DataSourceQueries&#x27;,
+                DSQName: &#x27;Detail_TABMD_DataSourceQueries&#x27;,
+            };
+            this.tabGetService
+                .executeRAWDSQWithName(paramData)
+                ?.pipe(take(1))
+                ?.subscribe((res) &#x3D;&gt; {
+                    if (!!res.Result &amp;&amp; res.Result.length &gt; 0) {
+                        resolve(res.Result[0]);
+                    } else {
+                        resolve({});
+                    }
+                });
+        });
+    }
+
+    /**
+     *
+     * @param appObjectDetailsOfDSQ this will get full app object details for specific dsq
+    this function will manage the appobject fields with lookup fields and create proper array
+    which query builder required with same format
+     */
+    async manageAppObjectFields(appObjectDetailsOfDSQ) {
+        if (appObjectDetailsOfDSQ?.Fields) {
+            each(appObjectDetailsOfDSQ.Fields, (f) &#x3D;&gt; {
+                this.bindAppObjectFieldsToQueryBuilder(&#x27;&#x27;, f, &#x27;&#x27;);
+            });
+            // const cfl &#x3D; await this.createColumns(this.fieldList);
+            // this.columnFieldList &#x3D; this.deleteKey(cfl, &#x27;columns&#x27;);
+        }
+    }
+
+    /**
+     *
+     * @param prefix prefix for lookup fields , it is field name
+     * @param item fields detail
+    this funciton willl create array of all the fields with configured lookup fields
+     * @returns
+     */
+    bindAppObjectFieldsToQueryBuilder(prefix, item, parentId) {
+        let fieldData &#x3D; {
+            field: prefix !&#x3D;&#x3D; &#x27;&#x27; ? parentId + &#x27;___&#x27; + item.ID : item.ID,
+            label: item.SystemDBFieldName,
+            lookUPText: prefix
+                ? prefix + &#x27;.&#x27; + item.SystemDBFieldName
+                : item.SystemDBFieldName,
+            type: TabCommonFunction.getFieldsType(
+                item?.FieldType.DataType,
+                item.hasOwnProperty(&#x27;LookUpDetails&#x27;)
+            ),
+            operators: TabCommonFunction.getOperatorListForQueryBuilder(
+                TabCommonFunction.getFieldsType(
+                    item?.FieldType.DataType,
+                    item.hasOwnProperty(&#x27;LookUpDetails&#x27;)
+                )
+            ),
+        };
+        this.fieldList.push(fieldData);
+        this.properties.push(fieldData.lookUPText);
+        if (item.hasOwnProperty(&#x27;LookUpDetails&#x27;) &amp;&amp; item.LookUpDetails) {
+            let lookupAppObjectData &#x3D;
+                TabAppFunction.getAppObjectFromSystemDBTableName(
+                    item.LookUpDetails.LookupObject
+                );
+            if (lookupAppObjectData) {
+                if (Object.keys(this.previousLookup).length &gt; 0) {
+                    if (
+                        this.previousLookup.LookupObject &#x3D;&#x3D;
+                            item.LookUpDetails.LookupObject &amp;&amp;
+                        !item.LookUpDetails.LookupObject.toLowerCase().includes(
+                            &#x27;tabd_recordinfo&#x27;
+                        )
+                    ) {
+                        return;
+                    }
+                }
+                this.previousLookup &#x3D; item.LookUpDetails;
+                let nprefix &#x3D; fieldData.lookUPText;
+                if (lookupAppObjectData?.Fields) {
+                    each(lookupAppObjectData.Fields, (ff) &#x3D;&gt; {
+                        this.bindAppObjectFieldsToQueryBuilder(
+                            nprefix,
+                            ff,
+                            fieldData.field
+                        );
+                    });
+                }
+            }
+        }
+    }
+
+    /**
+     *
+     * @param fields field list array
+     * @returns it will return formated array which query builder required for treeview
+    this function will generate formated array from all the field list and make structued as
+    querybuilder required
+     */
+    async createColumns(fields: any[]) {
+        const columns &#x3D; [];
+        for (const field of fields) {
+            const fieldParts &#x3D; field.lookUPText.split(&#x27;.&#x27;);
+            let parentColumns &#x3D; columns;
+            const fid &#x3D; field.field;
+            const fieldType &#x3D; field.type;
+            for (let i &#x3D; 0; i &lt; fieldParts.length; i++) {
+                const part &#x3D; fieldParts[i];
+                const column &#x3D; parentColumns.find((c) &#x3D;&gt; c.label &#x3D;&#x3D;&#x3D; part);
+                if (column) {
+                    parentColumns &#x3D; column.columns;
+                } else {
+                    const newColumn &#x3D; {
+                        field: part,
+                        label: part,
+                        type: fieldType,
+                        columns: null,
+                        operators: field.operators,
+                        // template: this.filterTypeTemplate,
+                    };
+                    parentColumns.push(newColumn);
+                    parentColumns &#x3D; newColumn.columns &#x3D; [];
+                }
+            }
+        }
+        return columns;
+    }
+
+    /**
+     *
+     * @param arr converted formated array of querybuilder
+     * @param keyToDelete &#x27;columns&#x27; field which you want to delete from json array
+    this function will delete the colums key which does not have value
+    so data type issue is resolved , everytime it was taking object data type for all fields
+     * @returns
+     */
+    deleteKey(arr: any[], keyToDelete: string): any[] {
+        for (let i &#x3D; 0; i &lt; arr.length; i++) {
+            if (arr[i].columns.length &gt; 0) {
+                this.deleteKey(arr[i].columns, keyToDelete);
+            } else {
+                delete arr[i][keyToDelete];
+            }
+        }
+        return arr;
+    }
+
+    /**
+     *
+     * @param dataSourceQueryID dsq id to get parameter list
+     */
+    getParameterListOFDSQ(dataSourceQueryID) {
+        let paramData &#x3D; {
+            Reqtokens: { ID: dataSourceQueryID },
+            AppObjectName: &#x27;TABMD_DataSourceQueries_Parameters&#x27;,
+            DSQName:
+                &#x27;FK_TABMD_DataSourceQueries_Parameters_TABMD_DataSourceQueries&#x27;,
+        };
+
+        this.tabGetService
+            .executeRAWDSQWithName(paramData)
+            ?.pipe(take(1))
+            ?.subscribe((res) &#x3D;&gt; {
+                if (!!res.Result &amp;&amp; res.Result.length &gt; 0) {
+                    const params: any &#x3D; res.Result;
+                    this.parameterList &#x3D; [];
+                    params.forEach((element: any) &#x3D;&gt; {
+                        this.parameterList.push(element.MappingFieldName);
+                    });
+                }
+            });
+    }
+
+    manageQueryBuilderRules(filterData) {
+        this.finalRules &#x3D; [];
+        let groupByGroups: any &#x3D; [];
+        groupByGroups &#x3D; this.groupArrayOfObjects(filterData, &#x27;GroupID&#x27;);
+        Object.keys(groupByGroups).forEach((element, index) &#x3D;&gt; {
+            let rules &#x3D; this.getGroupByRule(groupByGroups[element]);
+            if (index &gt; 0) {
+                this.finalRules.rules.push(rules[0]);
+            } else {
+                this.finalRules &#x3D; rules[0];
+            }
+        });
+    }
+
+    assignAPIValueTosaveControl() {
+        this.controlValue.isRefresh &#x3D; false;
+        // let bindNewRules &#x3D; { filters: this.filterda };
+        // Object.assign(this.controlValue, bindNewRules);
+        this.controlValue[&#x27;filters&#x27;] &#x3D; this.controlValue[&#x27;filterData&#x27;];
+        this.value &#x3D; this.controlValue;
+        let convertValue &#x3D; JSON.stringify(this.controlValue);
+        this.valueChange.emit(JSON.parse(convertValue));
+    }
+    groupArrayOfObjects(list: any, key: string) {
+        return list.reduce(function (rv: any, x: any) {
+            (rv[x[key]] &#x3D; rv[x[key]] || []).push(x);
+            return rv;
+        }, {});
+    }
+    getGroupByRule(singleGroupArray: any) {
+        let rules: any &#x3D; [];
+        let rr: any &#x3D; [];
+        let cnd &#x3D; &#x27;&#x27;;
+        singleGroupArray.forEach((element: any) &#x3D;&gt; {
+            let field: any &#x3D; {};
+            // If Field is Lookup field then compare with lookuptext otherwise direct compare with field
+            if (element.LookUpDetail &amp;&amp; element.LookUpDetail.includes(&#x27;.&#x27;)) {
+                field &#x3D; this.fieldList.find(
+                    (a: any) &#x3D;&gt;
+                        a.lookUPText &amp;&amp;
+                        a.lookUPText.toLowerCase() &#x3D;&#x3D;
+                            element.LookUpDetail.toLowerCase()
+                );
+            } else {
+                let isGuidExist &#x3D; this.isGuidValid(
+                    element.FieldID.toLowerCase()
+                );
+                if (isGuidExist) {
+                    field &#x3D; this.fieldList.find(
+                        (a: any) &#x3D;&gt;
+                            a.field.toLowerCase() &#x3D;&#x3D;
+                            element.FieldID.toLowerCase()
+                    );
+                } else {
+                    // changes lookuptext instead of label as we are getting lookup value in fieldid to compare
+                    field &#x3D; this.fieldList.find(
+                        (a: any) &#x3D;&gt;
+                            a.lookUPText.toLowerCase() &#x3D;&#x3D;
+                            element.FieldID.toLowerCase()
+                    );
+                }
+            }
+            if (field) {
+                let rule &#x3D; {
+                    label: field.label,
+                    field: field.field,
+                    operator:
+                        TabCommonFunction.getRelationalOperatorValueToString(
+                            element.RelationalOperator
+                        ),
+                    value: this.getTypeAndValue(element),
+                    type: field.type,
+                    // id: element.FieldID,
+                };
+                rr.push(rule);
+                cnd &#x3D; TabCommonFunction.getConjuctionClauseName(
+                    element.ConjuctionClause
+                );
+            }
+        });
+        rules.push({ condition: cnd, rules: rr });
+        return rules;
+    }
+
+    /**
+     *
+     * @param args args of rulechange
+    this function will triggers when changing the condition(AND/OR), field, value, operator is changed.
+     */
+    onRuleChange(args: RuleChangeEventArgs) {
+        this.finalRules &#x3D; [];
+        if (args?.rule &amp;&amp; args?.rule?.rules?.length) {
+            let groupCount &#x3D; 1;
+            args.rule.rules.forEach((element, index) &#x3D;&gt; {
+                if (element.hasOwnProperty(&#x27;rules&#x27;)) {
+                    groupCount++;
+                    this.updateGroupRules(element, groupCount);
+                } else {
+                    if (element.hasOwnProperty(&#x27;value&#x27;)) {
+                        let sr &#x3D; {
+                            ConjuctionClause:
+                                TabCommonFunction.getConjuctionClause(
+                                    args.rule.condition
+                                ),
+                            FieldID: this.getAppFieldId(element.field),
+                            RelationalOperator:
+                                TabCommonFunction.getRelationalOperatorValueToNumber(
+                                    element.operator
+                                ),
+                            // RelationalOperator: element.operator,
+                            Value:
+                                typeof element.value &#x3D;&#x3D; &#x27;string&#x27;
+                                    ? element.value
+                                          .split(&#x27;,&#x27;)
+                                          .slice(1)
+                                          .join(&#x27;,&#x27;)
+                                    : &#x27;&#x27;,
+                            ValueType:
+                                typeof element.value &#x3D;&#x3D; &#x27;string&#x27;
+                                    ? element.value.split(&#x27;,&#x27;)[0]
+                                    : &#x27;&#x27;, // this should be FilterValueType like Literal,Parameter
+                            // label: element.label,  Commenting this line because of Data are removing from filter if field is lookup field (scenario - if we have one filter with lookup field and after change dsq and coming back to dsq with lookup field filter and then adding new filter will not save lookup details of exiting filter.)
+                            label:
+                                this.getLabel(element.field) &#x3D;&#x3D;&#x3D; &#x27;&#x27;
+                                    ? element.label
+                                    : this.getLabel(element.field),
+                            group: groupCount,
+                            Sequence: index + 1,
+                        };
+                        this.finalRules.push(sr);
+                    }
+                }
+            });
+        }
+        this.controlValue.isRefresh &#x3D; false;
+        let bindNewRules &#x3D; { filters: this.finalRules };
+        Object.assign(this.controlValue, bindNewRules);
+        this.value &#x3D; this.controlValue;
+        let convertValue &#x3D; JSON.stringify(this.controlValue);
+        this.valueChange.emit(JSON.parse(convertValue));
+    }
+    updateGroupRules(groupData: any, groupCount: number) {
+        let updatedGroupCount &#x3D; groupCount;
+        if (
+            groupData &amp;&amp;
+            groupData.hasOwnProperty(&#x27;rules&#x27;) &amp;&amp;
+            groupData.rules &amp;&amp;
+            groupData.rules.length &gt; 0
+        ) {
+            groupData.rules.forEach((element: any, index) &#x3D;&gt; {
+                if (element.hasOwnProperty(&#x27;rules&#x27;)) {
+                    updatedGroupCount++;
+                    this.updateGroupRules(element, updatedGroupCount);
+                } else {
+                    if (element.hasOwnProperty(&#x27;value&#x27;)) {
+                        let sr &#x3D; {
+                            ConjuctionClause:
+                                TabCommonFunction.getConjuctionClause(
+                                    groupData.condition
+                                ),
+                            FieldID: element.field,
+                            RelationalOperator:
+                                TabCommonFunction.getRelationalOperatorValueToNumber(
+                                    element.operator
+                                ),
+                            Value:
+                                typeof element.value &#x3D;&#x3D; &#x27;string&#x27;
+                                    ? element.value.split(&#x27;,&#x27;)[1]
+                                    : &#x27;&#x27;,
+                            ValueType:
+                                typeof element.value &#x3D;&#x3D; &#x27;string&#x27;
+                                    ? element.value.split(&#x27;,&#x27;)[0]
+                                    : &#x27;&#x27;, // this should be FilterValueType like Literal,Parameter
+                            label:
+                                this.getLabel(element.field) &#x3D;&#x3D;&#x3D; &#x27;&#x27;
+                                    ? element.label
+                                    : this.getLabel(element.field),
+                            group: groupCount,
+                            Sequence: index + 1,
+                        };
+                        this.finalRules.push(sr);
+                    }
+                }
+            });
+        }
+    }
+
+    onFilterDropdownValueChange(
+        event: any,
+        ruleID: string,
+        type: string
+    ): void {
+        let element: any &#x3D; document
+            .getElementById(ruleID)
+            ?.querySelector(&#x27;.e-rule-value&#x27;);
+        let value;
+        switch (type) {
+            case &#x27;filter&#x27;:
+                value &#x3D; element.querySelector(&#x27;#value1&#x27;).textContent;
+                if (value &#x3D;&#x3D; &#x27;Parameter&#x27;) {
+                    if (
+                        this.controlValue &amp;&amp;
+                        this.controlValue.hasOwnProperty(&#x27;dataSourceQueryId&#x27;) &amp;&amp;
+                        this.controlValue[&#x27;dataSourceQueryId&#x27;]
+                    ) {
+                        this.getParameterListOFDSQ(
+                            this.controlValue[&#x27;dataSourceQueryId&#x27;]
+                        );
+                    }
+                }
+                break;
+            case &#x27;parameter&#x27;:
+                value &#x3D;
+                    element.querySelector(&#x27;#value1&#x27;).textContent +
+                    &#x27;,&#x27; +
+                    element.querySelector(&#x27;#value2&#x27;).textContent;
+                break;
+            case &#x27;property&#x27;:
+                value &#x3D;
+                    element.querySelector(&#x27;#value1&#x27;).textContent +
+                    &#x27;,&#x27; +
+                    element.querySelector(&#x27;#value3&#x27;).textContent;
+                break;
+            case &#x27;value&#x27;:
+                value &#x3D;
+                    element.querySelector(&#x27;#value1&#x27;).textContent +
+                    &#x27;,&#x27; +
+                    event.target.value;
+                break;
+            case &#x27;global&#x27;:
+                value &#x3D;
+                    element.querySelector(&#x27;#value1&#x27;).textContent +
+                    &#x27;,&#x27; +
+                    element.querySelector(&#x27;#value5&#x27;).textContent;
+                break;
+        }
+        this.tabQueryBuilder?.notifyChange(value as string, element, &#x27;value&#x27;);
+    }
+
+    // Get AppField Id
+    getAppFieldId(id: string): string {
+        let returnId &#x3D; &#x27;&#x27;;
+
+        if (id.includes(&#x27;___&#x27;)) {
+            var splittedArray &#x3D; id.split(&#x27;___&#x27;);
+
+            if (splittedArray &amp;&amp; splittedArray.length &gt; 1) {
+                returnId &#x3D; splittedArray[splittedArray.length - 1].toString();
+            }
+        } else {
+            returnId &#x3D; id;
+        }
+
+        return returnId;
+    }
+
+    // Get Label
+    getLabel(id: string): string {
+        let label &#x3D; &#x27;&#x27;;
+
+        if (id.includes(&#x27;___&#x27;) &amp;&amp; this.fieldList.length &gt; 0) {
+            label &#x3D; this.fieldList.find((x) &#x3D;&gt; x.field &#x3D;&#x3D;&#x3D; id)?.lookUPText;
+        }
+
+        return label;
+    }
+
+    isGuidValid(guid) {
+        const guidPattern &#x3D;
+            /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
+        return guidPattern.test(guid);
+    }
+
+    getTypeAndValue(element) {
+        let fs &#x3D; element.hasOwnProperty(&#x27;ValueType&#x27;)
+            ? TabCommonFunction.getFilterValueTypeInString(element.ValueType)
+            : TabCommonFunction.getFilterValueTypeInString(
+                  element.FilterValueType
+              );
+        let ss &#x3D; element.hasOwnProperty(&#x27;Value&#x27;)
+            ? element.Value
+            : element.value;
+        let ffs &#x3D; fs + &#x27;,&#x27; + ss;
+        return ffs;
+    }
+    ngOnDestroy(): void {
+        clearTimeout(this.setTimer);
+        clearTimeout(this.setTimerAssignAPI);
+        // Unsubscribe from all subscriptions
+        this._unsubscribeAll.next(null);
+        this._unsubscribeAll.complete();
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- &lt;div class&#x3D;&quot;container&quot; *ngIf&#x3D;&quot;!isShowBuilder&quot;&gt;
+    &lt;div class&#x3D;&quot;loader&quot;&gt;&lt;/div&gt;
+&lt;/div&gt; --&gt;
+
+&lt;div *ngIf&#x3D;&quot;isShowBuilder&quot; class&#x3D;&quot;col-lg-12 control-section&quot;&gt;
+    &lt;ejs-querybuilder
+        #tabQueryBuilder
+        [rule]&#x3D;&quot;finalRules&quot;
+        [fieldModel]&#x3D;&quot;{ allowFiltering: true, filterType: &#x27;Contains&#x27; }&quot;
+        (ruleChange)&#x3D;&quot;onRuleChange($event)&quot;
+        width&#x3D;&quot;100%&quot;
+        class&#x3D;&quot;row&quot;
+        [displayMode]&#x3D;&quot;controlSetting?.displayMode&quot;
+    &gt;
+        &lt;!-- when you try with dropdown tree just add this in builder  --&gt;
+        &lt;!-- [columns]&#x3D;&quot;columnFieldList&quot;
+    [fieldMode]&#x3D;&quot;fieldMode&quot;
+ [separator]&#x3D;&quot;separator&quot;--&gt;
+        &lt;e-columns&gt;
+            &lt;e-column
+                *ngFor&#x3D;&quot;let c of fieldList&quot;
+                [field]&#x3D;&quot;c.field&quot;
+                [label]&#x3D;&quot;c.lookUPText&quot;
+                [type]&#x3D;&quot;c.type&quot;
+                [operators]&#x3D;&quot;c.operators&quot;
+            &gt;
+                &lt;ng-template #template let-data&gt;
+                    &lt;div class&#x3D;&quot;e-query-box-layout&quot;&gt;
+                        &lt;ejs-dropdownlist
+                            cssClass&#x3D;&quot;e-custom e-query-custom-box&quot;
+                            id&#x3D;&quot;value1&quot;
+                            [dataSource]&#x3D;&quot;supportedFilterTypeList&quot;
+                            value&#x3D;&quot;{{
+                                data.rule.hasOwnProperty(&#x27;value&#x27;)
+                                    ? data.rule.value.split(&#x27;,&#x27;)[0]
+                                    : &#x27;&#x27;
+                            }}&quot;
+                            (change)&#x3D;&quot;
+                                onFilterDropdownValueChange(
+                                    $event,
+                                    data.ruleID,
+                                    &#x27;filter&#x27;
+                                )
+                            &quot;
+                        &gt;
+                        &lt;/ejs-dropdownlist&gt;
+                        &lt;div
+                            *ngIf&#x3D;&quot;
+                                data.rule.hasOwnProperty(&#x27;value&#x27;) &amp;&amp;
+                                data.rule.value.split(&#x27;,&#x27;)[0] &#x3D;&#x3D; &#x27;Parameter&#x27;
+                            &quot;
+                            class&#x3D;&quot;e-query-builder-select&quot;
+                        &gt;
+                            &lt;!-- (filtering)&#x3D;&quot;onFiltering($event, &#x27;parameter&#x27;)&quot; --&gt;
+                            &lt;ejs-dropdownlist
+                                cssClass&#x3D;&quot;e-custom e-query-custom-box&quot;
+                                id&#x3D;&quot;value2&quot;
+                                [dataSource]&#x3D;&quot;parameterList&quot;
+                                [allowFiltering]&#x3D;&quot;true&quot;
+                                value&#x3D;&quot;{{ data.rule.value.split(&#x27;,&#x27;)[1] }}&quot;
+                                (change)&#x3D;&quot;
+                                    onFilterDropdownValueChange(
+                                        $event,
+                                        data.ruleID,
+                                        &#x27;parameter&#x27;
+                                    )
+                                &quot;
+                            &gt;
+                            &lt;/ejs-dropdownlist&gt;
+                        &lt;/div&gt;
+                        &lt;div
+                            *ngIf&#x3D;&quot;
+                                data.rule.hasOwnProperty(&#x27;value&#x27;) &amp;&amp;
+                                data.rule.value.split(&#x27;,&#x27;)[0] &#x3D;&#x3D; &#x27;Literal&#x27;
+                            &quot;
+                            class&#x3D;&quot;e-query-builder-select&quot;
+                        &gt;
+                            &lt;!-- [value]&#x3D;&quot; data.rule.value.split(&#x27;,&#x27;)[1] ?
+                            data.rule.value.split(&#x27;,&#x27;)[1] : &#x27;&#x27; &quot; --&gt;
+                            &lt;input
+                                type&#x3D;&quot;text&quot;
+                                id&#x3D;&quot;value4&quot;
+                                placeholder&#x3D;&quot;Enter Value&quot;
+                                class&#x3D;&quot;e-input-group e-custom-input-group&quot;
+                                [value]&#x3D;&quot;
+                                    data.rule.value.split(&#x27;,&#x27;)[1]
+                                        ? data.rule.value
+                                              .split(&#x27;,&#x27;)
+                                              .slice(1)
+                                              .join(&#x27;,&#x27;)
+                                        : &#x27;&#x27;
+                                &quot;
+                                (change)&#x3D;&quot;
+                                    onFilterDropdownValueChange(
+                                        $event,
+                                        data.ruleID,
+                                        &#x27;value&#x27;
+                                    )
+                                &quot;
+                            /&gt;
+                        &lt;/div&gt;
+                        &lt;div
+                            *ngIf&#x3D;&quot;
+                                data.rule.hasOwnProperty(&#x27;value&#x27;) &amp;&amp;
+                                data.rule.value.split(&#x27;,&#x27;)[0] &#x3D;&#x3D; &#x27;Property&#x27;
+                            &quot;
+                            class&#x3D;&quot;e-query-builder-select&quot;
+                        &gt;
+                            &lt;!-- (filtering)&#x3D;&quot;onFiltering($event, &#x27;property&#x27;)&quot; --&gt;
+                            &lt;ejs-dropdownlist
+                                cssClass&#x3D;&quot;e-custom&quot;
+                                id&#x3D;&quot;value3&quot;
+                                [dataSource]&#x3D;&quot;properties&quot;
+                                value&#x3D;&quot;{{ data.rule.value.split(&#x27;,&#x27;)[1] }}&quot;
+                                [allowFiltering]&#x3D;&quot;true&quot;
+                                (change)&#x3D;&quot;
+                                    onFilterDropdownValueChange(
+                                        $event,
+                                        data.ruleID,
+                                        &#x27;property&#x27;
+                                    )
+                                &quot;
+                            &gt;
+                            &lt;/ejs-dropdownlist&gt;
+                        &lt;/div&gt;
+                        &lt;div
+                            *ngIf&#x3D;&quot;
+                                data.rule.hasOwnProperty(&#x27;value&#x27;) &amp;&amp;
+                                data.rule.value.split(&#x27;,&#x27;)[0] &#x3D;&#x3D; &#x27;Global&#x27;
+                            &quot;
+                            class&#x3D;&quot;e-query-builder-select&quot;
+                        &gt;
+                            &lt;ejs-dropdownlist
+                                cssClass&#x3D;&quot;e-custom&quot;
+                                id&#x3D;&quot;value5&quot;
+                                [dataSource]&#x3D;&quot;globalValues&quot;
+                                [value]&#x3D;&quot;
+                                    data.rule.value.split(&#x27;,&#x27;)[1]
+                                        ? data.rule.value.split(&#x27;,&#x27;)[1]
+                                        : &#x27;&#x27;
+                                &quot;
+                                (change)&#x3D;&quot;
+                                    onFilterDropdownValueChange(
+                                        $event,
+                                        data.ruleID,
+                                        &#x27;global&#x27;
+                                    )
+                                &quot;
+                            &gt;
+                            &lt;/ejs-dropdownlist&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/ng-template&gt;
+            &lt;/e-column&gt;
+        &lt;/e-columns&gt;
+    &lt;/ejs-querybuilder&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./new-tab-query-builder.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.e-query-builder {
+    margin: 0 auto;
+    display: block;
+}
+
+ejs-querybuilder {
+    display: block;
+}
+
+/* dropdown padding */
+.e-query-builder-select {
+    padding: 15px 0 12px 0px;
+}
+
+.e-query-box-layout {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    column-gap: 11px;
+    flex-wrap: wrap;
+}
+
+.e-rule-value {
+    width: fit-content !important;
+}
+
+
+.e-custom-input-group {
+    height: 31.5px;
+    padding-left: 10px;
+    padding-right: 10px !important;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- <div class="container" *ngIf="!isShowBuilder">    <div class="loader"></div></div> --><div *ngIf="isShowBuilder" class="col-lg-12 control-section">    <ejs-querybuilder        #tabQueryBuilder        [rule]="finalRules"        [fieldModel]="{ allowFiltering: true, filterType: \'Contains\' }"        (ruleChange)="onRuleChange($event)"        width="100%"        class="row"        [displayMode]="controlSetting?.displayMode"    >        <!-- when you try with dropdown tree just add this in builder  -->        <!-- [columns]="columnFieldList"    [fieldMode]="fieldMode" [separator]="separator"-->        <e-columns>            <e-column                *ngFor="let c of fieldList"                [field]="c.field"                [label]="c.lookUPText"                [type]="c.type"                [operators]="c.operators"            >                <ng-template #template let-data>                    <div class="e-query-box-layout">                        <ejs-dropdownlist                            cssClass="e-custom e-query-custom-box"                            id="value1"                            [dataSource]="supportedFilterTypeList"                            value="{{                                data.rule.hasOwnProperty(\'value\')                                    ? data.rule.value.split(\',\')[0]                                    : \'\'                            }}"                            (change)="                                onFilterDropdownValueChange(                                    $event,                                    data.ruleID,                                    \'filter\'                                )                            "                        >                        </ejs-dropdownlist>                        <div                            *ngIf="                                data.rule.hasOwnProperty(\'value\') &&                                data.rule.value.split(\',\')[0] == \'Parameter\'                            "                            class="e-query-builder-select"                        >                            <!-- (filtering)="onFiltering($event, \'parameter\')" -->                            <ejs-dropdownlist                                cssClass="e-custom e-query-custom-box"                                id="value2"                                [dataSource]="parameterList"                                [allowFiltering]="true"                                value="{{ data.rule.value.split(\',\')[1] }}"                                (change)="                                    onFilterDropdownValueChange(                                        $event,                                        data.ruleID,                                        \'parameter\'                                    )                                "                            >                            </ejs-dropdownlist>                        </div>                        <div                            *ngIf="                                data.rule.hasOwnProperty(\'value\') &&                                data.rule.value.split(\',\')[0] == \'Literal\'                            "                            class="e-query-builder-select"                        >                            <!-- [value]=" data.rule.value.split(\',\')[1] ?                            data.rule.value.split(\',\')[1] : \'\' " -->                            <input                                type="text"                                id="value4"                                placeholder="Enter Value"                                class="e-input-group e-custom-input-group"                                [value]="                                    data.rule.value.split(\',\')[1]                                        ? data.rule.value                                              .split(\',\')                                              .slice(1)                                              .join(\',\')                                        : \'\'                                "                                (change)="                                    onFilterDropdownValueChange(                                        $event,                                        data.ruleID,                                        \'value\'                                    )                                "                            />                        </div>                        <div                            *ngIf="                                data.rule.hasOwnProperty(\'value\') &&                                data.rule.value.split(\',\')[0] == \'Property\'                            "                            class="e-query-builder-select"                        >                            <!-- (filtering)="onFiltering($event, \'property\')" -->                            <ejs-dropdownlist                                cssClass="e-custom"                                id="value3"                                [dataSource]="properties"                                value="{{ data.rule.value.split(\',\')[1] }}"                                [allowFiltering]="true"                                (change)="                                    onFilterDropdownValueChange(                                        $event,                                        data.ruleID,                                        \'property\'                                    )                                "                            >                            </ejs-dropdownlist>                        </div>                        <div                            *ngIf="                                data.rule.hasOwnProperty(\'value\') &&                                data.rule.value.split(\',\')[0] == \'Global\'                            "                            class="e-query-builder-select"                        >                            <ejs-dropdownlist                                cssClass="e-custom"                                id="value5"                                [dataSource]="globalValues"                                [value]="                                    data.rule.value.split(\',\')[1]                                        ? data.rule.value.split(\',\')[1]                                        : \'\'                                "                                (change)="                                    onFilterDropdownValueChange(                                        $event,                                        data.ruleID,                                        \'global\'                                    )                                "                            >                            </ejs-dropdownlist>                        </div>                    </div>                </ng-template>            </e-column>        </e-columns>    </ejs-querybuilder></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthConfirmationRequiredComponent', 'selector': 'auth-confirmation-required'},{'name': 'AuthForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'AuthResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'AuthSignInComponent', 'selector': 'auth-sign-in'},{'name': 'AuthSignOutComponent', 'selector': 'auth-sign-out'},{'name': 'AuthSignUpComponent', 'selector': 'auth-sign-up'},{'name': 'AuthUnlockSessionComponent', 'selector': 'auth-unlock-session'},{'name': 'ButtonTemplateComponent', 'selector': 'button-template'},{'name': 'CenteredLayoutComponent', 'selector': 'centered-layout'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ClassicLayoutComponent', 'selector': 'classic-layout'},{'name': 'ClassyLayoutComponent', 'selector': 'classy-layout'},{'name': 'CompactLayoutComponent', 'selector': 'compact-layout'},{'name': 'DenseLayoutComponent', 'selector': 'dense-layout'},{'name': 'EmptyLayoutComponent', 'selector': 'empty-layout'},{'name': 'EnterpriseLayoutComponent', 'selector': 'enterprise-layout'},{'name': 'FuseAlertComponent', 'selector': 'fuse-alert'},{'name': 'FuseCardComponent', 'selector': 'fuse-card'},{'name': 'FuseConfirmationDialogComponent', 'selector': 'fuse-confirmation-dialog'},{'name': 'FuseDrawerComponent', 'selector': 'fuse-drawer'},{'name': 'FuseFullscreenComponent', 'selector': 'fuse-fullscreen'},{'name': 'FuseHighlightComponent', 'selector': 'textarea[fuse-highlight]'},{'name': 'FuseHorizontalNavigationBasicItemComponent', 'selector': 'fuse-horizontal-navigation-basic-item'},{'name': 'FuseHorizontalNavigationBranchItemComponent', 'selector': 'fuse-horizontal-navigation-branch-item'},{'name': 'FuseHorizontalNavigationComponent', 'selector': 'fuse-horizontal-navigation'},{'name': 'FuseHorizontalNavigationDividerItemComponent', 'selector': 'fuse-horizontal-navigation-divider-item'},{'name': 'FuseHorizontalNavigationSpacerItemComponent', 'selector': 'fuse-horizontal-navigation-spacer-item'},{'name': 'FuseLoadingBarComponent', 'selector': 'fuse-loading-bar'},{'name': 'FuseMasonryComponent', 'selector': 'fuse-masonry'},{'name': 'FuseVerticalNavigationAsideItemComponent', 'selector': 'fuse-vertical-navigation-aside-item'},{'name': 'FuseVerticalNavigationBasicItemComponent', 'selector': 'fuse-vertical-navigation-basic-item'},{'name': 'FuseVerticalNavigationCollapsableItemComponent', 'selector': 'fuse-vertical-navigation-collapsable-item'},{'name': 'FuseVerticalNavigationComponent', 'selector': 'fuse-vertical-navigation'},{'name': 'FuseVerticalNavigationDividerItemComponent', 'selector': 'fuse-vertical-navigation-divider-item'},{'name': 'FuseVerticalNavigationGroupItemComponent', 'selector': 'fuse-vertical-navigation-group-item'},{'name': 'FuseVerticalNavigationSpacerItemComponent', 'selector': 'fuse-vertical-navigation-spacer-item'},{'name': 'FuturisticLayoutComponent', 'selector': 'futuristic-layout'},{'name': 'GridCustomHTMLTemplateComponent', 'selector': 'app-grid-custom-htmltemplate'},{'name': 'HomeComponent', 'selector': 'Home'},{'name': 'ImageTemplateComponent', 'selector': 'image-template'},{'name': 'ImageWithNameTemplateComponent', 'selector': 'image-with-name-template'},{'name': 'LandingHomeComponent', 'selector': 'landing-home'},{'name': 'LanguagesComponent', 'selector': 'languages'},{'name': 'LayoutComponent', 'selector': 'layout'},{'name': 'LinkTemplateComponent', 'selector': 'link-template'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapdialogComponent', 'selector': 'app-mapdialog'},{'name': 'MaterialLayoutComponent', 'selector': 'material-layout'},{'name': 'MessagesComponent', 'selector': 'messages'},{'name': 'ModernLayoutComponent', 'selector': 'modern-layout'},{'name': 'NewTabQueryBuilderComponent', 'selector': 'new-tab-core-tab-query-builder'},{'name': 'NotificationsComponent', 'selector': 'notifications'},{'name': 'ScreenFilterComponent', 'selector': 'screen-filter'},{'name': 'SearchComponent', 'selector': 'search'},{'name': 'SettingsComponent', 'selector': 'settings'},{'name': 'ShortcutsComponent', 'selector': 'shortcuts'},{'name': 'StarComponent', 'selector': 'app-star'},{'name': 'TabBasicGridComponent', 'selector': 'tab-basic-grid'},{'name': 'TabBlueprintComponent', 'selector': 'app-tab-blueprint'},{'name': 'TabChildScreenRendererComponent', 'selector': 'tab-core-tab-child-screen-renderer'},{'name': 'TabChipsComponent', 'selector': 'app-tab-chips'},{'name': 'TabColorPickerComponent', 'selector': 'app-tab-color-picker'},{'name': 'TabCommentsComponent', 'selector': 'app-tab-comments'},{'name': 'TabCustomCalenderComponent', 'selector': 'tab-custom-calender'},{'name': 'TabCustomCodeEditorComponent', 'selector': 'tab-core-tab-custom-code-editor'},{'name': 'TabCustomFormBuilderComponent', 'selector': 'tab-custom-form-builder'},{'name': 'TabCustomGanttChartComponent', 'selector': 'app-tab-custom-gantt-chart'},{'name': 'TabCustomImageuploadComponent', 'selector': 'app-tab-custom-imageupload'},{'name': 'TabCustomPivotTableComponent', 'selector': 'app-tab-custom-pivot-table'},{'name': 'TabCustomPlacePickerMapComponent', 'selector': 'app-tab-custom-place-picker-map'},{'name': 'TabCustomRichtextHtmlEditorComponent', 'selector': 'app-tab-custom-richtext-html-editor'},{'name': 'TabCustomTrackMapComponent', 'selector': 'app-tab-custom-track-map'},{'name': 'TabDateRangePickerComponent', 'selector': 'app-tab-date-range-picker'},{'name': 'TabDropDownTreeComponent', 'selector': 'app-tab-dropdown-tree'},{'name': 'TabDynamicDialogComponent', 'selector': 'app-tab-dynamic-dialog'},{'name': 'TabDynamicSidebarComponent', 'selector': 'app-tab-dynamic-sidebar'},{'name': 'TabFilePreviewComponent', 'selector': 'app-tab-file-preview'},{'name': 'TabFormBuilderComponent', 'selector': 'tab-form-builder'},{'name': 'TabFormRendererComponent', 'selector': 'tab-form-renderer'},{'name': 'TabHistoryComponent', 'selector': 'app-tab-history'},{'name': 'TabIframeComponent', 'selector': 'app-tab-iframe'},{'name': 'TabPdfViewerComponent', 'selector': 'app-tab-pdf-viewer'},{'name': 'TabQueryBuilderComponent', 'selector': 'tab-core-tab-query-builder'},{'name': 'TabSkeletonComponent', 'selector': 'app-tab-skeleton'},{'name': 'TabTextBoxComponent', 'selector': 'app-tab-iframe'},{'name': 'TabTimerComponent', 'selector': 'app-tab-timer'},{'name': 'TabTimerComponentComponent', 'selector': 'app-tab-timer-component'},{'name': 'TabTransitionPreviewComponent', 'selector': 'app-tab-transition-preview'},{'name': 'TabTreeViewComponent', 'selector': 'tab-core-tab-tree-view'},{'name': 'TabWidgetComponent', 'selector': 'app-tab-widget'},{'name': 'ThinLayoutComponent', 'selector': 'thin-layout'},{'name': 'UserComponent', 'selector': 'user'},{'name': 'ViewMoreComponent', 'selector': 'view-more-search-list'}];
+    var DIRECTIVES = [{'name': 'FuseScrollbarDirective', 'selector': '[fuseScrollbar]'},{'name': 'FuseScrollResetDirective', 'selector': '[fuseScrollReset]'},{'name': 'SafeHtmlDirective', 'selector': '[appSafeHtml]'}];
+    var ACTUAL_COMPONENT = {'name': 'NewTabQueryBuilderComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NewTabQueryBuilderComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

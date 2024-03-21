@@ -1,0 +1,1291 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@fuse/starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@fuse/starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TabPdfViewerComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-tab-pdf-viewer</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./tab-pdf-viewer.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./tab-pdf-viewer.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#_unsubscribeAll" >_unsubscribeAll</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_value" >_value</a>
+                            </li>
+                            <li>
+                                <a href="#debounceSubject" >debounceSubject</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#document" >document</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                <a href="#pdfviewerControl" >pdfviewerControl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#service" >service</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#toolbarSettings" >toolbarSettings</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#load" >load</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnChanges" >ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#toolbarSetting" >toolbarSetting</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSettingOfPdfViewer" >dataSettingOfPdfViewer</a>
+                            </li>
+                            <li>
+                                <a href="#value" >value</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#value" >value</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(tabMediaUploadService: TabMediaUploadService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>tabMediaUploadService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabMediaUploadService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSettingOfPdfViewer"></a>
+                        <b>dataSettingOfPdfViewer</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:30</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <b>value</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:38</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="load"></a>
+                    <span class="name">
+                        <span ><b>load</b></span>
+                        <a href="#load"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>load()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="179"
+                                    class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:179</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnChanges"></a>
+                    <span class="name">
+                        <span ><b>ngOnChanges</b></span>
+                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnChanges(changes: SimpleChanges)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="75"
+                                    class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>changes</td>
+                                            <td>
+                                                        <code>SimpleChanges</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="205"
+                                    class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:205</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="50"
+                                    class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toolbarSetting"></a>
+                    <span class="name">
+                        <span ><b>toolbarSetting</b></span>
+                        <a href="#toolbarSetting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toolbarSetting()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="82"
+                                    class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_unsubscribeAll"></a>
+                    <span class="name">
+                        <span ><b>_unsubscribeAll</b></span>
+                        <a href="#_unsubscribeAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;string&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_value"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_value</b></span>
+                        <a href="#_value"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="debounceSubject"></a>
+                    <span class="name">
+                        <span ><b>debounceSubject</b></span>
+                        <a href="#debounceSubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="document"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>document</b></span>
+                        <a href="#document"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pdfviewerControl"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Public</span>
+                        <span ><b>pdfviewerControl</b></span>
+                        <a href="#pdfviewerControl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>PdfViewerComponent</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;pdfviewer&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="service"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>service</b></span>
+                        <a href="#service"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;https://ej2services.syncfusion.com/production/web-services/api/pdfviewer&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toolbarSettings"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>toolbarSettings</b></span>
+                        <a href="#toolbarSettings"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ToolbarSettingsModel</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+        showTooltip: true,
+        toolbarItems: [],
+    }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:68</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <span class="name"><b>value</b><a href="#value"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>value()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:44</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>value(val: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/modules/admin/tab-pdf-viewer/tab-pdf-viewer.component.ts:38</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    Component,
+    Input,
+    OnDestroy,
+    OnInit,
+    SimpleChanges,
+    ViewChild,
+} from &#x27;@angular/core&#x27;;
+import {
+    PdfViewerComponent,
+    ToolbarSettingsModel,
+} from &#x27;@syncfusion/ej2-angular-pdfviewer&#x27;;
+import { TabMediaUploadService } from &#x27;@techextensor/tab-service&#x27;;
+import { Subject, debounceTime, takeUntil } from &#x27;rxjs&#x27;;
+
+@Component({
+    selector: &#x27;app-tab-pdf-viewer&#x27;,
+    templateUrl: &#x27;./tab-pdf-viewer.component.html&#x27;,
+    styleUrls: [&#x27;./tab-pdf-viewer.component.scss&#x27;],
+})
+export class TabPdfViewerComponent implements OnInit, OnDestroy {
+    private _value: any;
+
+    // Reference to the PdfViewerComponent
+    @ViewChild(&#x27;pdfviewer&#x27;)
+    public pdfviewerControl: PdfViewerComponent;
+
+    // Input property to receive data setting for the PDF viewer
+
+    @Input() dataSettingOfPdfViewer: any;
+
+    debounceSubject &#x3D; new Subject();
+    _unsubscribeAll: Subject&lt;string&gt; &#x3D; new Subject&lt;string&gt;();
+
+    // Setter and getter for the value property
+
+    @Input()
+    public set value(val: any) {
+        if (val &amp;&amp; val !&#x3D; null) {
+            this._value &#x3D; val;
+        }
+        this.debounceSubject.next(1);
+    }
+    public get value(): any {
+        return this._value;
+    }
+
+    constructor(private tabMediaUploadService: TabMediaUploadService) { }
+
+    ngOnInit(): void {
+        this.debounceSubject.pipe(debounceTime(1000))
+            .pipe(takeUntil(this._unsubscribeAll)).subscribe(() &#x3D;&gt; {
+                this.load();
+            })
+    }
+
+    // Service URL for the PDF viewer
+
+    public service &#x3D;
+        &#x27;https://ej2services.syncfusion.com/production/web-services/api/pdfviewer&#x27;;
+
+    // Document to be displayed in the PDF viewer
+
+    public document &#x3D; &#x27;&#x27;;
+
+    // Toolbar settings for the PDF viewer
+
+    public toolbarSettings: ToolbarSettingsModel &#x3D; {
+        showTooltip: true,
+        toolbarItems: [],
+    };
+
+    // Lifecycle hook called when input properties change
+
+    ngOnChanges(changes: SimpleChanges) {
+        if (changes.dataSettingOfPdfViewer &amp;&amp; this.dataSettingOfPdfViewer) {
+            this.toolbarSetting();
+        }
+    }
+
+    // Function to configure the toolbar settings based on the provided dataSettingOfPdfViewer
+    toolbarSetting() {
+        // Reset the toolbar items array
+
+        this.toolbarSettings.toolbarItems &#x3D; [];
+
+        // Check if dataSettingOfPdfViewer has been provided
+
+        if (this.dataSettingOfPdfViewer) {
+            const {
+                isOpenFile,
+                isDownLoadFile,
+                isNavigantion,
+                isMagnification,
+                isPanTool,
+                isSelection,
+                isSearchOption,
+                isPrint,
+                isUndoRedo,
+                isAnnotationEdit,
+                isFormDesignerTool,
+                isCommentTool,
+                submitForm,
+            } &#x3D; this.dataSettingOfPdfViewer;
+
+            // Configure the toolbar items based on the settings
+
+            if (isOpenFile) {
+                // Add the &#x27;OpenOption&#x27; to the toolbar items array
+
+                this.toolbarSettings.toolbarItems.push(&#x27;OpenOption&#x27;);
+            }
+
+            if (isDownLoadFile) {
+                // Add the &#x27;DownloadOption&#x27; to the toolbar items array
+
+                this.toolbarSettings.toolbarItems.push(&#x27;DownloadOption&#x27;);
+
+                if (isNavigantion) {
+                    // Add the &#x27;PageNavigationTool&#x27; to the toolbar items array
+                    this.toolbarSettings.toolbarItems.push(
+                        &#x27;PageNavigationTool&#x27;
+                    );
+                }
+                if (isMagnification) {
+                    // Add the &#x27;MagnificationTool&#x27; to the toolbar items array
+                    this.toolbarSettings.toolbarItems.push(&#x27;MagnificationTool&#x27;);
+                }
+
+                if (isPanTool) {
+                    // Add the &#x27;PanTool&#x27; to the toolbar items array
+                    this.toolbarSettings.toolbarItems.push(&#x27;PanTool&#x27;);
+                }
+                if (isSelection) {
+                    // Add the &#x27;SelectionTool&#x27; to the toolbar items array
+
+                    this.toolbarSettings.toolbarItems.push(&#x27;SelectionTool&#x27;);
+                }
+                if (isSearchOption) {
+                    // Add the &#x27;PrintOption&#x27; to the toolbar items array
+                    this.toolbarSettings.toolbarItems.push(&#x27;SearchOption&#x27;);
+                }
+                if (isPrint) {
+                    // Add the &#x27;UndoRedoTool&#x27; to the toolbar items array
+                    this.toolbarSettings.toolbarItems.push(&#x27;PrintOption&#x27;);
+                }
+                if (isUndoRedo) {
+                    // Add the &#x27;UndoRedoTool&#x27; to the toolbar items array
+                    this.toolbarSettings.toolbarItems.push(&#x27;UndoRedoTool&#x27;);
+                }
+                if (isAnnotationEdit) {
+                    // Add the &#x27;AnnotationEditTool&#x27; to the toolbar items array
+                    this.toolbarSettings.toolbarItems.push(
+                        &#x27;AnnotationEditTool&#x27;
+                    );
+                }
+
+                if (isFormDesignerTool) {
+                    // Add the &#x27;FormDesignerEditTool&#x27; to the toolbar items array
+                    this.toolbarSettings.toolbarItems.push(
+                        &#x27;FormDesignerEditTool&#x27;
+                    );
+                }
+
+                if (isCommentTool) {
+                    // Add the &#x27;CommentTool&#x27; to the toolbar items array
+                    this.toolbarSettings.toolbarItems.push(&#x27;CommentTool&#x27;);
+                }
+
+                if (submitForm) {
+                    // Add the &#x27;SubmitForm&#x27; to the toolbar items array
+                    this.toolbarSettings.toolbarItems.push(&#x27;SubmitForm&#x27;);
+                }
+            }
+        }
+    }
+    // This method loads the PDF document into the PDF viewer using the mediaId provided in the _value object.
+
+    load() {
+        // Get a reference to the PDF viewer instance
+        var viewer &#x3D; (&lt;any&gt;document.getElementById(&#x27;pdfViewer&#x27;))
+            .ej2_instances[0];
+
+        // Call the tabMediaUploadService to get the PDF file blob using the mediaId
+
+        this.tabMediaUploadService
+            .getFileByMediaId(this._value.mediaId)
+            .subscribe((blob: any) &#x3D;&gt; {
+                // Create a new FileReader to read the blob as a data URL (base64)
+
+                var reader &#x3D; new FileReader();
+                reader.readAsDataURL(blob);
+
+                // When the FileReader finishes loading the data (base64 string),
+                // this callback function will be executed.
+                reader.onload &#x3D; () &#x3D;&gt; {
+                    // Get the base64 string representing the PDF file
+                    var base64data &#x3D; reader.result;
+                    // Load the base64 data into the PDF viewer
+                    viewer.load(base64data, null);
+                };
+            });
+    }
+
+    ngOnDestroy(): void {
+        this._unsubscribeAll.next(null);
+        this._unsubscribeAll.complete();
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content-wrapper&quot;&gt;
+    &lt;ejs-pdfviewer
+        id&#x3D;&quot;pdfViewer&quot;
+        class&#x3D;&quot;pdf-Viewer&quot;
+        [serviceUrl]&#x3D;&quot;service&quot;
+        [toolbarSettings]&#x3D;&quot;toolbarSettings&quot;
+        [enableNavigation]&#x3D;&quot;true&quot;
+        [enableBookmark]&#x3D;&quot;true&quot;
+        [enableFormFields]&#x3D;&quot;true&quot;
+        [enableFormDesigner]&#x3D;&quot;true&quot;
+        [enableFormDesignerToolbar]&#x3D;&quot;true&quot;
+        style&#x3D;&quot;height: 1000px; display: block&quot;
+    &gt;
+    &lt;/ejs-pdfviewer&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./tab-pdf-viewer.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.pdf-Viewer .e-toolbar .e-toolbar-items .e-toolbar-item .e-tbar-btn.e-btn{
+    background-color: transparent
+}
+
+.pdf-Viewer {
+    background-color: transparent;
+}
+
+::ng-deep .e-pdfviewer-toolbar .e-pageno-container {
+  display: flex;
+  align-items: center;
+}
+
+::ng-deep .e-pdfviewer-toolbar .e-pageno-container input {
+  width: 40px;
+  height: 25px;
+  padding: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+::ng-deep .e-pdfviewer-toolbar .e-pageno-container .e-pageno-count {
+  margin-left: 10px;
+  font-size: 14px;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="content-wrapper">    <ejs-pdfviewer        id="pdfViewer"        class="pdf-Viewer"        [serviceUrl]="service"        [toolbarSettings]="toolbarSettings"        [enableNavigation]="true"        [enableBookmark]="true"        [enableFormFields]="true"        [enableFormDesigner]="true"        [enableFormDesignerToolbar]="true"        style="height: 1000px; display: block"    >    </ejs-pdfviewer></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthConfirmationRequiredComponent', 'selector': 'auth-confirmation-required'},{'name': 'AuthForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'AuthResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'AuthSignInComponent', 'selector': 'auth-sign-in'},{'name': 'AuthSignOutComponent', 'selector': 'auth-sign-out'},{'name': 'AuthSignUpComponent', 'selector': 'auth-sign-up'},{'name': 'AuthUnlockSessionComponent', 'selector': 'auth-unlock-session'},{'name': 'ButtonTemplateComponent', 'selector': 'button-template'},{'name': 'CenteredLayoutComponent', 'selector': 'centered-layout'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ClassicLayoutComponent', 'selector': 'classic-layout'},{'name': 'ClassyLayoutComponent', 'selector': 'classy-layout'},{'name': 'CompactLayoutComponent', 'selector': 'compact-layout'},{'name': 'DenseLayoutComponent', 'selector': 'dense-layout'},{'name': 'EmptyLayoutComponent', 'selector': 'empty-layout'},{'name': 'EnterpriseLayoutComponent', 'selector': 'enterprise-layout'},{'name': 'FuseAlertComponent', 'selector': 'fuse-alert'},{'name': 'FuseCardComponent', 'selector': 'fuse-card'},{'name': 'FuseConfirmationDialogComponent', 'selector': 'fuse-confirmation-dialog'},{'name': 'FuseDrawerComponent', 'selector': 'fuse-drawer'},{'name': 'FuseFullscreenComponent', 'selector': 'fuse-fullscreen'},{'name': 'FuseHighlightComponent', 'selector': 'textarea[fuse-highlight]'},{'name': 'FuseHorizontalNavigationBasicItemComponent', 'selector': 'fuse-horizontal-navigation-basic-item'},{'name': 'FuseHorizontalNavigationBranchItemComponent', 'selector': 'fuse-horizontal-navigation-branch-item'},{'name': 'FuseHorizontalNavigationComponent', 'selector': 'fuse-horizontal-navigation'},{'name': 'FuseHorizontalNavigationDividerItemComponent', 'selector': 'fuse-horizontal-navigation-divider-item'},{'name': 'FuseHorizontalNavigationSpacerItemComponent', 'selector': 'fuse-horizontal-navigation-spacer-item'},{'name': 'FuseLoadingBarComponent', 'selector': 'fuse-loading-bar'},{'name': 'FuseMasonryComponent', 'selector': 'fuse-masonry'},{'name': 'FuseVerticalNavigationAsideItemComponent', 'selector': 'fuse-vertical-navigation-aside-item'},{'name': 'FuseVerticalNavigationBasicItemComponent', 'selector': 'fuse-vertical-navigation-basic-item'},{'name': 'FuseVerticalNavigationCollapsableItemComponent', 'selector': 'fuse-vertical-navigation-collapsable-item'},{'name': 'FuseVerticalNavigationComponent', 'selector': 'fuse-vertical-navigation'},{'name': 'FuseVerticalNavigationDividerItemComponent', 'selector': 'fuse-vertical-navigation-divider-item'},{'name': 'FuseVerticalNavigationGroupItemComponent', 'selector': 'fuse-vertical-navigation-group-item'},{'name': 'FuseVerticalNavigationSpacerItemComponent', 'selector': 'fuse-vertical-navigation-spacer-item'},{'name': 'FuturisticLayoutComponent', 'selector': 'futuristic-layout'},{'name': 'GridCustomHTMLTemplateComponent', 'selector': 'app-grid-custom-htmltemplate'},{'name': 'HomeComponent', 'selector': 'Home'},{'name': 'ImageTemplateComponent', 'selector': 'image-template'},{'name': 'ImageWithNameTemplateComponent', 'selector': 'image-with-name-template'},{'name': 'LandingHomeComponent', 'selector': 'landing-home'},{'name': 'LanguagesComponent', 'selector': 'languages'},{'name': 'LayoutComponent', 'selector': 'layout'},{'name': 'LinkTemplateComponent', 'selector': 'link-template'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapdialogComponent', 'selector': 'app-mapdialog'},{'name': 'MaterialLayoutComponent', 'selector': 'material-layout'},{'name': 'MessagesComponent', 'selector': 'messages'},{'name': 'ModernLayoutComponent', 'selector': 'modern-layout'},{'name': 'NewTabQueryBuilderComponent', 'selector': 'new-tab-core-tab-query-builder'},{'name': 'NotificationsComponent', 'selector': 'notifications'},{'name': 'ScreenFilterComponent', 'selector': 'screen-filter'},{'name': 'SearchComponent', 'selector': 'search'},{'name': 'SettingsComponent', 'selector': 'settings'},{'name': 'ShortcutsComponent', 'selector': 'shortcuts'},{'name': 'StarComponent', 'selector': 'app-star'},{'name': 'TabBasicGridComponent', 'selector': 'tab-basic-grid'},{'name': 'TabBlueprintComponent', 'selector': 'app-tab-blueprint'},{'name': 'TabChildScreenRendererComponent', 'selector': 'tab-core-tab-child-screen-renderer'},{'name': 'TabChipsComponent', 'selector': 'app-tab-chips'},{'name': 'TabColorPickerComponent', 'selector': 'app-tab-color-picker'},{'name': 'TabCommentsComponent', 'selector': 'app-tab-comments'},{'name': 'TabCustomCalenderComponent', 'selector': 'tab-custom-calender'},{'name': 'TabCustomCodeEditorComponent', 'selector': 'tab-core-tab-custom-code-editor'},{'name': 'TabCustomFormBuilderComponent', 'selector': 'tab-custom-form-builder'},{'name': 'TabCustomGanttChartComponent', 'selector': 'app-tab-custom-gantt-chart'},{'name': 'TabCustomImageuploadComponent', 'selector': 'app-tab-custom-imageupload'},{'name': 'TabCustomPivotTableComponent', 'selector': 'app-tab-custom-pivot-table'},{'name': 'TabCustomPlacePickerMapComponent', 'selector': 'app-tab-custom-place-picker-map'},{'name': 'TabCustomRichtextHtmlEditorComponent', 'selector': 'app-tab-custom-richtext-html-editor'},{'name': 'TabCustomTrackMapComponent', 'selector': 'app-tab-custom-track-map'},{'name': 'TabDateRangePickerComponent', 'selector': 'app-tab-date-range-picker'},{'name': 'TabDropDownTreeComponent', 'selector': 'app-tab-dropdown-tree'},{'name': 'TabDynamicDialogComponent', 'selector': 'app-tab-dynamic-dialog'},{'name': 'TabDynamicSidebarComponent', 'selector': 'app-tab-dynamic-sidebar'},{'name': 'TabFilePreviewComponent', 'selector': 'app-tab-file-preview'},{'name': 'TabFormBuilderComponent', 'selector': 'tab-form-builder'},{'name': 'TabFormRendererComponent', 'selector': 'tab-form-renderer'},{'name': 'TabHistoryComponent', 'selector': 'app-tab-history'},{'name': 'TabIframeComponent', 'selector': 'app-tab-iframe'},{'name': 'TabPdfViewerComponent', 'selector': 'app-tab-pdf-viewer'},{'name': 'TabQueryBuilderComponent', 'selector': 'tab-core-tab-query-builder'},{'name': 'TabSkeletonComponent', 'selector': 'app-tab-skeleton'},{'name': 'TabTextBoxComponent', 'selector': 'app-tab-iframe'},{'name': 'TabTimerComponent', 'selector': 'app-tab-timer'},{'name': 'TabTimerComponentComponent', 'selector': 'app-tab-timer-component'},{'name': 'TabTransitionPreviewComponent', 'selector': 'app-tab-transition-preview'},{'name': 'TabTreeViewComponent', 'selector': 'tab-core-tab-tree-view'},{'name': 'TabWidgetComponent', 'selector': 'app-tab-widget'},{'name': 'ThinLayoutComponent', 'selector': 'thin-layout'},{'name': 'UserComponent', 'selector': 'user'},{'name': 'ViewMoreComponent', 'selector': 'view-more-search-list'}];
+    var DIRECTIVES = [{'name': 'FuseScrollbarDirective', 'selector': '[fuseScrollbar]'},{'name': 'FuseScrollResetDirective', 'selector': '[fuseScrollReset]'},{'name': 'SafeHtmlDirective', 'selector': '[appSafeHtml]'}];
+    var ACTUAL_COMPONENT = {'name': 'TabPdfViewerComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TabPdfViewerComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

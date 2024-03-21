@@ -1,0 +1,3893 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@fuse/starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@fuse/starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TabBlueprintComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>FormioCustomComponent</code>
+                <code>AfterViewInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-tab-blueprint</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./tab-blueprint.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./tab-blueprint.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_unsubscribeAll" >_unsubscribeAll</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#debounceSubject" >debounceSubject</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#diagram" >diagram</a>
+                            </li>
+                            <li>
+                                <a href="#diagramConstraints" >diagramConstraints</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#diagramTool" >diagramTool</a>
+                            </li>
+                            <li>
+                                <a href="#expandMode" >expandMode</a>
+                            </li>
+                            <li>
+                                <a href="#getConnectorDefaults" >getConnectorDefaults</a>
+                            </li>
+                            <li>
+                                <a href="#getNodeDefaults" >getNodeDefaults</a>
+                            </li>
+                            <li>
+                                <a href="#getNodeDefaultsForPalette" >getNodeDefaultsForPalette</a>
+                            </li>
+                            <li>
+                                <a href="#getNodeModel" >getNodeModel</a>
+                            </li>
+                            <li>
+                                <a href="#getSymbolInfo" >getSymbolInfo</a>
+                            </li>
+                            <li>
+                                <a href="#onClick" >onClick</a>
+                            </li>
+                            <li>
+                                <a href="#onCollectionChange" >onCollectionChange</a>
+                            </li>
+                            <li>
+                                <a href="#onDiagramCreate" >onDiagramCreate</a>
+                            </li>
+                            <li>
+                                <a href="#onDoubleClick" >onDoubleClick</a>
+                            </li>
+                            <li>
+                                <a href="#onDragEnter" >onDragEnter</a>
+                            </li>
+                            <li>
+                                <a href="#onPropertyChange" >onPropertyChange</a>
+                            </li>
+                            <li>
+                                <a href="#onTextEdit" >onTextEdit</a>
+                            </li>
+                            <li>
+                                <a href="#onToolbarEvent" >onToolbarEvent</a>
+                            </li>
+                            <li>
+                                <a href="#palettes" >palettes</a>
+                            </li>
+                            <li>
+                                <a href="#selectedElements" >selectedElements</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setTimer" >setTimer</a>
+                            </li>
+                            <li>
+                                <a href="#showPalettes" >showPalettes</a>
+                            </li>
+                            <li>
+                                <a href="#snapSettings" >snapSettings</a>
+                            </li>
+                            <li>
+                                <a href="#symbolHeight" >symbolHeight</a>
+                            </li>
+                            <li>
+                                <a href="#symbolMargin" >symbolMargin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#symbolpalette" >symbolpalette</a>
+                            </li>
+                            <li>
+                                <a href="#symbolWidth" >symbolWidth</a>
+                            </li>
+                            <li>
+                                <a href="#updateDiagram" >updateDiagram</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#callCustomEventAction" >callCustomEventAction</a>
+                            </li>
+                            <li>
+                                <a href="#convertMinutes" >convertMinutes</a>
+                            </li>
+                            <li>
+                                <a href="#getConnectorConstraints" >getConnectorConstraints</a>
+                            </li>
+                            <li>
+                                <a href="#getNodeConstraints" >getNodeConstraints</a>
+                            </li>
+                            <li>
+                                <a href="#getPorts" >getPorts</a>
+                            </li>
+                            <li>
+                                <a href="#getPortStyle" >getPortStyle</a>
+                            </li>
+                            <li>
+                                <a href="#getStatusObservable" >getStatusObservable</a>
+                            </li>
+                            <li>
+                                <a href="#getTransitionsObservable" >getTransitionsObservable</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#toSegment" >toSegment</a>
+                            </li>
+                            <li>
+                                <a href="#updatePalette" >updatePalette</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#componentValue" >componentValue</a>
+                            </li>
+                            <li>
+                                <a href="#dataSettingsBlueprint" >dataSettingsBlueprint</a>
+                            </li>
+                            <li>
+                                <a href="#disabled" >disabled</a>
+                            </li>
+                            <li>
+                                <a href="#layout" >layout</a>
+                            </li>
+                            <li>
+                                <a href="#statuses" >statuses</a>
+                            </li>
+                            <li>
+                                <a href="#transitions" >transitions</a>
+                            </li>
+                            <li>
+                                <a href="#value" >value</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#formioEvent" >formioEvent</a>
+                            </li>
+                            <li>
+                                <a href="#valueChange" >valueChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#value" >value</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(tabGetService: TabGetService, datePipe: DatePipe)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:135</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>tabGetService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabGetService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>datePipe</td>
+                                                  
+                                                        <td>
+                                                                    <code>DatePipe</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="componentValue"></a>
+                        <b>componentValue</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>{ BluePrintId: any; blueprint: string; changed: string; isRefresh: boolean; }</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+        BluePrintId: null,
+        blueprint: &#x27;&#x27;, // diagram json
+        changed: &#x27;&#x27;, // which field changed on event
+        isRefresh: false,
+    }</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:81</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSettingsBlueprint"></a>
+                        <b>dataSettingsBlueprint</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/BlueprintSettings.html" target="_self" >BlueprintSettings</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:76</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="disabled"></a>
+                        <b>disabled</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:77</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="layout"></a>
+                        <b>layout</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Layout" target="_self" >LayoutModel</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+        type: &#x27;ComplexHierarchicalTree&#x27;,
+        enableRouting: true,
+        enableAnimation: true,
+        orientation: &#x27;TopToBottom&#x27;,
+        verticalAlignment: &#x27;Center&#x27;,
+        horizontalAlignment: &#x27;Center&#x27;,
+        horizontalSpacing: 40,
+        verticalSpacing: 55,
+        margin: { top: 30, left: 30, right: 30, bottom: 0 },
+    }</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:103</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="statuses"></a>
+                        <b>statuses</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Status.html" target="_self" >Status[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="132" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:132</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="transitions"></a>
+                        <b>transitions</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Transition[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:133</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <b>value</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="167" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:167</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formioEvent"></a>
+                        <b>formioEvent</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:79</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueChange"></a>
+                        <b>valueChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:78</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="callCustomEventAction"></a>
+                    <span class="name">
+                        <span ><b>callCustomEventAction</b></span>
+                        <a href="#callCustomEventAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>callCustomEventAction(action: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, element: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="815"
+                                    class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:815</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Executes a custom event action based on the specified action and element.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>action</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The action to be performed.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>element</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The element associated with the action.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertMinutes"></a>
+                    <span class="name">
+                        <span ><b>convertMinutes</b></span>
+                        <a href="#convertMinutes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>convertMinutes(minutes: number | number)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="884"
+                                    class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:884</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>minutes</td>
+                                            <td>
+                                                        <code>number | number</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getConnectorConstraints"></a>
+                    <span class="name">
+                        <span ><b>getConnectorConstraints</b></span>
+                        <a href="#getConnectorConstraints"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getConnectorConstraints()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="447"
+                                    class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:447</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves connector constraints</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/ConnectorConstraints.html" target="_self" >ConnectorConstraints</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>ConnectorConstraints</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNodeConstraints"></a>
+                    <span class="name">
+                        <span ><b>getNodeConstraints</b></span>
+                        <a href="#getNodeConstraints"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getNodeConstraints()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="422"
+                                    class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:422</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves node constraints</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/NodeConstraints.html" target="_self" >NodeConstraints</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>NodeConstraints</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPorts"></a>
+                    <span class="name">
+                        <span ><b>getPorts</b></span>
+                        <a href="#getPorts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPorts(color: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="359"
+                                    class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:359</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves the ports based on the specified color and node port settings.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>color</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The color used for the ports.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>PointPortModel[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>An array of PointPortModel.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPortStyle"></a>
+                    <span class="name">
+                        <span ><b>getPortStyle</b></span>
+                        <a href="#getPortStyle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPortStyle(color: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="397"
+                                    class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:397</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves the port style base on specified color</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>color</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>The color used for ports</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>PointPortModel</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>port style</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStatusObservable"></a>
+                    <span class="name">
+                        <span ><b>getStatusObservable</b></span>
+                        <a href="#getStatusObservable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getStatusObservable()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="283"
+                                    class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:283</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves the status data as an observable array.
+If <code>BluePrintId</code> is not available in <code>formIoValue</code>, it updates the palette and returns an empty array.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;any[]&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An observable emitting an array of status data.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTransitionsObservable"></a>
+                    <span class="name">
+                        <span ><b>getTransitionsObservable</b></span>
+                        <a href="#getTransitionsObservable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTransitionsObservable()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="305"
+                                    class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:305</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves the transaction data as an observable array.
+If <code>BluePrintId</code> is not available in <code>formIoValue</code>, it returns an empty array.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An observable emitting an array of transaction data.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="915"
+                                    class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:915</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="926"
+                                    class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:926</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="142"
+                                    class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:142</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toSegment"></a>
+                    <span class="name">
+                        <span ><b>toSegment</b></span>
+                        <a href="#toSegment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toSegment(str: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="792"
+                                    class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:792</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>str</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Segments</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePalette"></a>
+                    <span class="name">
+                        <span ><b>updatePalette</b></span>
+                        <a href="#updatePalette"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updatePalette()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="183"
+                                    class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:183</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>configuring palette base on diagram settings</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_unsubscribeAll"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_unsubscribeAll</b></span>
+                        <a href="#_unsubscribeAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;any&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:135</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="debounceSubject"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>debounceSubject</b></span>
+                        <a href="#debounceSubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="diagram"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>diagram</b></span>
+                        <a href="#diagram"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>DiagramComponent</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;diagram&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:90</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="diagramConstraints"></a>
+                    <span class="name">
+                        <span ><b>diagramConstraints</b></span>
+                        <a href="#diagramConstraints"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>DiagramConstraints.Default |
+        DiagramConstraints.Bridging |
+        DiagramConstraints.LineRouting</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="diagramTool"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>diagramTool</b></span>
+                        <a href="#diagramTool"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>DiagramTools</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>DiagramTools.ZoomPan</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:98</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="expandMode"></a>
+                    <span class="name">
+                        <span ><b>expandMode</b></span>
+                        <a href="#expandMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ExpandMode</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Multiple&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="120" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:120</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getConnectorDefaults"></a>
+                    <span class="name">
+                        <span ><b>getConnectorDefaults</b></span>
+                        <a href="#getConnectorDefaults"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="485" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:485</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves default connector model when when connector (transition) draw on diagram.
+Used arrow function to bind this</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>args</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNodeDefaults"></a>
+                    <span class="name">
+                        <span ><b>getNodeDefaults</b></span>
+                        <a href="#getNodeDefaults"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="623" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:623</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves default connector model when node (status) draw on diagram.
+Used arrow function to bind this</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>node</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNodeDefaultsForPalette"></a>
+                    <span class="name">
+                        <span ><b>getNodeDefaultsForPalette</b></span>
+                        <a href="#getNodeDefaultsForPalette"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="649" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:649</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves node defaults when palette populate symbols.
+Used arrow function to bind this</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>symbol</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNodeModel"></a>
+                    <span class="name">
+                        <span ><b>getNodeModel</b></span>
+                        <a href="#getNodeModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="327" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:327</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates a node model based on the provided status.</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>status</td>
+                                                    <td>
+                                                            <code><ul>
+<li>The status object used to create the node model.</li>
+</ul>
+</code>
+                                                    </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSymbolInfo"></a>
+                    <span class="name">
+                        <span ><b>getSymbolInfo</b></span>
+                        <a href="#getSymbolInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="638" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:638</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves symbol info when pellet get crated.
+Used arrow function to bind this</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>symbol</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClick"></a>
+                    <span class="name">
+                        <span ><b>onClick</b></span>
+                        <a href="#onClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="676" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:676</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Used arrow function to bind this.
+calling formIo custom events (<code>editInfo</code>,<code>editStatus</code>,<code>editTransition</code>) base on click.</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>event</td>
+                                                    <td>
+                                                            <code><ul>
+<li>The click event arguments.</li>
+</ul>
+</code>
+                                                    </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCollectionChange"></a>
+                    <span class="name">
+                        <span ><b>onCollectionChange</b></span>
+                        <a href="#onCollectionChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="863" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:863</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDiagramCreate"></a>
+                    <span class="name">
+                        <span ><b>onDiagramCreate</b></span>
+                        <a href="#onDiagramCreate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="663" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:663</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p> Used arrow function to bind this.</p>
+<p> @remark
+ Triggers once diagram created.
+ Updating formIo value
+ @param {Object} args
+ @returns {void} void</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>args</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDoubleClick"></a>
+                    <span class="name">
+                        <span ><b>onDoubleClick</b></span>
+                        <a href="#onDoubleClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="700" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:700</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p> Used arrow function to bind this.
+ calling formIo custom events (<code>editStatus</code>,<code>editTransition</code>) base on click.</p>
+<p> @remark Triggers once the node or connector property changed.</p>
+<p> @param {IDoubleClickEventArgs} event - The double click event arguments.
+ @returns {void} void</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>event</td>
+                                                    <td>
+                                                            <code><ul>
+<li>The double click event arguments.</li>
+</ul>
+</code>
+                                                    </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDragEnter"></a>
+                    <span class="name">
+                        <span ><b>onDragEnter</b></span>
+                        <a href="#onDragEnter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="854" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:854</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPropertyChange"></a>
+                    <span class="name">
+                        <span ><b>onPropertyChange</b></span>
+                        <a href="#onPropertyChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="717" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:717</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p> Used arrow function to bind this.
+ calling formIo custom events (<code>editStatus</code>,<code>editTransition</code>) base on click.</p>
+<p> @remark Triggers once the node or connector property changed.
+ @param {IPropertyChangeEventArgs} event - The property change event arguments.
+ @returns {void}</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>event</td>
+                                                    <td>
+                                                            <code><ul>
+<li>The property change event arguments.</li>
+</ul>
+</code>
+                                                    </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onTextEdit"></a>
+                    <span class="name">
+                        <span ><b>onTextEdit</b></span>
+                        <a href="#onTextEdit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="734" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:734</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p> Used arrow function to bind this.
+ calling formIo custom events (<code>editTransition</code>) when user starts editing connector annotations</p>
+<p> @remark Triggers once the node or connector annotation text edit.
+ @param {ITextEditEventArgs} event - The property change event arguments.
+ @returns {void} void</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>event</td>
+                                                    <td>
+                                                            <code><ul>
+<li>The property change event arguments.</li>
+</ul>
+</code>
+                                                    </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onToolbarEvent"></a>
+                    <span class="name">
+                        <span ><b>onToolbarEvent</b></span>
+                        <a href="#onToolbarEvent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="748" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:748</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p> Used arrow function to bind this.
+ handling toolbar events</p>
+<p> @remark Triggers once the node or connector annotation text edit.
+ @param {string} event - Event name <code>delete</code>, <code>zoomIn</code>, <code>zoomOut</code> or <code>palettes</code>
+ @returns {void} void</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>event</td>
+                                                    <td>
+                                                            <code><ul>
+<li>Event name <code>delete</code>, <code>zoomIn</code>, <code>zoomOut</code> or <code>palettes</code></li>
+</ul>
+</code>
+                                                    </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="palettes"></a>
+                    <span class="name">
+                        <span ><b>palettes</b></span>
+                        <a href="#palettes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>PaletteModel[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:129</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedElements"></a>
+                    <span class="name">
+                        <span ><b>selectedElements</b></span>
+                        <a href="#selectedElements"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>(ConnectorModel | NodeModel)[]</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTimer"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>setTimer</b></span>
+                        <a href="#setTimer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="134" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:134</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showPalettes"></a>
+                    <span class="name">
+                        <span ><b>showPalettes</b></span>
+                        <a href="#showPalettes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="snapSettings"></a>
+                    <span class="name">
+                        <span ><b>snapSettings</b></span>
+                        <a href="#snapSettings"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>SnapSettingsModel</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+        constraints: SnapConstraints.None,
+    }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:115</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="symbolHeight"></a>
+                    <span class="name">
+                        <span ><b>symbolHeight</b></span>
+                        <a href="#symbolHeight"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>40</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:121</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="symbolMargin"></a>
+                    <span class="name">
+                        <span ><b>symbolMargin</b></span>
+                        <a href="#symbolMargin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MarginModel</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+        left: 5,
+        right: 5,
+        top: 5,
+        bottom: 5,
+    }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:123</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="symbolpalette"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>symbolpalette</b></span>
+                        <a href="#symbolpalette"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>SymbolPaletteComponent</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;symbolpalette&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="symbolWidth"></a>
+                    <span class="name">
+                        <span ><b>symbolWidth</b></span>
+                        <a href="#symbolWidth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>90</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:122</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateDiagram"></a>
+                    <span class="name">
+                        <span ><b>updateDiagram</b></span>
+                        <a href="#updateDiagram"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="202" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:202</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Updates the diagram based on the changes in the formIoValue.
+If the &#39;changed&#39; property in formIoValue is not &#39;diagram&#39;, no refresh is performed.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <span class="name"><b>value</b><a href="#value"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>value()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="175" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:175</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>value(v: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="167" class="link-to-prism">src/app/modules/admin/tab-blueprint/tab-blueprint.component.ts:167</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>v</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    AfterViewInit,
+    Component,
+    EventEmitter,
+    Input,
+    OnDestroy,
+    OnInit,
+    Output,
+    ViewChild,
+} from &#x27;@angular/core&#x27;;
+import { FormioCustomComponent, FormioEvent } from &#x27;@formio/angular&#x27;;
+import {
+    ComplexHierarchicalTree,
+    Connector,
+    ConnectorConstraints,
+    ConnectorModel,
+    DataBinding,
+    DecoratorShapes,
+    Diagram,
+    DiagramComponent,
+    DiagramConstraints,
+    DiagramTools,
+    HierarchicalTree,
+    IClickEventArgs,
+    ICollectionChangeEventArgs,
+    IDoubleClickEventArgs,
+    IDragEnterEventArgs,
+    IPropertyChangeEventArgs,
+    ITextEditEventArgs,
+    LayoutModel,
+    MarginModel,
+    Node,
+    NodeConstraints,
+    NodeModel,
+    PaletteModel,
+    PointPortModel,
+    PortConstraints,
+    PortVisibility,
+    Segments,
+    SnapConstraints,
+    SnapSettingsModel,
+    SymbolInfo,
+    SymbolPaletteComponent,
+    TextElement,
+} from &#x27;@syncfusion/ej2-angular-diagrams&#x27;;
+import { ExpandMode } from &#x27;@syncfusion/ej2-angular-navigations&#x27;;
+import _ from &#x27;lodash&#x27;;
+import { BlueprintSettings } from &#x27;./models/blueprint-settings.model&#x27;;
+import { Transition } from &#x27;./models/transition.model&#x27;;
+import {
+    Observable,
+    Subject,
+    debounceTime,
+    forkJoin,
+    map,
+    take,
+    of,
+    takeUntil,
+} from &#x27;rxjs&#x27;;
+import { DataManager } from &#x27;@syncfusion/ej2-data&#x27;;
+import { Status } from &#x27;./models/status.model&#x27;;
+import { TabGetService } from &#x27;@techextensor/tab-service&#x27;;
+import { DatePipe } from &#x27;@angular/common&#x27;;
+
+Diagram.Inject(DataBinding, HierarchicalTree, ComplexHierarchicalTree);
+
+@Component({
+    selector: &#x27;app-tab-blueprint&#x27;,
+    templateUrl: &#x27;./tab-blueprint.component.html&#x27;,
+    styleUrls: [&#x27;./tab-blueprint.component.scss&#x27;],
+})
+export class TabBlueprintComponent
+    implements OnInit, FormioCustomComponent&lt;any&gt;, AfterViewInit, OnDestroy
+{
+    // Form.io
+    @Input() dataSettingsBlueprint: BlueprintSettings;
+    @Input() disabled: boolean;
+    @Output() valueChange &#x3D; new EventEmitter&lt;any&gt;();
+    @Output() formioEvent &#x3D; new EventEmitter&lt;FormioEvent&gt;();
+    @Input()
+    componentValue &#x3D; {
+        BluePrintId: null,
+        blueprint: &#x27;&#x27;, // diagram json
+        changed: &#x27;&#x27;, // which field changed on event
+        isRefresh: false,
+    };
+    private debounceSubject &#x3D; new Subject();
+
+    // syncfusion diagrams
+    @ViewChild(&#x27;diagram&#x27;, { static: false }) diagram: DiagramComponent;
+    @ViewChild(&#x27;symbolpalette&#x27;, { static: false })
+    symbolpalette: SymbolPaletteComponent;
+    selectedElements: (ConnectorModel | NodeModel)[]; // tracking selected element for deleting functionality
+    diagramConstraints &#x3D;
+        DiagramConstraints.Default |
+        DiagramConstraints.Bridging |
+        DiagramConstraints.LineRouting;
+    public diagramTool: DiagramTools &#x3D; DiagramTools.ZoomPan;
+    // diagram config fields
+    showPalettes &#x3D; true;
+    // automatic layout to draw diagram
+    @Input()
+    layout: LayoutModel &#x3D; {
+        type: &#x27;ComplexHierarchicalTree&#x27;,
+        enableRouting: true,
+        enableAnimation: true,
+        orientation: &#x27;TopToBottom&#x27;,
+        verticalAlignment: &#x27;Center&#x27;,
+        horizontalAlignment: &#x27;Center&#x27;,
+        horizontalSpacing: 40,
+        verticalSpacing: 55,
+        margin: { top: 30, left: 30, right: 30, bottom: 0 },
+    };
+
+    snapSettings: SnapSettingsModel &#x3D; {
+        constraints: SnapConstraints.None,
+    };
+
+    //SymbolPalette Properties
+    expandMode: ExpandMode &#x3D; &#x27;Multiple&#x27;;
+    symbolHeight &#x3D; 40;
+    symbolWidth &#x3D; 90;
+    symbolMargin: MarginModel &#x3D; {
+        left: 5,
+        right: 5,
+        top: 5,
+        bottom: 5,
+    };
+    palettes: PaletteModel[] &#x3D; [];
+
+    // Blueprint details
+    @Input() statuses: Status[] &#x3D; [];
+    @Input() transitions: Transition[] &#x3D; [];
+    private setTimer: any;
+    private _unsubscribeAll: Subject&lt;any&gt; &#x3D; new Subject&lt;any&gt;();
+
+    constructor(
+        private tabGetService: TabGetService,
+        private datePipe: DatePipe
+    ) {}
+
+    ngOnInit(): void {
+        /**
+         * Observing formIo value changes
+         */
+        this.debounceSubject
+            .pipe(debounceTime(1000))
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(() &#x3D;&gt; {
+                if (this.componentValue?.isRefresh) {
+                    forkJoin({
+                        statuses: this.getStatusObservable(),
+                        transitions: this.getTransitionsObservable(),
+                    })
+                        .pipe(take(1))
+                        .subscribe(({ statuses, transitions }) &#x3D;&gt; {
+                            this.statuses &#x3D; statuses;
+                            this.transitions &#x3D; transitions;
+                            this.updatePalette();
+                            this.updateDiagram();
+                        });
+                }
+            });
+    }
+
+    @Input()
+    public set value(v: any) {
+        if (v &amp;&amp; v !&#x3D; null) {
+            this.componentValue &#x3D; v;
+        }
+        this.updatePalette();
+        this.debounceSubject.next(1000);
+    }
+
+    public get value(): any {
+        return this.componentValue;
+    }
+
+    /**
+     * configuring palette base on diagram settings
+     * @returns {void}
+     */
+    updatePalette(): void {
+        const symbols: NodeModel[] &#x3D; this.statuses.map(this.getNodeModel);
+        this.palettes &#x3D; [
+            {
+                id: &#x27;status&#x27;,
+                expanded: true,
+                symbols: symbols,
+                iconCss: &#x27;fa fa-bars&#x27;,
+                title: &#x27;Available Status&#x27;,
+            },
+        ];
+    }
+
+    /**
+     * Updates the diagram based on the changes in the formIoValue.
+     * If the &#x27;changed&#x27; property in formIoValue is not &#x27;diagram&#x27;, no refresh is performed.
+     *
+     * @returns {void}
+     */
+    updateDiagram &#x3D; (): void &#x3D;&gt; {
+        // Only refresh if anything updated on diagram
+        if (this.componentValue?.changed !&#x3D; &#x27;diagram&#x27;) return;
+
+        const nodeList: {
+            [id: string]: Status;
+        } &#x3D; {};
+
+        for (let i &#x3D; 0; i &lt; this.transitions.length; i++) {
+            const transition &#x3D; this.transitions[i];
+
+            const fromStatus &#x3D; this.statuses.find(
+                (s) &#x3D;&gt; s.Id &#x3D;&#x3D; transition.FromStatus
+            );
+            const toStatus &#x3D; this.statuses.find(
+                (s) &#x3D;&gt; s.Id &#x3D;&#x3D; transition.ToStatus
+            );
+
+            if (!nodeList[transition.FromStatus] &amp;&amp; fromStatus) {
+                nodeList[transition.FromStatus] &#x3D; fromStatus;
+            }
+            if (!nodeList[transition.ToStatus] &amp;&amp; toStatus) {
+                nodeList[transition.ToStatus] &#x3D; {
+                    ...toStatus,
+                    ParentId: transition.FromStatus,
+                };
+            } else {
+                nodeList[transition.ToStatus][&#x27;ParentId&#x27;] &#x3D;
+                    transition.FromStatus;
+            }
+        }
+        this.diagram.dataSourceSettings &#x3D; {
+            id: &#x27;Id&#x27;,
+            parentId: &#x27;ParentId&#x27;,
+            dataManager: new DataManager({
+                json: Object.values(nodeList),
+            }),
+            doBinding: (model: NodeModel, data: Status, diagram: Diagram) &#x3D;&gt; {
+                // FOR REFERENCE
+                // model &#x3D; { ...model, ...this.getNodeModel(data) };
+
+                // Binding for nodes (status)&#x27;
+                model.id &#x3D; data.Id;
+                model.shape &#x3D; {
+                    type: &#x27;Text&#x27;,
+                    content: data.Name,
+                };
+                model.width &#x3D; this.symbolWidth;
+                model.height &#x3D; this.symbolHeight;
+                if (
+                    data.Color &#x3D;&#x3D;&#x3D; undefined ||
+                    data.Color &#x3D;&#x3D;&#x3D; null ||
+                    data.Color &#x3D;&#x3D;&#x3D; &#x27;&#x27;
+                ) {
+                    model.borderColor &#x3D; &#x27;#757575&#x27;;
+                } else {
+                    model.borderColor &#x3D; data.Color;
+                }
+                model.borderWidth &#x3D;
+                    this.dataSettingsBlueprint.nodeBorderWidth ?? 2;
+                model.style &#x3D; {
+                    strokeColor: model.borderColor,
+                    strokeWidth: 1,
+                };
+                // model.ports &#x3D; this.getPorts(data.Color);
+                // model.constraints &#x3D; this.getNodeConstraints();
+            },
+        } as any;
+
+        // FOR DELETE FUNCTIONALITY
+        // Object.keys(nodeList).forEach((k) &#x3D;&gt; {
+        //     this.symbolpalette.removePaletteItem(&#x27;status&#x27;, k);
+        // });
+    };
+
+    /**
+     * Retrieves the status data as an observable array.
+     * If &#x60;BluePrintId&#x60; is not available in &#x60;formIoValue&#x60;, it updates the palette and returns an empty array.
+     *
+     * @returns An observable emitting an array of status data.
+     */
+    getStatusObservable(): Observable&lt;any[]&gt; {
+        if (!this.componentValue.BluePrintId) return of([]);
+
+        const apiData &#x3D; {
+            AppObjectName: &#x27;TABD_BlueprintStatus&#x27;,
+            DSQName: &#x27;List_TABD_BlueprintStatus&#x27;,
+            Reqtokens: {
+                // BluePrintId: &#x27;67121140-70CB-4532-87A9-69B9632BC4E6&#x27;,
+                BluePrintId: this.componentValue.BluePrintId,
+            },
+        };
+        return this.tabGetService
+            .executeRAWDSQWithName(apiData)
+            .pipe(map((res: any) &#x3D;&gt; res?.Result as any[]));
+    }
+
+    /**
+     * Retrieves the transaction data as an observable array.
+     * If &#x60;BluePrintId&#x60; is not available in &#x60;formIoValue&#x60;, it returns an empty array.
+     *
+     * @returns An observable emitting an array of transaction data.
+     */
+    getTransitionsObservable() {
+        if (!this.componentValue.BluePrintId) return of([]);
+
+        const apiData &#x3D; {
+            AppObjectName: &#x27;TABD_Transitions&#x27;,
+            DSQName: &#x27;List_TABD_Transitions&#x27;,
+            Reqtokens: {
+                // BluePrintId: &#x27;67121140-70CB-4532-87A9-69B9632BC4E6&#x27;,
+                BluePrintId: this.componentValue.BluePrintId,
+            },
+        };
+        return this.tabGetService
+            .executeRAWDSQWithName(apiData)
+            .pipe(map((res: any) &#x3D;&gt; res?.Result));
+    }
+
+    /**
+     * Creates a node model based on the provided status.
+     *
+     * @param {Status} status - The status object used to create the node model.
+     * @returns {NodeModel} The generated node model.
+     */
+    getNodeModel &#x3D; (status: Status): NodeModel &#x3D;&gt; {
+        return {
+            id: status?.Id ?? status?.Name,
+            width: this.symbolWidth,
+            height: this.symbolHeight,
+            shape: {
+                type: &#x27;Text&#x27;,
+                content: status.Name,
+            },
+            borderColor:
+                this.dataSettingsBlueprint.nodeBorderColorType &#x3D;&#x3D; &#x27;default&#x27;
+                    ? status?.Color
+                    : this.dataSettingsBlueprint.nodeBorderColor,
+            borderWidth: this.dataSettingsBlueprint.nodeBorderWidth ?? 2,
+            style: {
+                strokeWidth: 1,
+                strokeColor:
+                    this.dataSettingsBlueprint.nodeBorderColorType &#x3D;&#x3D; &#x27;default&#x27;
+                        ? status?.Color
+                        : this.dataSettingsBlueprint.nodeBorderColor,
+            },
+            ports: this.getPorts(status?.Color),
+            constraints: this.getNodeConstraints(),
+        };
+    };
+
+    /**
+     * Retrieves the ports based on the specified color and node port settings.
+     *
+     * @param {string} color - The color used for the ports.
+     * @returns {PointPortModel[]} - An array of PointPortModel.
+     */
+    getPorts(color: string): PointPortModel[] {
+        const ports: PointPortModel[] &#x3D; [];
+        const nodePorts &#x3D; this.dataSettingsBlueprint?.nodePorts;
+        const portStyle &#x3D; this.getPortStyle(color);
+        if (nodePorts?.leftCenter) {
+            ports.push({
+                offset: { x: 0, y: 0.5 },
+                ...portStyle,
+            });
+        }
+        if (nodePorts?.topCenter) {
+            ports.push({
+                offset: { x: 0.5, y: 0 },
+                ...portStyle,
+            });
+        }
+        if (nodePorts?.rightCenter) {
+            ports.push({
+                offset: { x: 1, y: 0.5 },
+                ...portStyle,
+            });
+        }
+        if (nodePorts?.bottomCenter) {
+            ports.push({
+                offset: { x: 0.5, y: 1 },
+                ...portStyle,
+            });
+        }
+
+        return ports;
+    }
+
+    /**
+     * Retrieves the port style base on specified color
+     *
+     * @param {string} color  The color used for ports
+     * @returns {PointPortModel} port style
+     */
+    getPortStyle(color: string): PointPortModel {
+        return {
+            visibility: PortVisibility.Connect | PortVisibility.Hover,
+            constraints: PortConstraints.Draw,
+            style: {
+                fill:
+                    this.dataSettingsBlueprint.nodeBorderColorType &#x3D;&#x3D;&#x3D; &#x27;default&#x27;
+                        ? color
+                        : this.dataSettingsBlueprint.nodeBorderColor,
+                strokeColor:
+                    this.dataSettingsBlueprint.nodeBorderColorType &#x3D;&#x3D;&#x3D; &#x27;default&#x27;
+                        ? color
+                        : this.dataSettingsBlueprint.nodeBorderColor,
+            },
+            width: 8,
+            height: 8,
+            shape: &#x27;Circle&#x27;,
+        };
+    }
+
+    /**
+     * Retrieves node constraints
+     *
+     * @returns {NodeConstraints} NodeConstraints
+     */
+    getNodeConstraints(): NodeConstraints {
+        let constraints: NodeConstraints;
+        constraints &#x3D;
+            (NodeConstraints.Default &amp;
+                ~NodeConstraints.Resize &amp;
+                ~NodeConstraints.Rotate) |
+            NodeConstraints.Select |
+            NodeConstraints.Shadow;
+        // Object.keys(this.dataSettingsBlueprint.nodeConstraints).forEach(
+        //     (constraint) &#x3D;&gt; {
+        //         if (this.dataSettingsBlueprint.nodeConstraints[constraint]) {
+        //             constraints &#x3D;
+        //                 constraints &amp;
+        //                 NodeConstraints[constraint as keyof NodeConstraints];
+        //         }
+        //     }
+        // );
+        return constraints;
+    }
+
+    /**
+     * Retrieves connector constraints
+     *
+     * @returns {ConnectorConstraints} ConnectorConstraints
+     */
+    getConnectorConstraints(): ConnectorConstraints {
+        let constraints: ConnectorConstraints;
+        constraints &#x3D;
+            ~ConnectorConstraints.Drag &amp;
+            (ConnectorConstraints.Default |
+                ConnectorConstraints.BridgeObstacle |
+                ConnectorConstraints.DragSourceEnd |
+                ConnectorConstraints.DragSourceEnd |
+                ConnectorConstraints.Bridging);
+        // Object.keys(this.dataSettingsBlueprint.connectorConstraints).forEach(
+        //     (constraint) &#x3D;&gt; {
+        //         if (
+        //             this.dataSettingsBlueprint.connectorConstraints[constraint]
+        //         ) {
+        //             console.log(
+        //                 &#x27;connector&#x27;,
+        //                 ConnectorConstraints[
+        //                     constraint as keyof ConnectorConstraints
+        //                 ]
+        //             );
+        //             constraints &#x3D;
+        //                 constraints |
+        //                 ConnectorConstraints[
+        //                     constraint as keyof ConnectorConstraints
+        //                 ];
+        //         }
+        //     }
+        // );
+        return constraints;
+    }
+
+    /**
+     * Retrieves default connector model when when connector (transition) draw on diagram.
+     * Used arrow function to bind this
+     *
+     * @param {ConnectorModel} args
+     * @returns {ConnectorModel} ConnectorModel
+     */
+    getConnectorDefaults &#x3D; (args: ConnectorModel): ConnectorModel &#x3D;&gt; {
+        args.sourceDecorator.shape &#x3D; this.dataSettingsBlueprint
+            .connectorSourceDecorator as DecoratorShapes;
+        args.targetDecorator.shape &#x3D; this.dataSettingsBlueprint
+            .connectorTargetDecorator as DecoratorShapes;
+        args.sourceDecorator.height &#x3D;
+            this.dataSettingsBlueprint.connectorDecoratorSize;
+        args.sourceDecorator.width &#x3D;
+            this.dataSettingsBlueprint.connectorDecoratorSize;
+        args.sourceDecorator.style &#x3D; {
+            fill: this.dataSettingsBlueprint.connectorColor,
+            strokeColor: this.dataSettingsBlueprint.connectorColor,
+        };
+        args.targetDecorator.height &#x3D;
+            this.dataSettingsBlueprint.connectorDecoratorSize;
+        args.targetDecorator.width &#x3D;
+            this.dataSettingsBlueprint.connectorDecoratorSize;
+        args.style.strokeColor &#x3D; this.dataSettingsBlueprint.connectorColor;
+        args.targetDecorator.style &#x3D; {
+            fill: this.dataSettingsBlueprint.connectorColor,
+            strokeColor: this.dataSettingsBlueprint.connectorColor,
+        };
+        args.cornerRadius &#x3D; this.dataSettingsBlueprint.connectorCornerRadius;
+        args.type &#x3D; this.toSegment(this.dataSettingsBlueprint.connectorType);
+        args.constraints &#x3D; this.getConnectorConstraints();
+
+        args.annotations;
+        const transition &#x3D; this.transitions.find(
+            (t) &#x3D;&gt; t.FromStatus &#x3D;&#x3D; args.sourceID &amp;&amp; t.ToStatus &#x3D;&#x3D; args.targetID
+        );
+        if (!transition.Details) {
+            args.annotations &#x3D; [
+                {
+                    content: transition.Name,
+                    style: {
+                        color: &#x27;black&#x27;,
+                        fill: &#x27;white&#x27;,
+                    },
+                },
+            ] as any;
+        } else {
+            let SLADetails &#x3D; &#x27;&#x27;;
+            if (transition.Details?.SLATime &amp;&amp; transition.Details.SLATime &gt; 0) {
+                let takenSLATime &#x3D; transition.Details.SLAHitTime;
+                takenSLATime &#x3D; transition.Details.SLATime - takenSLATime;
+                if (takenSLATime &lt; 0) {
+                    takenSLATime &#x3D; Math.floor(takenSLATime);
+                } else {
+                    takenSLATime &#x3D; Math.ceil(takenSLATime);
+                }
+                SLADetails &#x3D;
+                    SLADetails +
+                    &#x60;Configured: ${this.convertMinutes(
+                        transition.Details.SLATime
+                    )}&#x60; +
+                    &#x60;\nTaken: ${this.convertMinutes(takenSLATime)} ${
+                        transition.Details.SLAHitTime &lt; 0
+                            ? &#x27;(Extra &#x27; +
+                              this.convertMinutes(
+                                  -Math.floor(transition.Details.SLAHitTime)
+                              ) +
+                              &#x27;)&#x27;
+                            : &#x27;&#x27;
+                    }&#x60;;
+            }
+
+            args.style.strokeDashArray &#x3D; &#x27;4 4&#x27;;
+            args.annotations &#x3D; [
+                {
+                    template: &#x60;&lt;div class&#x3D;&quot;badge bg-primary text-white p-1&quot;&gt; ${transition.Name} &lt;div&gt;&#x60;,
+                    displacement: {
+                        x: 0,
+                        y: 0,
+                    },
+                    margin: {},
+                    offset: 0.5,
+                    height: 20,
+                    width: transition.Name.length * 5.07 + 8,
+                },
+                {
+                    content: transition.Details.PerformedDate,
+                    offset: 0.5,
+                    displacement: {
+                        x: 0,
+                        y: 0,
+                    },
+                    margin: {
+                        top: 45,
+                    },
+                    style: {
+                        textWrapping: &#x27;NoWrap&#x27;,
+                        color: &#x27;black&#x27;,
+                    },
+                },
+                {
+                    content: transition.Details.PerformedBy?.UserName,
+                    offset: 0.5,
+                    displacement: {
+                        x: 0,
+                        y: 0,
+                    },
+                    margin: {
+                        top: 30,
+                    },
+                    style: {
+                        textWrapping: &#x27;NoWrap&#x27;,
+                        color: &#x27;black&#x27;,
+                    },
+                },
+                {
+                    content: SLADetails,
+                    offset: 0.5,
+                    displacement: {
+                        x: 0,
+                        y: 0,
+                    },
+                    margin: {
+                        bottom: 30,
+                    },
+                    width: this.layout.horizontalSpacing - 40,
+                    style: {
+                        textWrapping: &#x27;Wrap&#x27;,
+                        color: &#x27;black&#x27;,
+                    },
+                },
+            ];
+        }
+
+        return args;
+    };
+
+    /**
+     * Retrieves default connector model when node (status) draw on diagram.
+     * Used arrow function to bind this
+     *
+     * @param {NodeModel} node
+     * @returns {NodeModel} NodeModel
+     */
+    getNodeDefaults &#x3D; (node: NodeModel): NodeModel &#x3D;&gt; {
+        const status &#x3D; this.statuses.find(
+            (s) &#x3D;&gt;
+                s.Name &#x3D;&#x3D; (node as any).properties?.shape?.properties?.content
+        );
+        return this.getNodeModel(status);
+    };
+
+    /**
+     * Retrieves symbol info when pellet get crated.
+     * Used arrow function to bind this
+     *
+     * @param {NodeModel} symbol
+     * @returns {SymbolInfo} SymbolInfo
+     */
+    getSymbolInfo &#x3D; (symbol: NodeModel): SymbolInfo &#x3D;&gt; {
+        return symbol?.symbolInfo;
+    };
+
+    /**
+     * Retrieves node defaults when palette populate symbols.
+     * Used arrow function to bind this
+     *
+     * @param {NodeModel} symbol
+     * @returns {void} void
+     */
+    getNodeDefaultsForPalette &#x3D; (symbol: NodeModel): void &#x3D;&gt; {
+        symbol.width &#x3D; 90;
+        symbol.height &#x3D; 30;
+    };
+
+    /**
+     *  Used arrow function to bind this.
+     *
+     *  @remark
+     *  Triggers once diagram created.
+     *  Updating formIo value
+     *  @param {Object} args
+     *  @returns {void} void
+     */
+    onDiagramCreate &#x3D; (args: Object): void &#x3D;&gt; {
+        this.componentValue.blueprint &#x3D; this.diagram.saveDiagram();
+        this.valueChange.emit(this.componentValue);
+    };
+
+    /**
+     * Used arrow function to bind this.
+     * calling formIo custom events (&#x60;editInfo&#x60;,&#x60;editStatus&#x60;,&#x60;editTransition&#x60;) base on click.
+     *
+     * @remark Triggers once the node or connector or diagram clicked.
+     * @param {IClickEventArgs} event - The click event arguments.
+     * @returns {void} void
+     */
+    onClick &#x3D; (event: IClickEventArgs) &#x3D;&gt; {
+        if (event.element instanceof Diagram) {
+            this.selectedElements &#x3D; [];
+            this.callCustomEventAction(&#x27;editInfo&#x27;, event.element);
+        }
+        if (event.element instanceof Node) {
+            this.callCustomEventAction(&#x27;editStatus&#x27;, event.element);
+        }
+        if (event.element instanceof Connector) {
+            this.callCustomEventAction(&#x27;editTransition&#x27;, event.element);
+        }
+        this.componentValue.blueprint &#x3D; this.diagram.saveDiagram();
+        this.valueChange.emit(this.componentValue);
+    };
+
+    /**
+     *  Used arrow function to bind this.
+     *  calling formIo custom events (&#x60;editStatus&#x60;,&#x60;editTransition&#x60;) base on click.
+     *
+     *  @remark Triggers once the node or connector property changed.
+     *
+     *  @param {IDoubleClickEventArgs} event - The double click event arguments.
+     *  @returns {void} void
+     */
+    onDoubleClick &#x3D; (event: IDoubleClickEventArgs) &#x3D;&gt; {
+        if (event.source instanceof Node) {
+            this.callCustomEventAction(&#x27;editStatus&#x27;, event.source);
+        }
+        if (event.source instanceof Connector) {
+            this.callCustomEventAction(&#x27;editTransition&#x27;, event.source);
+        }
+    };
+
+    /**
+     *  Used arrow function to bind this.
+     *  calling formIo custom events (&#x60;editStatus&#x60;,&#x60;editTransition&#x60;) base on click.
+     *
+     *  @remark Triggers once the node or connector property changed.
+     *  @param {IPropertyChangeEventArgs} event - The property change event arguments.
+     *  @returns {void}
+     */
+    onPropertyChange &#x3D; (event: IPropertyChangeEventArgs): void &#x3D;&gt; {
+        if (event.element instanceof Node) {
+            this.callCustomEventAction(&#x27;editStatus&#x27;, event.element);
+        }
+        if (event.element instanceof Connector) {
+            this.callCustomEventAction(&#x27;editTransition&#x27;, event.element);
+        }
+    };
+
+    /**
+     *  Used arrow function to bind this.
+     *  calling formIo custom events (&#x60;editTransition&#x60;) when user starts editing connector annotations
+     *
+     *  @remark Triggers once the node or connector annotation text edit.
+     *  @param {ITextEditEventArgs} event - The property change event arguments.
+     *  @returns {void} void
+     */
+    onTextEdit &#x3D; (event: ITextEditEventArgs): void &#x3D;&gt; {
+        if (event.element instanceof Connector &amp;&amp; !event.cancel) {
+            this.callCustomEventAction(&#x27;editTransition&#x27;, event.element);
+        }
+    };
+
+    /**
+     *  Used arrow function to bind this.
+     *  handling toolbar events
+     *
+     *  @remark Triggers once the node or connector annotation text edit.
+     *  @param {string} event - Event name &#x60;delete&#x60;, &#x60;zoomIn&#x60;, &#x60;zoomOut&#x60; or &#x60;palettes&#x60;
+     *  @returns {void} void
+     */
+    onToolbarEvent &#x3D; (event: string): void &#x3D;&gt; {
+        if (event &#x3D;&#x3D; &#x27;delete&#x27; &amp;&amp; this.selectedElements) {
+            this.selectedElements.forEach((e) &#x3D;&gt; {
+                this.diagram.remove(e);
+            });
+            this.selectedElements &#x3D; [];
+        }
+        if (event &#x3D;&#x3D;&#x3D; &#x27;zoomIn&#x27;) {
+            if (this.selectedElements &amp;&amp; this.selectedElements.length &gt; 0) {
+                const element &#x3D; this.selectedElements[0];
+                this.diagram.zoomTo({
+                    type: &#x27;ZoomIn&#x27;,
+                    zoomFactor: 0.1,
+                    focusPoint: {
+                        x: element.wrapper.offsetX,
+                        y: element.wrapper.offsetY,
+                    },
+                });
+            } else {
+                this.diagram.zoom(1.1);
+            }
+        }
+        if (event &#x3D;&#x3D;&#x3D; &#x27;zoomOut&#x27;) {
+            if (this.selectedElements &amp;&amp; this.selectedElements.length &gt; 0) {
+                const element &#x3D; this.selectedElements[0];
+                this.diagram.zoomTo({
+                    type: &#x27;ZoomOut&#x27;,
+                    zoomFactor: 0.1,
+                    focusPoint: {
+                        x: element.wrapper.offsetX,
+                        y: element.wrapper.offsetY,
+                    },
+                });
+            } else {
+                this.diagram.zoom(0.9);
+            }
+        }
+        // ONLY FOR REFERENCE
+        // if (event &#x3D;&#x3D;&#x3D; &#x27;palettes&#x27;) {
+        //     this.showPalettes &#x3D; !this.showPalettes;
+        //     this.diagram.refreshDiagram();
+        // }
+    };
+
+    toSegment(str: string): Segments {
+        switch (str) {
+            case &#x27;straight&#x27; || &#x27;Straight&#x27;:
+                return &#x27;Straight&#x27;;
+            case &#x27;orthogonal&#x27; || &#x27;Orthogonal&#x27;:
+                return &#x27;Orthogonal&#x27;;
+            case &#x27;polyline&#x27; || &#x27;Polyline&#x27;:
+                return &#x27;Polyline&#x27;;
+            case &#x27;bezier&#x27; || &#x27;Bezier&#x27;:
+                return &#x27;Bezier&#x27;;
+            case &#x27;freehand&#x27; || &#x27;Freehand&#x27;:
+                return &#x27;Freehand&#x27;;
+            default:
+                throw new Error(&#x60;Invalid segment type: ${str}&#x60;);
+        }
+    }
+
+    /**
+     * Executes a custom event action based on the specified action and element.
+     *
+     * @param {string} action - The action to be performed.
+     * @param {any} element - The element associated with the action.
+     */
+    callCustomEventAction(action: string, element: any) {
+        let data: any &#x3D; {
+            action: action,
+        };
+        // this.showPalettes &#x3D; true;
+        if (element instanceof Connector) {
+            // this.showPalettes &#x3D; false;
+            const source &#x3D; this.statuses.find(
+                (s) &#x3D;&gt; s.Name &#x3D;&#x3D; (element.sourceWrapper as TextElement)?.content
+            );
+            const target &#x3D; this.statuses.find(
+                (s) &#x3D;&gt; s.Name &#x3D;&#x3D; (element.targetWrapper as TextElement)?.content
+            );
+            data.connector &#x3D; element;
+            data.fromStatus &#x3D; source?.Id;
+            data.toStatus &#x3D; target?.Id;
+            data.transitionId &#x3D; this.transitions?.find(
+                (t) &#x3D;&gt; t.ToStatus &#x3D;&#x3D; target?.Id &amp;&amp; t.FromStatus &#x3D;&#x3D; source?.Id
+            )?.Id;
+        }
+        if (element instanceof Node) {
+            data.node &#x3D; element;
+            const status &#x3D; this.statuses.find(
+                (s) &#x3D;&gt;
+                    s.Name &#x3D;&#x3D;
+                    (element as any).properties?.shape?.properties?.content
+            );
+            data.status &#x3D; status;
+        }
+        this.formioEvent.emit({
+            eventName: &#x27;customEvent&#x27;,
+            data: data,
+        });
+    }
+
+    // ONLY FOR REFERENCE
+    // START
+
+    // Used arrow function to bind this
+    onDragEnter &#x3D; (event: IDragEnterEventArgs) &#x3D;&gt; {
+        // const nodeId &#x3D; (event.dragItem as any).properties.shape.properties
+        //     .content;
+        // if (this.palettes &amp;&amp; !event.cancel &amp;&amp; event.dragItem instanceof Node) {
+        //     this.symbolpalette.removePaletteItem(&#x27;status&#x27;, nodeId);
+        // }
+    };
+
+    // Used arrow function to bind this
+    onCollectionChange &#x3D; (event: ICollectionChangeEventArgs) &#x3D;&gt; {
+        // if (
+        //     event.state &#x3D;&#x3D;&#x3D; &#x27;Changed&#x27; &amp;&amp;
+        //     event.type &#x3D;&#x3D;&#x3D; &#x27;Removal&#x27; &amp;&amp;
+        //     event.element instanceof Node
+        // ) {
+        //     const data &#x3D; {
+        //         name: (event.element as any).properties.shape.properties
+        //             .content,
+        //         color:
+        //             (event.element as any).properties.borderColor || &#x27;#757575&#x27;,
+        //     };
+        //     this.symbolpalette.addPaletteItem(
+        //         &#x27;status&#x27;,
+        //         this.getNodeModel(data)
+        //     );
+        // }
+    };
+
+    // END - REFERENCE
+
+    convertMinutes(minutes: number | number): string {
+        if (minutes) {
+            const isNegative &#x3D; minutes &lt; 0;
+            minutes &#x3D; Math.abs(minutes);
+
+            const weeks &#x3D; Math.floor(minutes / (60 * 24 * 7));
+            const days &#x3D; Math.floor((minutes % (60 * 24 * 7)) / (60 * 24));
+            const hours &#x3D; Math.floor((minutes % (60 * 24)) / 60);
+            const remainingMinutes &#x3D; Math.floor(minutes % 60);
+            const timeUnits: string[] &#x3D; [];
+            if (weeks &gt; 0) {
+                timeUnits.push(&#x60;${weeks}W&#x60;);
+            }
+            if (days &gt; 0) {
+                timeUnits.push(&#x60;${days}D&#x60;);
+            }
+            if (hours &gt; 0) {
+                timeUnits.push(&#x60;${hours}H&#x60;);
+            }
+            if (remainingMinutes &gt; 0) {
+                timeUnits.push(
+                    &#x60;${remainingMinutes} Min${remainingMinutes &gt; 1 ? &#x27;s&#x27; : &#x27;&#x27;}&#x60;
+                );
+            }
+            const result &#x3D; timeUnits.join(&#x27;, &#x27;);
+            return isNegative ? &#x60;-${result}&#x60; : result;
+        }
+        return &#x27;&#x27;;
+    }
+
+    // ONLY FOR TESTING
+    ngAfterViewInit(): void {
+        // removing syncfusion premium dialog
+        this.setTimer &#x3D; setTimeout(() &#x3D;&gt; {
+            const els &#x3D; document.querySelectorAll(
+                &#x27;div[style*&#x3D;&quot;z-index: 99999&quot;]&#x27;
+            );
+            els.forEach((e) &#x3D;&gt; {
+                e.remove();
+            });
+        }, 2000);
+    }
+    ngOnDestroy(): void {
+        clearTimeout(this.setTimer);
+        // Unsubscribe from all subscriptions
+        this._unsubscribeAll.next(null);
+        this._unsubscribeAll.complete();
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;height: 100%&quot;&gt;
+    &lt;div style&#x3D;&quot;height: calc(100% - 500px)&quot; *ngIf&#x3D;&quot;showPalettes&quot;&gt;
+        &lt;ejs-symbolpalette
+            #symbolpalette
+            id&#x3D;&quot;symbolpalette&quot;
+            [enableAnimation]&#x3D;&quot;true&quot;
+            [expandMode]&#x3D;&quot;expandMode&quot;
+            [enableSearch]&#x3D;&quot;dataSettingsBlueprint?.enableSearch&quot;
+            [palettes]&#x3D;&quot;palettes&quot;
+            width&#x3D;&quot;100%&quot;
+            [symbolHeight]&#x3D;&quot;symbolHeight&quot;
+            [symbolWidth]&#x3D;&quot;symbolWidth&quot;
+            [symbolMargin]&#x3D;&quot;symbolMargin&quot;
+            [getSymbolInfo]&#x3D;&quot;getSymbolInfo&quot;
+            [getNodeDefaults]&#x3D;&quot;getNodeDefaultsForPalette&quot;
+            class&#x3D;&quot;e-symbolpalette&quot;
+        &gt;&lt;/ejs-symbolpalette&gt;
+    &lt;/div&gt;
+    &lt;div style&#x3D;&quot;height: 500px&quot; class&#x3D;&quot;diagram&quot;&gt;
+        &lt;ejs-diagram
+            #diagram
+            id&#x3D;&quot;diagram&quot;
+            height&#x3D;&quot;500px&quot;
+            width&#x3D;&quot;100%&quot;
+            class&#x3D;&quot;diagram-space&quot;
+            [layout]&#x3D;&quot;layout&quot;
+            mode&#x3D;&quot;Canvas&quot;
+            [tool]&#x3D;&quot;diagramTool&quot;
+            [snapSettings]&#x3D;&quot;snapSettings&quot;
+            [constraints]&#x3D;&quot;diagramConstraints&quot;
+            [getConnectorDefaults]&#x3D;&quot;getConnectorDefaults&quot;
+            [getNodeDefaults]&#x3D;&quot;getNodeDefaults&quot;
+            [backgroundColor]&#x3D;&quot;&#x27;#ffffff&#x27;&quot;
+            (created)&#x3D;&quot;onDiagramCreate($event)&quot;
+            (click)&#x3D;&quot;onClick($event)&quot;
+            (doubleClick)&#x3D;&quot;onDoubleClick($event)&quot;
+            (dragEnter)&#x3D;&quot;onDragEnter($event)&quot;
+            (collectionChange)&#x3D;&quot;onCollectionChange($event)&quot;
+            (propertyChange)&#x3D;&quot;onPropertyChange($event)&quot;
+            (textEdit)&#x3D;&quot;onTextEdit($event)&quot;
+        &gt;&lt;/ejs-diagram&gt;
+        &lt;div class&#x3D;&quot;toolbar left&quot;&gt;
+            &lt;div&gt;
+                &lt;button
+                    class&#x3D;&quot;btn&quot;
+                    title&#x3D;&quot;Delete&quot;
+                    (click)&#x3D;&quot;onToolbarEvent(&#x27;delete&#x27;)&quot;
+                    [disabled]&#x3D;&quot;
+                        !selectedElements || selectedElements?.length &#x3D;&#x3D; 0
+                    &quot;
+                    *ngIf&#x3D;&quot;dataSettingsBlueprint?.displayDelete&quot;
+                &gt;
+                    &lt;i class&#x3D;&quot;fa fa-trash&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;!-- ONLY FOR REFERENCE --&gt;
+                &lt;!-- &lt;button
+                    class&#x3D;&quot;btn&quot;
+                    title&#x3D;&quot;palettes&quot;
+                    (click)&#x3D;&quot;onToolbarEvent(&#x27;palettes&#x27;)&quot;
+                    *ngIf&#x3D;&quot;dataSettingsBlueprint?.enablePalateToggle&quot;
+                &gt;
+                    &lt;i class&#x3D;&quot;fa fa-bars&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt; --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;toolbar right&quot; *ngIf&#x3D;&quot;dataSettingsBlueprint?.enableZoom&quot;&gt;
+            &lt;div&gt;
+                &lt;button
+                    class&#x3D;&quot;btn&quot;
+                    title&#x3D;&quot;zoomIn&quot;
+                    (click)&#x3D;&quot;onToolbarEvent(&#x27;zoomIn&#x27;)&quot;
+                &gt;
+                    &lt;i class&#x3D;&quot;fa fa-plus&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;button
+                    class&#x3D;&quot;btn&quot;
+                    title&#x3D;&quot;zoomOut&quot;
+                    (click)&#x3D;&quot;onToolbarEvent(&#x27;zoomOut&#x27;)&quot;
+                &gt;
+                    &lt;i class&#x3D;&quot;fa fa-minus&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./tab-blueprint.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.col {
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+/* For 12 columns */
+.col-1 {
+    width: 8.333%;
+}
+.col-2 {
+    width: 16.667%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-4 {
+    width: 33.333%;
+}
+.col-5 {
+    width: 41.667%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-7 {
+    width: 58.333%;
+}
+.col-8 {
+    width: 66.667%;
+}
+.col-9 {
+    width: 75%;
+}
+.col-10 {
+    width: 83.333%;
+}
+.col-11 {
+    width: 91.667%;
+}
+.col-12 {
+    width: 100%;
+}
+
+.diagram {
+    position: relative;
+}
+
+.toolbar {
+    position: absolute;
+    margin: 0;
+    padding: 4px;
+    height: 48px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+
+    .btn {
+        margin: 0 6px;
+    }
+}
+
+.toolbar.right {
+    top: 12px;
+    right: 12px;
+    justify-content: flex-end;
+}
+
+.toolbar.left {
+    top: 12px;
+    left: 12px;
+    justify-content: flex-start;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div style="height: 100%">    <div style="height: calc(100% - 500px)" *ngIf="showPalettes">        <ejs-symbolpalette            #symbolpalette            id="symbolpalette"            [enableAnimation]="true"            [expandMode]="expandMode"            [enableSearch]="dataSettingsBlueprint?.enableSearch"            [palettes]="palettes"            width="100%"            [symbolHeight]="symbolHeight"            [symbolWidth]="symbolWidth"            [symbolMargin]="symbolMargin"            [getSymbolInfo]="getSymbolInfo"            [getNodeDefaults]="getNodeDefaultsForPalette"            class="e-symbolpalette"        ></ejs-symbolpalette>    </div>    <div style="height: 500px" class="diagram">        <ejs-diagram            #diagram            id="diagram"            height="500px"            width="100%"            class="diagram-space"            [layout]="layout"            mode="Canvas"            [tool]="diagramTool"            [snapSettings]="snapSettings"            [constraints]="diagramConstraints"            [getConnectorDefaults]="getConnectorDefaults"            [getNodeDefaults]="getNodeDefaults"            [backgroundColor]="\'#ffffff\'"            (created)="onDiagramCreate($event)"            (click)="onClick($event)"            (doubleClick)="onDoubleClick($event)"            (dragEnter)="onDragEnter($event)"            (collectionChange)="onCollectionChange($event)"            (propertyChange)="onPropertyChange($event)"            (textEdit)="onTextEdit($event)"        ></ejs-diagram>        <div class="toolbar left">            <div>                <button                    class="btn"                    title="Delete"                    (click)="onToolbarEvent(\'delete\')"                    [disabled]="                        !selectedElements || selectedElements?.length == 0                    "                    *ngIf="dataSettingsBlueprint?.displayDelete"                >                    <i class="fa fa-trash"></i>                </button>                <!-- ONLY FOR REFERENCE -->                <!-- <button                    class="btn"                    title="palettes"                    (click)="onToolbarEvent(\'palettes\')"                    *ngIf="dataSettingsBlueprint?.enablePalateToggle"                >                    <i class="fa fa-bars"></i>                </button> -->            </div>        </div>        <div class="toolbar right" *ngIf="dataSettingsBlueprint?.enableZoom">            <div>                <button                    class="btn"                    title="zoomIn"                    (click)="onToolbarEvent(\'zoomIn\')"                >                    <i class="fa fa-plus"></i>                </button>                <button                    class="btn"                    title="zoomOut"                    (click)="onToolbarEvent(\'zoomOut\')"                >                    <i class="fa fa-minus"></i>                </button>            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthConfirmationRequiredComponent', 'selector': 'auth-confirmation-required'},{'name': 'AuthForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'AuthResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'AuthSignInComponent', 'selector': 'auth-sign-in'},{'name': 'AuthSignOutComponent', 'selector': 'auth-sign-out'},{'name': 'AuthSignUpComponent', 'selector': 'auth-sign-up'},{'name': 'AuthUnlockSessionComponent', 'selector': 'auth-unlock-session'},{'name': 'ButtonTemplateComponent', 'selector': 'button-template'},{'name': 'CenteredLayoutComponent', 'selector': 'centered-layout'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ClassicLayoutComponent', 'selector': 'classic-layout'},{'name': 'ClassyLayoutComponent', 'selector': 'classy-layout'},{'name': 'CompactLayoutComponent', 'selector': 'compact-layout'},{'name': 'DenseLayoutComponent', 'selector': 'dense-layout'},{'name': 'EmptyLayoutComponent', 'selector': 'empty-layout'},{'name': 'EnterpriseLayoutComponent', 'selector': 'enterprise-layout'},{'name': 'FuseAlertComponent', 'selector': 'fuse-alert'},{'name': 'FuseCardComponent', 'selector': 'fuse-card'},{'name': 'FuseConfirmationDialogComponent', 'selector': 'fuse-confirmation-dialog'},{'name': 'FuseDrawerComponent', 'selector': 'fuse-drawer'},{'name': 'FuseFullscreenComponent', 'selector': 'fuse-fullscreen'},{'name': 'FuseHighlightComponent', 'selector': 'textarea[fuse-highlight]'},{'name': 'FuseHorizontalNavigationBasicItemComponent', 'selector': 'fuse-horizontal-navigation-basic-item'},{'name': 'FuseHorizontalNavigationBranchItemComponent', 'selector': 'fuse-horizontal-navigation-branch-item'},{'name': 'FuseHorizontalNavigationComponent', 'selector': 'fuse-horizontal-navigation'},{'name': 'FuseHorizontalNavigationDividerItemComponent', 'selector': 'fuse-horizontal-navigation-divider-item'},{'name': 'FuseHorizontalNavigationSpacerItemComponent', 'selector': 'fuse-horizontal-navigation-spacer-item'},{'name': 'FuseLoadingBarComponent', 'selector': 'fuse-loading-bar'},{'name': 'FuseMasonryComponent', 'selector': 'fuse-masonry'},{'name': 'FuseVerticalNavigationAsideItemComponent', 'selector': 'fuse-vertical-navigation-aside-item'},{'name': 'FuseVerticalNavigationBasicItemComponent', 'selector': 'fuse-vertical-navigation-basic-item'},{'name': 'FuseVerticalNavigationCollapsableItemComponent', 'selector': 'fuse-vertical-navigation-collapsable-item'},{'name': 'FuseVerticalNavigationComponent', 'selector': 'fuse-vertical-navigation'},{'name': 'FuseVerticalNavigationDividerItemComponent', 'selector': 'fuse-vertical-navigation-divider-item'},{'name': 'FuseVerticalNavigationGroupItemComponent', 'selector': 'fuse-vertical-navigation-group-item'},{'name': 'FuseVerticalNavigationSpacerItemComponent', 'selector': 'fuse-vertical-navigation-spacer-item'},{'name': 'FuturisticLayoutComponent', 'selector': 'futuristic-layout'},{'name': 'GridCustomHTMLTemplateComponent', 'selector': 'app-grid-custom-htmltemplate'},{'name': 'HomeComponent', 'selector': 'Home'},{'name': 'ImageTemplateComponent', 'selector': 'image-template'},{'name': 'ImageWithNameTemplateComponent', 'selector': 'image-with-name-template'},{'name': 'LandingHomeComponent', 'selector': 'landing-home'},{'name': 'LanguagesComponent', 'selector': 'languages'},{'name': 'LayoutComponent', 'selector': 'layout'},{'name': 'LinkTemplateComponent', 'selector': 'link-template'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapdialogComponent', 'selector': 'app-mapdialog'},{'name': 'MaterialLayoutComponent', 'selector': 'material-layout'},{'name': 'MessagesComponent', 'selector': 'messages'},{'name': 'ModernLayoutComponent', 'selector': 'modern-layout'},{'name': 'NewTabQueryBuilderComponent', 'selector': 'new-tab-core-tab-query-builder'},{'name': 'NotificationsComponent', 'selector': 'notifications'},{'name': 'ScreenFilterComponent', 'selector': 'screen-filter'},{'name': 'SearchComponent', 'selector': 'search'},{'name': 'SettingsComponent', 'selector': 'settings'},{'name': 'ShortcutsComponent', 'selector': 'shortcuts'},{'name': 'StarComponent', 'selector': 'app-star'},{'name': 'TabBasicGridComponent', 'selector': 'tab-basic-grid'},{'name': 'TabBlueprintComponent', 'selector': 'app-tab-blueprint'},{'name': 'TabChildScreenRendererComponent', 'selector': 'tab-core-tab-child-screen-renderer'},{'name': 'TabChipsComponent', 'selector': 'app-tab-chips'},{'name': 'TabColorPickerComponent', 'selector': 'app-tab-color-picker'},{'name': 'TabCommentsComponent', 'selector': 'app-tab-comments'},{'name': 'TabCustomCalenderComponent', 'selector': 'tab-custom-calender'},{'name': 'TabCustomCodeEditorComponent', 'selector': 'tab-core-tab-custom-code-editor'},{'name': 'TabCustomFormBuilderComponent', 'selector': 'tab-custom-form-builder'},{'name': 'TabCustomGanttChartComponent', 'selector': 'app-tab-custom-gantt-chart'},{'name': 'TabCustomImageuploadComponent', 'selector': 'app-tab-custom-imageupload'},{'name': 'TabCustomPivotTableComponent', 'selector': 'app-tab-custom-pivot-table'},{'name': 'TabCustomPlacePickerMapComponent', 'selector': 'app-tab-custom-place-picker-map'},{'name': 'TabCustomRichtextHtmlEditorComponent', 'selector': 'app-tab-custom-richtext-html-editor'},{'name': 'TabCustomTrackMapComponent', 'selector': 'app-tab-custom-track-map'},{'name': 'TabDateRangePickerComponent', 'selector': 'app-tab-date-range-picker'},{'name': 'TabDropDownTreeComponent', 'selector': 'app-tab-dropdown-tree'},{'name': 'TabDynamicDialogComponent', 'selector': 'app-tab-dynamic-dialog'},{'name': 'TabDynamicSidebarComponent', 'selector': 'app-tab-dynamic-sidebar'},{'name': 'TabFilePreviewComponent', 'selector': 'app-tab-file-preview'},{'name': 'TabFormBuilderComponent', 'selector': 'tab-form-builder'},{'name': 'TabFormRendererComponent', 'selector': 'tab-form-renderer'},{'name': 'TabHistoryComponent', 'selector': 'app-tab-history'},{'name': 'TabIframeComponent', 'selector': 'app-tab-iframe'},{'name': 'TabPdfViewerComponent', 'selector': 'app-tab-pdf-viewer'},{'name': 'TabQueryBuilderComponent', 'selector': 'tab-core-tab-query-builder'},{'name': 'TabSkeletonComponent', 'selector': 'app-tab-skeleton'},{'name': 'TabTextBoxComponent', 'selector': 'app-tab-iframe'},{'name': 'TabTimerComponent', 'selector': 'app-tab-timer'},{'name': 'TabTimerComponentComponent', 'selector': 'app-tab-timer-component'},{'name': 'TabTransitionPreviewComponent', 'selector': 'app-tab-transition-preview'},{'name': 'TabTreeViewComponent', 'selector': 'tab-core-tab-tree-view'},{'name': 'TabWidgetComponent', 'selector': 'app-tab-widget'},{'name': 'ThinLayoutComponent', 'selector': 'thin-layout'},{'name': 'UserComponent', 'selector': 'user'},{'name': 'ViewMoreComponent', 'selector': 'view-more-search-list'}];
+    var DIRECTIVES = [{'name': 'FuseScrollbarDirective', 'selector': '[fuseScrollbar]'},{'name': 'FuseScrollResetDirective', 'selector': '[fuseScrollReset]'},{'name': 'SafeHtmlDirective', 'selector': '[appSafeHtml]'}];
+    var ACTUAL_COMPONENT = {'name': 'TabBlueprintComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TabBlueprintComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

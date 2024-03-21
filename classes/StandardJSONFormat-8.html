@@ -1,0 +1,2736 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@fuse/starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@fuse/starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >StandardJSONFormat</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/modules/admin/tab-custom-calender/tab-custom-calender-standard-json.ts</code>
+        </p>
+
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#StandardJSON" >StandardJSON</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StandardJSON"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>StandardJSON</b></span>
+                        <a href="#StandardJSON"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    &quot;components&quot;: [
+      {
+        &quot;type&quot;: &quot;tabs&quot;,
+        &quot;key&quot;: &quot;tabs&quot;,
+        &quot;components&quot;: [
+          {
+            &quot;key&quot;: &quot;display&quot;,
+            &quot;components&quot;: [
+              {
+                &quot;weight&quot;: 0,
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;label&quot;,
+                &quot;label&quot;: &quot;Label&quot;,
+                &quot;placeholder&quot;: &quot;Field Label&quot;,
+                &quot;tooltip&quot;: &quot;The label for this field that will appear next to it.&quot;,
+                &quot;validate&quot;: {
+                  &quot;required&quot;: true
+                }
+              },
+              {
+                &quot;type&quot;: &quot;number&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;labelWidth&quot;,
+                &quot;label&quot;: &quot;Label Width&quot;,
+                &quot;tooltip&quot;: &quot;The width of label on line in percentages.&quot;,
+                &quot;clearOnHide&quot;: false,
+                &quot;weight&quot;: 30,
+                &quot;placeholder&quot;: &quot;30&quot;,
+                &quot;suffix&quot;: &quot;%&quot;,
+                &quot;validate&quot;: {
+                  &quot;min&quot;: 0,
+                  &quot;max&quot;: 100
+                },
+                &quot;conditional&quot;: {
+                  &quot;json&quot;: {
+                    &quot;and&quot;: [
+                      {
+                        &quot;!&#x3D;&#x3D;&quot;: [
+                          {
+                            &quot;var&quot;: &quot;data.labelPosition&quot;
+                          },
+                          &quot;top&quot;
+                        ]
+                      },
+                      {
+                        &quot;!&#x3D;&#x3D;&quot;: [
+                          {
+                            &quot;var&quot;: &quot;data.labelPosition&quot;
+                          },
+                          &quot;bottom&quot;
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                &quot;type&quot;: &quot;number&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;labelMargin&quot;,
+                &quot;label&quot;: &quot;Label Margin&quot;,
+                &quot;tooltip&quot;: &quot;The width of label margin on line in percentages.&quot;,
+                &quot;clearOnHide&quot;: false,
+                &quot;weight&quot;: 30,
+                &quot;placeholder&quot;: &quot;3&quot;,
+                &quot;suffix&quot;: &quot;%&quot;,
+                &quot;validate&quot;: {
+                  &quot;min&quot;: 0,
+                  &quot;max&quot;: 100
+                },
+                &quot;conditional&quot;: {
+                  &quot;json&quot;: {
+                    &quot;and&quot;: [
+                      {
+                        &quot;!&#x3D;&#x3D;&quot;: [
+                          {
+                            &quot;var&quot;: &quot;data.labelPosition&quot;
+                          },
+                          &quot;top&quot;
+                        ]
+                      },
+                      {
+                        &quot;!&#x3D;&#x3D;&quot;: [
+                          {
+                            &quot;var&quot;: &quot;data.labelPosition&quot;
+                          },
+                          &quot;bottom&quot;
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                &quot;weight&quot;: 200,
+                &quot;type&quot;: &quot;textarea&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;description&quot;,
+                &quot;label&quot;: &quot;Description&quot;,
+                &quot;placeholder&quot;: &quot;Description for this field.&quot;,
+                &quot;tooltip&quot;: &quot;The description is text that will appear below the input field.&quot;,
+                &quot;editor&quot;: &quot;ace&quot;,
+                &quot;as&quot;: &quot;html&quot;,
+                &quot;wysiwyg&quot;: {
+                  &quot;minLines&quot;: 3
+                }
+              },
+              {
+                &quot;weight&quot;: 300,
+                &quot;type&quot;: &quot;textarea&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;tooltip&quot;,
+                &quot;label&quot;: &quot;Tooltip&quot;,
+                &quot;placeholder&quot;: &quot;To add a tooltip to this field, enter text here.&quot;,
+                &quot;tooltip&quot;: &quot;Adds a tooltip to the side of this field.&quot;,
+                &quot;editor&quot;: &quot;ace&quot;,
+                &quot;as&quot;: &quot;html&quot;,
+                &quot;wysiwyg&quot;: {
+                  &quot;minLines&quot;: 3
+                }
+              },
+              {
+                &quot;type&quot;: &quot;select&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;buttonStyle&quot;,
+                &quot;label&quot;: &quot;Bootstrap button color style&quot;,
+                &quot;tooltip&quot;: &quot;&lt;a href&#x3D;&#x27;https://getbootstrap.com/docs/4.0/components/buttons/&#x27;&gt;Button style&lt;/a&gt;&quot;,
+                &quot;weight&quot;: 400,
+                &quot;defaultValue&quot;: &quot;primary&quot;,
+                &quot;dataSrc&quot;: &quot;values&quot;,
+                &quot;data&quot;: {
+                  &quot;values&quot;: [
+                    {
+                      &quot;label&quot;: &quot;Primary&quot;,
+                      &quot;value&quot;: &quot;primary&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Secondary&quot;,
+                      &quot;value&quot;: &quot;secondary&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Success&quot;,
+                      &quot;value&quot;: &quot;success&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Danger&quot;,
+                      &quot;value&quot;: &quot;danger&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Warning&quot;,
+                      &quot;value&quot;: &quot;warning&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Info&quot;,
+                      &quot;value&quot;: &quot;info&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Light&quot;,
+                      &quot;value&quot;: &quot;light&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Dark&quot;,
+                      &quot;value&quot;: &quot;dark&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Link&quot;,
+                      &quot;value&quot;: &quot;link&quot;
+                    }
+                  ]
+                }
+              },
+              {
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;icon&quot;,
+                &quot;label&quot;: &quot;The font-awesome icon to display in the field, try &#x27;car&#x27;&quot;,
+                &quot;tooltip&quot;: &quot;&lt;a href&#x3D;&#x27;https://fontawesome.com/icons?d&#x3D;gallery&amp;m&#x3D;free&#x27;&gt;Font-awesome icon&lt;/a&gt; &quot;,
+                &quot;weight&quot;: 410
+              },
+              {
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;name&quot;,
+                &quot;label&quot;: &quot;Radio Key&quot;,
+                &quot;tooltip&quot;: &quot;The key used to trigger the radio button toggle.&quot;,
+                &quot;weight&quot;: 420,
+                &quot;conditional&quot;: {
+                  &quot;json&quot;: {
+                    &quot;&#x3D;&#x3D;&#x3D;&quot;: [
+                      {
+                        &quot;var&quot;: &quot;data.inputType&quot;
+                      },
+                      &quot;radio&quot;
+                    ]
+                  }
+                }
+              },
+              {
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;label&quot;: &quot;Radio Value&quot;,
+                &quot;key&quot;: &quot;value&quot;,
+                &quot;tooltip&quot;: &quot;The value used with this radio button.&quot;,
+                &quot;weight&quot;: 430,
+                &quot;conditional&quot;: {
+                  &quot;json&quot;: {
+                    &quot;&#x3D;&#x3D;&#x3D;&quot;: [
+                      {
+                        &quot;var&quot;: &quot;data.inputType&quot;
+                      },
+                      &quot;radio&quot;
+                    ]
+                  }
+                }
+              },
+              {
+                &quot;weight&quot;: 500,
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;customClass&quot;,
+                &quot;label&quot;: &quot;Custom CSS Class&quot;,
+                &quot;placeholder&quot;: &quot;Custom CSS Class&quot;,
+                &quot;tooltip&quot;: &quot;Custom CSS class to add to this component.&quot;
+              },
+              {
+                &quot;weight&quot;: 600,
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;tabindex&quot;,
+                &quot;label&quot;: &quot;Tab Index&quot;,
+                &quot;placeholder&quot;: &quot;0&quot;,
+                &quot;tooltip&quot;: &quot;Sets the tabindex attribute of this component to override the tab order of the form. See the &lt;a href&#x3D;&#x27;https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex&#x27;&gt;MDN documentation&lt;/a&gt; on tabindex for more information.&quot;
+              },
+              {
+                &quot;weight&quot;: 1100,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Hidden&quot;,
+                &quot;tooltip&quot;: &quot;A hidden field is still a part of the form, but is hidden from view.&quot;,
+                &quot;key&quot;: &quot;hidden&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 1200,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Hide Label&quot;,
+                &quot;tooltip&quot;: &quot;Hide the label of this component. This allows you to show the label in the form builder, but not when it is rendered.&quot;,
+                &quot;key&quot;: &quot;hideLabel&quot;,
+                &quot;defaultValue&quot;: true,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 1350,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Initial Focus&quot;,
+                &quot;tooltip&quot;: &quot;Make this field the initially focused element on this form.&quot;,
+                &quot;key&quot;: &quot;autofocus&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 1370,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Show Label in DataGrid&quot;,
+                &quot;tooltip&quot;: &quot;Show the label when in a Datagrid.&quot;,
+                &quot;key&quot;: &quot;dataGridLabel&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 1400,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Disabled&quot;,
+                &quot;tooltip&quot;: &quot;Disable the form input.&quot;,
+                &quot;key&quot;: &quot;disabled&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 1500,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Table View&quot;,
+                &quot;tooltip&quot;: &quot;Shows this value within the table view of the submissions.&quot;,
+                &quot;key&quot;: &quot;tableView&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 1600,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Modal Edit&quot;,
+                &quot;tooltip&quot;: &quot;Opens up a modal to edit the value of this component.&quot;,
+                &quot;key&quot;: &quot;modalEdit&quot;,
+                &quot;input&quot;: true
+              }
+            ],
+            &quot;label&quot;: &quot;Display&quot;,
+            &quot;weight&quot;: 0
+          },
+          {
+            &quot;key&quot;: &quot;data&quot;,
+            &quot;components&quot;: [
+              {
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;label&quot;: &quot;Default Value&quot;,
+                &quot;key&quot;: &quot;defaultValue&quot;,
+                &quot;weight&quot;: 5,
+                &quot;placeholder&quot;: &quot;Default Value&quot;,
+                &quot;tooltip&quot;: &quot;The will be the value for this field, before user interaction. Having a default value will override the placeholder text.&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 30,
+                &quot;type&quot;: &quot;radio&quot;,
+                &quot;label&quot;: &quot;Persistent&quot;,
+                &quot;tooltip&quot;: &quot;A persistent field will be stored in database when the form is submitted.&quot;,
+                &quot;key&quot;: &quot;persistent&quot;,
+                &quot;input&quot;: true,
+                &quot;inline&quot;: true,
+                &quot;defaultValue&quot;: true,
+                &quot;values&quot;: [
+                  {
+                    &quot;label&quot;: &quot;None&quot;,
+                    &quot;value&quot;: false
+                  },
+                  {
+                    &quot;label&quot;: &quot;Server&quot;,
+                    &quot;value&quot;: true
+                  },
+                  {
+                    &quot;label&quot;: &quot;Client&quot;,
+                    &quot;value&quot;: &quot;client-only&quot;
+                  }
+                ]
+              },
+              {
+                &quot;weight&quot;: 150,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Protected&quot;,
+                &quot;tooltip&quot;: &quot;A protected field will not be returned when queried via API.&quot;,
+                &quot;key&quot;: &quot;protected&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;input&quot;: true,
+                &quot;weight&quot;: 200,
+                &quot;key&quot;: &quot;dbIndex&quot;,
+                &quot;label&quot;: &quot;Database Index&quot;,
+                &quot;tooltip&quot;: &quot;Set this field as an index within the database. Increases performance for submission queries.&quot;
+              },
+              {
+                &quot;weight&quot;: 400,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Encrypted (Enterprise Only)&quot;,
+                &quot;tooltip&quot;: &quot;Encrypt this field on the server. This is two way encryption which is not suitable for passwords.&quot;,
+                &quot;key&quot;: &quot;encrypted&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;type&quot;: &quot;select&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;redrawOn&quot;,
+                &quot;label&quot;: &quot;Redraw On&quot;,
+                &quot;weight&quot;: 600,
+                &quot;tooltip&quot;: &quot;Redraw this component if another component changes. This is useful if interpolating parts of the component like the label.&quot;,
+                &quot;dataSrc&quot;: &quot;custom&quot;,
+                &quot;valueProperty&quot;: &quot;value&quot;,
+                &quot;data&quot;: {},
+                &quot;conditional&quot;: {
+                  &quot;json&quot;: {
+                    &quot;!&quot;: [
+                      {
+                        &quot;var&quot;: &quot;data.dataSrc&quot;
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                &quot;weight&quot;: 700,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Clear Value When Hidden&quot;,
+                &quot;key&quot;: &quot;clearOnHide&quot;,
+                &quot;defaultValue&quot;: true,
+                &quot;tooltip&quot;: &quot;When a field is hidden, clear the value.&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;type&quot;: &quot;panel&quot;,
+                &quot;title&quot;: &quot;Custom Default Value&quot;,
+                &quot;theme&quot;: &quot;default&quot;,
+                &quot;collapsible&quot;: true,
+                &quot;collapsed&quot;: true,
+                &quot;key&quot;: &quot;customDefaultValuePanel&quot;,
+                &quot;weight&quot;: 1000,
+                &quot;components&quot;: [
+                  {
+                    &quot;type&quot;: &quot;htmlelement&quot;,
+                    &quot;tag&quot;: &quot;div&quot;,
+                    &quot;content&quot;: &quot;&lt;p&gt;The following variables are available in all scripts.&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-bordered table-condensed table-striped\&quot;&gt;&lt;tr&gt;&lt;th&gt;form&lt;/th&gt;&lt;td&gt;The complete form JSON object&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;submission&lt;/th&gt;&lt;td&gt;The complete submission object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;data&lt;/th&gt;&lt;td&gt;The complete submission data object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;row&lt;/th&gt;&lt;td&gt;Contextual \&quot;row\&quot; data, used within DataGrid, EditGrid, and Container components&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;component&lt;/th&gt;&lt;td&gt;The current component JSON&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;instance&lt;/th&gt;&lt;td&gt;The current component instance.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;value&lt;/th&gt;&lt;td&gt;The current value of the component.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;moment&lt;/th&gt;&lt;td&gt;The moment.js library for date manipulation.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;_&lt;/th&gt;&lt;td&gt;An instance of &lt;a href&#x3D;\&quot;https://lodash.com/docs/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Lodash&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;utils&lt;/th&gt;&lt;td&gt;An instance of the &lt;a href&#x3D;\&quot;http://formio.github.io/formio.js/docs/identifiers.html#utils\&quot; target&#x3D;\&quot;_blank\&quot;&gt;FormioUtils&lt;/a&gt; object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;util&lt;/th&gt;&lt;td&gt;An alias for \&quot;utils\&quot;.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;panel&quot;,
+                    &quot;title&quot;: &quot;JavaScript&quot;,
+                    &quot;collapsible&quot;: true,
+                    &quot;collapsed&quot;: false,
+                    &quot;style&quot;: {
+                      &quot;margin-bottom&quot;: &quot;10px&quot;
+                    },
+                    &quot;key&quot;: &quot;customDefaultValue-js&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;type&quot;: &quot;textarea&quot;,
+                        &quot;key&quot;: &quot;customDefaultValue&quot;,
+                        &quot;rows&quot;: 5,
+                        &quot;editor&quot;: &quot;ace&quot;,
+                        &quot;hideLabel&quot;: true,
+                        &quot;input&quot;: true
+                      },
+                      {
+                        &quot;type&quot;: &quot;htmlelement&quot;,
+                        &quot;tag&quot;: &quot;div&quot;,
+                        &quot;content&quot;: &quot;&lt;p&gt;Enter custom javascript code.&lt;/p&gt;&lt;p&gt;&lt;h4&gt;Example:&lt;/h4&gt;&lt;pre&gt;value &#x3D; data.firstName + \&quot; \&quot; + data.lastName;&lt;/pre&gt;&lt;/p&gt;&quot;
+                      }
+                    ]
+                  },
+                  {
+                    &quot;type&quot;: &quot;panel&quot;,
+                    &quot;title&quot;: &quot;JSONLogic&quot;,
+                    &quot;collapsible&quot;: true,
+                    &quot;collapsed&quot;: true,
+                    &quot;key&quot;: &quot;customDefaultValue-json&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;type&quot;: &quot;htmlelement&quot;,
+                        &quot;tag&quot;: &quot;div&quot;,
+                        &quot;content&quot;: &quot;&lt;p&gt;Execute custom logic using &lt;a href&#x3D;\&quot;http://jsonlogic.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;JSONLogic&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Full &lt;a href&#x3D;\&quot;https://lodash.com/docs\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Lodash&lt;/a&gt; support is provided using an \&quot;_\&quot; before each operation, such as &lt;code&gt;{\&quot;_sum\&quot;: {var: \&quot;data.a\&quot;}}&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;h4&gt;Example:&lt;/h4&gt;&lt;pre&gt;{\&quot;cat\&quot;: [{\&quot;var\&quot;: \&quot;data.firstName\&quot;}, \&quot; \&quot;, {\&quot;var\&quot;: \&quot;data.lastName\&quot;}]}&lt;/pre&gt;&quot;
+                      },
+                      {
+                        &quot;type&quot;: &quot;textarea&quot;,
+                        &quot;key&quot;: &quot;customDefaultValue&quot;,
+                        &quot;rows&quot;: 5,
+                        &quot;editor&quot;: &quot;ace&quot;,
+                        &quot;hideLabel&quot;: true,
+                        &quot;as&quot;: &quot;json&quot;,
+                        &quot;input&quot;: true
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                &quot;type&quot;: &quot;panel&quot;,
+                &quot;title&quot;: &quot;Calculated Value&quot;,
+                &quot;theme&quot;: &quot;default&quot;,
+                &quot;collapsible&quot;: true,
+                &quot;collapsed&quot;: true,
+                &quot;key&quot;: &quot;calculateValuePanel&quot;,
+                &quot;weight&quot;: 1100,
+                &quot;components&quot;: [
+                  {
+                    &quot;type&quot;: &quot;htmlelement&quot;,
+                    &quot;tag&quot;: &quot;div&quot;,
+                    &quot;content&quot;: &quot;&lt;p&gt;The following variables are available in all scripts.&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-bordered table-condensed table-striped\&quot;&gt;&lt;tr&gt;&lt;th&gt;token&lt;/th&gt;&lt;td&gt;The decoded JWT token for the authenticated user.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;form&lt;/th&gt;&lt;td&gt;The complete form JSON object&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;submission&lt;/th&gt;&lt;td&gt;The complete submission object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;data&lt;/th&gt;&lt;td&gt;The complete submission data object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;row&lt;/th&gt;&lt;td&gt;Contextual \&quot;row\&quot; data, used within DataGrid, EditGrid, and Container components&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;component&lt;/th&gt;&lt;td&gt;The current component JSON&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;instance&lt;/th&gt;&lt;td&gt;The current component instance.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;value&lt;/th&gt;&lt;td&gt;The current value of the component.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;moment&lt;/th&gt;&lt;td&gt;The moment.js library for date manipulation.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;_&lt;/th&gt;&lt;td&gt;An instance of &lt;a href&#x3D;\&quot;https://lodash.com/docs/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Lodash&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;utils&lt;/th&gt;&lt;td&gt;An instance of the &lt;a href&#x3D;\&quot;http://formio.github.io/formio.js/docs/identifiers.html#utils\&quot; target&#x3D;\&quot;_blank\&quot;&gt;FormioUtils&lt;/a&gt; object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;util&lt;/th&gt;&lt;td&gt;An alias for \&quot;utils\&quot;.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;panel&quot;,
+                    &quot;title&quot;: &quot;JavaScript&quot;,
+                    &quot;collapsible&quot;: true,
+                    &quot;collapsed&quot;: false,
+                    &quot;style&quot;: {
+                      &quot;margin-bottom&quot;: &quot;10px&quot;
+                    },
+                    &quot;key&quot;: &quot;calculateValue-js&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;type&quot;: &quot;textarea&quot;,
+                        &quot;key&quot;: &quot;calculateValue&quot;,
+                        &quot;rows&quot;: 5,
+                        &quot;editor&quot;: &quot;ace&quot;,
+                        &quot;hideLabel&quot;: true,
+                        &quot;input&quot;: true
+                      },
+                      {
+                        &quot;type&quot;: &quot;htmlelement&quot;,
+                        &quot;tag&quot;: &quot;div&quot;,
+                        &quot;content&quot;: &quot;&lt;p&gt;Enter custom javascript code.&lt;/p&gt;&lt;p&gt;&lt;h4&gt;Example:&lt;/h4&gt;&lt;pre&gt;value &#x3D; data.a + data.b + data.c;&lt;/pre&gt;&lt;/p&gt;&quot;
+                      }
+                    ]
+                  },
+                  {
+                    &quot;type&quot;: &quot;panel&quot;,
+                    &quot;title&quot;: &quot;JSONLogic&quot;,
+                    &quot;collapsible&quot;: true,
+                    &quot;collapsed&quot;: true,
+                    &quot;key&quot;: &quot;calculateValue-json&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;type&quot;: &quot;htmlelement&quot;,
+                        &quot;tag&quot;: &quot;div&quot;,
+                        &quot;content&quot;: &quot;&lt;p&gt;Execute custom logic using &lt;a href&#x3D;\&quot;http://jsonlogic.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;JSONLogic&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Full &lt;a href&#x3D;\&quot;https://lodash.com/docs\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Lodash&lt;/a&gt; support is provided using an \&quot;_\&quot; before each operation, such as &lt;code&gt;{\&quot;_sum\&quot;: {var: \&quot;data.a\&quot;}}&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;h4&gt;Example:&lt;/h4&gt;&lt;pre&gt;{\&quot;+\&quot;: [{\&quot;var\&quot;: \&quot;data.a\&quot;}, {\&quot;var\&quot;: \&quot;data.b\&quot;}, {\&quot;var\&quot;: \&quot;data.c\&quot;}]}&lt;/pre&gt;&lt;p&gt;&lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;http://formio.github.io/formio.js/app/examples/calculated.html\&quot;&gt;Click here for an example&lt;/a&gt;&lt;/p&gt;&quot;
+                      },
+                      {
+                        &quot;type&quot;: &quot;textarea&quot;,
+                        &quot;key&quot;: &quot;calculateValue&quot;,
+                        &quot;rows&quot;: 5,
+                        &quot;editor&quot;: &quot;ace&quot;,
+                        &quot;hideLabel&quot;: true,
+                        &quot;as&quot;: &quot;json&quot;,
+                        &quot;input&quot;: true
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;input&quot;: true,
+                &quot;weight&quot;: 1100,
+                &quot;key&quot;: &quot;calculateServer&quot;,
+                &quot;label&quot;: &quot;Calculate Value on server&quot;,
+                &quot;tooltip&quot;: &quot;Checking this will run the calculation on the server. This is useful if you wish to override the values submitted with the calculations performed on the server.&quot;
+              },
+              {
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;input&quot;: true,
+                &quot;weight&quot;: 1200,
+                &quot;key&quot;: &quot;allowCalculateOverride&quot;,
+                &quot;label&quot;: &quot;Allow Manual Override of Calculated Value&quot;,
+                &quot;tooltip&quot;: &quot;When checked, this will allow the user to manually override the calculated value.&quot;
+              }
+            ],
+            &quot;label&quot;: &quot;Data&quot;,
+            &quot;weight&quot;: 10
+          },
+          {
+            &quot;key&quot;: &quot;validation&quot;,
+            &quot;components&quot;: [
+              {
+                &quot;weight&quot;: 10,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Required&quot;,
+                &quot;tooltip&quot;: &quot;A required field must be filled in before the form can be submitted.&quot;,
+                &quot;key&quot;: &quot;validate.required&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 190,
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;errorLabel&quot;,
+                &quot;label&quot;: &quot;Error Label&quot;,
+                &quot;placeholder&quot;: &quot;Error Label&quot;,
+                &quot;tooltip&quot;: &quot;The label for this field when an error occurs.&quot;
+              },
+              {
+                &quot;weight&quot;: 200,
+                &quot;key&quot;: &quot;validate.customMessage&quot;,
+                &quot;label&quot;: &quot;Custom Error Message&quot;,
+                &quot;placeholder&quot;: &quot;Custom Error Message&quot;,
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;tooltip&quot;: &quot;Error message displayed if any error occurred.&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;type&quot;: &quot;panel&quot;,
+                &quot;title&quot;: &quot;Custom Validation&quot;,
+                &quot;collapsible&quot;: true,
+                &quot;collapsed&quot;: true,
+                &quot;style&quot;: {
+                  &quot;margin-bottom&quot;: &quot;10px&quot;
+                },
+                &quot;key&quot;: &quot;custom-validation-js&quot;,
+                &quot;weight&quot;: 300,
+                &quot;components&quot;: [
+                  {
+                    &quot;type&quot;: &quot;htmlelement&quot;,
+                    &quot;tag&quot;: &quot;div&quot;,
+                    &quot;content&quot;: &quot;&lt;p&gt;The following variables are available in all scripts.&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-bordered table-condensed table-striped\&quot;&gt;&lt;tr&gt;&lt;th&gt;input&lt;/th&gt;&lt;td&gt;The value that was input into this component&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;form&lt;/th&gt;&lt;td&gt;The complete form JSON object&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;submission&lt;/th&gt;&lt;td&gt;The complete submission object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;data&lt;/th&gt;&lt;td&gt;The complete submission data object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;row&lt;/th&gt;&lt;td&gt;Contextual \&quot;row\&quot; data, used within DataGrid, EditGrid, and Container components&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;component&lt;/th&gt;&lt;td&gt;The current component JSON&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;instance&lt;/th&gt;&lt;td&gt;The current component instance.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;value&lt;/th&gt;&lt;td&gt;The current value of the component.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;moment&lt;/th&gt;&lt;td&gt;The moment.js library for date manipulation.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;_&lt;/th&gt;&lt;td&gt;An instance of &lt;a href&#x3D;\&quot;https://lodash.com/docs/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Lodash&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;utils&lt;/th&gt;&lt;td&gt;An instance of the &lt;a href&#x3D;\&quot;http://formio.github.io/formio.js/docs/identifiers.html#utils\&quot; target&#x3D;\&quot;_blank\&quot;&gt;FormioUtils&lt;/a&gt; object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;util&lt;/th&gt;&lt;td&gt;An alias for \&quot;utils\&quot;.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;textarea&quot;,
+                    &quot;key&quot;: &quot;validate.custom&quot;,
+                    &quot;rows&quot;: 5,
+                    &quot;editor&quot;: &quot;ace&quot;,
+                    &quot;hideLabel&quot;: true,
+                    &quot;input&quot;: true
+                  },
+                  {
+                    &quot;type&quot;: &quot;htmlelement&quot;,
+                    &quot;tag&quot;: &quot;div&quot;,
+                    &quot;content&quot;: &quot;\n          &lt;small&gt;\n            &lt;p&gt;Enter custom validation code.&lt;/p&gt;\n            &lt;p&gt;You must assign the &lt;strong&gt;valid&lt;/strong&gt; variable as either &lt;strong&gt;true&lt;/strong&gt; or an error message if validation fails.&lt;/p&gt;\n            &lt;h5&gt;Example:&lt;/h5&gt;\n            &lt;pre&gt;valid &#x3D; (input &#x3D;&#x3D;&#x3D; &#x27;Joe&#x27;) ? true : &#x27;Your name must be \&quot;Joe\&quot;&#x27;;&lt;/pre&gt;\n          &lt;/small&gt;&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;well&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;weight&quot;: 100,
+                        &quot;type&quot;: &quot;checkbox&quot;,
+                        &quot;label&quot;: &quot;Secret Validation&quot;,
+                        &quot;tooltip&quot;: &quot;Check this if you wish to perform the validation ONLY on the server side. This keeps your validation logic private and secret.&quot;,
+                        &quot;description&quot;: &quot;Check this if you wish to perform the validation ONLY on the server side. This keeps your validation logic private and secret.&quot;,
+                        &quot;key&quot;: &quot;validate.customPrivate&quot;,
+                        &quot;input&quot;: true
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                &quot;type&quot;: &quot;panel&quot;,
+                &quot;title&quot;: &quot;JSONLogic Validation&quot;,
+                &quot;collapsible&quot;: true,
+                &quot;collapsed&quot;: true,
+                &quot;key&quot;: &quot;json-validation-json&quot;,
+                &quot;weight&quot;: 400,
+                &quot;components&quot;: [
+                  {
+                    &quot;type&quot;: &quot;htmlelement&quot;,
+                    &quot;tag&quot;: &quot;div&quot;,
+                    &quot;content&quot;: &quot;&lt;p&gt;Execute custom logic using &lt;a href&#x3D;\&quot;http://jsonlogic.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;JSONLogic&lt;/a&gt;.&lt;/p&gt;&lt;h5&gt;Example:&lt;/h5&gt;&lt;pre&gt;{\n  \&quot;if\&quot;: [\n    {\n      \&quot;&#x3D;&#x3D;&#x3D;\&quot;: [\n        {\n          \&quot;var\&quot;: \&quot;input\&quot;\n        },\n        \&quot;Bob\&quot;\n      ]\n    },\n    true,\n    \&quot;Your name must be &#x27;Bob&#x27;!\&quot;\n  ]\n}&lt;/pre&gt;&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;textarea&quot;,
+                    &quot;key&quot;: &quot;validate.json&quot;,
+                    &quot;hideLabel&quot;: true,
+                    &quot;rows&quot;: 5,
+                    &quot;editor&quot;: &quot;ace&quot;,
+                    &quot;as&quot;: &quot;json&quot;,
+                    &quot;input&quot;: true
+                  }
+                ]
+              }
+            ],
+            &quot;label&quot;: &quot;Validation&quot;,
+            &quot;weight&quot;: 20
+          },
+          {
+            &quot;label&quot;: &quot;API&quot;,
+            &quot;key&quot;: &quot;api&quot;,
+            &quot;weight&quot;: 30,
+            &quot;components&quot;: [
+              {
+                &quot;weight&quot;: 0,
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;key&quot;,
+                &quot;label&quot;: &quot;Property Name&quot;,
+                &quot;tooltip&quot;: &quot;The name of this field in the API endpoint.&quot;,
+                &quot;validate&quot;: {
+                  &quot;pattern&quot;: &quot;(\\w|\\w[\\w-.]*\\w)&quot;,
+                  &quot;patternMessage&quot;: &quot;The property name must only contain alphanumeric characters, underscores, dots and dashes and should not be ended by dash or dot.&quot;
+                }
+              },
+              {
+                &quot;weight&quot;: 100,
+                &quot;type&quot;: &quot;tags&quot;,
+                &quot;input&quot;: true,
+                &quot;label&quot;: &quot;Field Tags&quot;,
+                &quot;storeas&quot;: &quot;array&quot;,
+                &quot;tooltip&quot;: &quot;Tag the field for use in custom logic.&quot;,
+                &quot;key&quot;: &quot;tags&quot;
+              },
+              {
+                &quot;weight&quot;: 200,
+                &quot;type&quot;: &quot;datamap&quot;,
+                &quot;label&quot;: &quot;Custom Properties&quot;,
+                &quot;tooltip&quot;: &quot;This allows you to configure any custom properties for this component.&quot;,
+                &quot;key&quot;: &quot;properties&quot;,
+                &quot;valueComponent&quot;: {
+                  &quot;type&quot;: &quot;textfield&quot;,
+                  &quot;key&quot;: &quot;value&quot;,
+                  &quot;label&quot;: &quot;Value&quot;,
+                  &quot;placeholder&quot;: &quot;Value&quot;,
+                  &quot;input&quot;: true
+                }
+              }
+            ]
+          },
+          {
+            &quot;label&quot;: &quot;Conditional&quot;,
+            &quot;key&quot;: &quot;conditional&quot;,
+            &quot;weight&quot;: 40,
+            &quot;components&quot;: [
+              {
+                &quot;type&quot;: &quot;panel&quot;,
+                &quot;title&quot;: &quot;Simple&quot;,
+                &quot;key&quot;: &quot;simple-conditional&quot;,
+                &quot;theme&quot;: &quot;default&quot;,
+                &quot;components&quot;: [
+                  {
+                    &quot;type&quot;: &quot;select&quot;,
+                    &quot;input&quot;: true,
+                    &quot;label&quot;: &quot;This component should Display:&quot;,
+                    &quot;key&quot;: &quot;conditional.show&quot;,
+                    &quot;dataSrc&quot;: &quot;values&quot;,
+                    &quot;data&quot;: {
+                      &quot;values&quot;: [
+                        {
+                          &quot;label&quot;: &quot;True&quot;,
+                          &quot;value&quot;: &quot;true&quot;
+                        },
+                        {
+                          &quot;label&quot;: &quot;False&quot;,
+                          &quot;value&quot;: &quot;false&quot;
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    &quot;type&quot;: &quot;select&quot;,
+                    &quot;input&quot;: true,
+                    &quot;label&quot;: &quot;When the form component:&quot;,
+                    &quot;key&quot;: &quot;conditional.when&quot;,
+                    &quot;dataSrc&quot;: &quot;custom&quot;,
+                    &quot;valueProperty&quot;: &quot;value&quot;,
+                    &quot;data&quot;: {}
+                  },
+                  {
+                    &quot;type&quot;: &quot;textfield&quot;,
+                    &quot;input&quot;: true,
+                    &quot;label&quot;: &quot;Has the value:&quot;,
+                    &quot;key&quot;: &quot;conditional.eq&quot;
+                  }
+                ]
+              },
+              {
+                &quot;type&quot;: &quot;panel&quot;,
+                &quot;title&quot;: &quot;Advanced Conditions&quot;,
+                &quot;theme&quot;: &quot;default&quot;,
+                &quot;collapsible&quot;: true,
+                &quot;collapsed&quot;: true,
+                &quot;key&quot;: &quot;customConditionalPanel&quot;,
+                &quot;weight&quot;: 110,
+                &quot;components&quot;: [
+                  {
+                    &quot;type&quot;: &quot;htmlelement&quot;,
+                    &quot;tag&quot;: &quot;div&quot;,
+                    &quot;content&quot;: &quot;&lt;p&gt;The following variables are available in all scripts.&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-bordered table-condensed table-striped\&quot;&gt;&lt;tr&gt;&lt;th&gt;form&lt;/th&gt;&lt;td&gt;The complete form JSON object&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;submission&lt;/th&gt;&lt;td&gt;The complete submission object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;data&lt;/th&gt;&lt;td&gt;The complete submission data object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;row&lt;/th&gt;&lt;td&gt;Contextual \&quot;row\&quot; data, used within DataGrid, EditGrid, and Container components&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;component&lt;/th&gt;&lt;td&gt;The current component JSON&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;instance&lt;/th&gt;&lt;td&gt;The current component instance.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;value&lt;/th&gt;&lt;td&gt;The current value of the component.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;moment&lt;/th&gt;&lt;td&gt;The moment.js library for date manipulation.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;_&lt;/th&gt;&lt;td&gt;An instance of &lt;a href&#x3D;\&quot;https://lodash.com/docs/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Lodash&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;utils&lt;/th&gt;&lt;td&gt;An instance of the &lt;a href&#x3D;\&quot;http://formio.github.io/formio.js/docs/identifiers.html#utils\&quot; target&#x3D;\&quot;_blank\&quot;&gt;FormioUtils&lt;/a&gt; object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;util&lt;/th&gt;&lt;td&gt;An alias for \&quot;utils\&quot;.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;panel&quot;,
+                    &quot;title&quot;: &quot;JavaScript&quot;,
+                    &quot;collapsible&quot;: true,
+                    &quot;collapsed&quot;: false,
+                    &quot;style&quot;: {
+                      &quot;margin-bottom&quot;: &quot;10px&quot;
+                    },
+                    &quot;key&quot;: &quot;customConditional-js&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;type&quot;: &quot;textarea&quot;,
+                        &quot;key&quot;: &quot;customConditional&quot;,
+                        &quot;rows&quot;: 5,
+                        &quot;editor&quot;: &quot;ace&quot;,
+                        &quot;hideLabel&quot;: true,
+                        &quot;input&quot;: true
+                      },
+                      {
+                        &quot;type&quot;: &quot;htmlelement&quot;,
+                        &quot;tag&quot;: &quot;div&quot;,
+                        &quot;content&quot;: &quot;&lt;p&gt;Enter custom javascript code.&lt;/p&gt;&lt;p&gt;You must assign the &lt;strong&gt;show&lt;/strong&gt; variable a boolean result.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Note: Advanced Conditional logic will override the results of the Simple Conditional logic.&lt;/strong&gt;&lt;/p&gt;&lt;h5&gt;Example&lt;/h5&gt;&lt;pre&gt;show &#x3D; !!data.showMe;&lt;/pre&gt;&quot;
+                      }
+                    ]
+                  },
+                  {
+                    &quot;type&quot;: &quot;panel&quot;,
+                    &quot;title&quot;: &quot;JSONLogic&quot;,
+                    &quot;collapsible&quot;: true,
+                    &quot;collapsed&quot;: true,
+                    &quot;key&quot;: &quot;customConditional-json&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;type&quot;: &quot;htmlelement&quot;,
+                        &quot;tag&quot;: &quot;div&quot;,
+                        &quot;content&quot;: &quot;&lt;p&gt;Execute custom logic using &lt;a href&#x3D;\&quot;http://jsonlogic.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;JSONLogic&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Full &lt;a href&#x3D;\&quot;https://lodash.com/docs\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Lodash&lt;/a&gt; support is provided using an \&quot;_\&quot; before each operation, such as &lt;code&gt;{\&quot;_sum\&quot;: {var: \&quot;data.a\&quot;}}&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;a href&#x3D;\&quot;http://formio.github.io/formio.js/app/examples/conditions.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Click here for an example&lt;/a&gt;&lt;/p&gt;&quot;
+                      },
+                      {
+                        &quot;type&quot;: &quot;textarea&quot;,
+                        &quot;key&quot;: &quot;conditional.json&quot;,
+                        &quot;rows&quot;: 5,
+                        &quot;editor&quot;: &quot;ace&quot;,
+                        &quot;hideLabel&quot;: true,
+                        &quot;as&quot;: &quot;json&quot;,
+                        &quot;input&quot;: true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            &quot;label&quot;: &quot;Logic&quot;,
+            &quot;key&quot;: &quot;logic&quot;,
+            &quot;weight&quot;: 50,
+            &quot;components&quot;: [
+              {
+                &quot;weight&quot;: 0,
+                &quot;input&quot;: true,
+                &quot;label&quot;: &quot;Advanced Logic&quot;,
+                &quot;key&quot;: &quot;logic&quot;,
+                &quot;templates&quot;: {
+                  &quot;header&quot;: &quot;&lt;div class&#x3D;\&quot;row\&quot;&gt; \n  &lt;div class&#x3D;\&quot;col-sm-6\&quot;&gt;\n    &lt;strong&gt;{{ value.length }} Advanced Logic Configured&lt;/strong&gt;\n  &lt;/div&gt;\n&lt;/div&gt;&quot;,
+                  &quot;row&quot;: &quot;&lt;div class&#x3D;\&quot;row\&quot;&gt; \n  &lt;div class&#x3D;\&quot;col-sm-6\&quot;&gt;\n    &lt;div&gt;{{ row.name }} &lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class&#x3D;\&quot;col-sm-2\&quot;&gt; \n    &lt;div class&#x3D;\&quot;btn-group pull-right\&quot;&gt; \n      &lt;div class&#x3D;\&quot;btn btn-default editRow\&quot;&gt;Edit&lt;/div&gt; \n      &lt;div class&#x3D;\&quot;btn btn-danger removeRow\&quot;&gt;Delete&lt;/div&gt; \n    &lt;/div&gt; \n  &lt;/div&gt; \n&lt;/div&gt;&quot;,
+                  &quot;footer&quot;: &quot;&quot;
+                },
+                &quot;type&quot;: &quot;editgrid&quot;,
+                &quot;addAnother&quot;: &quot;Add Logic&quot;,
+                &quot;saveRow&quot;: &quot;Save Logic&quot;,
+                &quot;components&quot;: [
+                  {
+                    &quot;weight&quot;: 0,
+                    &quot;input&quot;: true,
+                    &quot;inputType&quot;: &quot;text&quot;,
+                    &quot;label&quot;: &quot;Logic Name&quot;,
+                    &quot;key&quot;: &quot;name&quot;,
+                    &quot;validate&quot;: {
+                      &quot;required&quot;: true
+                    },
+                    &quot;type&quot;: &quot;textfield&quot;
+                  },
+                  {
+                    &quot;weight&quot;: 10,
+                    &quot;key&quot;: &quot;triggerPanel&quot;,
+                    &quot;input&quot;: false,
+                    &quot;title&quot;: &quot;Trigger&quot;,
+                    &quot;tableView&quot;: false,
+                    &quot;components&quot;: [
+                      {
+                        &quot;weight&quot;: 0,
+                        &quot;input&quot;: true,
+                        &quot;tableView&quot;: false,
+                        &quot;components&quot;: [
+                          {
+                            &quot;weight&quot;: 0,
+                            &quot;input&quot;: true,
+                            &quot;label&quot;: &quot;Type&quot;,
+                            &quot;key&quot;: &quot;type&quot;,
+                            &quot;tableView&quot;: false,
+                            &quot;data&quot;: {
+                              &quot;values&quot;: [
+                                {
+                                  &quot;value&quot;: &quot;simple&quot;,
+                                  &quot;label&quot;: &quot;Simple&quot;
+                                },
+                                {
+                                  &quot;value&quot;: &quot;javascript&quot;,
+                                  &quot;label&quot;: &quot;Javascript&quot;
+                                },
+                                {
+                                  &quot;value&quot;: &quot;json&quot;,
+                                  &quot;label&quot;: &quot;JSON Logic&quot;
+                                },
+                                {
+                                  &quot;value&quot;: &quot;event&quot;,
+                                  &quot;label&quot;: &quot;Event&quot;
+                                }
+                              ]
+                            },
+                            &quot;dataSrc&quot;: &quot;values&quot;,
+                            &quot;template&quot;: &quot;&lt;span&gt;{{ item.label }}&lt;/span&gt;&quot;,
+                            &quot;type&quot;: &quot;select&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 10,
+                            &quot;label&quot;: &quot;&quot;,
+                            &quot;key&quot;: &quot;simple&quot;,
+                            &quot;type&quot;: &quot;container&quot;,
+                            &quot;tableView&quot;: false,
+                            &quot;components&quot;: [
+                              {
+                                &quot;input&quot;: true,
+                                &quot;key&quot;: &quot;show&quot;,
+                                &quot;label&quot;: &quot;Show&quot;,
+                                &quot;type&quot;: &quot;hidden&quot;,
+                                &quot;tableView&quot;: false
+                              },
+                              {
+                                &quot;type&quot;: &quot;select&quot;,
+                                &quot;input&quot;: true,
+                                &quot;label&quot;: &quot;When the form component:&quot;,
+                                &quot;key&quot;: &quot;when&quot;,
+                                &quot;dataSrc&quot;: &quot;custom&quot;,
+                                &quot;valueProperty&quot;: &quot;value&quot;,
+                                &quot;tableView&quot;: false,
+                                &quot;data&quot;: {}
+                              },
+                              {
+                                &quot;type&quot;: &quot;textfield&quot;,
+                                &quot;input&quot;: true,
+                                &quot;label&quot;: &quot;Has the value:&quot;,
+                                &quot;key&quot;: &quot;eq&quot;,
+                                &quot;tableView&quot;: false
+                              }
+                            ]
+                          },
+                          {
+                            &quot;weight&quot;: 10,
+                            &quot;type&quot;: &quot;textarea&quot;,
+                            &quot;key&quot;: &quot;javascript&quot;,
+                            &quot;rows&quot;: 5,
+                            &quot;editor&quot;: &quot;ace&quot;,
+                            &quot;input&quot;: true,
+                            &quot;tableView&quot;: false,
+                            &quot;placeholder&quot;: &quot;result &#x3D; (data[&#x27;mykey&#x27;] &gt; 1);&quot;,
+                            &quot;description&quot;: &quot;\&quot;row\&quot;, \&quot;data\&quot;, and \&quot;component\&quot; variables are available. Return \&quot;result\&quot;.&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 10,
+                            &quot;type&quot;: &quot;textarea&quot;,
+                            &quot;key&quot;: &quot;json&quot;,
+                            &quot;rows&quot;: 5,
+                            &quot;editor&quot;: &quot;ace&quot;,
+                            &quot;label&quot;: &quot;JSON Logic&quot;,
+                            &quot;as&quot;: &quot;json&quot;,
+                            &quot;input&quot;: true,
+                            &quot;tableView&quot;: false,
+                            &quot;placeholder&quot;: &quot;{ ... }&quot;,
+                            &quot;description&quot;: &quot;\&quot;row\&quot;, \&quot;data\&quot;, \&quot;component\&quot; and \&quot;_\&quot; variables are available. Return the result to be passed to the action if truthy.&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 10,
+                            &quot;type&quot;: &quot;textfield&quot;,
+                            &quot;key&quot;: &quot;event&quot;,
+                            &quot;label&quot;: &quot;Event Name&quot;,
+                            &quot;placeholder&quot;: &quot;event&quot;,
+                            &quot;description&quot;: &quot;The event that will trigger this logic. You can trigger events externally or via a button.&quot;,
+                            &quot;tableView&quot;: false
+                          }
+                        ],
+                        &quot;key&quot;: &quot;trigger&quot;,
+                        &quot;type&quot;: &quot;container&quot;
+                      }
+                    ],
+                    &quot;type&quot;: &quot;panel&quot;
+                  },
+                  {
+                    &quot;weight&quot;: 20,
+                    &quot;input&quot;: true,
+                    &quot;label&quot;: &quot;Actions&quot;,
+                    &quot;key&quot;: &quot;actions&quot;,
+                    &quot;tableView&quot;: false,
+                    &quot;templates&quot;: {
+                      &quot;header&quot;: &quot;&lt;div class&#x3D;\&quot;row\&quot;&gt; \n  &lt;div class&#x3D;\&quot;col-sm-6\&quot;&gt;&lt;strong&gt;{{ value.length }} actions&lt;/strong&gt;&lt;/div&gt;\n&lt;/div&gt;&quot;,
+                      &quot;row&quot;: &quot;&lt;div class&#x3D;\&quot;row\&quot;&gt; \n  &lt;div class&#x3D;\&quot;col-sm-6\&quot;&gt;\n    &lt;div&gt;{{ row.name }} &lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class&#x3D;\&quot;col-sm-2\&quot;&gt; \n    &lt;div class&#x3D;\&quot;btn-group pull-right\&quot;&gt; \n      &lt;div class&#x3D;\&quot;btn btn-default editRow\&quot;&gt;Edit&lt;/div&gt; \n      &lt;div class&#x3D;\&quot;btn btn-danger removeRow\&quot;&gt;Delete&lt;/div&gt; \n    &lt;/div&gt; \n  &lt;/div&gt; \n&lt;/div&gt;&quot;,
+                      &quot;footer&quot;: &quot;&quot;
+                    },
+                    &quot;type&quot;: &quot;editgrid&quot;,
+                    &quot;addAnother&quot;: &quot;Add Action&quot;,
+                    &quot;saveRow&quot;: &quot;Save Action&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;weight&quot;: 0,
+                        &quot;title&quot;: &quot;Action&quot;,
+                        &quot;input&quot;: false,
+                        &quot;key&quot;: &quot;actionPanel&quot;,
+                        &quot;type&quot;: &quot;panel&quot;,
+                        &quot;components&quot;: [
+                          {
+                            &quot;weight&quot;: 0,
+                            &quot;input&quot;: true,
+                            &quot;inputType&quot;: &quot;text&quot;,
+                            &quot;label&quot;: &quot;Action Name&quot;,
+                            &quot;key&quot;: &quot;name&quot;,
+                            &quot;validate&quot;: {
+                              &quot;required&quot;: true
+                            },
+                            &quot;type&quot;: &quot;textfield&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 10,
+                            &quot;input&quot;: true,
+                            &quot;label&quot;: &quot;Type&quot;,
+                            &quot;key&quot;: &quot;type&quot;,
+                            &quot;data&quot;: {
+                              &quot;values&quot;: [
+                                {
+                                  &quot;value&quot;: &quot;property&quot;,
+                                  &quot;label&quot;: &quot;Property&quot;
+                                },
+                                {
+                                  &quot;value&quot;: &quot;value&quot;,
+                                  &quot;label&quot;: &quot;Value&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Merge Component Schema&quot;,
+                                  &quot;value&quot;: &quot;mergeComponentSchema&quot;
+                                }
+                              ]
+                            },
+                            &quot;dataSrc&quot;: &quot;values&quot;,
+                            &quot;template&quot;: &quot;&lt;span&gt;{{ item.label }}&lt;/span&gt;&quot;,
+                            &quot;type&quot;: &quot;select&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 20,
+                            &quot;type&quot;: &quot;select&quot;,
+                            &quot;template&quot;: &quot;&lt;span&gt;{{ item.label }}&lt;/span&gt;&quot;,
+                            &quot;dataSrc&quot;: &quot;json&quot;,
+                            &quot;tableView&quot;: false,
+                            &quot;data&quot;: {
+                              &quot;json&quot;: [
+                                {
+                                  &quot;label&quot;: &quot;Hidden&quot;,
+                                  &quot;value&quot;: &quot;hidden&quot;,
+                                  &quot;type&quot;: &quot;boolean&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Required&quot;,
+                                  &quot;value&quot;: &quot;validate.required&quot;,
+                                  &quot;type&quot;: &quot;boolean&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Disabled&quot;,
+                                  &quot;value&quot;: &quot;disabled&quot;,
+                                  &quot;type&quot;: &quot;boolean&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Label&quot;,
+                                  &quot;value&quot;: &quot;label&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Title&quot;,
+                                  &quot;value&quot;: &quot;title&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Prefix&quot;,
+                                  &quot;value&quot;: &quot;prefix&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Suffix&quot;,
+                                  &quot;value&quot;: &quot;suffix&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Tooltip&quot;,
+                                  &quot;value&quot;: &quot;tooltip&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Description&quot;,
+                                  &quot;value&quot;: &quot;description&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Placeholder&quot;,
+                                  &quot;value&quot;: &quot;placeholder&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Input Mask&quot;,
+                                  &quot;value&quot;: &quot;inputMask&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;CSS Class&quot;,
+                                  &quot;value&quot;: &quot;className&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Container Custom Class&quot;,
+                                  &quot;value&quot;: &quot;customClass&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                }
+                              ]
+                            },
+                            &quot;key&quot;: &quot;property&quot;,
+                            &quot;label&quot;: &quot;Component Property&quot;,
+                            &quot;input&quot;: true
+                          },
+                          {
+                            &quot;weight&quot;: 30,
+                            &quot;input&quot;: true,
+                            &quot;label&quot;: &quot;Set State&quot;,
+                            &quot;key&quot;: &quot;state&quot;,
+                            &quot;tableView&quot;: false,
+                            &quot;data&quot;: {
+                              &quot;values&quot;: [
+                                {
+                                  &quot;label&quot;: &quot;True&quot;,
+                                  &quot;value&quot;: &quot;true&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;False&quot;,
+                                  &quot;value&quot;: &quot;false&quot;
+                                }
+                              ]
+                            },
+                            &quot;dataSrc&quot;: &quot;values&quot;,
+                            &quot;template&quot;: &quot;&lt;span&gt;{{ item.label }}&lt;/span&gt;&quot;,
+                            &quot;type&quot;: &quot;select&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 30,
+                            &quot;type&quot;: &quot;textfield&quot;,
+                            &quot;key&quot;: &quot;text&quot;,
+                            &quot;label&quot;: &quot;Text&quot;,
+                            &quot;inputType&quot;: &quot;text&quot;,
+                            &quot;input&quot;: true,
+                            &quot;tableView&quot;: false,
+                            &quot;description&quot;: &quot;Can use templating with {{ data.myfield }}. \&quot;data\&quot;, \&quot;row\&quot;, \&quot;component\&quot; and \&quot;result\&quot; variables are available.&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 20,
+                            &quot;input&quot;: true,
+                            &quot;label&quot;: &quot;Value (Javascript)&quot;,
+                            &quot;key&quot;: &quot;value&quot;,
+                            &quot;editor&quot;: &quot;ace&quot;,
+                            &quot;rows&quot;: 5,
+                            &quot;placeholder&quot;: &quot;value &#x3D; data.myfield;&quot;,
+                            &quot;type&quot;: &quot;textarea&quot;,
+                            &quot;tableView&quot;: false,
+                            &quot;description&quot;: &quot;\&quot;row\&quot;, \&quot;data\&quot;, \&quot;component\&quot;, and \&quot;result\&quot; variables are available. Return the value.&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 20,
+                            &quot;input&quot;: true,
+                            &quot;label&quot;: &quot;Schema Defenition&quot;,
+                            &quot;key&quot;: &quot;schemaDefinition&quot;,
+                            &quot;editor&quot;: &quot;ace&quot;,
+                            &quot;rows&quot;: 5,
+                            &quot;placeholder&quot;: &quot;schema &#x3D; { label: &#x27;Updated&#x27; };&quot;,
+                            &quot;type&quot;: &quot;textarea&quot;,
+                            &quot;tableView&quot;: false,
+                            &quot;description&quot;: &quot;\&quot;row\&quot;, \&quot;data\&quot;, \&quot;component\&quot;, and \&quot;result\&quot; variables are available. Return the schema.&quot;
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            &quot;label&quot;: &quot;Layout&quot;,
+            &quot;key&quot;: &quot;layout&quot;,
+            &quot;weight&quot;: 60,
+            &quot;components&quot;: [
+              {
+                &quot;label&quot;: &quot;HTML Attributes&quot;,
+                &quot;type&quot;: &quot;datamap&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;attributes&quot;,
+                &quot;keyLabel&quot;: &quot;Attribute Name&quot;,
+                &quot;valueComponent&quot;: {
+                  &quot;type&quot;: &quot;textfield&quot;,
+                  &quot;key&quot;: &quot;value&quot;,
+                  &quot;label&quot;: &quot;Attribute Value&quot;,
+                  &quot;input&quot;: true
+                },
+                &quot;tooltip&quot;: &quot;Provide a map of HTML attributes for component&#x27;s input element (attributes provided by other component settings or other attributes generated by form.io take precedence over attributes in this grid)&quot;,
+                &quot;addAnother&quot;: &quot;Add Attribute&quot;
+              },
+              {
+                &quot;type&quot;: &quot;panel&quot;,
+                &quot;legend&quot;: &quot;PDF Overlay&quot;,
+                &quot;title&quot;: &quot;PDF Overlay&quot;,
+                &quot;key&quot;: &quot;overlay&quot;,
+                &quot;weight&quot;: 2000,
+                &quot;collapsible&quot;: true,
+                &quot;collapsed&quot;: true,
+                &quot;components&quot;: [
+                  {
+                    &quot;type&quot;: &quot;textfield&quot;,
+                    &quot;input&quot;: true,
+                    &quot;key&quot;: &quot;overlay.style&quot;,
+                    &quot;label&quot;: &quot;Style&quot;,
+                    &quot;placeholder&quot;: &quot;&quot;,
+                    &quot;tooltip&quot;: &quot;Custom styles that should be applied to this component when rendered in PDF.&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;textfield&quot;,
+                    &quot;input&quot;: true,
+                    &quot;key&quot;: &quot;overlay.page&quot;,
+                    &quot;label&quot;: &quot;Page&quot;,
+                    &quot;placeholder&quot;: &quot;&quot;,
+                    &quot;tooltip&quot;: &quot;The PDF page to place this component.&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;textfield&quot;,
+                    &quot;input&quot;: true,
+                    &quot;key&quot;: &quot;overlay.left&quot;,
+                    &quot;label&quot;: &quot;Left&quot;,
+                    &quot;placeholder&quot;: &quot;&quot;,
+                    &quot;tooltip&quot;: &quot;The left margin within a page to place this component.&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;textfield&quot;,
+                    &quot;input&quot;: true,
+                    &quot;key&quot;: &quot;overlay.top&quot;,
+                    &quot;label&quot;: &quot;Top&quot;,
+                    &quot;placeholder&quot;: &quot;&quot;,
+                    &quot;tooltip&quot;: &quot;The top margin within a page to place this component.&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;textfield&quot;,
+                    &quot;input&quot;: true,
+                    &quot;key&quot;: &quot;overlay.width&quot;,
+                    &quot;label&quot;: &quot;Width&quot;,
+                    &quot;placeholder&quot;: &quot;&quot;,
+                    &quot;tooltip&quot;: &quot;The width of the component (in pixels).&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;textfield&quot;,
+                    &quot;input&quot;: true,
+                    &quot;key&quot;: &quot;overlay.height&quot;,
+                    &quot;label&quot;: &quot;Height&quot;,
+                    &quot;placeholder&quot;: &quot;&quot;,
+                    &quot;tooltip&quot;: &quot;The height of the component (in pixels).&quot;
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        &quot;type&quot;: &quot;hidden&quot;,
+        &quot;key&quot;: &quot;type&quot;
+      }
+    ]
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="2" class="link-to-prism">src/app/modules/admin/tab-custom-calender/tab-custom-calender-standard-json.ts:2</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class StandardJSONFormat {
+  static StandardJSON &#x3D; {
+    &quot;components&quot;: [
+      {
+        &quot;type&quot;: &quot;tabs&quot;,
+        &quot;key&quot;: &quot;tabs&quot;,
+        &quot;components&quot;: [
+          {
+            &quot;key&quot;: &quot;display&quot;,
+            &quot;components&quot;: [
+              {
+                &quot;weight&quot;: 0,
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;label&quot;,
+                &quot;label&quot;: &quot;Label&quot;,
+                &quot;placeholder&quot;: &quot;Field Label&quot;,
+                &quot;tooltip&quot;: &quot;The label for this field that will appear next to it.&quot;,
+                &quot;validate&quot;: {
+                  &quot;required&quot;: true
+                }
+              },
+              {
+                &quot;type&quot;: &quot;number&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;labelWidth&quot;,
+                &quot;label&quot;: &quot;Label Width&quot;,
+                &quot;tooltip&quot;: &quot;The width of label on line in percentages.&quot;,
+                &quot;clearOnHide&quot;: false,
+                &quot;weight&quot;: 30,
+                &quot;placeholder&quot;: &quot;30&quot;,
+                &quot;suffix&quot;: &quot;%&quot;,
+                &quot;validate&quot;: {
+                  &quot;min&quot;: 0,
+                  &quot;max&quot;: 100
+                },
+                &quot;conditional&quot;: {
+                  &quot;json&quot;: {
+                    &quot;and&quot;: [
+                      {
+                        &quot;!&#x3D;&#x3D;&quot;: [
+                          {
+                            &quot;var&quot;: &quot;data.labelPosition&quot;
+                          },
+                          &quot;top&quot;
+                        ]
+                      },
+                      {
+                        &quot;!&#x3D;&#x3D;&quot;: [
+                          {
+                            &quot;var&quot;: &quot;data.labelPosition&quot;
+                          },
+                          &quot;bottom&quot;
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                &quot;type&quot;: &quot;number&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;labelMargin&quot;,
+                &quot;label&quot;: &quot;Label Margin&quot;,
+                &quot;tooltip&quot;: &quot;The width of label margin on line in percentages.&quot;,
+                &quot;clearOnHide&quot;: false,
+                &quot;weight&quot;: 30,
+                &quot;placeholder&quot;: &quot;3&quot;,
+                &quot;suffix&quot;: &quot;%&quot;,
+                &quot;validate&quot;: {
+                  &quot;min&quot;: 0,
+                  &quot;max&quot;: 100
+                },
+                &quot;conditional&quot;: {
+                  &quot;json&quot;: {
+                    &quot;and&quot;: [
+                      {
+                        &quot;!&#x3D;&#x3D;&quot;: [
+                          {
+                            &quot;var&quot;: &quot;data.labelPosition&quot;
+                          },
+                          &quot;top&quot;
+                        ]
+                      },
+                      {
+                        &quot;!&#x3D;&#x3D;&quot;: [
+                          {
+                            &quot;var&quot;: &quot;data.labelPosition&quot;
+                          },
+                          &quot;bottom&quot;
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                &quot;weight&quot;: 200,
+                &quot;type&quot;: &quot;textarea&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;description&quot;,
+                &quot;label&quot;: &quot;Description&quot;,
+                &quot;placeholder&quot;: &quot;Description for this field.&quot;,
+                &quot;tooltip&quot;: &quot;The description is text that will appear below the input field.&quot;,
+                &quot;editor&quot;: &quot;ace&quot;,
+                &quot;as&quot;: &quot;html&quot;,
+                &quot;wysiwyg&quot;: {
+                  &quot;minLines&quot;: 3
+                }
+              },
+              {
+                &quot;weight&quot;: 300,
+                &quot;type&quot;: &quot;textarea&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;tooltip&quot;,
+                &quot;label&quot;: &quot;Tooltip&quot;,
+                &quot;placeholder&quot;: &quot;To add a tooltip to this field, enter text here.&quot;,
+                &quot;tooltip&quot;: &quot;Adds a tooltip to the side of this field.&quot;,
+                &quot;editor&quot;: &quot;ace&quot;,
+                &quot;as&quot;: &quot;html&quot;,
+                &quot;wysiwyg&quot;: {
+                  &quot;minLines&quot;: 3
+                }
+              },
+              {
+                &quot;type&quot;: &quot;select&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;buttonStyle&quot;,
+                &quot;label&quot;: &quot;Bootstrap button color style&quot;,
+                &quot;tooltip&quot;: &quot;&lt;a href&#x3D;&#x27;https://getbootstrap.com/docs/4.0/components/buttons/&#x27;&gt;Button style&lt;/a&gt;&quot;,
+                &quot;weight&quot;: 400,
+                &quot;defaultValue&quot;: &quot;primary&quot;,
+                &quot;dataSrc&quot;: &quot;values&quot;,
+                &quot;data&quot;: {
+                  &quot;values&quot;: [
+                    {
+                      &quot;label&quot;: &quot;Primary&quot;,
+                      &quot;value&quot;: &quot;primary&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Secondary&quot;,
+                      &quot;value&quot;: &quot;secondary&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Success&quot;,
+                      &quot;value&quot;: &quot;success&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Danger&quot;,
+                      &quot;value&quot;: &quot;danger&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Warning&quot;,
+                      &quot;value&quot;: &quot;warning&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Info&quot;,
+                      &quot;value&quot;: &quot;info&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Light&quot;,
+                      &quot;value&quot;: &quot;light&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Dark&quot;,
+                      &quot;value&quot;: &quot;dark&quot;
+                    },
+                    {
+                      &quot;label&quot;: &quot;Link&quot;,
+                      &quot;value&quot;: &quot;link&quot;
+                    }
+                  ]
+                }
+              },
+              {
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;icon&quot;,
+                &quot;label&quot;: &quot;The font-awesome icon to display in the field, try &#x27;car&#x27;&quot;,
+                &quot;tooltip&quot;: &quot;&lt;a href&#x3D;&#x27;https://fontawesome.com/icons?d&#x3D;gallery&amp;m&#x3D;free&#x27;&gt;Font-awesome icon&lt;/a&gt; &quot;,
+                &quot;weight&quot;: 410
+              },
+              {
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;name&quot;,
+                &quot;label&quot;: &quot;Radio Key&quot;,
+                &quot;tooltip&quot;: &quot;The key used to trigger the radio button toggle.&quot;,
+                &quot;weight&quot;: 420,
+                &quot;conditional&quot;: {
+                  &quot;json&quot;: {
+                    &quot;&#x3D;&#x3D;&#x3D;&quot;: [
+                      {
+                        &quot;var&quot;: &quot;data.inputType&quot;
+                      },
+                      &quot;radio&quot;
+                    ]
+                  }
+                }
+              },
+              {
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;label&quot;: &quot;Radio Value&quot;,
+                &quot;key&quot;: &quot;value&quot;,
+                &quot;tooltip&quot;: &quot;The value used with this radio button.&quot;,
+                &quot;weight&quot;: 430,
+                &quot;conditional&quot;: {
+                  &quot;json&quot;: {
+                    &quot;&#x3D;&#x3D;&#x3D;&quot;: [
+                      {
+                        &quot;var&quot;: &quot;data.inputType&quot;
+                      },
+                      &quot;radio&quot;
+                    ]
+                  }
+                }
+              },
+              {
+                &quot;weight&quot;: 500,
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;customClass&quot;,
+                &quot;label&quot;: &quot;Custom CSS Class&quot;,
+                &quot;placeholder&quot;: &quot;Custom CSS Class&quot;,
+                &quot;tooltip&quot;: &quot;Custom CSS class to add to this component.&quot;
+              },
+              {
+                &quot;weight&quot;: 600,
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;tabindex&quot;,
+                &quot;label&quot;: &quot;Tab Index&quot;,
+                &quot;placeholder&quot;: &quot;0&quot;,
+                &quot;tooltip&quot;: &quot;Sets the tabindex attribute of this component to override the tab order of the form. See the &lt;a href&#x3D;&#x27;https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex&#x27;&gt;MDN documentation&lt;/a&gt; on tabindex for more information.&quot;
+              },
+              {
+                &quot;weight&quot;: 1100,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Hidden&quot;,
+                &quot;tooltip&quot;: &quot;A hidden field is still a part of the form, but is hidden from view.&quot;,
+                &quot;key&quot;: &quot;hidden&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 1200,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Hide Label&quot;,
+                &quot;tooltip&quot;: &quot;Hide the label of this component. This allows you to show the label in the form builder, but not when it is rendered.&quot;,
+                &quot;key&quot;: &quot;hideLabel&quot;,
+                &quot;defaultValue&quot;: true,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 1350,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Initial Focus&quot;,
+                &quot;tooltip&quot;: &quot;Make this field the initially focused element on this form.&quot;,
+                &quot;key&quot;: &quot;autofocus&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 1370,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Show Label in DataGrid&quot;,
+                &quot;tooltip&quot;: &quot;Show the label when in a Datagrid.&quot;,
+                &quot;key&quot;: &quot;dataGridLabel&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 1400,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Disabled&quot;,
+                &quot;tooltip&quot;: &quot;Disable the form input.&quot;,
+                &quot;key&quot;: &quot;disabled&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 1500,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Table View&quot;,
+                &quot;tooltip&quot;: &quot;Shows this value within the table view of the submissions.&quot;,
+                &quot;key&quot;: &quot;tableView&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 1600,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Modal Edit&quot;,
+                &quot;tooltip&quot;: &quot;Opens up a modal to edit the value of this component.&quot;,
+                &quot;key&quot;: &quot;modalEdit&quot;,
+                &quot;input&quot;: true
+              }
+            ],
+            &quot;label&quot;: &quot;Display&quot;,
+            &quot;weight&quot;: 0
+          },
+          {
+            &quot;key&quot;: &quot;data&quot;,
+            &quot;components&quot;: [
+              {
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;label&quot;: &quot;Default Value&quot;,
+                &quot;key&quot;: &quot;defaultValue&quot;,
+                &quot;weight&quot;: 5,
+                &quot;placeholder&quot;: &quot;Default Value&quot;,
+                &quot;tooltip&quot;: &quot;The will be the value for this field, before user interaction. Having a default value will override the placeholder text.&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 30,
+                &quot;type&quot;: &quot;radio&quot;,
+                &quot;label&quot;: &quot;Persistent&quot;,
+                &quot;tooltip&quot;: &quot;A persistent field will be stored in database when the form is submitted.&quot;,
+                &quot;key&quot;: &quot;persistent&quot;,
+                &quot;input&quot;: true,
+                &quot;inline&quot;: true,
+                &quot;defaultValue&quot;: true,
+                &quot;values&quot;: [
+                  {
+                    &quot;label&quot;: &quot;None&quot;,
+                    &quot;value&quot;: false
+                  },
+                  {
+                    &quot;label&quot;: &quot;Server&quot;,
+                    &quot;value&quot;: true
+                  },
+                  {
+                    &quot;label&quot;: &quot;Client&quot;,
+                    &quot;value&quot;: &quot;client-only&quot;
+                  }
+                ]
+              },
+              {
+                &quot;weight&quot;: 150,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Protected&quot;,
+                &quot;tooltip&quot;: &quot;A protected field will not be returned when queried via API.&quot;,
+                &quot;key&quot;: &quot;protected&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;input&quot;: true,
+                &quot;weight&quot;: 200,
+                &quot;key&quot;: &quot;dbIndex&quot;,
+                &quot;label&quot;: &quot;Database Index&quot;,
+                &quot;tooltip&quot;: &quot;Set this field as an index within the database. Increases performance for submission queries.&quot;
+              },
+              {
+                &quot;weight&quot;: 400,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Encrypted (Enterprise Only)&quot;,
+                &quot;tooltip&quot;: &quot;Encrypt this field on the server. This is two way encryption which is not suitable for passwords.&quot;,
+                &quot;key&quot;: &quot;encrypted&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;type&quot;: &quot;select&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;redrawOn&quot;,
+                &quot;label&quot;: &quot;Redraw On&quot;,
+                &quot;weight&quot;: 600,
+                &quot;tooltip&quot;: &quot;Redraw this component if another component changes. This is useful if interpolating parts of the component like the label.&quot;,
+                &quot;dataSrc&quot;: &quot;custom&quot;,
+                &quot;valueProperty&quot;: &quot;value&quot;,
+                &quot;data&quot;: {},
+                &quot;conditional&quot;: {
+                  &quot;json&quot;: {
+                    &quot;!&quot;: [
+                      {
+                        &quot;var&quot;: &quot;data.dataSrc&quot;
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                &quot;weight&quot;: 700,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Clear Value When Hidden&quot;,
+                &quot;key&quot;: &quot;clearOnHide&quot;,
+                &quot;defaultValue&quot;: true,
+                &quot;tooltip&quot;: &quot;When a field is hidden, clear the value.&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;type&quot;: &quot;panel&quot;,
+                &quot;title&quot;: &quot;Custom Default Value&quot;,
+                &quot;theme&quot;: &quot;default&quot;,
+                &quot;collapsible&quot;: true,
+                &quot;collapsed&quot;: true,
+                &quot;key&quot;: &quot;customDefaultValuePanel&quot;,
+                &quot;weight&quot;: 1000,
+                &quot;components&quot;: [
+                  {
+                    &quot;type&quot;: &quot;htmlelement&quot;,
+                    &quot;tag&quot;: &quot;div&quot;,
+                    &quot;content&quot;: &quot;&lt;p&gt;The following variables are available in all scripts.&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-bordered table-condensed table-striped\&quot;&gt;&lt;tr&gt;&lt;th&gt;form&lt;/th&gt;&lt;td&gt;The complete form JSON object&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;submission&lt;/th&gt;&lt;td&gt;The complete submission object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;data&lt;/th&gt;&lt;td&gt;The complete submission data object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;row&lt;/th&gt;&lt;td&gt;Contextual \&quot;row\&quot; data, used within DataGrid, EditGrid, and Container components&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;component&lt;/th&gt;&lt;td&gt;The current component JSON&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;instance&lt;/th&gt;&lt;td&gt;The current component instance.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;value&lt;/th&gt;&lt;td&gt;The current value of the component.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;moment&lt;/th&gt;&lt;td&gt;The moment.js library for date manipulation.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;_&lt;/th&gt;&lt;td&gt;An instance of &lt;a href&#x3D;\&quot;https://lodash.com/docs/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Lodash&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;utils&lt;/th&gt;&lt;td&gt;An instance of the &lt;a href&#x3D;\&quot;http://formio.github.io/formio.js/docs/identifiers.html#utils\&quot; target&#x3D;\&quot;_blank\&quot;&gt;FormioUtils&lt;/a&gt; object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;util&lt;/th&gt;&lt;td&gt;An alias for \&quot;utils\&quot;.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;panel&quot;,
+                    &quot;title&quot;: &quot;JavaScript&quot;,
+                    &quot;collapsible&quot;: true,
+                    &quot;collapsed&quot;: false,
+                    &quot;style&quot;: {
+                      &quot;margin-bottom&quot;: &quot;10px&quot;
+                    },
+                    &quot;key&quot;: &quot;customDefaultValue-js&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;type&quot;: &quot;textarea&quot;,
+                        &quot;key&quot;: &quot;customDefaultValue&quot;,
+                        &quot;rows&quot;: 5,
+                        &quot;editor&quot;: &quot;ace&quot;,
+                        &quot;hideLabel&quot;: true,
+                        &quot;input&quot;: true
+                      },
+                      {
+                        &quot;type&quot;: &quot;htmlelement&quot;,
+                        &quot;tag&quot;: &quot;div&quot;,
+                        &quot;content&quot;: &quot;&lt;p&gt;Enter custom javascript code.&lt;/p&gt;&lt;p&gt;&lt;h4&gt;Example:&lt;/h4&gt;&lt;pre&gt;value &#x3D; data.firstName + \&quot; \&quot; + data.lastName;&lt;/pre&gt;&lt;/p&gt;&quot;
+                      }
+                    ]
+                  },
+                  {
+                    &quot;type&quot;: &quot;panel&quot;,
+                    &quot;title&quot;: &quot;JSONLogic&quot;,
+                    &quot;collapsible&quot;: true,
+                    &quot;collapsed&quot;: true,
+                    &quot;key&quot;: &quot;customDefaultValue-json&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;type&quot;: &quot;htmlelement&quot;,
+                        &quot;tag&quot;: &quot;div&quot;,
+                        &quot;content&quot;: &quot;&lt;p&gt;Execute custom logic using &lt;a href&#x3D;\&quot;http://jsonlogic.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;JSONLogic&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Full &lt;a href&#x3D;\&quot;https://lodash.com/docs\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Lodash&lt;/a&gt; support is provided using an \&quot;_\&quot; before each operation, such as &lt;code&gt;{\&quot;_sum\&quot;: {var: \&quot;data.a\&quot;}}&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;h4&gt;Example:&lt;/h4&gt;&lt;pre&gt;{\&quot;cat\&quot;: [{\&quot;var\&quot;: \&quot;data.firstName\&quot;}, \&quot; \&quot;, {\&quot;var\&quot;: \&quot;data.lastName\&quot;}]}&lt;/pre&gt;&quot;
+                      },
+                      {
+                        &quot;type&quot;: &quot;textarea&quot;,
+                        &quot;key&quot;: &quot;customDefaultValue&quot;,
+                        &quot;rows&quot;: 5,
+                        &quot;editor&quot;: &quot;ace&quot;,
+                        &quot;hideLabel&quot;: true,
+                        &quot;as&quot;: &quot;json&quot;,
+                        &quot;input&quot;: true
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                &quot;type&quot;: &quot;panel&quot;,
+                &quot;title&quot;: &quot;Calculated Value&quot;,
+                &quot;theme&quot;: &quot;default&quot;,
+                &quot;collapsible&quot;: true,
+                &quot;collapsed&quot;: true,
+                &quot;key&quot;: &quot;calculateValuePanel&quot;,
+                &quot;weight&quot;: 1100,
+                &quot;components&quot;: [
+                  {
+                    &quot;type&quot;: &quot;htmlelement&quot;,
+                    &quot;tag&quot;: &quot;div&quot;,
+                    &quot;content&quot;: &quot;&lt;p&gt;The following variables are available in all scripts.&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-bordered table-condensed table-striped\&quot;&gt;&lt;tr&gt;&lt;th&gt;token&lt;/th&gt;&lt;td&gt;The decoded JWT token for the authenticated user.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;form&lt;/th&gt;&lt;td&gt;The complete form JSON object&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;submission&lt;/th&gt;&lt;td&gt;The complete submission object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;data&lt;/th&gt;&lt;td&gt;The complete submission data object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;row&lt;/th&gt;&lt;td&gt;Contextual \&quot;row\&quot; data, used within DataGrid, EditGrid, and Container components&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;component&lt;/th&gt;&lt;td&gt;The current component JSON&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;instance&lt;/th&gt;&lt;td&gt;The current component instance.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;value&lt;/th&gt;&lt;td&gt;The current value of the component.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;moment&lt;/th&gt;&lt;td&gt;The moment.js library for date manipulation.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;_&lt;/th&gt;&lt;td&gt;An instance of &lt;a href&#x3D;\&quot;https://lodash.com/docs/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Lodash&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;utils&lt;/th&gt;&lt;td&gt;An instance of the &lt;a href&#x3D;\&quot;http://formio.github.io/formio.js/docs/identifiers.html#utils\&quot; target&#x3D;\&quot;_blank\&quot;&gt;FormioUtils&lt;/a&gt; object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;util&lt;/th&gt;&lt;td&gt;An alias for \&quot;utils\&quot;.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;panel&quot;,
+                    &quot;title&quot;: &quot;JavaScript&quot;,
+                    &quot;collapsible&quot;: true,
+                    &quot;collapsed&quot;: false,
+                    &quot;style&quot;: {
+                      &quot;margin-bottom&quot;: &quot;10px&quot;
+                    },
+                    &quot;key&quot;: &quot;calculateValue-js&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;type&quot;: &quot;textarea&quot;,
+                        &quot;key&quot;: &quot;calculateValue&quot;,
+                        &quot;rows&quot;: 5,
+                        &quot;editor&quot;: &quot;ace&quot;,
+                        &quot;hideLabel&quot;: true,
+                        &quot;input&quot;: true
+                      },
+                      {
+                        &quot;type&quot;: &quot;htmlelement&quot;,
+                        &quot;tag&quot;: &quot;div&quot;,
+                        &quot;content&quot;: &quot;&lt;p&gt;Enter custom javascript code.&lt;/p&gt;&lt;p&gt;&lt;h4&gt;Example:&lt;/h4&gt;&lt;pre&gt;value &#x3D; data.a + data.b + data.c;&lt;/pre&gt;&lt;/p&gt;&quot;
+                      }
+                    ]
+                  },
+                  {
+                    &quot;type&quot;: &quot;panel&quot;,
+                    &quot;title&quot;: &quot;JSONLogic&quot;,
+                    &quot;collapsible&quot;: true,
+                    &quot;collapsed&quot;: true,
+                    &quot;key&quot;: &quot;calculateValue-json&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;type&quot;: &quot;htmlelement&quot;,
+                        &quot;tag&quot;: &quot;div&quot;,
+                        &quot;content&quot;: &quot;&lt;p&gt;Execute custom logic using &lt;a href&#x3D;\&quot;http://jsonlogic.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;JSONLogic&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Full &lt;a href&#x3D;\&quot;https://lodash.com/docs\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Lodash&lt;/a&gt; support is provided using an \&quot;_\&quot; before each operation, such as &lt;code&gt;{\&quot;_sum\&quot;: {var: \&quot;data.a\&quot;}}&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;h4&gt;Example:&lt;/h4&gt;&lt;pre&gt;{\&quot;+\&quot;: [{\&quot;var\&quot;: \&quot;data.a\&quot;}, {\&quot;var\&quot;: \&quot;data.b\&quot;}, {\&quot;var\&quot;: \&quot;data.c\&quot;}]}&lt;/pre&gt;&lt;p&gt;&lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;http://formio.github.io/formio.js/app/examples/calculated.html\&quot;&gt;Click here for an example&lt;/a&gt;&lt;/p&gt;&quot;
+                      },
+                      {
+                        &quot;type&quot;: &quot;textarea&quot;,
+                        &quot;key&quot;: &quot;calculateValue&quot;,
+                        &quot;rows&quot;: 5,
+                        &quot;editor&quot;: &quot;ace&quot;,
+                        &quot;hideLabel&quot;: true,
+                        &quot;as&quot;: &quot;json&quot;,
+                        &quot;input&quot;: true
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;input&quot;: true,
+                &quot;weight&quot;: 1100,
+                &quot;key&quot;: &quot;calculateServer&quot;,
+                &quot;label&quot;: &quot;Calculate Value on server&quot;,
+                &quot;tooltip&quot;: &quot;Checking this will run the calculation on the server. This is useful if you wish to override the values submitted with the calculations performed on the server.&quot;
+              },
+              {
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;input&quot;: true,
+                &quot;weight&quot;: 1200,
+                &quot;key&quot;: &quot;allowCalculateOverride&quot;,
+                &quot;label&quot;: &quot;Allow Manual Override of Calculated Value&quot;,
+                &quot;tooltip&quot;: &quot;When checked, this will allow the user to manually override the calculated value.&quot;
+              }
+            ],
+            &quot;label&quot;: &quot;Data&quot;,
+            &quot;weight&quot;: 10
+          },
+          {
+            &quot;key&quot;: &quot;validation&quot;,
+            &quot;components&quot;: [
+              {
+                &quot;weight&quot;: 10,
+                &quot;type&quot;: &quot;checkbox&quot;,
+                &quot;label&quot;: &quot;Required&quot;,
+                &quot;tooltip&quot;: &quot;A required field must be filled in before the form can be submitted.&quot;,
+                &quot;key&quot;: &quot;validate.required&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;weight&quot;: 190,
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;errorLabel&quot;,
+                &quot;label&quot;: &quot;Error Label&quot;,
+                &quot;placeholder&quot;: &quot;Error Label&quot;,
+                &quot;tooltip&quot;: &quot;The label for this field when an error occurs.&quot;
+              },
+              {
+                &quot;weight&quot;: 200,
+                &quot;key&quot;: &quot;validate.customMessage&quot;,
+                &quot;label&quot;: &quot;Custom Error Message&quot;,
+                &quot;placeholder&quot;: &quot;Custom Error Message&quot;,
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;tooltip&quot;: &quot;Error message displayed if any error occurred.&quot;,
+                &quot;input&quot;: true
+              },
+              {
+                &quot;type&quot;: &quot;panel&quot;,
+                &quot;title&quot;: &quot;Custom Validation&quot;,
+                &quot;collapsible&quot;: true,
+                &quot;collapsed&quot;: true,
+                &quot;style&quot;: {
+                  &quot;margin-bottom&quot;: &quot;10px&quot;
+                },
+                &quot;key&quot;: &quot;custom-validation-js&quot;,
+                &quot;weight&quot;: 300,
+                &quot;components&quot;: [
+                  {
+                    &quot;type&quot;: &quot;htmlelement&quot;,
+                    &quot;tag&quot;: &quot;div&quot;,
+                    &quot;content&quot;: &quot;&lt;p&gt;The following variables are available in all scripts.&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-bordered table-condensed table-striped\&quot;&gt;&lt;tr&gt;&lt;th&gt;input&lt;/th&gt;&lt;td&gt;The value that was input into this component&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;form&lt;/th&gt;&lt;td&gt;The complete form JSON object&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;submission&lt;/th&gt;&lt;td&gt;The complete submission object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;data&lt;/th&gt;&lt;td&gt;The complete submission data object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;row&lt;/th&gt;&lt;td&gt;Contextual \&quot;row\&quot; data, used within DataGrid, EditGrid, and Container components&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;component&lt;/th&gt;&lt;td&gt;The current component JSON&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;instance&lt;/th&gt;&lt;td&gt;The current component instance.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;value&lt;/th&gt;&lt;td&gt;The current value of the component.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;moment&lt;/th&gt;&lt;td&gt;The moment.js library for date manipulation.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;_&lt;/th&gt;&lt;td&gt;An instance of &lt;a href&#x3D;\&quot;https://lodash.com/docs/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Lodash&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;utils&lt;/th&gt;&lt;td&gt;An instance of the &lt;a href&#x3D;\&quot;http://formio.github.io/formio.js/docs/identifiers.html#utils\&quot; target&#x3D;\&quot;_blank\&quot;&gt;FormioUtils&lt;/a&gt; object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;util&lt;/th&gt;&lt;td&gt;An alias for \&quot;utils\&quot;.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;textarea&quot;,
+                    &quot;key&quot;: &quot;validate.custom&quot;,
+                    &quot;rows&quot;: 5,
+                    &quot;editor&quot;: &quot;ace&quot;,
+                    &quot;hideLabel&quot;: true,
+                    &quot;input&quot;: true
+                  },
+                  {
+                    &quot;type&quot;: &quot;htmlelement&quot;,
+                    &quot;tag&quot;: &quot;div&quot;,
+                    &quot;content&quot;: &quot;\n          &lt;small&gt;\n            &lt;p&gt;Enter custom validation code.&lt;/p&gt;\n            &lt;p&gt;You must assign the &lt;strong&gt;valid&lt;/strong&gt; variable as either &lt;strong&gt;true&lt;/strong&gt; or an error message if validation fails.&lt;/p&gt;\n            &lt;h5&gt;Example:&lt;/h5&gt;\n            &lt;pre&gt;valid &#x3D; (input &#x3D;&#x3D;&#x3D; &#x27;Joe&#x27;) ? true : &#x27;Your name must be \&quot;Joe\&quot;&#x27;;&lt;/pre&gt;\n          &lt;/small&gt;&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;well&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;weight&quot;: 100,
+                        &quot;type&quot;: &quot;checkbox&quot;,
+                        &quot;label&quot;: &quot;Secret Validation&quot;,
+                        &quot;tooltip&quot;: &quot;Check this if you wish to perform the validation ONLY on the server side. This keeps your validation logic private and secret.&quot;,
+                        &quot;description&quot;: &quot;Check this if you wish to perform the validation ONLY on the server side. This keeps your validation logic private and secret.&quot;,
+                        &quot;key&quot;: &quot;validate.customPrivate&quot;,
+                        &quot;input&quot;: true
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                &quot;type&quot;: &quot;panel&quot;,
+                &quot;title&quot;: &quot;JSONLogic Validation&quot;,
+                &quot;collapsible&quot;: true,
+                &quot;collapsed&quot;: true,
+                &quot;key&quot;: &quot;json-validation-json&quot;,
+                &quot;weight&quot;: 400,
+                &quot;components&quot;: [
+                  {
+                    &quot;type&quot;: &quot;htmlelement&quot;,
+                    &quot;tag&quot;: &quot;div&quot;,
+                    &quot;content&quot;: &quot;&lt;p&gt;Execute custom logic using &lt;a href&#x3D;\&quot;http://jsonlogic.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;JSONLogic&lt;/a&gt;.&lt;/p&gt;&lt;h5&gt;Example:&lt;/h5&gt;&lt;pre&gt;{\n  \&quot;if\&quot;: [\n    {\n      \&quot;&#x3D;&#x3D;&#x3D;\&quot;: [\n        {\n          \&quot;var\&quot;: \&quot;input\&quot;\n        },\n        \&quot;Bob\&quot;\n      ]\n    },\n    true,\n    \&quot;Your name must be &#x27;Bob&#x27;!\&quot;\n  ]\n}&lt;/pre&gt;&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;textarea&quot;,
+                    &quot;key&quot;: &quot;validate.json&quot;,
+                    &quot;hideLabel&quot;: true,
+                    &quot;rows&quot;: 5,
+                    &quot;editor&quot;: &quot;ace&quot;,
+                    &quot;as&quot;: &quot;json&quot;,
+                    &quot;input&quot;: true
+                  }
+                ]
+              }
+            ],
+            &quot;label&quot;: &quot;Validation&quot;,
+            &quot;weight&quot;: 20
+          },
+          {
+            &quot;label&quot;: &quot;API&quot;,
+            &quot;key&quot;: &quot;api&quot;,
+            &quot;weight&quot;: 30,
+            &quot;components&quot;: [
+              {
+                &quot;weight&quot;: 0,
+                &quot;type&quot;: &quot;textfield&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;key&quot;,
+                &quot;label&quot;: &quot;Property Name&quot;,
+                &quot;tooltip&quot;: &quot;The name of this field in the API endpoint.&quot;,
+                &quot;validate&quot;: {
+                  &quot;pattern&quot;: &quot;(\\w|\\w[\\w-.]*\\w)&quot;,
+                  &quot;patternMessage&quot;: &quot;The property name must only contain alphanumeric characters, underscores, dots and dashes and should not be ended by dash or dot.&quot;
+                }
+              },
+              {
+                &quot;weight&quot;: 100,
+                &quot;type&quot;: &quot;tags&quot;,
+                &quot;input&quot;: true,
+                &quot;label&quot;: &quot;Field Tags&quot;,
+                &quot;storeas&quot;: &quot;array&quot;,
+                &quot;tooltip&quot;: &quot;Tag the field for use in custom logic.&quot;,
+                &quot;key&quot;: &quot;tags&quot;
+              },
+              {
+                &quot;weight&quot;: 200,
+                &quot;type&quot;: &quot;datamap&quot;,
+                &quot;label&quot;: &quot;Custom Properties&quot;,
+                &quot;tooltip&quot;: &quot;This allows you to configure any custom properties for this component.&quot;,
+                &quot;key&quot;: &quot;properties&quot;,
+                &quot;valueComponent&quot;: {
+                  &quot;type&quot;: &quot;textfield&quot;,
+                  &quot;key&quot;: &quot;value&quot;,
+                  &quot;label&quot;: &quot;Value&quot;,
+                  &quot;placeholder&quot;: &quot;Value&quot;,
+                  &quot;input&quot;: true
+                }
+              }
+            ]
+          },
+          {
+            &quot;label&quot;: &quot;Conditional&quot;,
+            &quot;key&quot;: &quot;conditional&quot;,
+            &quot;weight&quot;: 40,
+            &quot;components&quot;: [
+              {
+                &quot;type&quot;: &quot;panel&quot;,
+                &quot;title&quot;: &quot;Simple&quot;,
+                &quot;key&quot;: &quot;simple-conditional&quot;,
+                &quot;theme&quot;: &quot;default&quot;,
+                &quot;components&quot;: [
+                  {
+                    &quot;type&quot;: &quot;select&quot;,
+                    &quot;input&quot;: true,
+                    &quot;label&quot;: &quot;This component should Display:&quot;,
+                    &quot;key&quot;: &quot;conditional.show&quot;,
+                    &quot;dataSrc&quot;: &quot;values&quot;,
+                    &quot;data&quot;: {
+                      &quot;values&quot;: [
+                        {
+                          &quot;label&quot;: &quot;True&quot;,
+                          &quot;value&quot;: &quot;true&quot;
+                        },
+                        {
+                          &quot;label&quot;: &quot;False&quot;,
+                          &quot;value&quot;: &quot;false&quot;
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    &quot;type&quot;: &quot;select&quot;,
+                    &quot;input&quot;: true,
+                    &quot;label&quot;: &quot;When the form component:&quot;,
+                    &quot;key&quot;: &quot;conditional.when&quot;,
+                    &quot;dataSrc&quot;: &quot;custom&quot;,
+                    &quot;valueProperty&quot;: &quot;value&quot;,
+                    &quot;data&quot;: {}
+                  },
+                  {
+                    &quot;type&quot;: &quot;textfield&quot;,
+                    &quot;input&quot;: true,
+                    &quot;label&quot;: &quot;Has the value:&quot;,
+                    &quot;key&quot;: &quot;conditional.eq&quot;
+                  }
+                ]
+              },
+              {
+                &quot;type&quot;: &quot;panel&quot;,
+                &quot;title&quot;: &quot;Advanced Conditions&quot;,
+                &quot;theme&quot;: &quot;default&quot;,
+                &quot;collapsible&quot;: true,
+                &quot;collapsed&quot;: true,
+                &quot;key&quot;: &quot;customConditionalPanel&quot;,
+                &quot;weight&quot;: 110,
+                &quot;components&quot;: [
+                  {
+                    &quot;type&quot;: &quot;htmlelement&quot;,
+                    &quot;tag&quot;: &quot;div&quot;,
+                    &quot;content&quot;: &quot;&lt;p&gt;The following variables are available in all scripts.&lt;/p&gt;&lt;table class&#x3D;\&quot;table table-bordered table-condensed table-striped\&quot;&gt;&lt;tr&gt;&lt;th&gt;form&lt;/th&gt;&lt;td&gt;The complete form JSON object&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;submission&lt;/th&gt;&lt;td&gt;The complete submission object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;data&lt;/th&gt;&lt;td&gt;The complete submission data object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;row&lt;/th&gt;&lt;td&gt;Contextual \&quot;row\&quot; data, used within DataGrid, EditGrid, and Container components&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;component&lt;/th&gt;&lt;td&gt;The current component JSON&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;instance&lt;/th&gt;&lt;td&gt;The current component instance.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;value&lt;/th&gt;&lt;td&gt;The current value of the component.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;moment&lt;/th&gt;&lt;td&gt;The moment.js library for date manipulation.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;_&lt;/th&gt;&lt;td&gt;An instance of &lt;a href&#x3D;\&quot;https://lodash.com/docs/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Lodash&lt;/a&gt;.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;utils&lt;/th&gt;&lt;td&gt;An instance of the &lt;a href&#x3D;\&quot;http://formio.github.io/formio.js/docs/identifiers.html#utils\&quot; target&#x3D;\&quot;_blank\&quot;&gt;FormioUtils&lt;/a&gt; object.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;util&lt;/th&gt;&lt;td&gt;An alias for \&quot;utils\&quot;.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br/&gt;&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;panel&quot;,
+                    &quot;title&quot;: &quot;JavaScript&quot;,
+                    &quot;collapsible&quot;: true,
+                    &quot;collapsed&quot;: false,
+                    &quot;style&quot;: {
+                      &quot;margin-bottom&quot;: &quot;10px&quot;
+                    },
+                    &quot;key&quot;: &quot;customConditional-js&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;type&quot;: &quot;textarea&quot;,
+                        &quot;key&quot;: &quot;customConditional&quot;,
+                        &quot;rows&quot;: 5,
+                        &quot;editor&quot;: &quot;ace&quot;,
+                        &quot;hideLabel&quot;: true,
+                        &quot;input&quot;: true
+                      },
+                      {
+                        &quot;type&quot;: &quot;htmlelement&quot;,
+                        &quot;tag&quot;: &quot;div&quot;,
+                        &quot;content&quot;: &quot;&lt;p&gt;Enter custom javascript code.&lt;/p&gt;&lt;p&gt;You must assign the &lt;strong&gt;show&lt;/strong&gt; variable a boolean result.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Note: Advanced Conditional logic will override the results of the Simple Conditional logic.&lt;/strong&gt;&lt;/p&gt;&lt;h5&gt;Example&lt;/h5&gt;&lt;pre&gt;show &#x3D; !!data.showMe;&lt;/pre&gt;&quot;
+                      }
+                    ]
+                  },
+                  {
+                    &quot;type&quot;: &quot;panel&quot;,
+                    &quot;title&quot;: &quot;JSONLogic&quot;,
+                    &quot;collapsible&quot;: true,
+                    &quot;collapsed&quot;: true,
+                    &quot;key&quot;: &quot;customConditional-json&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;type&quot;: &quot;htmlelement&quot;,
+                        &quot;tag&quot;: &quot;div&quot;,
+                        &quot;content&quot;: &quot;&lt;p&gt;Execute custom logic using &lt;a href&#x3D;\&quot;http://jsonlogic.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;JSONLogic&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Full &lt;a href&#x3D;\&quot;https://lodash.com/docs\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Lodash&lt;/a&gt; support is provided using an \&quot;_\&quot; before each operation, such as &lt;code&gt;{\&quot;_sum\&quot;: {var: \&quot;data.a\&quot;}}&lt;/code&gt;&lt;/p&gt;&lt;p&gt;&lt;a href&#x3D;\&quot;http://formio.github.io/formio.js/app/examples/conditions.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Click here for an example&lt;/a&gt;&lt;/p&gt;&quot;
+                      },
+                      {
+                        &quot;type&quot;: &quot;textarea&quot;,
+                        &quot;key&quot;: &quot;conditional.json&quot;,
+                        &quot;rows&quot;: 5,
+                        &quot;editor&quot;: &quot;ace&quot;,
+                        &quot;hideLabel&quot;: true,
+                        &quot;as&quot;: &quot;json&quot;,
+                        &quot;input&quot;: true
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            &quot;label&quot;: &quot;Logic&quot;,
+            &quot;key&quot;: &quot;logic&quot;,
+            &quot;weight&quot;: 50,
+            &quot;components&quot;: [
+              {
+                &quot;weight&quot;: 0,
+                &quot;input&quot;: true,
+                &quot;label&quot;: &quot;Advanced Logic&quot;,
+                &quot;key&quot;: &quot;logic&quot;,
+                &quot;templates&quot;: {
+                  &quot;header&quot;: &quot;&lt;div class&#x3D;\&quot;row\&quot;&gt; \n  &lt;div class&#x3D;\&quot;col-sm-6\&quot;&gt;\n    &lt;strong&gt;{{ value.length }} Advanced Logic Configured&lt;/strong&gt;\n  &lt;/div&gt;\n&lt;/div&gt;&quot;,
+                  &quot;row&quot;: &quot;&lt;div class&#x3D;\&quot;row\&quot;&gt; \n  &lt;div class&#x3D;\&quot;col-sm-6\&quot;&gt;\n    &lt;div&gt;{{ row.name }} &lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class&#x3D;\&quot;col-sm-2\&quot;&gt; \n    &lt;div class&#x3D;\&quot;btn-group pull-right\&quot;&gt; \n      &lt;div class&#x3D;\&quot;btn btn-default editRow\&quot;&gt;Edit&lt;/div&gt; \n      &lt;div class&#x3D;\&quot;btn btn-danger removeRow\&quot;&gt;Delete&lt;/div&gt; \n    &lt;/div&gt; \n  &lt;/div&gt; \n&lt;/div&gt;&quot;,
+                  &quot;footer&quot;: &quot;&quot;
+                },
+                &quot;type&quot;: &quot;editgrid&quot;,
+                &quot;addAnother&quot;: &quot;Add Logic&quot;,
+                &quot;saveRow&quot;: &quot;Save Logic&quot;,
+                &quot;components&quot;: [
+                  {
+                    &quot;weight&quot;: 0,
+                    &quot;input&quot;: true,
+                    &quot;inputType&quot;: &quot;text&quot;,
+                    &quot;label&quot;: &quot;Logic Name&quot;,
+                    &quot;key&quot;: &quot;name&quot;,
+                    &quot;validate&quot;: {
+                      &quot;required&quot;: true
+                    },
+                    &quot;type&quot;: &quot;textfield&quot;
+                  },
+                  {
+                    &quot;weight&quot;: 10,
+                    &quot;key&quot;: &quot;triggerPanel&quot;,
+                    &quot;input&quot;: false,
+                    &quot;title&quot;: &quot;Trigger&quot;,
+                    &quot;tableView&quot;: false,
+                    &quot;components&quot;: [
+                      {
+                        &quot;weight&quot;: 0,
+                        &quot;input&quot;: true,
+                        &quot;tableView&quot;: false,
+                        &quot;components&quot;: [
+                          {
+                            &quot;weight&quot;: 0,
+                            &quot;input&quot;: true,
+                            &quot;label&quot;: &quot;Type&quot;,
+                            &quot;key&quot;: &quot;type&quot;,
+                            &quot;tableView&quot;: false,
+                            &quot;data&quot;: {
+                              &quot;values&quot;: [
+                                {
+                                  &quot;value&quot;: &quot;simple&quot;,
+                                  &quot;label&quot;: &quot;Simple&quot;
+                                },
+                                {
+                                  &quot;value&quot;: &quot;javascript&quot;,
+                                  &quot;label&quot;: &quot;Javascript&quot;
+                                },
+                                {
+                                  &quot;value&quot;: &quot;json&quot;,
+                                  &quot;label&quot;: &quot;JSON Logic&quot;
+                                },
+                                {
+                                  &quot;value&quot;: &quot;event&quot;,
+                                  &quot;label&quot;: &quot;Event&quot;
+                                }
+                              ]
+                            },
+                            &quot;dataSrc&quot;: &quot;values&quot;,
+                            &quot;template&quot;: &quot;&lt;span&gt;{{ item.label }}&lt;/span&gt;&quot;,
+                            &quot;type&quot;: &quot;select&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 10,
+                            &quot;label&quot;: &quot;&quot;,
+                            &quot;key&quot;: &quot;simple&quot;,
+                            &quot;type&quot;: &quot;container&quot;,
+                            &quot;tableView&quot;: false,
+                            &quot;components&quot;: [
+                              {
+                                &quot;input&quot;: true,
+                                &quot;key&quot;: &quot;show&quot;,
+                                &quot;label&quot;: &quot;Show&quot;,
+                                &quot;type&quot;: &quot;hidden&quot;,
+                                &quot;tableView&quot;: false
+                              },
+                              {
+                                &quot;type&quot;: &quot;select&quot;,
+                                &quot;input&quot;: true,
+                                &quot;label&quot;: &quot;When the form component:&quot;,
+                                &quot;key&quot;: &quot;when&quot;,
+                                &quot;dataSrc&quot;: &quot;custom&quot;,
+                                &quot;valueProperty&quot;: &quot;value&quot;,
+                                &quot;tableView&quot;: false,
+                                &quot;data&quot;: {}
+                              },
+                              {
+                                &quot;type&quot;: &quot;textfield&quot;,
+                                &quot;input&quot;: true,
+                                &quot;label&quot;: &quot;Has the value:&quot;,
+                                &quot;key&quot;: &quot;eq&quot;,
+                                &quot;tableView&quot;: false
+                              }
+                            ]
+                          },
+                          {
+                            &quot;weight&quot;: 10,
+                            &quot;type&quot;: &quot;textarea&quot;,
+                            &quot;key&quot;: &quot;javascript&quot;,
+                            &quot;rows&quot;: 5,
+                            &quot;editor&quot;: &quot;ace&quot;,
+                            &quot;input&quot;: true,
+                            &quot;tableView&quot;: false,
+                            &quot;placeholder&quot;: &quot;result &#x3D; (data[&#x27;mykey&#x27;] &gt; 1);&quot;,
+                            &quot;description&quot;: &quot;\&quot;row\&quot;, \&quot;data\&quot;, and \&quot;component\&quot; variables are available. Return \&quot;result\&quot;.&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 10,
+                            &quot;type&quot;: &quot;textarea&quot;,
+                            &quot;key&quot;: &quot;json&quot;,
+                            &quot;rows&quot;: 5,
+                            &quot;editor&quot;: &quot;ace&quot;,
+                            &quot;label&quot;: &quot;JSON Logic&quot;,
+                            &quot;as&quot;: &quot;json&quot;,
+                            &quot;input&quot;: true,
+                            &quot;tableView&quot;: false,
+                            &quot;placeholder&quot;: &quot;{ ... }&quot;,
+                            &quot;description&quot;: &quot;\&quot;row\&quot;, \&quot;data\&quot;, \&quot;component\&quot; and \&quot;_\&quot; variables are available. Return the result to be passed to the action if truthy.&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 10,
+                            &quot;type&quot;: &quot;textfield&quot;,
+                            &quot;key&quot;: &quot;event&quot;,
+                            &quot;label&quot;: &quot;Event Name&quot;,
+                            &quot;placeholder&quot;: &quot;event&quot;,
+                            &quot;description&quot;: &quot;The event that will trigger this logic. You can trigger events externally or via a button.&quot;,
+                            &quot;tableView&quot;: false
+                          }
+                        ],
+                        &quot;key&quot;: &quot;trigger&quot;,
+                        &quot;type&quot;: &quot;container&quot;
+                      }
+                    ],
+                    &quot;type&quot;: &quot;panel&quot;
+                  },
+                  {
+                    &quot;weight&quot;: 20,
+                    &quot;input&quot;: true,
+                    &quot;label&quot;: &quot;Actions&quot;,
+                    &quot;key&quot;: &quot;actions&quot;,
+                    &quot;tableView&quot;: false,
+                    &quot;templates&quot;: {
+                      &quot;header&quot;: &quot;&lt;div class&#x3D;\&quot;row\&quot;&gt; \n  &lt;div class&#x3D;\&quot;col-sm-6\&quot;&gt;&lt;strong&gt;{{ value.length }} actions&lt;/strong&gt;&lt;/div&gt;\n&lt;/div&gt;&quot;,
+                      &quot;row&quot;: &quot;&lt;div class&#x3D;\&quot;row\&quot;&gt; \n  &lt;div class&#x3D;\&quot;col-sm-6\&quot;&gt;\n    &lt;div&gt;{{ row.name }} &lt;/div&gt;\n  &lt;/div&gt;\n  &lt;div class&#x3D;\&quot;col-sm-2\&quot;&gt; \n    &lt;div class&#x3D;\&quot;btn-group pull-right\&quot;&gt; \n      &lt;div class&#x3D;\&quot;btn btn-default editRow\&quot;&gt;Edit&lt;/div&gt; \n      &lt;div class&#x3D;\&quot;btn btn-danger removeRow\&quot;&gt;Delete&lt;/div&gt; \n    &lt;/div&gt; \n  &lt;/div&gt; \n&lt;/div&gt;&quot;,
+                      &quot;footer&quot;: &quot;&quot;
+                    },
+                    &quot;type&quot;: &quot;editgrid&quot;,
+                    &quot;addAnother&quot;: &quot;Add Action&quot;,
+                    &quot;saveRow&quot;: &quot;Save Action&quot;,
+                    &quot;components&quot;: [
+                      {
+                        &quot;weight&quot;: 0,
+                        &quot;title&quot;: &quot;Action&quot;,
+                        &quot;input&quot;: false,
+                        &quot;key&quot;: &quot;actionPanel&quot;,
+                        &quot;type&quot;: &quot;panel&quot;,
+                        &quot;components&quot;: [
+                          {
+                            &quot;weight&quot;: 0,
+                            &quot;input&quot;: true,
+                            &quot;inputType&quot;: &quot;text&quot;,
+                            &quot;label&quot;: &quot;Action Name&quot;,
+                            &quot;key&quot;: &quot;name&quot;,
+                            &quot;validate&quot;: {
+                              &quot;required&quot;: true
+                            },
+                            &quot;type&quot;: &quot;textfield&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 10,
+                            &quot;input&quot;: true,
+                            &quot;label&quot;: &quot;Type&quot;,
+                            &quot;key&quot;: &quot;type&quot;,
+                            &quot;data&quot;: {
+                              &quot;values&quot;: [
+                                {
+                                  &quot;value&quot;: &quot;property&quot;,
+                                  &quot;label&quot;: &quot;Property&quot;
+                                },
+                                {
+                                  &quot;value&quot;: &quot;value&quot;,
+                                  &quot;label&quot;: &quot;Value&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Merge Component Schema&quot;,
+                                  &quot;value&quot;: &quot;mergeComponentSchema&quot;
+                                }
+                              ]
+                            },
+                            &quot;dataSrc&quot;: &quot;values&quot;,
+                            &quot;template&quot;: &quot;&lt;span&gt;{{ item.label }}&lt;/span&gt;&quot;,
+                            &quot;type&quot;: &quot;select&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 20,
+                            &quot;type&quot;: &quot;select&quot;,
+                            &quot;template&quot;: &quot;&lt;span&gt;{{ item.label }}&lt;/span&gt;&quot;,
+                            &quot;dataSrc&quot;: &quot;json&quot;,
+                            &quot;tableView&quot;: false,
+                            &quot;data&quot;: {
+                              &quot;json&quot;: [
+                                {
+                                  &quot;label&quot;: &quot;Hidden&quot;,
+                                  &quot;value&quot;: &quot;hidden&quot;,
+                                  &quot;type&quot;: &quot;boolean&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Required&quot;,
+                                  &quot;value&quot;: &quot;validate.required&quot;,
+                                  &quot;type&quot;: &quot;boolean&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Disabled&quot;,
+                                  &quot;value&quot;: &quot;disabled&quot;,
+                                  &quot;type&quot;: &quot;boolean&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Label&quot;,
+                                  &quot;value&quot;: &quot;label&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Title&quot;,
+                                  &quot;value&quot;: &quot;title&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Prefix&quot;,
+                                  &quot;value&quot;: &quot;prefix&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Suffix&quot;,
+                                  &quot;value&quot;: &quot;suffix&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Tooltip&quot;,
+                                  &quot;value&quot;: &quot;tooltip&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Description&quot;,
+                                  &quot;value&quot;: &quot;description&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Placeholder&quot;,
+                                  &quot;value&quot;: &quot;placeholder&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Input Mask&quot;,
+                                  &quot;value&quot;: &quot;inputMask&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;CSS Class&quot;,
+                                  &quot;value&quot;: &quot;className&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;Container Custom Class&quot;,
+                                  &quot;value&quot;: &quot;customClass&quot;,
+                                  &quot;type&quot;: &quot;string&quot;
+                                }
+                              ]
+                            },
+                            &quot;key&quot;: &quot;property&quot;,
+                            &quot;label&quot;: &quot;Component Property&quot;,
+                            &quot;input&quot;: true
+                          },
+                          {
+                            &quot;weight&quot;: 30,
+                            &quot;input&quot;: true,
+                            &quot;label&quot;: &quot;Set State&quot;,
+                            &quot;key&quot;: &quot;state&quot;,
+                            &quot;tableView&quot;: false,
+                            &quot;data&quot;: {
+                              &quot;values&quot;: [
+                                {
+                                  &quot;label&quot;: &quot;True&quot;,
+                                  &quot;value&quot;: &quot;true&quot;
+                                },
+                                {
+                                  &quot;label&quot;: &quot;False&quot;,
+                                  &quot;value&quot;: &quot;false&quot;
+                                }
+                              ]
+                            },
+                            &quot;dataSrc&quot;: &quot;values&quot;,
+                            &quot;template&quot;: &quot;&lt;span&gt;{{ item.label }}&lt;/span&gt;&quot;,
+                            &quot;type&quot;: &quot;select&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 30,
+                            &quot;type&quot;: &quot;textfield&quot;,
+                            &quot;key&quot;: &quot;text&quot;,
+                            &quot;label&quot;: &quot;Text&quot;,
+                            &quot;inputType&quot;: &quot;text&quot;,
+                            &quot;input&quot;: true,
+                            &quot;tableView&quot;: false,
+                            &quot;description&quot;: &quot;Can use templating with {{ data.myfield }}. \&quot;data\&quot;, \&quot;row\&quot;, \&quot;component\&quot; and \&quot;result\&quot; variables are available.&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 20,
+                            &quot;input&quot;: true,
+                            &quot;label&quot;: &quot;Value (Javascript)&quot;,
+                            &quot;key&quot;: &quot;value&quot;,
+                            &quot;editor&quot;: &quot;ace&quot;,
+                            &quot;rows&quot;: 5,
+                            &quot;placeholder&quot;: &quot;value &#x3D; data.myfield;&quot;,
+                            &quot;type&quot;: &quot;textarea&quot;,
+                            &quot;tableView&quot;: false,
+                            &quot;description&quot;: &quot;\&quot;row\&quot;, \&quot;data\&quot;, \&quot;component\&quot;, and \&quot;result\&quot; variables are available. Return the value.&quot;
+                          },
+                          {
+                            &quot;weight&quot;: 20,
+                            &quot;input&quot;: true,
+                            &quot;label&quot;: &quot;Schema Defenition&quot;,
+                            &quot;key&quot;: &quot;schemaDefinition&quot;,
+                            &quot;editor&quot;: &quot;ace&quot;,
+                            &quot;rows&quot;: 5,
+                            &quot;placeholder&quot;: &quot;schema &#x3D; { label: &#x27;Updated&#x27; };&quot;,
+                            &quot;type&quot;: &quot;textarea&quot;,
+                            &quot;tableView&quot;: false,
+                            &quot;description&quot;: &quot;\&quot;row\&quot;, \&quot;data\&quot;, \&quot;component\&quot;, and \&quot;result\&quot; variables are available. Return the schema.&quot;
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            &quot;label&quot;: &quot;Layout&quot;,
+            &quot;key&quot;: &quot;layout&quot;,
+            &quot;weight&quot;: 60,
+            &quot;components&quot;: [
+              {
+                &quot;label&quot;: &quot;HTML Attributes&quot;,
+                &quot;type&quot;: &quot;datamap&quot;,
+                &quot;input&quot;: true,
+                &quot;key&quot;: &quot;attributes&quot;,
+                &quot;keyLabel&quot;: &quot;Attribute Name&quot;,
+                &quot;valueComponent&quot;: {
+                  &quot;type&quot;: &quot;textfield&quot;,
+                  &quot;key&quot;: &quot;value&quot;,
+                  &quot;label&quot;: &quot;Attribute Value&quot;,
+                  &quot;input&quot;: true
+                },
+                &quot;tooltip&quot;: &quot;Provide a map of HTML attributes for component&#x27;s input element (attributes provided by other component settings or other attributes generated by form.io take precedence over attributes in this grid)&quot;,
+                &quot;addAnother&quot;: &quot;Add Attribute&quot;
+              },
+              {
+                &quot;type&quot;: &quot;panel&quot;,
+                &quot;legend&quot;: &quot;PDF Overlay&quot;,
+                &quot;title&quot;: &quot;PDF Overlay&quot;,
+                &quot;key&quot;: &quot;overlay&quot;,
+                &quot;weight&quot;: 2000,
+                &quot;collapsible&quot;: true,
+                &quot;collapsed&quot;: true,
+                &quot;components&quot;: [
+                  {
+                    &quot;type&quot;: &quot;textfield&quot;,
+                    &quot;input&quot;: true,
+                    &quot;key&quot;: &quot;overlay.style&quot;,
+                    &quot;label&quot;: &quot;Style&quot;,
+                    &quot;placeholder&quot;: &quot;&quot;,
+                    &quot;tooltip&quot;: &quot;Custom styles that should be applied to this component when rendered in PDF.&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;textfield&quot;,
+                    &quot;input&quot;: true,
+                    &quot;key&quot;: &quot;overlay.page&quot;,
+                    &quot;label&quot;: &quot;Page&quot;,
+                    &quot;placeholder&quot;: &quot;&quot;,
+                    &quot;tooltip&quot;: &quot;The PDF page to place this component.&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;textfield&quot;,
+                    &quot;input&quot;: true,
+                    &quot;key&quot;: &quot;overlay.left&quot;,
+                    &quot;label&quot;: &quot;Left&quot;,
+                    &quot;placeholder&quot;: &quot;&quot;,
+                    &quot;tooltip&quot;: &quot;The left margin within a page to place this component.&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;textfield&quot;,
+                    &quot;input&quot;: true,
+                    &quot;key&quot;: &quot;overlay.top&quot;,
+                    &quot;label&quot;: &quot;Top&quot;,
+                    &quot;placeholder&quot;: &quot;&quot;,
+                    &quot;tooltip&quot;: &quot;The top margin within a page to place this component.&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;textfield&quot;,
+                    &quot;input&quot;: true,
+                    &quot;key&quot;: &quot;overlay.width&quot;,
+                    &quot;label&quot;: &quot;Width&quot;,
+                    &quot;placeholder&quot;: &quot;&quot;,
+                    &quot;tooltip&quot;: &quot;The width of the component (in pixels).&quot;
+                  },
+                  {
+                    &quot;type&quot;: &quot;textfield&quot;,
+                    &quot;input&quot;: true,
+                    &quot;key&quot;: &quot;overlay.height&quot;,
+                    &quot;label&quot;: &quot;Height&quot;,
+                    &quot;placeholder&quot;: &quot;&quot;,
+                    &quot;tooltip&quot;: &quot;The height of the component (in pixels).&quot;
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        &quot;type&quot;: &quot;hidden&quot;,
+        &quot;key&quot;: &quot;type&quot;
+      }
+    ]
+  }
+}</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'StandardJSONFormat-8.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,2708 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@fuse/starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@fuse/starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AuthSignInComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/auth/sign-in/sign-in.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>auth-sign-in</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./sign-in.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#alert" >alert</a>
+                            </li>
+                            <li>
+                                <a href="#appCode" >appCode</a>
+                            </li>
+                            <li>
+                                <a href="#currentScreen" >currentScreen</a>
+                            </li>
+                            <li>
+                                <a href="#defaultColor" >defaultColor</a>
+                            </li>
+                            <li>
+                                <a href="#favIcon" >favIcon</a>
+                            </li>
+                            <li>
+                                <a href="#isSignIn" >isSignIn</a>
+                            </li>
+                            <li>
+                                <a href="#org_logo" >org_logo</a>
+                            </li>
+                            <li>
+                                <a href="#OrganizationInfo" >OrganizationInfo</a>
+                            </li>
+                            <li>
+                                <a href="#orgData" >orgData</a>
+                            </li>
+                            <li>
+                                <a href="#ProjectTitle" >ProjectTitle</a>
+                            </li>
+                            <li>
+                                <a href="#showAlert" >showAlert</a>
+                            </li>
+                            <li>
+                                <a href="#signInForm" >signInForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#signInNgForm" >signInNgForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#afterLogin" >afterLogin</a>
+                            </li>
+                            <li>
+                                <a href="#afterLoginCallback" >afterLoginCallback</a>
+                            </li>
+                            <li>
+                                <a href="#beforeLogin" >beforeLogin</a>
+                            </li>
+                            <li>
+                                <a href="#beforeLoginCallback" >beforeLoginCallback</a>
+                            </li>
+                            <li>
+                                <a href="#callCustomEvent" >callCustomEvent</a>
+                            </li>
+                            <li>
+                                <a href="#getDynamicDesignCss" >getDynamicDesignCss</a>
+                            </li>
+                            <li>
+                                <a href="#getSchemaData" >getSchemaData</a>
+                            </li>
+                            <li>
+                                <a href="#handleError" >handleError</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onLoginError" >onLoginError</a>
+                            </li>
+                            <li>
+                                <a href="#signIn" >signIn</a>
+                            </li>
+                            <li>
+                                <a href="#updateCurrentScreenInstance" >updateCurrentScreenInstance</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#accessToken" >accessToken</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_activatedRoute: ActivatedRoute, _authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, _formBuilder: FormBuilder, _router: Router, tabAuthenticationService: TabAuthenticationService, _userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, tabAppService: TabAppService, tabGetService: TabGetService, store: Store, title: Title, toastrNotificationService: <a href="../injectables/ToastrNotificationService.html" target="_self">ToastrNotificationService</a>, myHttpService: <a href="../injectables/MyHttpService.html" target="_self">MyHttpService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:58</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_activatedRoute</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tabAuthenticationService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabAuthenticationService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tabAppService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabAppService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tabGetService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabGetService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code>Store</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
+                                                        <td>
+                                                                    <code>Title</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastrNotificationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ToastrNotificationService.html" target="_self" >ToastrNotificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>myHttpService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MyHttpService.html" target="_self" >MyHttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="afterLogin"></a>
+                    <span class="name">
+                        <span ><b>afterLogin</b></span>
+                        <a href="#afterLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>afterLogin(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="489"
+                                    class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:489</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Triggered after the login process is completed. Calls the custom event &#39;afterLogin&#39;.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The event data associated with the login process.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="afterLoginCallback"></a>
+                    <span class="name">
+                        <span ><b>afterLoginCallback</b></span>
+                        <a href="#afterLoginCallback"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>afterLoginCallback(error: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="444"
+                                    class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:444</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>error</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="beforeLogin"></a>
+                    <span class="name">
+                        <span ><b>beforeLogin</b></span>
+                        <a href="#beforeLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>beforeLogin(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="476"
+                                    class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:476</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Triggered before the login process starts. Calls the custom event &#39;beforeLogin&#39;.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The event data associated with the login process.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="beforeLoginCallback"></a>
+                    <span class="name">
+                        <span ><b>beforeLoginCallback</b></span>
+                        <a href="#beforeLoginCallback"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>beforeLoginCallback(err: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="436"
+                                    class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:436</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>err</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="callCustomEvent"></a>
+                    <span class="name">
+                        <span ><b>callCustomEvent</b></span>
+                        <a href="#callCustomEvent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>callCustomEvent(functionName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, isAsync: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, callback: (err: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>,data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>) => void)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="549"
+                                    class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:549</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Calls a custom event with the specified function name and event data.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>functionName</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The name of the custom event function to be called.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The event data to be passed to the custom event function.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>isAsync</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Specifies whether the custom event function is asynchronous or not.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>callback</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>A callback function that will be executed after the custom event function is called. It takes two arguments: err (error object) and data (data returned by the custom event function).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDynamicDesignCss"></a>
+                    <span class="name">
+                        <span ><b>getDynamicDesignCss</b></span>
+                        <a href="#getDynamicDesignCss"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDynamicDesignCss()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="200"
+                                    class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:200</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSchemaData"></a>
+                    <span class="name">
+                        <span ><b>getSchemaData</b></span>
+                        <a href="#getSchemaData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSchemaData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="499"
+                                    class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:499</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleError"></a>
+                    <span class="name">
+                        <span ><b>handleError</b></span>
+                        <a href="#handleError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleError(res, customMessage?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="417"
+                                    class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:417</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles errors during sign-in process.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>res</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The response object containing error information.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>customMessage</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Optional custom message</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="124"
+                                    class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:124</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>On init</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onLoginError"></a>
+                    <span class="name">
+                        <span ><b>onLoginError</b></span>
+                        <a href="#onLoginError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onLoginError(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="538"
+                                    class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:538</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Called when an error occurs during the login process. Calls the custom event &#39;onLoginError&#39;.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The event data associated with the login error.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="signIn"></a>
+                    <span class="name">
+                        <span ><b>signIn</b></span>
+                        <a href="#signIn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>signIn()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="230"
+                                    class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:230</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Sign in</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateCurrentScreenInstance"></a>
+                    <span class="name">
+                        <span ><b>updateCurrentScreenInstance</b></span>
+                        <a href="#updateCurrentScreenInstance"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateCurrentScreenInstance(applicationCode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="589"
+                                    class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:589</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Updates the current screen instance based on the provided application code.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>applicationCode</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The application code.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="alert"></a>
+                    <span class="name">
+                        <span ><b>alert</b></span>
+                        <a href="#alert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+        type: &#x27;success&#x27;,
+        message: &#x27;&#x27;,
+    }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appCode"></a>
+                    <span class="name">
+                        <span ><b>appCode</b></span>
+                        <a href="#appCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentScreen"></a>
+                    <span class="name">
+                        <span ><b>currentScreen</b></span>
+                        <a href="#currentScreen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ILoginExtension | null</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="defaultColor"></a>
+                    <span class="name">
+                        <span ><b>defaultColor</b></span>
+                        <a href="#defaultColor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;#0a5077&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="favIcon"></a>
+                    <span class="name">
+                        <span ><b>favIcon</b></span>
+                        <a href="#favIcon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>HTMLLinkElement</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>document.querySelector(&#x27;#appIcon&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isSignIn"></a>
+                    <span class="name">
+                        <span ><b>isSignIn</b></span>
+                        <a href="#isSignIn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="org_logo"></a>
+                    <span class="name">
+                        <span ><b>org_logo</b></span>
+                        <a href="#org_logo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OrganizationInfo"></a>
+                    <span class="name">
+                        <span ><b>OrganizationInfo</b></span>
+                        <a href="#OrganizationInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="orgData"></a>
+                    <span class="name">
+                        <span ><b>orgData</b></span>
+                        <a href="#orgData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ProjectTitle"></a>
+                    <span class="name">
+                        <span ><b>ProjectTitle</b></span>
+                        <a href="#ProjectTitle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;TAB&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showAlert"></a>
+                    <span class="name">
+                        <span ><b>showAlert</b></span>
+                        <a href="#showAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="signInForm"></a>
+                    <span class="name">
+                        <span ><b>signInForm</b></span>
+                        <a href="#signInForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="signInNgForm"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>signInNgForm</b></span>
+                        <a href="#signInNgForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>NgForm</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;signInNgForm&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="accessToken"></a>
+                        <span class="name"><b>accessToken</b><a href="#accessToken"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>accessToken()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:55</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>accessToken(token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/modules/auth/sign-in/sign-in.component.ts:51</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>token</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, ViewEncapsulation } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, NgForm, Validators } from &#x27;@angular/forms&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { fuseAnimations } from &#x27;@fuse/animations&#x27;;
+import { FuseAlertType } from &#x27;@fuse/components/alert&#x27;;
+import { Store } from &#x27;@ngrx/store&#x27;;
+import {
+    TabAppService,
+    TabAuthenticationService,
+    TabConstant,
+    TabGetService,
+} from &#x27;@techextensor/tab-service&#x27;;
+import { AuthService } from &#x27;app/core/auth/auth.service&#x27;;
+import { UserService } from &#x27;app/core/user/user.service&#x27;;
+import { environment } from &#x27;environments/environment&#x27;;
+import * as fromRoot from &#x27;@techextensor/tab-service&#x27;;
+import { Title, Meta } from &#x27;@angular/platform-browser&#x27;;
+import { take } from &#x27;rxjs&#x27;;
+import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
+import { ToastrNotificationService } from &#x27;app/layout/common/notifications/toastr.service&#x27;;
+import {
+    ILoginExtension,
+    ILoginExtensionRegistry,
+} from &#x27;@techextensor/tab-interface&#x27;;
+import { MyHttpService } from &#x27;app/http-service.service&#x27;;
+
+@Component({
+    selector: &#x27;auth-sign-in&#x27;,
+    templateUrl: &#x27;./sign-in.component.html&#x27;,
+    encapsulation: ViewEncapsulation.None,
+    animations: fuseAnimations,
+})
+export class AuthSignInComponent implements OnInit {
+    @ViewChild(&#x27;signInNgForm&#x27;) signInNgForm: NgForm;
+
+    alert: { type: FuseAlertType; message: string } &#x3D; {
+        type: &#x27;success&#x27;,
+        message: &#x27;&#x27;,
+    };
+    signInForm: FormGroup;
+    showAlert: boolean &#x3D; false;
+    OrganizationInfo: any;
+    isSignIn: boolean &#x3D; false;
+    orgData: any;
+    defaultColor &#x3D; &#x27;#0a5077&#x27;;
+    ProjectTitle: any &#x3D; &#x27;TAB&#x27;;
+    org_logo: any;
+    appCode: any;
+    currentScreen: ILoginExtension | null;
+
+    set accessToken(token: string) {
+        sessionStorage.setItem(TabConstant.Storage.token, token);
+    }
+
+    get accessToken(): string {
+        return sessionStorage.getItem(TabConstant.Storage.token) ?? &#x27;&#x27;;
+    }
+    favIcon: HTMLLinkElement &#x3D; document.querySelector(&#x27;#appIcon&#x27;);
+
+    /**
+     * Constructor
+     */
+    constructor(
+        private _activatedRoute: ActivatedRoute,
+        private _authService: AuthService,
+        private _formBuilder: FormBuilder,
+        private _router: Router,
+        private tabAuthenticationService: TabAuthenticationService,
+        private _userService: UserService,
+        private tabAppService: TabAppService,
+        private tabGetService: TabGetService,
+        private store: Store,
+        private title: Title,
+        private toastrNotificationService: ToastrNotificationService,
+        private myHttpService: MyHttpService
+    ) {
+        if (
+            this._activatedRoute &amp;&amp;
+            this._activatedRoute?.snapshot?.queryParams &amp;&amp;
+            this._activatedRoute?.snapshot?.queryParams.hasOwnProperty(
+                &#x27;applicationCode&#x27;
+            ) &amp;&amp;
+            this._activatedRoute?.snapshot?.queryParams?.applicationCode
+        ) {
+            // TabConstant.Common.applicationCode &#x3D;
+            //     this._activatedRoute.snapshot.queryParams.applicationCode;
+            sessionStorage.setItem(
+                TabConstant.Storage.applicationCode,
+                this._activatedRoute.snapshot.queryParams.applicationCode
+            );
+        } else {
+            //Old logic
+            const code &#x3D; sessionStorage.getItem(
+                TabConstant.Storage.applicationCode
+            );
+            // TabConstant.Common.applicationCode &#x3D; code ?? &#x27;TAB&#x27;;
+            if (!code) {
+                // sessionStorage.setItem(&#x27;applicationCode&#x27;, &#x27;TAB&#x27;);
+                sessionStorage.setItem(
+                    TabConstant.Storage.applicationCode,
+                    TabConstant.Common.applicationCode
+                );
+            } else {
+                sessionStorage.setItem(
+                    TabConstant.Storage.applicationCode,
+                    code
+                );
+            }
+            //New Logic
+            // sessionStorage.setItem(
+            //     TabConstant.Storage.applicationCode,
+            //     TabConstant.Common.applicationCode
+            // );
+        }
+    }
+
+    // -----------------------------------------------------------------------------------------------------
+    // @ Lifecycle hooks
+    // -----------------------------------------------------------------------------------------------------
+
+    /**
+     * On init
+     */
+    ngOnInit(): void {
+        this.appCode &#x3D; sessionStorage.getItem(
+            TabConstant.Storage.applicationCode
+        );
+        // if (this.appCode &#x3D;&#x3D;&#x3D; null) {
+        //     this.appCode &#x3D; &#x27;TAB&#x27;;
+        // }
+        if (this.appCode &#x3D;&#x3D;&#x3D; null) {
+            this.appCode &#x3D; TabConstant.Common.applicationCode;
+        }
+        // Create the form
+        // this.updateCurrentScreenInstance(TabConstant.Common.applicationCode);
+        this.updateCurrentScreenInstance(this.appCode);
+        // this.beforeLogin({});
+        this.signInForm &#x3D; this._formBuilder.group({
+            email: [&#x27;&#x27;, [Validators.required, Validators.email]],
+            password: [&#x27;&#x27;, Validators.required],
+            rememberMe: [&#x27;&#x27;],
+        });
+        // get logo from orgInfo
+        this.accessToken &#x3D; TabConstant.Common.staticToken;
+        const appInfo &#x3D; {
+            AppObjectName: &#x27;TABD_OrgInfo&#x27;,
+            DSQName: &#x27;Detail_TABD_OrgInfo&#x27;,
+            Reqtokens: {
+                ID: TabConstant.Common.orgId,
+            },
+        };
+        this.tabGetService
+            .executeRAWDSQWithName(appInfo)
+            .pipe(take(1))
+            .subscribe((res) &#x3D;&gt; {
+                if (
+                    res?.StatusCode &#x3D;&#x3D; &#x27;200&#x27; &amp;&amp;
+                    res?.Result &amp;&amp;
+                    res[&#x27;Result&#x27;][0] !&#x3D;&#x3D; null
+                ) {
+                    this.accessToken &#x3D; &#x27;&#x27;;
+                    this.OrganizationInfo &#x3D; res?.Result[0];
+                    if (this.OrganizationInfo !&#x3D; null) {
+                        if (TabConstant.Common.applicationCode !&#x3D; null) {
+                            // let organizationInfo &#x3D; {
+                            //     organizationInfo: this.OrganizationInfo,
+                            // };
+                            // localStorage.setItem(
+                            //     this.appCode + &#x27;_Configuration&#x27;,
+                            //     JSON.stringify(organizationInfo)
+                            // );
+                            localStorage.setItem(
+                                &#x27;orgInfo&#x27;,
+                                JSON.stringify(this.OrganizationInfo)
+                            );
+                            this.orgData &#x3D; JSON.parse(
+                                this.OrganizationInfo?.LocaleSettings
+                            );
+
+                            if (this.orgData !&#x3D; null) {
+                                const logo &#x3D; this.orgData.FavIcon;
+                                this.favIcon.href &#x3D; logo;
+                            } else {
+                                this.favIcon.href &#x3D; &#x27;favicon-16x16.png&#x27;;
+                            }
+                            const title &#x3D;
+                                this.OrganizationInfo.OrganizationName;
+                            this.title.setTitle(title);
+                            this.isSignIn &#x3D; true;
+                        }
+                    } else {
+                        this.isSignIn &#x3D; true;
+                    }
+                } else {
+                    this.isSignIn &#x3D; true;
+                }
+            });
+        this.getDynamicDesignCss();
+    }
+    getDynamicDesignCss() {
+        const apiData &#x3D; {
+            AppObjectName: &#x27;TABMD_Configurations&#x27;,
+            DSQName: &#x27;Detail_TABMD_Configurations&#x27;,
+            Reqtokens: { ID: &#x27;10052fd2-45c6-47ec-8fe9-fe0bda28830a&#x27; },
+        };
+        this.tabGetService
+            .executeRAWDSQWithName(apiData)
+            .pipe(take(1))
+            ?.subscribe((response) &#x3D;&gt; {
+                if (!!response.Result &amp;&amp; response.Result.length &gt; 0) {
+                    let text &#x3D; response.Result[0].Setting_Value;
+                    // var css &#x3D; &#x27;h1 { background: red; }&#x27;,
+                    let head &#x3D;
+                        document.head ||
+                        document.getElementsByTagName(&#x27;head&#x27;)[0];
+                    let style &#x3D; document.createElement(&#x27;style&#x27;);
+                    head.appendChild(style);
+                    style.appendChild(document.createTextNode(text));
+                }
+            });
+    }
+
+    // -----------------------------------------------------------------------------------------------------
+    // @ Public methods
+    // -----------------------------------------------------------------------------------------------------
+
+    /**
+     * Sign in
+     */
+    signIn(): Promise&lt;void&gt; {
+        // Return if the form is invalid
+        if (this.signInForm.invalid) {
+            return;
+        }
+
+        // Disable the form
+        this.signInForm.disable();
+
+        // Hide the alert
+        this.showAlert &#x3D; false;
+
+        const user &#x3D; {
+            username: this.signInForm.controls[&#x27;email&#x27;].value,
+            password: this.signInForm.controls[&#x27;password&#x27;].value,
+        };
+
+        if (this._authService._authenticated) {
+            alert(&#x27;User is already logged in.&#x27;);
+            return;
+        }
+
+        //sign in for tab
+        // this.tabAuthenticationService
+        //     .login(user)
+        this.myHttpService
+            .login(
+                this.signInForm.controls[&#x27;email&#x27;].value,
+                this.signInForm.controls[&#x27;password&#x27;].value
+            )
+            .pipe(take(1))
+            .subscribe(
+                (res) &#x3D;&gt; {
+                    if (res?.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                        // let LoggedInUserInfo &#x3D; res.Result.user;
+                        // let stordeConfigurationForSpecificAppCode &#x3D; JSON.parse(
+                        //     localStorage.getItem(
+                        //         this.appCode + &#x27;_Configuration&#x27;
+                        //     )
+                        // );
+                        // if (stordeConfigurationForSpecificAppCode) {
+                        //     stordeConfigurationForSpecificAppCode &#x3D; {
+                        //         ...stordeConfigurationForSpecificAppCode,
+                        //         LoggedInUserInfo,
+                        //     };
+                        // } else {
+                        //     stordeConfigurationForSpecificAppCode &#x3D; {
+                        //         LoggedInUserInfo: LoggedInUserInfo,
+                        //     };
+                        // }
+                        // localStorage.setItem(
+                        //     this.appCode + &#x27;_Configuration&#x27;,
+                        //     JSON.stringify(
+                        //         stordeConfigurationForSpecificAppCode
+                        //     )
+                        // );
+                        localStorage.setItem(
+                            &#x27;loginData&#x27;,
+                            JSON.stringify(res.Result.user)
+                        );
+                        this.accessToken &#x3D; &#x27;bearer &#x27; + res?.Result?.Token;
+                        this.getSchemaData();
+                        setTimeout(() &#x3D;&gt; {
+                            this.afterLogin(res);
+                        }, 1000);
+
+                        // OLD CODE
+                        // FOR REFERENCE
+                        /**
+                        localStorage.setItem(
+                            &#x27;loginData&#x27;,
+                            JSON.stringify(res.Result.user)
+                        );
+                        this.accessToken &#x3D; &#x27;bearer &#x27; + res?.Result?.Token;
+
+                        // Set the authenticated flag to true
+                        this._authService._authenticated &#x3D; true;
+
+                        // Store the user on the user service
+                        this._userService.user &#x3D; res?.Result.user;
+
+                        const redirectURL &#x3D;
+                            this._activatedRoute.snapshot.queryParamMap.get(
+                                &#x27;redirectURL&#x27;
+                            ) || &#x27;/signed-in-redirect&#x27;;
+
+                        this._router.navigateByUrl(redirectURL);
+
+                        if (environment.name &#x3D;&#x3D;&#x3D; &#x27;DEV&#x27;) {
+                            this.tabAppService.getSchema();
+                        } else {
+                            const appInfo &#x3D; {
+                                AppObjectName: &#x27;TABD_AppInfo&#x27;,
+                                DSQName: &#x27;Detail_TABD_AppInfo&#x27;,
+                                Reqtokens: {
+                                    ID: &#x27;013CE22E-010A-40EC-B59F-045BB70C6F3F&#x27;,
+                                },
+                            };
+                            this.tabGetService
+                                .executeRAWDSQWithName(appInfo)
+                                .subscribe((res) &#x3D;&gt; {
+                                    if (res?.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                                        this.store.dispatch(
+                                            fromRoot.applicationData({
+                                                applicationData:
+                                                    res[&#x27;Result&#x27;][0],
+                                            })
+                                        );
+                                        TabConstant.Common.appInfo &#x3D;
+                                            res[&#x27;Result&#x27;][0];
+                                        if (res[&#x27;Result&#x27;][0] !&#x3D;&#x3D; null) {
+                                            if (res[&#x27;Result&#x27;][0]?.AppVersion) {
+                                                this.tabAppService.getSchema({
+                                                    version:
+                                                        res[&#x27;Result&#x27;][0]
+                                                            ?.AppVersion,
+                                                });
+                                            } else {
+                                                this.tabAppService.getSchema();
+                                            }
+                                        }
+                                    }
+                                });
+                        } */
+                    } else {
+                        this.handleError(res);
+                    }
+                },
+                (error) &#x3D;&gt; {
+                    this.handleError(error.error);
+                    // FOR REFERENCE
+                    // this.onLoginError(error);
+                    // // this.handleError(error);
+
+                    // if (error.status &#x3D;&#x3D;&#x3D; 400) {
+                    //     this.toastrNotificationService.showError(
+                    //         error.error.Errors[0],
+                    //         &#x27;Error&#x27;
+                    //     );
+                    // } else {
+                    //     console.log(&#x27;Other Error:&#x27;, error.error);
+                    //     // Handle other error statuses if needed
+                    // }
+                    // this.signInForm.enable();
+                }
+            );
+
+        // Sign in
+        // this._authService.signIn(this.signInForm.value)
+        //     .subscribe(
+        //         () &#x3D;&gt; {
+
+        //             // Set the redirect url.
+        //             // The &#x27;/signed-in-redirect&#x27; is a dummy url to catch the request and redirect the user
+        //             // to the correct page after a successful sign in. This way, that url can be set via
+        //             // routing file and we don&#x27;t have to touch here.
+        //             const redirectURL &#x3D; this._activatedRoute.snapshot.queryParamMap.get(&#x27;redirectURL&#x27;) || &#x27;/signed-in-redirect&#x27;;
+
+        //             // Navigate to the redirect url
+        //             this._router.navigateByUrl(redirectURL);
+
+        //         },
+        //         (response) &#x3D;&gt; {
+
+        //             // Re-enable the form
+        //             this.signInForm.enable();
+
+        //             // Reset the form
+        //             this.signInNgForm.resetForm();
+
+        //             // Set the alert
+        //             this.alert &#x3D; {
+        //                 type: &#x27;error&#x27;,
+        //                 message: &#x27;Wrong email or password&#x27;
+        //             };
+
+        //             // Show the alert
+        //             this.showAlert &#x3D; true;
+        //         }
+        //     );
+    }
+
+    /**
+     * Handles errors during sign-in process.
+     * @param res - The response object containing error information.
+     * @param customMessage - Optional custom message
+     */
+    handleError(res, customMessage?: string) {
+        // Re-enable the form
+        this.signInForm.enable();
+
+        // Reset the form
+        this.signInNgForm.resetForm();
+
+        // Set the alert
+        this.alert &#x3D; {
+            type: &#x27;error&#x27;,
+            message: customMessage ?? res.Errors[0],
+        };
+
+        // Show the alert
+        this.showAlert &#x3D; true;
+        this.onLoginError(res);
+    }
+
+    // before login callback
+    beforeLoginCallback(err: any, data: any) {
+        if (!err) {
+            this.signIn();
+            return;
+        }
+    }
+
+    // after login callback
+    afterLoginCallback(error: any, data: any) {
+        if (error) {
+            this.handleError(data, error.message);
+            return;
+        }
+        // localStorage.setItem(&#x27;loginData&#x27;, JSON.stringify(data.Result.user));
+        // this.accessToken &#x3D; &#x27;bearer &#x27; + data?.Result?.Token;
+        // Set the authenticated flag to true
+        this._authService._authenticated &#x3D; true;
+        // Store the user on the user service
+        this._userService.user &#x3D; data?.Result.user;
+        // default redirection with screen route
+        const redirectURL &#x3D;
+            this._activatedRoute.snapshot.queryParamMap.get(&#x27;redirectURL&#x27;) ||
+            &#x27;/signed-in-redirect&#x27;;
+        this._router.navigateByUrl(redirectURL);
+        // may be we can use in future
+        // let applicationCode &#x3D;
+        //     this._activatedRoute.snapshot.queryParamMap.get(&#x27;applicationCode&#x27;);
+        // if (applicationCode) {
+        //     this._router.navigate([redirectURL], {
+        //         queryParams: { applicationCode: applicationCode },
+        //     });
+        // } else {
+        //     this._router.navigateByUrl(redirectURL);
+        // }
+    }
+
+    /**
+     * Triggered before the login process starts. Calls the custom event &#x27;beforeLogin&#x27;.
+     * @param event - The event data associated with the login process.
+     */
+    beforeLogin(event: any) {
+        this.callCustomEvent(
+            &#x27;onBeforeLogin&#x27;,
+            event,
+            true,
+            this.beforeLoginCallback.bind(this)
+        );
+    }
+
+    /**
+     * Triggered after the login process is completed. Calls the custom event &#x27;afterLogin&#x27;.
+     * @param event - The event data associated with the login process.
+     */
+    afterLogin(event: any) {
+        // this.afterLoginCallback();
+        this.callCustomEvent(
+            &#x27;onAfterLogin&#x27;,
+            event,
+            true,
+            this.afterLoginCallback.bind(this)
+        );
+    }
+
+    getSchemaData() {
+        if (environment.name &#x3D;&#x3D;&#x3D; &#x27;DEV&#x27;) {
+            this.tabAppService.getSchema();
+        } else {
+            const appInfo &#x3D; {
+                AppObjectName: &#x27;TABD_AppInfo&#x27;,
+                DSQName: &#x27;Detail_TABD_AppInfo&#x27;,
+                Reqtokens: {
+                    ID: &#x27;013CE22E-010A-40EC-B59F-045BB70C6F3F&#x27;,
+                },
+            };
+            this.tabGetService
+                .executeRAWDSQWithName(appInfo)
+                .subscribe((res) &#x3D;&gt; {
+                    if (res?.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                        this.store.dispatch(
+                            fromRoot.applicationData({
+                                applicationData: res[&#x27;Result&#x27;][0],
+                            })
+                        );
+                        TabConstant.Common.appInfo &#x3D; res[&#x27;Result&#x27;][0];
+                        if (res[&#x27;Result&#x27;][0] !&#x3D;&#x3D; null) {
+                            if (res[&#x27;Result&#x27;][0]?.AppVersion) {
+                                this.tabAppService.getSchema({
+                                    version: res[&#x27;Result&#x27;][0]?.AppVersion,
+                                });
+                            } else {
+                                this.tabAppService.getSchema();
+                            }
+                        }
+                    }
+                });
+        }
+    }
+
+    /**
+     * Called when an error occurs during the login process. Calls the custom event &#x27;onLoginError&#x27;.
+     * @param event - The event data associated with the login error.
+     */
+    onLoginError(event: any) {
+        this.callCustomEvent(&#x27;onLoginError&#x27;, event, false, (err, data) &#x3D;&gt; {});
+    }
+
+    /**
+     * Calls a custom event with the specified function name and event data.
+     * @param functionName - The name of the custom event function to be called.
+     * @param event - The event data to be passed to the custom event function.
+     * @param isAsync - Specifies whether the custom event function is asynchronous or not.
+     * @param callback - A callback function that will be executed after the custom event function is called. It takes two arguments: err (error object) and data (data returned by the custom event function).
+     */
+    callCustomEvent(
+        functionName: string,
+        event: any,
+        isAsync: boolean,
+        callback: (err: any, data: any) &#x3D;&gt; void
+    ): void {
+        if (this.currentScreen) {
+            const loginParameters: {
+                serviceList: any;
+                event: any;
+                isAsync: boolean;
+                callback: (err, data) &#x3D;&gt; void | null;
+            } &#x3D; {
+                serviceList: null,
+                event: event,
+                isAsync: isAsync,
+                callback: callback,
+            };
+
+            loginParameters.serviceList &#x3D; {
+                store: this.store,
+                router: this._router,
+                route: this._activatedRoute,
+                getService: this.tabGetService,
+                appService: this.tabAppService,
+                notificationService: this.toastrNotificationService,
+                authenticationService: this.tabAuthenticationService,
+            };
+            this.currentScreen[functionName](loginParameters);
+        } else {
+            if (isAsync) {
+                callback(null, event);
+            }
+        }
+    }
+
+    /**
+     * Updates the current screen instance based on the provided application code.
+     * @param applicationCode - The application code.
+     */
+    updateCurrentScreenInstance(applicationCode: string) {
+        var screens &#x3D; ILoginExtensionRegistry.GetImplementations();
+        for (var x &#x3D; 0; x &lt; screens.length; x++) {
+            const screen &#x3D; new screens[x]();
+            if (
+                screen.applicationCode.toLowerCase() &#x3D;&#x3D;&#x3D;
+                applicationCode.toLowerCase()
+            ) {
+                this.currentScreen &#x3D; screen;
+            }
+        }
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;isSignIn&quot;
+    class&#x3D;&quot;flex flex-col sm:flex-row-reverse items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0 signin-main authentication-main&quot;&gt;
+    &lt;div
+        class&#x3D;&quot;md:flex md:items-center md:justify-start w-full sm:w-auto md:h-full md:w-1/3 py-8 px-4 sm:p-12 md:p-16 sm:rounded-2xl md:rounded-none sm:shadow md:shadow-none sm:bg-card&quot;&gt;
+        &lt;div class&#x3D;&quot;w-full max-w-80 sm:w-80 mx-auto sm:mx-0&quot;&gt;
+            &lt;!-- Title --&gt;
+            &lt;div class&#x3D;&quot;mt-8 text-4xl font-extrabold tracking-tight leading-tight mb-2&quot;&gt;Sign in&lt;/div&gt;
+            &lt;div *ngIf&#x3D;&quot;!orgData?.ShowSignUp&quot; class&#x3D;&quot;flex items-baseline mt-0.5 font-medium&quot;&gt;
+                &lt;div&gt;Don&#x27;t have an account?&lt;/div&gt;
+                &lt;a class&#x3D;&quot;ml-1 fw-700 hover:underline&quot;
+                    [ngStyle]&#x3D;&quot;{&#x27;color&#x27;: orgData? orgData.Org_Brand_Color : defaultColor}&quot;
+                    [routerLink]&#x3D;&quot;[&#x27;/sign-up&#x27;]&quot;&gt;Sign up
+                &lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Alert --&gt;
+            &lt;fuse-alert class&#x3D;&quot;mt-8 -mb-4&quot; *ngIf&#x3D;&quot;showAlert&quot; [appearance]&#x3D;&quot;&#x27;outline&#x27;&quot; [showIcon]&#x3D;&quot;false&quot;
+                [type]&#x3D;&quot;alert.type&quot; [@shake]&#x3D;&quot;alert.type &#x3D;&#x3D;&#x3D; &#x27;error&#x27;&quot;&gt;
+                {{alert.message}}
+            &lt;/fuse-alert&gt;
+
+            &lt;!-- Sign in form --&gt;
+            &lt;form class&#x3D;&quot;mt-8&quot; [formGroup]&#x3D;&quot;signInForm&quot; #signInNgForm&#x3D;&quot;ngForm&quot;&gt;
+
+                &lt;!-- Email field --&gt;
+                &lt;mat-form-field class&#x3D;&quot;w-full&quot;&gt;
+                    &lt;mat-label class&#x3D;&quot;fw-600&quot;&gt;Email address&lt;/mat-label&gt;
+                    &lt;input id&#x3D;&quot;email&quot; matInput [formControlName]&#x3D;&quot;&#x27;email&#x27;&quot;&gt;
+                    &lt;mat-error *ngIf&#x3D;&quot;signInForm.get(&#x27;email&#x27;).hasError(&#x27;required&#x27;)&quot;&gt;
+                        Email address is required
+                    &lt;/mat-error&gt;
+                    &lt;mat-error *ngIf&#x3D;&quot;signInForm.get(&#x27;email&#x27;).hasError(&#x27;email&#x27;)&quot;&gt;
+                        Please enter a valid email address
+                    &lt;/mat-error&gt;
+                &lt;/mat-form-field&gt;
+
+                &lt;!-- Password field --&gt;
+                &lt;mat-form-field class&#x3D;&quot;w-full&quot;&gt;
+                    &lt;mat-label class&#x3D;&quot;fw-600&quot;&gt;Password&lt;/mat-label&gt;
+                    &lt;input id&#x3D;&quot;password&quot; matInput type&#x3D;&quot;password&quot; [formControlName]&#x3D;&quot;&#x27;password&#x27;&quot; #passwordField&gt;
+                    &lt;button mat-icon-button type&#x3D;&quot;button&quot;
+                        (click)&#x3D;&quot;passwordField.type &#x3D;&#x3D;&#x3D; &#x27;password&#x27; ? passwordField.type &#x3D; &#x27;text&#x27; : passwordField.type &#x3D; &#x27;password&#x27;&quot;
+                        matSuffix&gt;
+                        &lt;mat-icon class&#x3D;&quot;icon-size-5&quot; *ngIf&#x3D;&quot;passwordField.type &#x3D;&#x3D;&#x3D; &#x27;password&#x27;&quot;
+                            [svgIcon]&#x3D;&quot;&#x27;heroicons_solid:eye&#x27;&quot;&gt;&lt;/mat-icon&gt;
+                        &lt;mat-icon class&#x3D;&quot;icon-size-5&quot; *ngIf&#x3D;&quot;passwordField.type &#x3D;&#x3D;&#x3D; &#x27;text&#x27;&quot;
+                            [svgIcon]&#x3D;&quot;&#x27;heroicons_solid:eye-off&#x27;&quot;&gt;&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+                    &lt;mat-error&gt;
+                        Password is required
+                    &lt;/mat-error&gt;
+                &lt;/mat-form-field&gt;
+
+                &lt;!-- Actions --&gt;
+                &lt;div class&#x3D;&quot;inline-flex items-end justify-between w-full mt-1.5&quot;&gt;
+                    &lt;!-- &lt;mat-checkbox
+                        [color]&#x3D;&quot;&#x27;primary&#x27;&quot;
+                        [formControlName]&#x3D;&quot;&#x27;rememberMe&#x27;&quot;&gt;
+                        Remember me
+                    &lt;/mat-checkbox&gt; --&gt;
+                    &lt;a class&#x3D;&quot;text-md font-medium fw-700 hover:underline&quot;
+                        [ngStyle]&#x3D;&quot;{&#x27;color&#x27;: orgData ? orgData.Org_Brand_Color : defaultColor}&quot;
+                        [routerLink]&#x3D;&quot;[&#x27;/forgot-password&#x27;]&quot;&gt;Forgot password?
+                    &lt;/a&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Submit button --&gt;
+                &lt;!-- [color]&#x3D;&quot;&#x27;primary&#x27;&quot; --&gt;
+                &lt;button class&#x3D;&quot;fuse-mat-button-large w-full mt-6&quot;
+                    [ngStyle]&#x3D;&quot;{&#x27;background-color&#x27;: orgData ? orgData.Org_Brand_Color : defaultColor}&quot; mat-flat-button
+                    [color]&#x3D;&quot;&#x27;primary&#x27;&quot; [disabled]&#x3D;&quot;signInForm.disabled&quot; (click)&#x3D;&quot;beforeLogin()&quot;&gt;
+                    &lt;span *ngIf&#x3D;&quot;!signInForm.disabled&quot;&gt;
+                        Sign in
+                    &lt;/span&gt;
+                    &lt;mat-progress-spinner *ngIf&#x3D;&quot;signInForm.disabled&quot; [diameter]&#x3D;&quot;24&quot;
+                        [mode]&#x3D;&quot;&#x27;indeterminate&#x27;&quot;&gt;&lt;/mat-progress-spinner&gt;
+                &lt;/button&gt;
+
+                &lt;!-- Separator --&gt;
+                &lt;!-- &lt;div class&#x3D;&quot;flex items-center mt-8&quot;&gt;
+                    &lt;div class&#x3D;&quot;flex-auto mt-px border-t&quot;&gt;&lt;/div&gt;
+                    &lt;div class&#x3D;&quot;mx-2 text-secondary&quot;&gt;Or continue with&lt;/div&gt;
+                    &lt;div class&#x3D;&quot;flex-auto mt-px border-t&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt; --&gt;
+
+                &lt;!-- Single sign-on buttons --&gt;
+                &lt;!-- &lt;div class&#x3D;&quot;flex items-center mt-8 space-x-4&quot;&gt;
+                    &lt;button
+                        class&#x3D;&quot;flex-auto&quot;
+                        type&#x3D;&quot;button&quot;
+                        mat-stroked-button&gt;
+                        &lt;mat-icon
+                            class&#x3D;&quot;icon-size-5&quot;
+                            [svgIcon]&#x3D;&quot;&#x27;feather:facebook&#x27;&quot;&gt;&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+                    &lt;button
+                        class&#x3D;&quot;flex-auto&quot;
+                        type&#x3D;&quot;button&quot;
+                        mat-stroked-button&gt;
+                        &lt;mat-icon
+                            class&#x3D;&quot;icon-size-5&quot;
+                            [svgIcon]&#x3D;&quot;&#x27;feather:twitter&#x27;&quot;&gt;&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+                    &lt;button
+                        class&#x3D;&quot;flex-auto&quot;
+                        type&#x3D;&quot;button&quot;
+                        mat-stroked-button&gt;
+                        &lt;mat-icon
+                            class&#x3D;&quot;icon-size-5&quot;
+                            [svgIcon]&#x3D;&quot;&#x27;feather:github&#x27;&quot;&gt;&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt; --&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;relative hidden md:flex flex-auto items-center justify-center w-1/3 h-full p-16 lg:px-28 overflow-hidden  dark:border-l&quot;
+        [ngStyle]&#x3D;&quot;{&#x27;background-color&#x27;: orgData?  orgData.Org_Brand_Color : defaultColor}&quot;&gt;
+        &lt;!-- Background - @formatter:off --&gt;
+        &lt;!-- Rings --&gt;
+        &lt;svg class&#x3D;&quot; absolute inset-0 pointer-events-none&quot; viewBox&#x3D;&quot;0 0 960 540&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot;
+            preserveAspectRatio&#x3D;&quot;xMidYMax slice&quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;&gt;
+            &lt;g class&#x3D;&quot;opacity-25&quot; fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;currentColor&quot; stroke-width&#x3D;&quot;100&quot;&gt;
+                &lt;circle r&#x3D;&quot;234&quot; cx&#x3D;&quot;196&quot; cy&#x3D;&quot;23&quot;&gt;&lt;/circle&gt;
+                &lt;circle r&#x3D;&quot;234&quot; cx&#x3D;&quot;790&quot; cy&#x3D;&quot;491&quot;&gt;&lt;/circle&gt;
+            &lt;/g&gt;
+        &lt;/svg&gt;
+        &lt;!-- Dots --&gt;
+        &lt;svg class&#x3D;&quot;absolute -top-16 -right-16 opacity-25&quot; viewBox&#x3D;&quot;0 0 220 192&quot; width&#x3D;&quot;220&quot; height&#x3D;&quot;192&quot; fill&#x3D;&quot;none&quot;&gt;
+            &lt;defs&gt;
+                &lt;pattern id&#x3D;&quot;837c3e70-6c3a-44e6-8854-cc48c737b659&quot; x&#x3D;&quot;0&quot; y&#x3D;&quot;0&quot; width&#x3D;&quot;20&quot; height&#x3D;&quot;20&quot;
+                    patternUnits&#x3D;&quot;userSpaceOnUse&quot;&gt;
+                    &lt;rect x&#x3D;&quot;0&quot; y&#x3D;&quot;0&quot; width&#x3D;&quot;4&quot; height&#x3D;&quot;4&quot; fill&#x3D;&quot;currentColor&quot;&gt;&lt;/rect&gt;
+                &lt;/pattern&gt;
+            &lt;/defs&gt;
+            &lt;rect width&#x3D;&quot;220&quot; height&#x3D;&quot;192&quot; fill&#x3D;&quot;url(#837c3e70-6c3a-44e6-8854-cc48c737b659)&quot;&gt;&lt;/rect&gt;
+        &lt;/svg&gt;
+        &lt;!-- @formatter:on --&gt;
+        &lt;!-- Content --&gt;
+        &lt;div class&#x3D;&quot;z-10 relative w-full max-w-2xl&quot;&gt;
+            &lt;div class&#x3D;&quot;text-7xl font-bold leading-none text-gray-100&quot;&gt;
+                &lt;!-- Logo for PMS --&gt;
+                &lt;img src&#x3D;&quot;{{ orgData?.Org_Logo }}&quot; width&#x3D;&quot;200&quot; height&#x3D;&quot;100&quot; class&#x3D;&quot;signup-logo-pms&quot;
+                    *ngIf&#x3D;&quot;appCode?.toLowerCase() &#x3D;&#x3D; &#x27;pms&#x27;&quot; /&gt;
+                &lt;!-- Headline for TAB and Phoenix --&gt;
+                &lt;h2 class&#x3D;&quot;text-white&quot; *ngIf&#x3D;&quot;appCode?.toLowerCase() !&#x3D; &#x27;pms&#x27;&quot;&gt;
+                    {{
+                    OrganizationInfo
+                    ? OrganizationInfo.OrganizationName
+                    : &quot;TechAppBuilder&quot;
+                    }}
+                &lt;/h2&gt;
+            &lt;/div&gt;
+
+            &lt;div *ngIf&#x3D;&quot;!orgData&quot; class&#x3D;&quot;mt-3 text-xl tracking-tight leading-6 text-white&quot;&gt;
+                A powerful platform to MANAGE any business solutions.
+            &lt;/div&gt;
+            &lt;!-- TagLine from API --&gt;
+            &lt;div *ngIf&#x3D;&quot;orgData&quot; class&#x3D;&quot;mt-3 text-xl tracking-tight leading-6 text-white&quot;
+                [ngClass]&#x3D;&quot;{&#x27;text-center&#x27;:appCode?.toLowerCase() &#x3D;&#x3D; &#x27;pms&#x27;}&quot;&gt;
+                {{orgData?.TagLine}}
+            &lt;/div&gt;
+            &lt;!-- &lt;div class&#x3D;&quot;flex items-center mt-8&quot;&gt;
+                &lt;div class&#x3D;&quot;flex flex-0 items-center -space-x-1.5&quot;&gt;
+                    &lt;img class&#x3D;&quot;flex-0 w-10 h-10 rounded-full ring-2 ring-offset-1 ring-white ring-offset-gray-800 object-cover&quot;
+                        src&#x3D;&quot;assets/images/avatars/female-18.jpg&quot;&gt;
+                    &lt;img class&#x3D;&quot;flex-0 w-10 h-10 rounded-full ring-2 ring-offset-1 ring-white ring-offset-gray-800 object-cover&quot;
+                        src&#x3D;&quot;assets/images/avatars/female-11.jpg&quot;&gt;
+                    &lt;img class&#x3D;&quot;flex-0 w-10 h-10 rounded-full ring-2 ring-offset-1 ring-white ring-offset-gray-800 object-cover&quot;
+                        src&#x3D;&quot;assets/images/avatars/male-09.jpg&quot;&gt;
+                    &lt;img class&#x3D;&quot;flex-0 w-10 h-10 rounded-full ring-2 ring-offset-1 ring-white ring-offset-gray-800 object-cover&quot;
+                        src&#x3D;&quot;assets/images/avatars/male-16.jpg&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;ml-4 font-medium tracking-tight text-white&quot;&gt;More than 17k people joined us, it&#x27;s your turn
+                &lt;/div&gt;
+            &lt;/div&gt; --&gt;
+
+        &lt;/div&gt;
+        &lt;!-- Logo for TAB and Phoenix --&gt;
+        &lt;div *ngIf&#x3D;&quot;appCode?.toLowerCase() !&#x3D; &#x27;pms&#x27;&quot;&gt;
+            &lt;div class&#x3D;&quot;company-logo flex justify-center&quot; style&#x3D;&quot;&quot;&gt;
+                &lt;img src&#x3D;&quot;{{ orgData?.Org_Logo }}&quot; width&#x3D;&quot;200&quot; height&#x3D;&quot;100&quot; class&#x3D;&quot;signup-logo&quot; /&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="isSignIn"    class="flex flex-col sm:flex-row-reverse items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0 signin-main authentication-main">    <div        class="md:flex md:items-center md:justify-start w-full sm:w-auto md:h-full md:w-1/3 py-8 px-4 sm:p-12 md:p-16 sm:rounded-2xl md:rounded-none sm:shadow md:shadow-none sm:bg-card">        <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0">            <!-- Title -->            <div class="mt-8 text-4xl font-extrabold tracking-tight leading-tight mb-2">Sign in</div>            <div *ngIf="!orgData?.ShowSignUp" class="flex items-baseline mt-0.5 font-medium">                <div>Don\'t have an account?</div>                <a class="ml-1 fw-700 hover:underline"                    [ngStyle]="{\'color\': orgData? orgData.Org_Brand_Color : defaultColor}"                    [routerLink]="[\'/sign-up\']">Sign up                </a>            </div>            <!-- Alert -->            <fuse-alert class="mt-8 -mb-4" *ngIf="showAlert" [appearance]="\'outline\'" [showIcon]="false"                [type]="alert.type" [@shake]="alert.type === \'error\'">                {{alert.message}}            </fuse-alert>            <!-- Sign in form -->            <form class="mt-8" [formGroup]="signInForm" #signInNgForm="ngForm">                <!-- Email field -->                <mat-form-field class="w-full">                    <mat-label class="fw-600">Email address</mat-label>                    <input id="email" matInput [formControlName]="\'email\'">                    <mat-error *ngIf="signInForm.get(\'email\').hasError(\'required\')">                        Email address is required                    </mat-error>                    <mat-error *ngIf="signInForm.get(\'email\').hasError(\'email\')">                        Please enter a valid email address                    </mat-error>                </mat-form-field>                <!-- Password field -->                <mat-form-field class="w-full">                    <mat-label class="fw-600">Password</mat-label>                    <input id="password" matInput type="password" [formControlName]="\'password\'" #passwordField>                    <button mat-icon-button type="button"                        (click)="passwordField.type === \'password\' ? passwordField.type = \'text\' : passwordField.type = \'password\'"                        matSuffix>                        <mat-icon class="icon-size-5" *ngIf="passwordField.type === \'password\'"                            [svgIcon]="\'heroicons_solid:eye\'"></mat-icon>                        <mat-icon class="icon-size-5" *ngIf="passwordField.type === \'text\'"                            [svgIcon]="\'heroicons_solid:eye-off\'"></mat-icon>                    </button>                    <mat-error>                        Password is required                    </mat-error>                </mat-form-field>                <!-- Actions -->                <div class="inline-flex items-end justify-between w-full mt-1.5">                    <!-- <mat-checkbox                        [color]="\'primary\'"                        [formControlName]="\'rememberMe\'">                        Remember me                    </mat-checkbox> -->                    <a class="text-md font-medium fw-700 hover:underline"                        [ngStyle]="{\'color\': orgData ? orgData.Org_Brand_Color : defaultColor}"                        [routerLink]="[\'/forgot-password\']">Forgot password?                    </a>                </div>                <!-- Submit button -->                <!-- [color]="\'primary\'" -->                <button class="fuse-mat-button-large w-full mt-6"                    [ngStyle]="{\'background-color\': orgData ? orgData.Org_Brand_Color : defaultColor}" mat-flat-button                    [color]="\'primary\'" [disabled]="signInForm.disabled" (click)="beforeLogin()">                    <span *ngIf="!signInForm.disabled">                        Sign in                    </span>                    <mat-progress-spinner *ngIf="signInForm.disabled" [diameter]="24"                        [mode]="\'indeterminate\'"></mat-progress-spinner>                </button>                <!-- Separator -->                <!-- <div class="flex items-center mt-8">                    <div class="flex-auto mt-px border-t"></div>                    <div class="mx-2 text-secondary">Or continue with</div>                    <div class="flex-auto mt-px border-t"></div>                </div> -->                <!-- Single sign-on buttons -->                <!-- <div class="flex items-center mt-8 space-x-4">                    <button                        class="flex-auto"                        type="button"                        mat-stroked-button>                        <mat-icon                            class="icon-size-5"                            [svgIcon]="\'feather:facebook\'"></mat-icon>                    </button>                    <button                        class="flex-auto"                        type="button"                        mat-stroked-button>                        <mat-icon                            class="icon-size-5"                            [svgIcon]="\'feather:twitter\'"></mat-icon>                    </button>                    <button                        class="flex-auto"                        type="button"                        mat-stroked-button>                        <mat-icon                            class="icon-size-5"                            [svgIcon]="\'feather:github\'"></mat-icon>                    </button>                </div> -->            </form>        </div>    </div>    <div class="relative hidden md:flex flex-auto items-center justify-center w-1/3 h-full p-16 lg:px-28 overflow-hidden  dark:border-l"        [ngStyle]="{\'background-color\': orgData?  orgData.Org_Brand_Color : defaultColor}">        <!-- Background - @formatter:off -->        <!-- Rings -->        <svg class=" absolute inset-0 pointer-events-none" viewBox="0 0 960 540" width="100%" height="100%"            preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">            <g class="opacity-25" fill="none" stroke="currentColor" stroke-width="100">                <circle r="234" cx="196" cy="23"></circle>                <circle r="234" cx="790" cy="491"></circle>            </g>        </svg>        <!-- Dots -->        <svg class="absolute -top-16 -right-16 opacity-25" viewBox="0 0 220 192" width="220" height="192" fill="none">            <defs>                <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20"                    patternUnits="userSpaceOnUse">                    <rect x="0" y="0" width="4" height="4" fill="currentColor"></rect>                </pattern>            </defs>            <rect width="220" height="192" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>        </svg>        <!-- @formatter:on -->        <!-- Content -->        <div class="z-10 relative w-full max-w-2xl">            <div class="text-7xl font-bold leading-none text-gray-100">                <!-- Logo for PMS -->                <img src="{{ orgData?.Org_Logo }}" width="200" height="100" class="signup-logo-pms"                    *ngIf="appCode?.toLowerCase() == \'pms\'" />                <!-- Headline for TAB and Phoenix -->                <h2 class="text-white" *ngIf="appCode?.toLowerCase() != \'pms\'">                    {{                    OrganizationInfo                    ? OrganizationInfo.OrganizationName                    : "TechAppBuilder"                    }}                </h2>            </div>            <div *ngIf="!orgData" class="mt-3 text-xl tracking-tight leading-6 text-white">                A powerful platform to MANAGE any business solutions.            </div>            <!-- TagLine from API -->            <div *ngIf="orgData" class="mt-3 text-xl tracking-tight leading-6 text-white"                [ngClass]="{\'text-center\':appCode?.toLowerCase() == \'pms\'}">                {{orgData?.TagLine}}            </div>            <!-- <div class="flex items-center mt-8">                <div class="flex flex-0 items-center -space-x-1.5">                    <img class="flex-0 w-10 h-10 rounded-full ring-2 ring-offset-1 ring-white ring-offset-gray-800 object-cover"                        src="assets/images/avatars/female-18.jpg">                    <img class="flex-0 w-10 h-10 rounded-full ring-2 ring-offset-1 ring-white ring-offset-gray-800 object-cover"                        src="assets/images/avatars/female-11.jpg">                    <img class="flex-0 w-10 h-10 rounded-full ring-2 ring-offset-1 ring-white ring-offset-gray-800 object-cover"                        src="assets/images/avatars/male-09.jpg">                    <img class="flex-0 w-10 h-10 rounded-full ring-2 ring-offset-1 ring-white ring-offset-gray-800 object-cover"                        src="assets/images/avatars/male-16.jpg">                </div>                <div class="ml-4 font-medium tracking-tight text-white">More than 17k people joined us, it\'s your turn                </div>            </div> -->        </div>        <!-- Logo for TAB and Phoenix -->        <div *ngIf="appCode?.toLowerCase() != \'pms\'">            <div class="company-logo flex justify-center" style="">                <img src="{{ orgData?.Org_Logo }}" width="200" height="100" class="signup-logo" />            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthConfirmationRequiredComponent', 'selector': 'auth-confirmation-required'},{'name': 'AuthForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'AuthResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'AuthSignInComponent', 'selector': 'auth-sign-in'},{'name': 'AuthSignOutComponent', 'selector': 'auth-sign-out'},{'name': 'AuthSignUpComponent', 'selector': 'auth-sign-up'},{'name': 'AuthUnlockSessionComponent', 'selector': 'auth-unlock-session'},{'name': 'ButtonTemplateComponent', 'selector': 'button-template'},{'name': 'CenteredLayoutComponent', 'selector': 'centered-layout'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ClassicLayoutComponent', 'selector': 'classic-layout'},{'name': 'ClassyLayoutComponent', 'selector': 'classy-layout'},{'name': 'CompactLayoutComponent', 'selector': 'compact-layout'},{'name': 'DenseLayoutComponent', 'selector': 'dense-layout'},{'name': 'EmptyLayoutComponent', 'selector': 'empty-layout'},{'name': 'EnterpriseLayoutComponent', 'selector': 'enterprise-layout'},{'name': 'FuseAlertComponent', 'selector': 'fuse-alert'},{'name': 'FuseCardComponent', 'selector': 'fuse-card'},{'name': 'FuseConfirmationDialogComponent', 'selector': 'fuse-confirmation-dialog'},{'name': 'FuseDrawerComponent', 'selector': 'fuse-drawer'},{'name': 'FuseFullscreenComponent', 'selector': 'fuse-fullscreen'},{'name': 'FuseHighlightComponent', 'selector': 'textarea[fuse-highlight]'},{'name': 'FuseHorizontalNavigationBasicItemComponent', 'selector': 'fuse-horizontal-navigation-basic-item'},{'name': 'FuseHorizontalNavigationBranchItemComponent', 'selector': 'fuse-horizontal-navigation-branch-item'},{'name': 'FuseHorizontalNavigationComponent', 'selector': 'fuse-horizontal-navigation'},{'name': 'FuseHorizontalNavigationDividerItemComponent', 'selector': 'fuse-horizontal-navigation-divider-item'},{'name': 'FuseHorizontalNavigationSpacerItemComponent', 'selector': 'fuse-horizontal-navigation-spacer-item'},{'name': 'FuseLoadingBarComponent', 'selector': 'fuse-loading-bar'},{'name': 'FuseMasonryComponent', 'selector': 'fuse-masonry'},{'name': 'FuseVerticalNavigationAsideItemComponent', 'selector': 'fuse-vertical-navigation-aside-item'},{'name': 'FuseVerticalNavigationBasicItemComponent', 'selector': 'fuse-vertical-navigation-basic-item'},{'name': 'FuseVerticalNavigationCollapsableItemComponent', 'selector': 'fuse-vertical-navigation-collapsable-item'},{'name': 'FuseVerticalNavigationComponent', 'selector': 'fuse-vertical-navigation'},{'name': 'FuseVerticalNavigationDividerItemComponent', 'selector': 'fuse-vertical-navigation-divider-item'},{'name': 'FuseVerticalNavigationGroupItemComponent', 'selector': 'fuse-vertical-navigation-group-item'},{'name': 'FuseVerticalNavigationSpacerItemComponent', 'selector': 'fuse-vertical-navigation-spacer-item'},{'name': 'FuturisticLayoutComponent', 'selector': 'futuristic-layout'},{'name': 'GridCustomHTMLTemplateComponent', 'selector': 'app-grid-custom-htmltemplate'},{'name': 'HomeComponent', 'selector': 'Home'},{'name': 'ImageTemplateComponent', 'selector': 'image-template'},{'name': 'ImageWithNameTemplateComponent', 'selector': 'image-with-name-template'},{'name': 'LandingHomeComponent', 'selector': 'landing-home'},{'name': 'LanguagesComponent', 'selector': 'languages'},{'name': 'LayoutComponent', 'selector': 'layout'},{'name': 'LinkTemplateComponent', 'selector': 'link-template'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapdialogComponent', 'selector': 'app-mapdialog'},{'name': 'MaterialLayoutComponent', 'selector': 'material-layout'},{'name': 'MessagesComponent', 'selector': 'messages'},{'name': 'ModernLayoutComponent', 'selector': 'modern-layout'},{'name': 'NewTabQueryBuilderComponent', 'selector': 'new-tab-core-tab-query-builder'},{'name': 'NotificationsComponent', 'selector': 'notifications'},{'name': 'ScreenFilterComponent', 'selector': 'screen-filter'},{'name': 'SearchComponent', 'selector': 'search'},{'name': 'SettingsComponent', 'selector': 'settings'},{'name': 'ShortcutsComponent', 'selector': 'shortcuts'},{'name': 'StarComponent', 'selector': 'app-star'},{'name': 'TabBasicGridComponent', 'selector': 'tab-basic-grid'},{'name': 'TabBlueprintComponent', 'selector': 'app-tab-blueprint'},{'name': 'TabChildScreenRendererComponent', 'selector': 'tab-core-tab-child-screen-renderer'},{'name': 'TabChipsComponent', 'selector': 'app-tab-chips'},{'name': 'TabColorPickerComponent', 'selector': 'app-tab-color-picker'},{'name': 'TabCommentsComponent', 'selector': 'app-tab-comments'},{'name': 'TabCustomCalenderComponent', 'selector': 'tab-custom-calender'},{'name': 'TabCustomCodeEditorComponent', 'selector': 'tab-core-tab-custom-code-editor'},{'name': 'TabCustomFormBuilderComponent', 'selector': 'tab-custom-form-builder'},{'name': 'TabCustomGanttChartComponent', 'selector': 'app-tab-custom-gantt-chart'},{'name': 'TabCustomImageuploadComponent', 'selector': 'app-tab-custom-imageupload'},{'name': 'TabCustomPivotTableComponent', 'selector': 'app-tab-custom-pivot-table'},{'name': 'TabCustomPlacePickerMapComponent', 'selector': 'app-tab-custom-place-picker-map'},{'name': 'TabCustomRichtextHtmlEditorComponent', 'selector': 'app-tab-custom-richtext-html-editor'},{'name': 'TabCustomTrackMapComponent', 'selector': 'app-tab-custom-track-map'},{'name': 'TabDateRangePickerComponent', 'selector': 'app-tab-date-range-picker'},{'name': 'TabDropDownTreeComponent', 'selector': 'app-tab-dropdown-tree'},{'name': 'TabDynamicDialogComponent', 'selector': 'app-tab-dynamic-dialog'},{'name': 'TabDynamicSidebarComponent', 'selector': 'app-tab-dynamic-sidebar'},{'name': 'TabFilePreviewComponent', 'selector': 'app-tab-file-preview'},{'name': 'TabFormBuilderComponent', 'selector': 'tab-form-builder'},{'name': 'TabFormRendererComponent', 'selector': 'tab-form-renderer'},{'name': 'TabHistoryComponent', 'selector': 'app-tab-history'},{'name': 'TabIframeComponent', 'selector': 'app-tab-iframe'},{'name': 'TabPdfViewerComponent', 'selector': 'app-tab-pdf-viewer'},{'name': 'TabQueryBuilderComponent', 'selector': 'tab-core-tab-query-builder'},{'name': 'TabSkeletonComponent', 'selector': 'app-tab-skeleton'},{'name': 'TabTextBoxComponent', 'selector': 'app-tab-iframe'},{'name': 'TabTimerComponent', 'selector': 'app-tab-timer'},{'name': 'TabTimerComponentComponent', 'selector': 'app-tab-timer-component'},{'name': 'TabTransitionPreviewComponent', 'selector': 'app-tab-transition-preview'},{'name': 'TabTreeViewComponent', 'selector': 'tab-core-tab-tree-view'},{'name': 'TabWidgetComponent', 'selector': 'app-tab-widget'},{'name': 'ThinLayoutComponent', 'selector': 'thin-layout'},{'name': 'UserComponent', 'selector': 'user'},{'name': 'ViewMoreComponent', 'selector': 'view-more-search-list'}];
+    var DIRECTIVES = [{'name': 'FuseScrollbarDirective', 'selector': '[fuseScrollbar]'},{'name': 'FuseScrollResetDirective', 'selector': '[fuseScrollReset]'},{'name': 'SafeHtmlDirective', 'selector': '[appSafeHtml]'}];
+    var ACTUAL_COMPONENT = {'name': 'AuthSignInComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthSignInComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

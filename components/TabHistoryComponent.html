@@ -1,0 +1,1543 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@fuse/starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@fuse/starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TabHistoryComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/admin/tab-history/tab-history.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-tab-history</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./tab-history.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./tab-history.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_unsubscribeAll" >_unsubscribeAll</a>
+                            </li>
+                            <li>
+                                <a href="#componentValue" >componentValue</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#debounceSubject" >debounceSubject</a>
+                            </li>
+                            <li>
+                                <a href="#expandedRecords" >expandedRecords</a>
+                            </li>
+                            <li>
+                                <a href="#historyRecords" >historyRecords</a>
+                            </li>
+                            <li>
+                                <a href="#historyRecordsByDate" >historyRecordsByDate</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#expandCollapse" >expandCollapse</a>
+                            </li>
+                            <li>
+                                <a href="#getSystemFields" >getSystemFields</a>
+                            </li>
+                            <li>
+                                <a href="#groupByDate" >groupByDate</a>
+                            </li>
+                            <li>
+                                <a href="#isExpanded" >isExpanded</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSettingsHistory" >dataSettingsHistory</a>
+                            </li>
+                            <li>
+                                <a href="#value" >value</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#valueChange" >valueChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#value" >value</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(tabGetService: TabGetService, dataPipe: DatePipe)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>tabGetService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabGetService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dataPipe</td>
+                                                  
+                                                        <td>
+                                                                    <code>DatePipe</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSettingsHistory"></a>
+                        <b>dataSettingsHistory</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:14</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <b>value</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:29</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueChange"></a>
+                        <b>valueChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:15</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="expandCollapse"></a>
+                    <span class="name">
+                        <span ><b>expandCollapse</b></span>
+                        <a href="#expandCollapse"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>expandCollapse(record: <a href="../interfaces/HistoryRecord.html" target="_self">HistoryRecord</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="96"
+                                    class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Toggles the expand/collapse state for the given history record.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>record</td>
+                                            <td>
+                                                            <code><a href="../interfaces/HistoryRecord.html" target="_self" >HistoryRecord</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The history record to expand or collapse.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSystemFields"></a>
+                    <span class="name">
+                        <span ><b>getSystemFields</b></span>
+                        <a href="#getSystemFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSystemFields(fieldRecords: <a href="../interfaces/FieldRecord.html" target="_self">FieldRecord[]</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="70"
+                                    class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:70</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves the system fields from the given array of field records.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>fieldRecords</td>
+                                            <td>
+                                                            <code><a href="../interfaces/FieldRecord.html" target="_self" >FieldRecord[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The array of field records.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A string containing the system fields separated by commas.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupByDate"></a>
+                    <span class="name">
+                        <span ><b>groupByDate</b></span>
+                        <a href="#groupByDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>groupByDate(records: <a href="../interfaces/HistoryRecord.html" target="_self">HistoryRecord[]</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="109"
+                                    class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:109</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Groups the given array of history records by date and returns the sorted grouped data.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>records</td>
+                                            <td>
+                                                            <code><a href="../interfaces/HistoryRecord.html" target="_self" >HistoryRecord[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>An array of history records to be grouped by date.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An object containing the grouped and sorted history records, where the keys represent the dates and the values represent the corresponding records.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isExpanded"></a>
+                    <span class="name">
+                        <span ><b>isExpanded</b></span>
+                        <a href="#isExpanded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isExpanded(record: <a href="../interfaces/HistoryRecord.html" target="_self">HistoryRecord</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="87"
+                                    class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Checks if the given history record is expanded.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>record</td>
+                                            <td>
+                                                            <code><a href="../interfaces/HistoryRecord.html" target="_self" >HistoryRecord</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The history record to check.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A boolean indicating whether the record is expanded or not.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="145"
+                                    class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:145</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_unsubscribeAll"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_unsubscribeAll</b></span>
+                        <a href="#_unsubscribeAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;any&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="componentValue"></a>
+                    <span class="name">
+                        <span ><b>componentValue</b></span>
+                        <a href="#componentValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="debounceSubject"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>debounceSubject</b></span>
+                        <a href="#debounceSubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="expandedRecords"></a>
+                    <span class="name">
+                        <span ><b>expandedRecords</b></span>
+                        <a href="#expandedRecords"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/HistoryRecord.html" target="_self" >HistoryRecord[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="historyRecords"></a>
+                    <span class="name">
+                        <span ><b>historyRecords</b></span>
+                        <a href="#historyRecords"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/HistoryRecord.html" target="_self" >HistoryRecord[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="historyRecordsByDate"></a>
+                    <span class="name">
+                        <span ><b>historyRecordsByDate</b></span>
+                        <a href="#historyRecordsByDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoading"></a>
+                    <span class="name">
+                        <span ><b>isLoading</b></span>
+                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <span class="name"><b>value</b><a href="#value"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>value(v: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/modules/admin/tab-history/tab-history.component.ts:29</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>v</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from &#x27;@angular/core&#x27;;
+import { Subject, debounceTime, take, takeUntil } from &#x27;rxjs&#x27;;
+import { FieldRecord, HistoryRecord } from &#x27;./model/record.model&#x27;;
+import { TabAppFunction, TabGetService } from &#x27;@techextensor/tab-service&#x27;;
+import { DatePipe } from &#x27;@angular/common&#x27;;
+
+@Component({
+    selector: &#x27;app-tab-history&#x27;,
+    templateUrl: &#x27;./tab-history.component.html&#x27;,
+    styleUrls: [&#x27;./tab-history.component.scss&#x27;],
+})
+export class TabHistoryComponent implements OnInit,OnDestroy {
+    // FormIo
+    @Input() dataSettingsHistory: any;
+    @Output() valueChange &#x3D; new EventEmitter&lt;any&gt;();
+
+    // History Component
+    componentValue: any;
+    private debounceSubject &#x3D; new Subject();
+    historyRecords: HistoryRecord[] &#x3D; [];
+    historyRecordsByDate: { [key: string]: HistoryRecord[] } &#x3D; {};
+    expandedRecords: HistoryRecord[] &#x3D; [];
+    private _unsubscribeAll: Subject&lt;any&gt; &#x3D; new Subject&lt;any&gt;();
+    isLoading &#x3D; true;
+
+    constructor(private tabGetService: TabGetService,private dataPipe: DatePipe) {}
+
+    @Input()
+    public set value(v: any) {
+        if (v &amp;&amp; v !&#x3D; null) {
+            this.componentValue &#x3D; v;
+            this.debounceSubject.next(1000);
+        }
+    }
+
+    ngOnInit(): void {
+        this.isLoading &#x3D; true;
+        this.debounceSubject
+        .pipe(debounceTime(1000),takeUntil(this._unsubscribeAll))
+        .subscribe((res) &#x3D;&gt; {
+            if (
+                this.componentValue.DataSourceQueryID &amp;&amp;
+                this.componentValue.PrimaryKey
+            ) {
+                const primaryKey &#x3D; [this.componentValue.PrimaryKey];
+                const appObjectId &#x3D;
+                    TabAppFunction.getAppObjectFromDataSourceQueryID(
+                        this.componentValue.DataSourceQueryID
+                    )?.ID;
+                this.tabGetService
+                    .getHistory(appObjectId, primaryKey)
+                    .pipe(take(1))
+                    ?.subscribe((res) &#x3D;&gt; {
+                        this.isLoading &#x3D; false;
+                        this.historyRecords &#x3D; res.Result;
+                        this.historyRecordsByDate &#x3D; this.groupByDate(
+                            res.Result
+                        );
+                    });
+            }
+        });
+    }
+
+    /**
+     * Retrieves the system fields from the given array of field records.
+     *
+     * @param {FieldRecord[]} fieldRecords - The array of field records.
+     * @returns A string containing the system fields separated by commas.
+     */
+    getSystemFields(fieldRecords: FieldRecord[]): string {
+        return fieldRecords.reduce((acc: string, crr) &#x3D;&gt; {
+            if (acc.length &#x3D;&#x3D; 0) {
+                acc &#x3D; crr.SystemDBFieldName;
+            } else {
+                acc +&#x3D; &#x27;, &#x27; + crr.SystemDBFieldName;
+            }
+            return acc;
+        }, &#x27;&#x27;);
+    }
+
+    /**
+     * Checks if the given history record is expanded.
+     *
+     * @param {HistoryRecord} record - The history record to check.
+     * @returns A boolean indicating whether the record is expanded or not.
+     */
+    isExpanded(record: HistoryRecord) {
+        return this.expandedRecords.indexOf(record) !&#x3D; -1;
+    }
+
+    /**
+     * Toggles the expand/collapse state for the given history record.
+     *
+     * @param {HistoryRecord} record - The history record to expand or collapse.
+     */
+    expandCollapse(record: HistoryRecord) {
+        const index &#x3D; this.expandedRecords.indexOf(record);
+        if (index !&#x3D; -1) {
+            this.expandedRecords.splice(index, 1);
+        } else this.expandedRecords.push(record);
+    }
+
+    /**
+     * Groups the given array of history records by date and returns the sorted grouped data.
+     *
+     * @param {HistoryRecord[]} records - An array of history records to be grouped by date.
+     * @returns  An object containing the grouped and sorted history records, where the keys represent the dates and the values represent the corresponding records.
+     */
+    groupByDate(records: HistoryRecord[]) {
+        const groupedData &#x3D; records.reduce(
+            (result: { [key: string]: HistoryRecord[] }, item: any) &#x3D;&gt; {
+                const date &#x3D; item.OP_Datetime.split(&quot; &quot;)[0];
+                if (!result[date]) {
+                    result[date] &#x3D; [];
+                }
+                result[date].push(item);
+                return result;
+            },
+            {}
+        );
+        let sortedData &#x3D; Object.entries(groupedData)
+            .sort(([dateA], [dateB]) &#x3D;&gt; {
+                const dateObjA &#x3D; new Date(dateA);
+                const dateObjB &#x3D; new Date(dateB);
+                return dateObjA.getTime() - dateObjB.getTime();
+            })
+            .reduce(
+                (
+                    result: { [key: string]: HistoryRecord[] },
+                    [date, values]
+                ) &#x3D;&gt; {
+                    result[date] &#x3D; values.sort((a, b) &#x3D;&gt; {
+                        const recordADate &#x3D; new Date(a.OP_Datetime);
+                        const recordBDate &#x3D; new Date(b.OP_Datetime);
+                        return recordBDate.getTime() - recordADate.getTime();
+                    });
+                    return result;
+                },
+                {}
+            );
+
+        return sortedData;
+    }
+
+    ngOnDestroy(): void {
+        // Unsubscribe from all subscriptions
+        this._unsubscribeAll.next(null);
+        this._unsubscribeAll.complete();
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;isLoading&quot; class&#x3D;&quot;customer-details-group&quot;&gt;
+    Loading... please wait
+&lt;/div&gt;
+&lt;div
+    class&#x3D;&quot;flex flex-col flex-auto sm:pb-20&quot;
+    [ngStyle]&#x3D;&quot;{
+        width: dataSettingsHistory?.historyWidth || &#x27;100%&#x27;,
+        height: dataSettingsHistory?.historyHeight || &#x27;100%&#x27;
+    }&quot;
+    *ngIf&#x3D;&quot;!isLoading&quot;
+&gt;
+    &lt;div class&#x3D;&quot;w-full max-w-3xl&quot; *ngIf&#x3D;&quot;historyRecords.length &gt; 0&quot;&gt;
+        &lt;div class&#x3D;&quot;ng-star-inserted&quot;&gt;
+            &lt;ol&gt;
+                &lt;ng-container
+                    *ngFor&#x3D;&quot;let item of historyRecordsByDate | keyvalue&quot;
+                &gt;
+                    &lt;li class&#x3D;&quot;relative flex py-7 ng-star-inserted&quot;&gt;
+                        &lt;div
+                            class&#x3D;&quot;relative py-2 px-8 text-md font-medium leading-5 rounded-full bg-primary text-on-primary&quot;
+                        &gt;
+                            {{ item.key }}
+                        &lt;/div&gt;
+                    &lt;/li&gt;
+                    &lt;li
+                        class&#x3D;&quot;relative flex py-7 ng-star-inserted&quot;
+                        *ngFor&#x3D;&quot;
+                            let record of item.value;
+                            let i &#x3D; index;
+                            let last &#x3D; last
+                        &quot;
+                    &gt;
+                        &lt;div
+                            class&#x3D;&quot;absolute top-7 left-5 w-0.5 h-full -ml-px bg-gray-300 dark:bg-gray-600 ng-star-inserted&quot;
+                            *ngIf&#x3D;&quot;!last&quot;
+                        &gt;&lt;/div&gt;
+                        &lt;div class&#x3D;&quot;relative flex flex-auto&quot;&gt;
+                            &lt;img
+                                class&#x3D;&quot;shrink-0 w-10 h-10 mr-4 rounded-full overflow-hidden object-cover object-center ng-star-inserted&quot;
+                                [src]&#x3D;&quot;record.OP_User_ProfileImage || &#x27;https://i.ibb.co/6HVGgkp/default-user-icon-13.png&#x27;&quot;
+                                [alt]&#x3D;&quot;
+                                    record.OP_User_FirstName +
+                                    &#x27; &#x27; +
+                                    record.OP_User_LastName
+                                &quot;
+                            /&gt;
+                            &lt;div class&#x3D;&quot;flex flex-col flex-auto items-start&quot;&gt;
+                                &lt;div class&#x3D;&quot;ng-star-inserted&quot;&gt;
+                                    &lt;strong&gt;{{
+                                        record.OP_User_FirstName +
+                                            &quot; &quot; +
+                                            record.OP_User_LastName
+                                    }}&lt;/strong&gt;
+                                    has
+                                    &lt;strong&gt;{{ record.OP_typeName }}&lt;/strong&gt;
+                                    record into
+                                    &lt;strong&gt;{{ record.AppObjectName }}&lt;/strong&gt;
+                                &lt;/div&gt;
+                                &lt;div
+                                    class&#x3D;&quot;flex flex-col sm:flex-row sm:items-center mt-2 sm:mt-1 sm:space-x-2 text-md leading-5&quot;
+                                &gt;
+                                    &lt;div class&#x3D;&quot;text-secondary&quot;&gt;
+                                        updated fields
+                                        &lt;span class&#x3D;&quot;fuse-new-value&quot;&gt;
+                                            {{
+                                                getSystemFields(
+                                                    record.FieldRecords
+                                                )
+                                            }}
+                                        &lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div
+                                    class&#x3D;&quot;flex flex-col sm:flex-row sm:items-center mt-2 sm:mt-1 sm:space-x-2 text-md leading-5&quot;
+                                &gt;
+                                    &lt;div class&#x3D;&quot;text-secondary&quot;&gt;
+                                        at
+                                        {{
+                                            record.OP_Datetime.split(&quot; &quot;)[1] + &quot; &quot;+record.OP_Datetime.split(&quot; &quot;)[2]
+                                        }}
+                                    &lt;/div&gt;
+
+                                    &lt;span
+                                        class&#x3D;&quot;cursor-pointer text-primary ng-star-inserted&quot;
+                                        style&#x3D;&quot;text-decoration: none&quot;
+                                        (click)&#x3D;&quot;expandCollapse(record)&quot;
+                                    &gt;
+                                        {{
+                                            isExpanded(record)
+                                                ? &quot;Hide details&quot;
+                                                : &quot;View details&quot;
+                                        }}
+                                    &lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div
+                                    class&#x3D;&quot;mt-4 py-4 px-5 rounded-lg bg-gray-100 dark:bg-gray-100 ng-star-inserted&quot;
+                                    *ngIf&#x3D;&quot;isExpanded(record)&quot;
+                                &gt;
+                                    &lt;div class&#x3D;&quot;font-bold&quot;&gt;Changes&lt;/div&gt;
+                                    &lt;br /&gt;
+                                    &lt;ul&gt;
+                                        &lt;li
+                                            *ngFor&#x3D;&quot;
+                                                let change of record.FieldRecords
+                                            &quot;
+                                            class&#x3D;&quot;activity-change&quot;
+                                        &gt;
+                                            &lt;span class&#x3D;&quot;fuse-field-value&quot;&gt;
+                                                {{ change.SystemDBFieldName }}
+                                            &lt;/span&gt;
+                                            :
+                                            &lt;span class&#x3D;&quot;fuse-old-value&quot; *ngIf&#x3D;&quot;change.OldValue &amp;&amp; change.OldValue !&#x3D; &#x27;&#x27;&quot;&gt;
+                                                {{ change.OldValue }}
+                                            &lt;/span&gt;
+                                            &lt;span class&#x3D;&quot;fuse-arrow&quot;  *ngIf&#x3D;&quot;change.OldValue &amp;&amp; change.OldValue !&#x3D; &#x27;&#x27;&quot;&gt;
+                                                &amp;#10141;
+                                            &lt;/span&gt;
+                                            &lt;span class&#x3D;&quot;fuse-new-value&quot;&gt;
+                                                {{ change.NewValue }}
+                                            &lt;/span&gt;
+                                        &lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/li&gt;
+                &lt;/ng-container&gt;
+            &lt;/ol&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;historyRecords.length &#x3D;&#x3D; 0&quot; class&#x3D;&quot;customer-details-group&quot;&gt;
+        No history found!
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./tab-history.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.fuse-field-value {
+    display: inline-block;
+    width: 100px;
+    font-size: 12px;
+    color: #000000;
+    font-weight: 600;
+    overflow-wrap: break-word;
+}
+
+.fuse-old-value,
+.fuse-new-value {
+    display: inline-block;
+    color: #000000;
+    white-space: pre-wrap;
+    background-color: #dee0e6;
+    font-size: 12px;
+    text-align: left;
+    border-radius: 4px;
+    font-weight: 600;
+    margin: 1px 3px 0 0;
+    padding: 2px 4px;
+}
+
+.fuse-arrow {
+    display: inline-block;
+}
+
+.fuse-old-value {
+    color: #585858;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="isLoading" class="customer-details-group">    Loading... please wait</div><div    class="flex flex-col flex-auto sm:pb-20"    [ngStyle]="{        width: dataSettingsHistory?.historyWidth || \'100%\',        height: dataSettingsHistory?.historyHeight || \'100%\'    }"    *ngIf="!isLoading">    <div class="w-full max-w-3xl" *ngIf="historyRecords.length > 0">        <div class="ng-star-inserted">            <ol>                <ng-container                    *ngFor="let item of historyRecordsByDate | keyvalue"                >                    <li class="relative flex py-7 ng-star-inserted">                        <div                            class="relative py-2 px-8 text-md font-medium leading-5 rounded-full bg-primary text-on-primary"                        >                            {{ item.key }}                        </div>                    </li>                    <li                        class="relative flex py-7 ng-star-inserted"                        *ngFor="                            let record of item.value;                            let i = index;                            let last = last                        "                    >                        <div                            class="absolute top-7 left-5 w-0.5 h-full -ml-px bg-gray-300 dark:bg-gray-600 ng-star-inserted"                            *ngIf="!last"                        ></div>                        <div class="relative flex flex-auto">                            <img                                class="shrink-0 w-10 h-10 mr-4 rounded-full overflow-hidden object-cover object-center ng-star-inserted"                                [src]="record.OP_User_ProfileImage || \'https://i.ibb.co/6HVGgkp/default-user-icon-13.png\'"                                [alt]="                                    record.OP_User_FirstName +                                    \' \' +                                    record.OP_User_LastName                                "                            />                            <div class="flex flex-col flex-auto items-start">                                <div class="ng-star-inserted">                                    <strong>{{                                        record.OP_User_FirstName +                                            " " +                                            record.OP_User_LastName                                    }}</strong>                                    has                                    <strong>{{ record.OP_typeName }}</strong>                                    record into                                    <strong>{{ record.AppObjectName }}</strong>                                </div>                                <div                                    class="flex flex-col sm:flex-row sm:items-center mt-2 sm:mt-1 sm:space-x-2 text-md leading-5"                                >                                    <div class="text-secondary">                                        updated fields                                        <span class="fuse-new-value">                                            {{                                                getSystemFields(                                                    record.FieldRecords                                                )                                            }}                                        </span>                                    </div>                                </div>                                <div                                    class="flex flex-col sm:flex-row sm:items-center mt-2 sm:mt-1 sm:space-x-2 text-md leading-5"                                >                                    <div class="text-secondary">                                        at                                        {{                                            record.OP_Datetime.split(" ")[1] + " "+record.OP_Datetime.split(" ")[2]                                        }}                                    </div>                                    <span                                        class="cursor-pointer text-primary ng-star-inserted"                                        style="text-decoration: none"                                        (click)="expandCollapse(record)"                                    >                                        {{                                            isExpanded(record)                                                ? "Hide details"                                                : "View details"                                        }}                                    </span>                                </div>                                <div                                    class="mt-4 py-4 px-5 rounded-lg bg-gray-100 dark:bg-gray-100 ng-star-inserted"                                    *ngIf="isExpanded(record)"                                >                                    <div class="font-bold">Changes</div>                                    <br />                                    <ul>                                        <li                                            *ngFor="                                                let change of record.FieldRecords                                            "                                            class="activity-change"                                        >                                            <span class="fuse-field-value">                                                {{ change.SystemDBFieldName }}                                            </span>                                            :                                            <span class="fuse-old-value" *ngIf="change.OldValue && change.OldValue != \'\'">                                                {{ change.OldValue }}                                            </span>                                            <span class="fuse-arrow"  *ngIf="change.OldValue && change.OldValue != \'\'">                                                &#10141;                                            </span>                                            <span class="fuse-new-value">                                                {{ change.NewValue }}                                            </span>                                        </li>                                    </ul>                                </div>                            </div>                        </div>                    </li>                </ng-container>            </ol>        </div>    </div>    <div *ngIf="historyRecords.length == 0" class="customer-details-group">        No history found!    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthConfirmationRequiredComponent', 'selector': 'auth-confirmation-required'},{'name': 'AuthForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'AuthResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'AuthSignInComponent', 'selector': 'auth-sign-in'},{'name': 'AuthSignOutComponent', 'selector': 'auth-sign-out'},{'name': 'AuthSignUpComponent', 'selector': 'auth-sign-up'},{'name': 'AuthUnlockSessionComponent', 'selector': 'auth-unlock-session'},{'name': 'ButtonTemplateComponent', 'selector': 'button-template'},{'name': 'CenteredLayoutComponent', 'selector': 'centered-layout'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ClassicLayoutComponent', 'selector': 'classic-layout'},{'name': 'ClassyLayoutComponent', 'selector': 'classy-layout'},{'name': 'CompactLayoutComponent', 'selector': 'compact-layout'},{'name': 'DenseLayoutComponent', 'selector': 'dense-layout'},{'name': 'EmptyLayoutComponent', 'selector': 'empty-layout'},{'name': 'EnterpriseLayoutComponent', 'selector': 'enterprise-layout'},{'name': 'FuseAlertComponent', 'selector': 'fuse-alert'},{'name': 'FuseCardComponent', 'selector': 'fuse-card'},{'name': 'FuseConfirmationDialogComponent', 'selector': 'fuse-confirmation-dialog'},{'name': 'FuseDrawerComponent', 'selector': 'fuse-drawer'},{'name': 'FuseFullscreenComponent', 'selector': 'fuse-fullscreen'},{'name': 'FuseHighlightComponent', 'selector': 'textarea[fuse-highlight]'},{'name': 'FuseHorizontalNavigationBasicItemComponent', 'selector': 'fuse-horizontal-navigation-basic-item'},{'name': 'FuseHorizontalNavigationBranchItemComponent', 'selector': 'fuse-horizontal-navigation-branch-item'},{'name': 'FuseHorizontalNavigationComponent', 'selector': 'fuse-horizontal-navigation'},{'name': 'FuseHorizontalNavigationDividerItemComponent', 'selector': 'fuse-horizontal-navigation-divider-item'},{'name': 'FuseHorizontalNavigationSpacerItemComponent', 'selector': 'fuse-horizontal-navigation-spacer-item'},{'name': 'FuseLoadingBarComponent', 'selector': 'fuse-loading-bar'},{'name': 'FuseMasonryComponent', 'selector': 'fuse-masonry'},{'name': 'FuseVerticalNavigationAsideItemComponent', 'selector': 'fuse-vertical-navigation-aside-item'},{'name': 'FuseVerticalNavigationBasicItemComponent', 'selector': 'fuse-vertical-navigation-basic-item'},{'name': 'FuseVerticalNavigationCollapsableItemComponent', 'selector': 'fuse-vertical-navigation-collapsable-item'},{'name': 'FuseVerticalNavigationComponent', 'selector': 'fuse-vertical-navigation'},{'name': 'FuseVerticalNavigationDividerItemComponent', 'selector': 'fuse-vertical-navigation-divider-item'},{'name': 'FuseVerticalNavigationGroupItemComponent', 'selector': 'fuse-vertical-navigation-group-item'},{'name': 'FuseVerticalNavigationSpacerItemComponent', 'selector': 'fuse-vertical-navigation-spacer-item'},{'name': 'FuturisticLayoutComponent', 'selector': 'futuristic-layout'},{'name': 'GridCustomHTMLTemplateComponent', 'selector': 'app-grid-custom-htmltemplate'},{'name': 'HomeComponent', 'selector': 'Home'},{'name': 'ImageTemplateComponent', 'selector': 'image-template'},{'name': 'ImageWithNameTemplateComponent', 'selector': 'image-with-name-template'},{'name': 'LandingHomeComponent', 'selector': 'landing-home'},{'name': 'LanguagesComponent', 'selector': 'languages'},{'name': 'LayoutComponent', 'selector': 'layout'},{'name': 'LinkTemplateComponent', 'selector': 'link-template'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapdialogComponent', 'selector': 'app-mapdialog'},{'name': 'MaterialLayoutComponent', 'selector': 'material-layout'},{'name': 'MessagesComponent', 'selector': 'messages'},{'name': 'ModernLayoutComponent', 'selector': 'modern-layout'},{'name': 'NewTabQueryBuilderComponent', 'selector': 'new-tab-core-tab-query-builder'},{'name': 'NotificationsComponent', 'selector': 'notifications'},{'name': 'ScreenFilterComponent', 'selector': 'screen-filter'},{'name': 'SearchComponent', 'selector': 'search'},{'name': 'SettingsComponent', 'selector': 'settings'},{'name': 'ShortcutsComponent', 'selector': 'shortcuts'},{'name': 'StarComponent', 'selector': 'app-star'},{'name': 'TabBasicGridComponent', 'selector': 'tab-basic-grid'},{'name': 'TabBlueprintComponent', 'selector': 'app-tab-blueprint'},{'name': 'TabChildScreenRendererComponent', 'selector': 'tab-core-tab-child-screen-renderer'},{'name': 'TabChipsComponent', 'selector': 'app-tab-chips'},{'name': 'TabColorPickerComponent', 'selector': 'app-tab-color-picker'},{'name': 'TabCommentsComponent', 'selector': 'app-tab-comments'},{'name': 'TabCustomCalenderComponent', 'selector': 'tab-custom-calender'},{'name': 'TabCustomCodeEditorComponent', 'selector': 'tab-core-tab-custom-code-editor'},{'name': 'TabCustomFormBuilderComponent', 'selector': 'tab-custom-form-builder'},{'name': 'TabCustomGanttChartComponent', 'selector': 'app-tab-custom-gantt-chart'},{'name': 'TabCustomImageuploadComponent', 'selector': 'app-tab-custom-imageupload'},{'name': 'TabCustomPivotTableComponent', 'selector': 'app-tab-custom-pivot-table'},{'name': 'TabCustomPlacePickerMapComponent', 'selector': 'app-tab-custom-place-picker-map'},{'name': 'TabCustomRichtextHtmlEditorComponent', 'selector': 'app-tab-custom-richtext-html-editor'},{'name': 'TabCustomTrackMapComponent', 'selector': 'app-tab-custom-track-map'},{'name': 'TabDateRangePickerComponent', 'selector': 'app-tab-date-range-picker'},{'name': 'TabDropDownTreeComponent', 'selector': 'app-tab-dropdown-tree'},{'name': 'TabDynamicDialogComponent', 'selector': 'app-tab-dynamic-dialog'},{'name': 'TabDynamicSidebarComponent', 'selector': 'app-tab-dynamic-sidebar'},{'name': 'TabFilePreviewComponent', 'selector': 'app-tab-file-preview'},{'name': 'TabFormBuilderComponent', 'selector': 'tab-form-builder'},{'name': 'TabFormRendererComponent', 'selector': 'tab-form-renderer'},{'name': 'TabHistoryComponent', 'selector': 'app-tab-history'},{'name': 'TabIframeComponent', 'selector': 'app-tab-iframe'},{'name': 'TabPdfViewerComponent', 'selector': 'app-tab-pdf-viewer'},{'name': 'TabQueryBuilderComponent', 'selector': 'tab-core-tab-query-builder'},{'name': 'TabSkeletonComponent', 'selector': 'app-tab-skeleton'},{'name': 'TabTextBoxComponent', 'selector': 'app-tab-iframe'},{'name': 'TabTimerComponent', 'selector': 'app-tab-timer'},{'name': 'TabTimerComponentComponent', 'selector': 'app-tab-timer-component'},{'name': 'TabTransitionPreviewComponent', 'selector': 'app-tab-transition-preview'},{'name': 'TabTreeViewComponent', 'selector': 'tab-core-tab-tree-view'},{'name': 'TabWidgetComponent', 'selector': 'app-tab-widget'},{'name': 'ThinLayoutComponent', 'selector': 'thin-layout'},{'name': 'UserComponent', 'selector': 'user'},{'name': 'ViewMoreComponent', 'selector': 'view-more-search-list'}];
+    var DIRECTIVES = [{'name': 'FuseScrollbarDirective', 'selector': '[fuseScrollbar]'},{'name': 'FuseScrollResetDirective', 'selector': '[fuseScrollReset]'},{'name': 'SafeHtmlDirective', 'selector': '[appSafeHtml]'}];
+    var ACTUAL_COMPONENT = {'name': 'TabHistoryComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TabHistoryComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

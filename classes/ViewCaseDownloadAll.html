@@ -1,0 +1,1804 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@fuse/starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@fuse/starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >ViewCaseDownloadAll</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts</code>
+        </p>
+
+
+
+
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                        <code>IScreenExtension</code>
+            </p>
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#loadNextStatuses" >loadNextStatuses</a>
+                            </li>
+                            <li>
+                                <a href="#performTransactionAction" >performTransactionAction</a>
+                            </li>
+                            <li>
+                                <a href="#ref" >ref</a>
+                            </li>
+                            <li>
+                                <a href="#refreshForm" >refreshForm</a>
+                            </li>
+                            <li>
+                                <a href="#screenId" >screenId</a>
+                            </li>
+                            <li>
+                                <a href="#updateStatus" >updateStatus</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#onAfterSubmit" >onAfterSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#onBeforeSubmit" >onBeforeSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#onChange" >onChange</a>
+                            </li>
+                            <li>
+                                <a href="#onCustomEvent" >onCustomEvent</a>
+                            </li>
+                            <li>
+                                <a href="#onCustomHTMLTemplateEvent" >onCustomHTMLTemplateEvent</a>
+                            </li>
+                            <li>
+                                <a href="#onErrorChange" >onErrorChange</a>
+                            </li>
+                            <li>
+                                <a href="#onFormLoad" >onFormLoad</a>
+                            </li>
+                            <li>
+                                <a href="#onInvalid" >onInvalid</a>
+                            </li>
+                            <li>
+                                <a href="#onNextPage" >onNextPage</a>
+                            </li>
+                            <li>
+                                <a href="#onPrevPage" >onPrevPage</a>
+                            </li>
+                            <li>
+                                <a href="#onReady" >onReady</a>
+                            </li>
+                            <li>
+                                <a href="#onRender" >onRender</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#proceedObjectBeforeRender" >proceedObjectBeforeRender</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadNextStatuses"></a>
+                    <span class="name">
+                        <span ><b>loadNextStatuses</b></span>
+                        <a href="#loadNextStatuses"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="310" class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:310</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="performTransactionAction"></a>
+                    <span class="name">
+                        <span ><b>performTransactionAction</b></span>
+                        <a href="#performTransactionAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="248" class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:248</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ref"></a>
+                    <span class="name">
+                        <span ><b>ref</b></span>
+                        <a href="#ref"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refreshForm"></a>
+                    <span class="name">
+                        <span ><b>refreshForm</b></span>
+                        <a href="#refreshForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="379" class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:379</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="screenId"></a>
+                    <span class="name">
+                        <span ><b>screenId</b></span>
+                        <a href="#screenId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;574d343a-480e-4b8b-86f1-697a3130fa7e&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:9</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateStatus"></a>
+                    <span class="name">
+                        <span ><b>updateStatus</b></span>
+                        <a href="#updateStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="257" class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:257</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onAfterSubmit"></a>
+                    <span class="name">
+                        <span ><b>onAfterSubmit</b></span>
+                        <a href="#onAfterSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onAfterSubmit(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="386"
+                                    class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:386</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBeforeSubmit"></a>
+                    <span class="name">
+                        <span ><b>onBeforeSubmit</b></span>
+                        <a href="#onBeforeSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onBeforeSubmit(screenParameters: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="13"
+                                    class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>screenParameters</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onChange"></a>
+                    <span class="name">
+                        <span ><b>onChange</b></span>
+                        <a href="#onChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onChange(screenParameters: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="16"
+                                    class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>screenParameters</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCustomEvent"></a>
+                    <span class="name">
+                        <span ><b>onCustomEvent</b></span>
+                        <a href="#onCustomEvent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCustomEvent(screenParameters: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="38"
+                                    class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>screenParameters</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCustomHTMLTemplateEvent"></a>
+                    <span class="name">
+                        <span ><b>onCustomHTMLTemplateEvent</b></span>
+                        <a href="#onCustomHTMLTemplateEvent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCustomHTMLTemplateEvent(screenParameters)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="164"
+                                    class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:164</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>screenParameters</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onErrorChange"></a>
+                    <span class="name">
+                        <span ><b>onErrorChange</b></span>
+                        <a href="#onErrorChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onErrorChange(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="225"
+                                    class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:225</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFormLoad"></a>
+                    <span class="name">
+                        <span ><b>onFormLoad</b></span>
+                        <a href="#onFormLoad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFormLoad(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="226"
+                                    class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:226</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onInvalid"></a>
+                    <span class="name">
+                        <span ><b>onInvalid</b></span>
+                        <a href="#onInvalid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onInvalid(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="34"
+                                    class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onNextPage"></a>
+                    <span class="name">
+                        <span ><b>onNextPage</b></span>
+                        <a href="#onNextPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onNextPage(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="35"
+                                    class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPrevPage"></a>
+                    <span class="name">
+                        <span ><b>onPrevPage</b></span>
+                        <a href="#onPrevPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPrevPage(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onReady"></a>
+                    <span class="name">
+                        <span ><b>onReady</b></span>
+                        <a href="#onReady"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onReady(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="227"
+                                    class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:227</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onRender"></a>
+                    <span class="name">
+                        <span ><b>onRender</b></span>
+                        <a href="#onRender"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onRender(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="12"
+                                    class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="11"
+                                    class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="proceedObjectBeforeRender"></a>
+                    <span class="name">
+                        <span ><b>proceedObjectBeforeRender</b></span>
+                        <a href="#proceedObjectBeforeRender"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>proceedObjectBeforeRender(screenParameters: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="228"
+                                    class="link-to-prism">src/app/screen-custom-logic/Phoenix/View-case-download-screen.ts:228</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>screenParameters</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ElementRef } from &#x27;@angular/core&#x27;;
+import { FormioUtils } from &#x27;@formio/angular&#x27;;
+import { IScreenExtension } from &#x27;@techextensor/tab-interface&#x27;;
+import { TabConstant } from &#x27;@techextensor/tab-service&#x27;;
+import { TabDynamicDialogComponent } from &#x27;app/shared/templates/tab-dynamic-dialog/tab-dynamic-dialog.component&#x27;;
+import { take } from &#x27;rxjs&#x27;;
+
+export class ViewCaseDownloadAll implements IScreenExtension {
+    screenId: string &#x3D; &#x27;574d343a-480e-4b8b-86f1-697a3130fa7e&#x27;;
+
+    onSubmit(event: any) { }
+    onRender(event: any) { }
+    onBeforeSubmit(screenParameters: any) {
+        screenParameters?.event?.callback(null, screenParameters?.event);
+    }
+    onChange(screenParameters: any) {
+        if (
+            screenParameters?.event?.changed?.component?.type &#x3D;&#x3D; &#x27;select&#x27; &amp;&amp;
+            screenParameters?.event?.changed?.component?.key &#x3D;&#x3D; &#x27;status&#x27; &amp;&amp;
+            screenParameters?.event?.isModified
+        ) {
+            const status &#x3D;
+                screenParameters?.event?.changed?.component.data.values.find(
+                    (s) &#x3D;&gt;
+                        s.StatusId?.toLowerCase() &#x3D;&#x3D;
+                        screenParameters?.event.changed.value?.toLowerCase()
+                );
+            if (status) {
+                this.performTransactionAction(screenParameters, status);
+            }
+        }
+    }
+
+    onInvalid(event: any) { }
+    onNextPage(event: any) { }
+    onPrevPage(event: any) { }
+    ref;
+    onCustomEvent(screenParameters: any) {
+        let sid &#x3D; &#x27;&#x27;;
+        let data &#x3D; { parameters: {} };
+        let title &#x3D; &#x27;&#x27;;
+        if (screenParameters.event.type &#x3D;&#x3D;&#x3D; &#x27;onCustomEvent&#x27;) {
+            const url &#x3D; &#x27;WorkFlow/Execute&#x27;;
+            const data &#x3D; {
+                WorkFlowID: &#x27;544E23BD-198F-4ADF-A064-6085E70516B5&#x27;,
+                Reqtokens: {
+                    CaseId: screenParameters.event.data.Id,
+                },
+            };
+            // Initiating a service call to execute a TAB workflow with a given URL and data
+            screenParameters.serviceList.tabWorkflowService
+                .executeTABWorkflow(url, data)
+                .subscribe(
+                    (res) &#x3D;&gt; {
+                        const claimType &#x3D; res.Result[0][&#x27;ClaimType&#x27;];
+                        const srNumber &#x3D; res.Result[0][&#x27;SrNumber&#x27;];
+                        const claimNumber &#x3D; res.Result[0][&#x27;ClaimNumber&#x27;];
+                        // Define a default filename if either claimType or srNumber is null
+                        const defaultFilename &#x3D; &#x27;Download.zip&#x27;;
+                        // Construct the filename using claimType and srNumber if available, otherwise use the default filename
+                        const filename &#x3D;
+                            claimType &amp;&amp; claimNumber
+                                ? &#x60;${claimType}_${claimNumber}.zip&#x60;
+                                : defaultFilename;
+                        let mediaId &#x3D; null;
+                        // Loop through the log entries in the response to find the MediaId
+                        for (const logEntry of res.Log) {
+                            if (logEntry.includes(&#x27;MediaId:&#x27;)) {
+                                // Extract the MediaId from the log entry
+                                mediaId &#x3D; logEntry.split(&#x27;MediaId:&#x27;)[1].trim();
+                                break; // Exit the loop once the MediaId is found
+                            }
+                        }
+
+                        if (mediaId) {
+                            // Fetch the file (blob) using the obtained MediaId
+                            screenParameters.serviceList.mediaUploadService
+                                .getFileByMediaId(mediaId)
+                                .subscribe(
+                                    (blob) &#x3D;&gt; {
+                                        if (blob) {
+                                            // Create a download link for the blob
+                                            const url &#x3D;
+                                                window.URL.createObjectURL(
+                                                    blob
+                                                );
+                                            const link &#x3D;
+                                                document.createElement(&#x27;a&#x27;);
+                                            link.href &#x3D; url;
+                                            // Set the file name for the download
+                                            link.download &#x3D; filename; // Use the constructed filename
+                                            // Trigger the download and clean up the object URL
+                                            link.click();
+                                            window.URL.revokeObjectURL(url);
+                                        }
+                                        // Show a success message using toastr service
+                                        screenParameters.serviceList.toastrService.showSuccess(
+                                            &#x27;Document Download Successfully&#x27;,
+                                            &#x27;Success&#x27;
+                                        );
+                                    },
+                                    (error) &#x3D;&gt; {
+                                        // Handle blob retrieval error and display an error message
+                                        screenParameters.serviceList.toastrService.showError(
+                                            error.statusText,
+                                            &#x27;Error&#x27;
+                                        );
+                                    }
+                                );
+                        }
+                    },
+                    (error) &#x3D;&gt; {
+                        // Handle TAB workflow execution error and display an error message
+                        screenParameters.serviceList.toastrService.showError(
+                            error.error.Errors[0],
+                            &#x27;Error&#x27;
+                        );
+                    }
+                );
+        } else if (screenParameters.event.type &#x3D;&#x3D; &#x27;shareEvent&#x27;) {
+            sid &#x3D; &#x27;001b0c09-4429-4c0e-a9e2-97917731e378&#x27;;
+            data.parameters[&#x27;RecordID&#x27;] &#x3D; screenParameters.event.data.Id;
+            data.parameters[&#x27;screenMode&#x27;] &#x3D; &#x27;Add&#x27;;
+            title &#x3D; &#x27;Share Record&#x27;;
+        } else if (screenParameters.event.type &#x3D;&#x3D; &#x27;historyClickEvent&#x27;) {
+            sid &#x3D; &#x27;48f8e8a0-85cb-43c9-9928-1afa05e57ce8&#x27;;
+
+            title &#x3D; &#x27;History of Record&#x27;;
+            data.parameters[&#x27;history&#x27;] &#x3D; {
+                DataSourceQueryID: &#x27;72FB70B5-9A6C-4E53-A621-5E2AF90C162E&#x27;,
+                PrimaryKey: screenParameters.event.data.PrimaryKey,
+            };
+
+            data.parameters[&#x27;screenMode&#x27;] &#x3D; &#x27;Add&#x27;;
+        } else if (screenParameters.event.type &#x3D;&#x3D; &#x27;commentsClickEvent&#x27;) {
+            sid &#x3D; &#x27;26cc7710-6e93-4aaa-aca8-2f6a8608435e&#x27;;
+            title &#x3D; &#x27;Comments&#x27;;
+            data.parameters[&#x27;comment&#x27;] &#x3D; {
+                RecordId: screenParameters.event.data?.RecordId,
+            };
+            data.parameters[&#x27;screenMode&#x27;] &#x3D; &#x27;Add&#x27;;
+        } else if (screenParameters.event.type !&#x3D; &#x27;onCustomEvent&#x27;) {
+            const target &#x3D; new ElementRef(screenParameters.event.event.target);
+            const rect &#x3D; target.nativeElement.getBoundingClientRect();
+            this.ref &#x3D; screenParameters.dailogRef.open(TabDynamicDialogComponent, {
+                height: &#x27;500px&#x27;,
+                width: &#x27;600px&#x27;,
+                panelClass: &#x27;custom-modalbox&#x27;,
+                position: {
+                    left: &#x60;${rect.left - 550}px&#x60;,
+                    top: &#x60;${rect.top + 50}px&#x60;,
+                    right: &#x60;${rect.right}px&#x60;,
+                    bottom: &#x60;${rect.bottom}px&#x60;,
+                },
+                data: {
+                    screenID: sid,
+                    data: JSON.stringify(data),
+                    title: title,
+                },
+            });
+        }
+    }
+    // this function is for the status timeline and history button in detail layout
+    onCustomHTMLTemplateEvent(screenParameters) {
+        let sid &#x3D; &#x27;&#x27;;
+        let data &#x3D; { parameters: {} };
+        let title &#x3D; &#x27;&#x27;;
+        if (screenParameters.event.tabHTMLEvent.detail.eventName &#x3D;&#x3D; &#x27;onShare&#x27;) {
+            sid &#x3D; &#x27;001b0c09-4429-4c0e-a9e2-97917731e378&#x27;;
+            data.parameters[&#x27;RecordID&#x27;] &#x3D;
+                screenParameters?.event?.data?.RecordInfo?.RecordId;
+            data.parameters[&#x27;screenMode&#x27;] &#x3D; &#x27;Add&#x27;;
+            title &#x3D; &#x27;Share Record&#x27;;
+        } else if (
+            screenParameters.event.tabHTMLEvent.detail.eventName &#x3D;&#x3D; &#x27;onHistory&#x27;
+        ) {
+            sid &#x3D; &#x27;48f8e8a0-85cb-43c9-9928-1afa05e57ce8&#x27;;
+
+            title &#x3D; &#x27;History of Record&#x27;;
+            data.parameters[&#x27;history&#x27;] &#x3D; {
+                DataSourceQueryID: &#x27;72FB70B5-9A6C-4E53-A621-5E2AF90C162E&#x27;,
+                PrimaryKey:
+                    screenParameters?.event?.data?.RecordInfo?.PrimaryKey,
+            };
+            data.parameters[&#x27;statusTimeline&#x27;] &#x3D; {
+                RecordId: screenParameters?.event?.data?.RecordInfo?.RecordId,
+                BlueprintId:
+                    screenParameters?.event?.data?.RecordInfo?.BlueprintId,
+                SLASchemeID:
+                    screenParameters?.event?.data?.RecordInfo?.SLASchemeID,
+                SLAValue: screenParameters?.event?.data?.RecordInfo?.SLAValue,
+            };
+            data.parameters[&#x27;screenMode&#x27;] &#x3D; &#x27;Add&#x27;;
+        } else if (
+            screenParameters.event.tabHTMLEvent.detail.eventName &#x3D;&#x3D; &#x27;onComment&#x27;
+        ) {
+            sid &#x3D; &#x27;26cc7710-6e93-4aaa-aca8-2f6a8608435e&#x27;;
+            title &#x3D; &#x27;Comments&#x27;;
+            data.parameters[&#x27;comment&#x27;] &#x3D; {
+                RecordId: screenParameters?.event?.data?.RecordInfo?.RecordId,
+            };
+            data.parameters[&#x27;screenMode&#x27;] &#x3D; &#x27;Add&#x27;;
+        }
+        const target &#x3D; new ElementRef(
+            screenParameters.event.tabHTMLEvent.detail.element
+        );
+        const rect &#x3D; target.nativeElement.getBoundingClientRect();
+        this.ref &#x3D; screenParameters.dailogRef.open(TabDynamicDialogComponent, {
+            height: &#x27;500px&#x27;,
+            width: &#x27;600px&#x27;,
+            panelClass: &#x27;custom-modalbox&#x27;,
+            position: {
+                left: &#x60;${rect.left - 550}px&#x60;,
+                top: &#x60;${rect.top + 50}px&#x60;,
+                right: &#x60;${rect.right}px&#x60;,
+                bottom: &#x60;${rect.bottom}px&#x60;,
+            },
+            data: {
+                screenID: sid,
+                data: JSON.stringify(data),
+                title: title,
+            },
+        });
+    }
+    onErrorChange(event: any) { }
+    onFormLoad(event: any) { }
+    onReady(event: any) { }
+    proceedObjectBeforeRender(screenParameters: any) {
+        FormioUtils.eachComponent(
+            screenParameters?.formIOObject?.formio?.component?.components,
+            (component: any, path: any) &#x3D;&gt; {
+                if (component.type &#x3D;&#x3D; &#x27;select&#x27; &amp;&amp; component.key &#x3D;&#x3D; &#x27;status&#x27;) {
+                    if (
+                        screenParameters?.event?.RecordInfo &amp;&amp;
+                        screenParameters?.event?.RecordInfo?.BlueprintId
+                    ) {
+                        this.loadNextStatuses(
+                            screenParameters,
+                            screenParameters?.event?.RecordInfo?.RecordId,
+                            component,
+                            true
+                        );
+                    }
+                }
+            }
+        );
+    }
+    performTransactionAction &#x3D; (screenParameters, status) &#x3D;&gt; {
+        if (
+            status.TransitionHooks_During &amp;&amp;
+            status.TransitionHooks_During.Actions
+        ) {
+        } else {
+            this.updateStatus(screenParameters, status);
+        }
+    };
+    updateStatus &#x3D; (screenParameters, status) &#x3D;&gt; {
+        screenParameters.serviceList.appService.tabCoreHttpService.httpClient
+            .get(
+                TabConstant.API.endpoint +
+                &#x27;Transition/UpdateStatus?RecordId&#x3D;&#x27; +
+                screenParameters?.event?.data?.RecordInfo?.RecordId +
+                &#x27;&amp;NextPossibleStatusId&#x3D;&#x27; +
+                status.StatusId,
+                {
+                    headers: {
+                        ApplicationCode: sessionStorage.getItem(
+                            TabConstant.Storage.applicationCode
+                        ),
+                        Authorization: sessionStorage.getItem(
+                            TabConstant.Storage.token
+                        ),
+                    },
+                }
+            )
+            ?.pipe(take(1))
+            .subscribe((res) &#x3D;&gt; {
+                if (res?.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                    // Loading next statuses
+                    FormioUtils.eachComponent(
+                        screenParameters?.formIOObject?.formio?.component
+                            ?.components,
+                        (component: any, path: any) &#x3D;&gt; {
+                            if (
+                                component.type &#x3D;&#x3D; &#x27;select&#x27; &amp;&amp;
+                                component.key &#x3D;&#x3D; &#x27;status&#x27;
+                            ) {
+                                this.loadNextStatuses(
+                                    screenParameters,
+                                    screenParameters?.event?.data?.RecordInfo
+                                        ?.RecordId,
+                                    component,
+                                    true
+                                );
+                            }
+                        }
+                    );
+                    screenParameters?.serviceList?.toastrService.showSuccess(
+                        &#x27;Status Updated successfully&#x27;,
+                        &#x27;Success&#x27;
+                    );
+                } else {
+                    screenParameters?.serviceList?.toastrService.showError(
+                        res.Errors[0],
+                        &#x27;Error&#x27;
+                    );
+                }
+            });
+    };
+    loadNextStatuses &#x3D; (
+        screenParameters,
+        recordId,
+        component,
+        hardRefresh &#x3D; false
+    ) &#x3D;&gt; {
+        screenParameters.serviceList.appService.tabCoreHttpService.httpClient
+            .get(
+                TabConstant.API.endpoint +
+                &#x27;Transition/GetNextStatus?RecordId&#x3D;&#x27; +
+                recordId,
+                {
+                    headers: {
+                        ApplicationCode: sessionStorage.getItem(
+                            TabConstant.Storage.applicationCode
+                        ),
+                        Authorization: sessionStorage.getItem(
+                            TabConstant.Storage.token
+                        ),
+                    },
+                }
+            )
+            ?.pipe(take(1))
+            .subscribe((res) &#x3D;&gt; {
+                const currentStatus &#x3D; res.Result;
+                const statuses: any &#x3D; [];
+                statuses.push({
+                    Name: currentStatus.FromStatusName,
+                    StatusId: currentStatus.FromStatusId.toLowerCase(),
+                });
+
+                currentStatus.ToStatusList?.forEach((status) &#x3D;&gt; {
+                    statuses.push({
+                        Name: status.ToStatusName,
+                        StatusId: status.ToStatusId.toLowerCase(),
+                        TransitionHooks_Before: status.TransitionHooks_Before,
+                        TransitionHooks_During: status.TransitionHooks_During,
+                        TransitionHooks_After: status.TransitionHooks_After,
+                    });
+                });
+                // component.defaultValue &#x3D;
+                //     currentStatus.FromStatusId.toLowerCase();
+                component.data.values &#x3D; statuses;
+                // const data: any &#x3D; {
+                //     ...screenParameters?.formIOObject.formio.data,
+                // };
+                let data: any &#x3D; {};
+                if (screenParameters?.event.hasOwnProperty(&#x27;changed&#x27;)) {
+                    data &#x3D; {
+                        ...screenParameters?.event?.data,
+                    };
+                } else {
+                    data &#x3D; {
+                        ...screenParameters?.event,
+                    };
+                }
+
+                data[component.key] &#x3D; currentStatus.FromStatusId.toLowerCase();
+                this.refreshForm(screenParameters, data);
+                const statusComponent &#x3D; FormioUtils.getComponent(
+                    screenParameters?.formIOObject?.formio?.components[0]
+                        .components[1].components,
+                    &#x27;status&#x27;,
+                    true
+                );
+                statusComponent.triggerRedraw();
+                // window.location.reload();
+            });
+    };
+    refreshForm &#x3D; (screenParameters: any, data): void &#x3D;&gt; {
+        screenParameters?.formIOObject.refresh.emit({
+            submission: {
+                data: data,
+            },
+        });
+    };
+    onAfterSubmit(event: any) { }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'ViewCaseDownloadAll.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

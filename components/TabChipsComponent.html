@@ -1,0 +1,2383 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@fuse/starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@fuse/starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TabChipsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/admin/tab-custom-chips/tab-chips.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>FormioCustomComponent</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-tab-chips</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./tab-chips.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./tab-chips.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_unsubscribeAll" >_unsubscribeAll</a>
+                            </li>
+                            <li>
+                                <a href="#allChipsDataArray" >allChipsDataArray</a>
+                            </li>
+                            <li>
+                                <a href="#chipInstance" >chipInstance</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#debounceSubject" >debounceSubject</a>
+                            </li>
+                            <li>
+                                <a href="#deletedDataArray" >deletedDataArray</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#drpInput" >drpInput</a>
+                            </li>
+                            <li>
+                                <a href="#filteredChips" >filteredChips</a>
+                            </li>
+                            <li>
+                                <a href="#inputCtrl" >inputCtrl</a>
+                            </li>
+                            <li>
+                                <a href="#insertedDataArray" >insertedDataArray</a>
+                            </li>
+                            <li>
+                                <a href="#selectedChipsDataArray" >selectedChipsDataArray</a>
+                            </li>
+                            <li>
+                                <a href="#separatorKeysCodes" >separatorKeysCodes</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#add" >add</a>
+                            </li>
+                            <li>
+                                <a href="#bindOptionList" >bindOptionList</a>
+                            </li>
+                            <li>
+                                <a href="#downloadFile" >downloadFile</a>
+                            </li>
+                            <li>
+                                <a href="#getDataFromDSQ" >getDataFromDSQ</a>
+                            </li>
+                            <li>
+                                <a href="#getFileByMediaId" >getFileByMediaId</a>
+                            </li>
+                            <li>
+                                <a href="#getLookupDetails" >getLookupDetails</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getOptionListFromComponent" >getOptionListFromComponent</a>
+                            </li>
+                            <li>
+                                <a href="#manageChipsComponentData" >manageChipsComponentData</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#remove" >remove</a>
+                            </li>
+                            <li>
+                                <a href="#selected" >selected</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSetting" >dataSetting</a>
+                            </li>
+                            <li>
+                                <a href="#disabled" >disabled</a>
+                            </li>
+                            <li>
+                                <a href="#value" >value</a>
+                            </li>
+                            <li>
+                                <a href="#values" >values</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#valueChange" >valueChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#value" >value</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(tabGetService: TabGetService, tabMediaService: TabMediaUploadService, tabSelectService: TabSelectService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>tabGetService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabGetService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tabMediaService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabMediaUploadService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tabSelectService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabSelectService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSetting"></a>
+                        <b>dataSetting</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:44</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="disabled"></a>
+                        <b>disabled</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:32</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <b>value</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:60</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="values"></a>
+                        <b>values</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:31</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueChange"></a>
+                        <b>valueChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:42</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="add"></a>
+                    <span class="name">
+                        <span ><b>add</b></span>
+                        <a href="#add"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>add(event: <a href="../undefineds/Event.html" target="_self">MatChipInputEvent</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="298"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:298</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >MatChipInputEvent</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>when we will add custom new chips without autocomplete</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bindOptionList"></a>
+                    <span class="name">
+                        <span ><b>bindOptionList</b></span>
+                        <a href="#bindOptionList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>bindOptionList(listData, lookUpdetails)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="284"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:284</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>listData</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>lookUpdetails</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadFile"></a>
+                    <span class="name">
+                        <span ><b>downloadFile</b></span>
+                        <a href="#downloadFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>downloadFile(chip: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="425"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:425</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>chip</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDataFromDSQ"></a>
+                    <span class="name">
+                        <span ><b>getDataFromDSQ</b></span>
+                        <a href="#getDataFromDSQ"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDataFromDSQ()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="382"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:382</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>if you have configured dsq datasource mode this will execute dsq and get data and bind to autocomplete</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFileByMediaId"></a>
+                    <span class="name">
+                        <span ><b>getFileByMediaId</b></span>
+                        <a href="#getFileByMediaId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFileByMediaId(mediaId: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="436"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:436</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>mediaId</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLookupDetails"></a>
+                    <span class="name">
+                        <span ><b>getLookupDetails</b></span>
+                        <a href="#getLookupDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getLookupDetails(lookupDetails: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="239"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:239</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>it will run select query else try for list api call and get data</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>lookupDetails</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>it will take lookup details and verify if select query exist in lookup detail
+it will run select query else try for list api call and get data</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>return result of api with promises , list or select query execute result response</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOptionListFromComponent"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getOptionListFromComponent</b></span>
+                        <a href="#getOptionListFromComponent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getOptionListFromComponent(componentKey)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="183"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:183</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>we will get fields from that appobject and from that get fiels and for lookup fields we will hanlde select and list query for
+option list</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>componentKey</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>component key will be same as appobject name
+we will get fields from that appobject and from that get fiels and for lookup fields we will hanlde select and list query for
+option list</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="manageChipsComponentData"></a>
+                    <span class="name">
+                        <span ><b>manageChipsComponentData</b></span>
+                        <a href="#manageChipsComponentData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>manageChipsComponentData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="132"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:132</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>this function will configuration and value or data for this component</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="418"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:418</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="103"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="remove"></a>
+                    <span class="name">
+                        <span ><b>remove</b></span>
+                        <a href="#remove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>remove(chip: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="319"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:319</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>chip</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selected"></a>
+                    <span class="name">
+                        <span ><b>selected</b></span>
+                        <a href="#selected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selected(event: <a href="../undefineds/Event.html" target="_self">MatAutocompleteSelectedEvent</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="349"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:349</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >MatAutocompleteSelectedEvent</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_unsubscribeAll"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_unsubscribeAll</b></span>
+                        <a href="#_unsubscribeAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;any&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allChipsDataArray"></a>
+                    <span class="name">
+                        <span ><b>allChipsDataArray</b></span>
+                        <a href="#allChipsDataArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chipInstance"></a>
+                    <span class="name">
+                        <span ><b>chipInstance</b></span>
+                        <a href="#chipInstance"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+        isRefreshComponent: true,
+        deletedChips: [],
+    }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="debounceSubject"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>debounceSubject</b></span>
+                        <a href="#debounceSubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletedDataArray"></a>
+                    <span class="name">
+                        <span ><b>deletedDataArray</b></span>
+                        <a href="#deletedDataArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="318" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:318</a></div>
+                        </td>
+                    </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>chip</td>
+                                                    <td>
+                                                            <code><p>when you unselect , or cancel or remove the chips this will execute</p>
+</code>
+                                                    </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="drpInput"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>drpInput</b></span>
+                        <a href="#drpInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLInputElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;drpInput&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filteredChips"></a>
+                    <span class="name">
+                        <span ><b>filteredChips</b></span>
+                        <a href="#filteredChips"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;any[]&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inputCtrl"></a>
+                    <span class="name">
+                        <span ><b>inputCtrl</b></span>
+                        <a href="#inputCtrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(&#x27;&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="insertedDataArray"></a>
+                    <span class="name">
+                        <span ><b>insertedDataArray</b></span>
+                        <a href="#insertedDataArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="348" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:348</a></div>
+                        </td>
+                    </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>event</td>
+                                                    <td>
+                                                            <code><p>event when we select the option from list this event will execute</p>
+</code>
+                                                    </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedChipsDataArray"></a>
+                    <span class="name">
+                        <span ><b>selectedChipsDataArray</b></span>
+                        <a href="#selectedChipsDataArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="separatorKeysCodes"></a>
+                    <span class="name">
+                        <span ><b>separatorKeysCodes</b></span>
+                        <a href="#separatorKeysCodes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[ENTER, COMMA]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <span class="name"><b>value</b><a href="#value"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>value()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:98</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>value(v: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/modules/admin/tab-custom-chips/tab-chips.component.ts:60</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>v</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    TabAppFunction,
+    TabClasses,
+    TabGetService,
+    TabMediaUploadService,
+    TabRequestResponseFunction,
+    TabSelectService,
+} from &#x27;@techextensor/tab-service&#x27;;
+import { Observable, Subject, debounceTime, take, takeUntil } from &#x27;rxjs&#x27;;
+import {
+    Component,
+    Input,
+    OnInit,
+    ViewChild,
+    ElementRef,
+    Output,
+    EventEmitter,
+} from &#x27;@angular/core&#x27;;
+import { FormControl } from &#x27;@angular/forms&#x27;;
+import { MatAutocompleteSelectedEvent } from &#x27;@angular/material/autocomplete&#x27;;
+import { MatChipInputEvent } from &#x27;@angular/material/chips&#x27;;
+import { COMMA, ENTER } from &#x27;@angular/cdk/keycodes&#x27;;
+import { FormioCustomComponent } from &#x27;@formio/angular&#x27;;
+
+@Component({
+    selector: &#x27;app-tab-chips&#x27;,
+    templateUrl: &#x27;./tab-chips.component.html&#x27;,
+    styleUrls: [&#x27;./tab-chips.component.css&#x27;],
+})
+export class TabChipsComponent implements OnInit, FormioCustomComponent&lt;any[]&gt; {
+    @Input() values: any[];
+    @Input() disabled: boolean;
+
+    inputCtrl &#x3D; new FormControl(&#x27;&#x27;);
+    separatorKeysCodes: number[] &#x3D; [ENTER, COMMA];
+    selectedChipsDataArray &#x3D; [];
+    allChipsDataArray &#x3D; [];
+    @ViewChild(&#x27;drpInput&#x27;) drpInput: ElementRef&lt;HTMLInputElement&gt;;
+    filteredChips: Observable&lt;any[]&gt;;
+    // private setTimer: any;
+    private debounceSubject &#x3D; new Subject();
+    @Output() valueChange &#x3D; new EventEmitter&lt;any&gt;();
+
+    @Input() dataSetting: any;
+    // @Input() data: any;
+    private _unsubscribeAll: Subject&lt;any&gt; &#x3D; new Subject&lt;any&gt;();
+
+    chipInstance: any &#x3D; {
+        isRefreshComponent: true,
+        deletedChips: [],
+    };
+
+    constructor(
+        private tabGetService: TabGetService,
+        private tabMediaService: TabMediaUploadService,
+        private tabSelectService: TabSelectService
+    ) {}
+
+    @Input()
+    public set value(v: any) {
+        // console.log(&#x27;chip component setter&#x27;, v);
+        // console.log(&#x27;chip component setting&#x27;, this.dataSetting);
+        if (v &amp;&amp; v !&#x3D; null) {
+            this.chipInstance &#x3D; v;
+            // this.chipInstance.selectedChips &#x3D; v;
+        }
+        this.debounceSubject.next(1000);
+        // this.setTimer &#x3D; setTimeout(() &#x3D;&gt; {
+        //     if (this.dataSetting &amp;&amp; Object.keys(this.dataSetting).length) {
+        //         if (this.dataSetting?.datasourceMode &#x3D;&#x3D; &#x27;nothing&#x27;) {
+        //             if (
+        //                 this.chipInstance &amp;&amp;
+        //                 this.chipInstance !&#x3D; undefined &amp;&amp;
+        //                 this.chipInstance !&#x3D; null &amp;&amp;
+        //                 Object.keys(this.chipInstance).length
+        //             ) {
+        //                 let strArray &#x3D; String(
+        //                     this.chipInstance?.selectedChips
+        //                 ).split(&#x27;,&#x27;);
+        //                 strArray.forEach((element) &#x3D;&gt; {
+        //                     this.selectedChipsDataArray.push({
+        //                         label: element,
+        //                         value: element,
+        //                     });
+        //                 });
+        //                 // this.selectedChipsDataArray &#x3D; str.split(&#x27;,&#x27;);
+        //             }
+        //         } else if (this.dataSetting?.datasourceMode &#x3D;&#x3D; &#x27;data&#x27;) {
+        //             this.allChipsDataArray &#x3D; this.dataSetting?.customData;
+        //         } else if (this.dataSetting?.datasourceMode &#x3D;&#x3D; &#x27;dsq&#x27;) {
+        //             if (this.dataSetting?.dataSourceQueryId) {
+        //                 this.getDataFromDSQ();
+        //             }
+        //         }
+        //     }
+        // }, 100);
+    }
+    public get value(): any {
+        let abc &#x3D; JSON.stringify(this.chipInstance);
+        return JSON.parse(abc);
+    }
+
+    ngOnInit(): void {
+        this.debounceSubject
+            .pipe(debounceTime(1000))
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(() &#x3D;&gt; {
+                if (this.chipInstance?.isRefreshComponent) {
+                    this.selectedChipsDataArray &#x3D; [];
+                    this.allChipsDataArray &#x3D; [];
+                    this.manageChipsComponentData();
+                } else {
+                    // added this condition to show validation message when value is required
+                    // we are setting null value when we do not have any selected chips
+                    // if (
+                    //     this.chipInstance &amp;&amp;
+                    //     this.chipInstance.hasOwnProperty(&#x27;selectedChips&#x27;) &amp;&amp;
+                    //     this.chipInstance.selectedChips.length &#x3D;&#x3D; 0
+                    // ) {
+                    //     this.chipInstance &#x3D; null;
+                    //     this.value &#x3D; this.chipInstance;
+                    //     let abc &#x3D; JSON.stringify(this.chipInstance);
+                    //     this.valueChange.emit(JSON.parse(abc));
+                    // }
+                }
+            });
+    }
+
+    /**
+     * this function will configuration and value or data for this component
+     */
+    manageChipsComponentData() {
+        if (this.dataSetting &amp;&amp; Object.keys(this.dataSetting).length) {
+            if (this.dataSetting?.datasourceMode &#x3D;&#x3D; &#x27;nothing&#x27;) {
+                if (
+                    this.chipInstance &amp;&amp;
+                    this.chipInstance !&#x3D; undefined &amp;&amp;
+                    this.chipInstance !&#x3D; null &amp;&amp;
+                    Object.keys(this.chipInstance).length
+                ) {
+                    // if (this.chipInstance.hasOwnProperty(&#x27;selectedChips&#x27;)) {
+                    //     let strArray &#x3D; String(
+                    //         this.chipInstance?.selectedChips
+                    //     ).split(&#x27;,&#x27;);
+                    //     strArray.forEach((element) &#x3D;&gt; {
+                    //         this.selectedChipsDataArray.push({
+                    //             label: element,
+                    //             value: element,
+                    //         });
+                    //     });
+                    // }
+                    if (
+                        this.dataSetting.hasOwnProperty(&#x27;key&#x27;) &amp;&amp;
+                        !this.chipInstance.hasOwnProperty(&#x27;selectedChips&#x27;)
+                    ) {
+                        this.getOptionListFromComponent(this.dataSetting.key);
+                    }
+                    // this.selectedChipsDataArray &#x3D; str.split(&#x27;,&#x27;);
+                }
+            } else if (this.dataSetting?.datasourceMode &#x3D;&#x3D; &#x27;data&#x27;) {
+                this.allChipsDataArray &#x3D; this.dataSetting?.customData;
+            } else if (this.dataSetting?.datasourceMode &#x3D;&#x3D; &#x27;dsq&#x27;) {
+                if (this.dataSetting?.dataSourceQueryId) {
+                    this.getDataFromDSQ();
+                }
+            }
+        }
+        if (
+            this.chipInstance &amp;&amp;
+            this.chipInstance.hasOwnProperty(&#x27;component&#x27;) &amp;&amp;
+            this.chipInstance.component
+        ) {
+            this.getOptionListFromComponent(this.chipInstance.component.key);
+        }
+    }
+
+    /**
+     *
+     * @param componentKey component key will be same as appobject name
+    we will get fields from that appobject and from that get fiels and for lookup fields we will hanlde select and list query for
+    option list
+     */
+    async getOptionListFromComponent(componentKey) {
+        let splitKey &#x3D; componentKey.split(&#x27;.&#x27;);
+        let appObjectData &#x3D; TabAppFunction.getAppObjectFromSystemDBTableName(
+            splitKey[0]
+        );
+        const primaryKeyField &#x3D;
+            TabRequestResponseFunction.getPrimaryKeyFields(appObjectData);
+        let lookUpdetails, listData;
+        if (appObjectData &amp;&amp; appObjectData?.Fields) {
+            for (let fs of appObjectData?.Fields) {
+                if (
+                    fs.hasOwnProperty(&#x27;LookUpDetails&#x27;) &amp;&amp;
+                    fs.FieldName &#x3D;&#x3D; splitKey[1]
+                ) {
+                    lookUpdetails &#x3D; fs.LookUpDetails;
+                    listData &#x3D; await this.getLookupDetails(fs.LookUpDetails);
+                }
+            }
+            this.bindOptionList(listData, lookUpdetails);
+
+            // manage from component value
+            if (
+                this.chipInstance &amp;&amp;
+                this.chipInstance.hasOwnProperty(&#x27;selectedChips&#x27;) &amp;&amp;
+                this.chipInstance.selectedChips &amp;&amp;
+                this.chipInstance.selectedChips.length &gt; 0
+            ) {
+                for (let d of this.chipInstance.selectedChips) {
+                    // add selected data chips component
+                    this.selectedChipsDataArray.push({
+                        label: d[splitKey[1]][lookUpdetails[&#x27;DisplayField&#x27;]],
+                        value: d[splitKey[1]][lookUpdetails[&#x27;LookupField&#x27;]],
+                        // Id: d[primaryKeyField[0]?.FieldName],
+                        [primaryKeyField[0]?.FieldName]:
+                            d[primaryKeyField[0]?.FieldName],
+                    });
+                    // remove selected data from option list
+                    const index &#x3D; this.allChipsDataArray.findIndex(
+                        (item) &#x3D;&gt;
+                            item.value &#x3D;&#x3D;
+                            d[splitKey[1]][lookUpdetails[&#x27;LookupField&#x27;]]
+                    );
+                    if (index &gt; -1) {
+                        this.allChipsDataArray.splice(index, 1);
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     *
+     * @param lookupDetails it will take lookup details and verify if select query exist in lookup detail
+    it will run select query else try for list api call and get data
+     * @returns return result of api with promises , list or select query execute result response
+     */
+    getLookupDetails(lookupDetails: any) {
+        return new Promise((resolve) &#x3D;&gt; {
+            if (lookupDetails.hasOwnProperty(&#x27;selectQuery&#x27;)) {
+                this.tabSelectService
+                    .selectExecutor(lookupDetails.selectQuery)
+                    ?.pipe(take(1))
+                    ?.subscribe((res: any) &#x3D;&gt; {
+                        resolve(res.Result);
+                    });
+            } else {
+                const selectedAppObject: TabClasses.AppObject &#x3D;
+                    TabAppFunction.getAppObjectFromSystemDBTableName(
+                        lookupDetails.LookupObject
+                    );
+                const dsqID &#x3D;
+                    TabAppFunction.getDsqIdfromSelectedAppObjectDSQArray(
+                        selectedAppObject.DataSourceQueries,
+                        lookupDetails.LookupObject,
+                        &#x27;List&#x27;
+                    );
+                const dsqDetails &#x3D;
+                    TabAppFunction.getDataFromDataSourceQueryID(dsqID);
+                const apiData &#x3D; {
+                    AppObjectName: selectedAppObject.ObjectName,
+                    DSQName: dsqDetails.QueryName,
+                    Reqtokens: {},
+                };
+                if (
+                    this.chipInstance &amp;&amp;
+                    this.chipInstance.hasOwnProperty(&#x27;parameters&#x27;)
+                ) {
+                    apiData.Reqtokens &#x3D; this.chipInstance.parameters;
+                }
+                this.tabGetService
+                    .executeRAWDSQWithName(apiData)
+                    ?.pipe(take(1))
+                    ?.subscribe((res: any) &#x3D;&gt; {
+                        if (res?.Result) {
+                            resolve(res.Result);
+                        }
+                    });
+            }
+        });
+    }
+
+    bindOptionList(listData, lookUpdetails) {
+        for (let d of listData) {
+            this.allChipsDataArray.push({
+                label: d[lookUpdetails[&#x27;DisplayField&#x27;]],
+                value: d[lookUpdetails[&#x27;LookupField&#x27;]],
+            });
+        }
+    }
+
+    /**
+     *
+     * @param event when we will add custom new chips without autocomplete
+     */
+
+    add(event: MatChipInputEvent): void {
+        // this.insertedDataArray.push(event.value);
+        const value &#x3D; (event.value || &#x27;&#x27;).trim();
+        if (value) {
+            this.selectedChipsDataArray.push({ label: value, value: value });
+        }
+        // Clear the input value
+        event.chipInput!.clear();
+        this.inputCtrl.setValue(null);
+        // this.chipInstance.selectedChips &#x3D; this.selectedChipsDataArray;
+        // this.chipInstance.isRefreshComponent &#x3D; false;
+        // this.value &#x3D; this.chipInstance;
+        // let abc &#x3D; JSON.stringify(this.chipInstance);
+        // this.valueChange.emit(JSON.parse(abc));
+    }
+
+    /**
+     *
+     * @param chip when you unselect , or cancel or remove the chips this will execute
+     */
+    deletedDataArray &#x3D; [];
+    remove(chip: string): void {
+        if (chip &amp;&amp; (chip.hasOwnProperty(&#x27;Id&#x27;) || chip.hasOwnProperty(&#x27;ID&#x27;))) {
+            this.deletedDataArray.push(chip);
+        }
+        const index &#x3D; this.selectedChipsDataArray.indexOf(chip);
+
+        if (index &gt;&#x3D; 0) {
+            this.selectedChipsDataArray.splice(index, 1);
+        }
+        if (this.chipInstance?.insertedChips) {
+            this.chipInstance.insertedChips.splice(index, 1);
+        }
+
+        // add  option from dropdown list
+        this.allChipsDataArray.push(chip);
+
+        this.chipInstance.selectedChips &#x3D; this.selectedChipsDataArray;
+        this.chipInstance.deletedChips &#x3D; this.deletedDataArray;
+        this.chipInstance.isRefreshComponent &#x3D; false;
+        this.value &#x3D; this.chipInstance;
+        let abc &#x3D; JSON.stringify(this.chipInstance);
+        this.valueChange.emit(JSON.parse(abc));
+    }
+
+    /**
+     *
+     * @param event event when we select the option from list this event will execute
+     */
+
+    insertedDataArray &#x3D; [];
+    selected(event: MatAutocompleteSelectedEvent): void {
+        // this.selectedChipsDataArray.push(event.option.viewValue);
+        this.selectedChipsDataArray.push({
+            label: event.option.value.label,
+            value: event.option.value.value,
+        });
+
+        // remove option from dropdown list
+        const index &#x3D; this.allChipsDataArray.indexOf(event.option.value);
+        if (index &gt;&#x3D; 0) {
+            this.allChipsDataArray.splice(index, 1);
+        }
+
+        this.insertedDataArray.push(event?.option?.value);
+        this.drpInput.nativeElement.value &#x3D; &#x27;&#x27;;
+        this.inputCtrl.setValue(null);
+        if (this.chipInstance &#x3D;&#x3D; null || this.chipInstance &#x3D;&#x3D; undefined) {
+            this.chipInstance &#x3D; {
+                isRefreshComponent: true,
+                deletedChips: [],
+            };
+        }
+        this.chipInstance.insertedChips &#x3D; this.insertedDataArray;
+        this.chipInstance.selectedChips &#x3D; this.selectedChipsDataArray;
+        this.chipInstance.isRefreshComponent &#x3D; false;
+        this.value &#x3D; this.chipInstance;
+        let abc &#x3D; JSON.stringify(this.chipInstance);
+        this.valueChange.emit(JSON.parse(abc));
+    }
+
+    /**
+     * if you have configured dsq datasource mode this will execute dsq and get data and bind to autocomplete
+     */
+    getDataFromDSQ() {
+        let appObjectDetailsOfGrid &#x3D;
+            TabAppFunction.getAppObjectFromDataSourceQueryID(
+                this.dataSetting?.dataSourceQueryId
+            );
+        let dsqDetails &#x3D; TabAppFunction.getDataFromDataSourceQueryID(
+            this.dataSetting?.dataSourceQueryId
+        );
+        const apiData &#x3D; {
+            AppObjectName: appObjectDetailsOfGrid?.ObjectName,
+            DSQName: dsqDetails?.QueryName,
+            Reqtokens: this.dataSetting?.parameters ?? {},
+        };
+        this.tabGetService
+            .executeRAWDSQWithName(apiData)
+            ?.pipe(take(1))
+            ?.subscribe((res: any) &#x3D;&gt; {
+                if (res?.StatusCode &#x3D;&#x3D; &#x27;200&#x27;) {
+                    if (res?.Result &amp;&amp; res?.Result.length) {
+                        this.allChipsDataArray &#x3D; [];
+                        let tdata &#x3D; res?.Result;
+                        for (let d of tdata) {
+                            this.allChipsDataArray.push({
+                                label: d[this.dataSetting?.labelField],
+                                value: d[this.dataSetting?.valueField],
+                            });
+                        }
+                        if (this.dataSetting.isDocumentPreview) {
+                            this.selectedChipsDataArray &#x3D;
+                                this.allChipsDataArray;
+                        }
+                    }
+                }
+            });
+    }
+
+    ngOnDestroy(): void {
+        // clearTimeout(this.setTimer);
+        // Unsubscribe from all subscriptions
+        this._unsubscribeAll.next(null);
+        this._unsubscribeAll.complete();
+    }
+
+    downloadFile(chip: any) {
+        const mediaId &#x3D; chip.value; // Assuming the &#x27;label&#x27; property contains the MediaId
+        if (
+            mediaId &amp;&amp;
+            !!this.dataSetting.isDocumentPreview &amp;&amp;
+            !!this.dataSetting.allowToDownload
+        ) {
+            this.getFileByMediaId(mediaId);
+        }
+    }
+
+    getFileByMediaId(mediaId: any) {
+        this.tabMediaService
+            .getFileByMediaId(mediaId)
+            ?.pipe(take(1))
+            .subscribe((blob: any) &#x3D;&gt; {
+                if (blob) {
+                    const url &#x3D; window.URL.createObjectURL(blob);
+                    const link &#x3D; document.createElement(&#x27;a&#x27;);
+                    link.href &#x3D; url;
+                    link.download &#x3D; new File([blob], mediaId.toString()).name;
+                    link.click();
+                    window.URL.revokeObjectURL(url);
+                }
+            });
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- &lt;mat-form-field class&#x3D;&quot;example-chip-list&quot; appearance&#x3D;&quot;fill&quot;&gt; --&gt;
+&lt;!-- &lt;mat-label&gt;Favorite Fruits&lt;/mat-label&gt; --&gt;
+&lt;!-- &lt;mat-chip-grid #chipGrid aria-label&#x3D;&quot;Chip selection&quot;&gt;
+    &lt;mat-chip-row
+        *ngFor&#x3D;&quot;let chip of selectedChipsDataArray&quot;
+        (removed)&#x3D;&quot;remove(chip)&quot;
+    &gt;
+        {{ chip }}
+        &lt;button matChipRemove [attr.aria-label]&#x3D;&quot;&#x27;remove &#x27; + chip&quot;&gt;
+            &lt;mat-icon&gt;cancel&lt;/mat-icon&gt;
+        &lt;/button&gt;
+    &lt;/mat-chip-row&gt;
+&lt;/mat-chip-grid&gt;
+&lt;input
+    placeholder&#x3D;&quot;New Value...&quot;
+    #drpInput
+    [formControl]&#x3D;&quot;inputCtrl&quot;
+    [matChipInputFor]&#x3D;&quot;chipGrid&quot;
+    [matAutocomplete]&#x3D;&quot;auto&quot;
+    [matChipInputSeparatorKeyCodes]&#x3D;&quot;separatorKeysCodes&quot;
+    (matChipInputTokenEnd)&#x3D;&quot;add($event)&quot;
+/&gt; --&gt;
+&lt;mat-form-field class&#x3D;&quot;example-chip-list&quot; appearance&#x3D;&quot;fill&quot;&gt;
+    &lt;mat-chip-list #chipList aria-label&#x3D;&quot;Chips selection&quot;&gt;
+        &lt;mat-chip
+            *ngFor&#x3D;&quot;let chip of selectedChipsDataArray&quot;
+            (removed)&#x3D;&quot;remove(chip)&quot;
+        &gt;
+            &lt;mat-icon
+                class&#x3D;&quot;icon-size-4 mr-1&quot;
+                *ngIf&#x3D;&quot;!!dataSetting?.isDocumentPreview &amp;&amp; !!dataSetting?.icon&quot;
+                &gt;{{ dataSetting?.icon }}&lt;/mat-icon
+            &gt;
+            {{ chip.label }}
+            &lt;mat-icon
+                class&#x3D;&quot;icon-size-4 mr-1 ml-1 download-icon&quot;
+                *ngIf&#x3D;&quot;
+                    !!dataSetting?.isDocumentPreview &amp;&amp;
+                    !!dataSetting?.allowToDownload
+                &quot;
+                (click)&#x3D;&quot;downloadFile(chip)&quot;
+                &gt;file_download&lt;/mat-icon
+            &gt;
+            &lt;button
+                matChipRemove
+                *ngIf&#x3D;&quot;
+                    (!!dataSetting?.isDocumentPreview &amp;&amp;
+                        !!dataSetting?.allowToDelete) ||
+                    !dataSetting?.isDocumentPreview
+                &quot;
+            &gt;
+                &lt;mat-icon&gt;cancel&lt;/mat-icon&gt;
+            &lt;/button&gt;
+        &lt;/mat-chip&gt;
+        &lt;input
+            [placeholder]&#x3D;&quot;dataSetting?.placeholder ?? &#x27;New Value...&#x27;&quot;
+            #drpInput
+            [formControl]&#x3D;&quot;inputCtrl&quot;
+            [matAutocomplete]&#x3D;&quot;auto&quot;
+            [matChipInputFor]&#x3D;&quot;chipList&quot;
+            [matChipInputSeparatorKeyCodes]&#x3D;&quot;separatorKeysCodes&quot;
+            (matChipInputTokenEnd)&#x3D;&quot;add($event)&quot;
+            [disabled]&#x3D;&quot;dataSetting?.disabled ?? false&quot;
+        /&gt;
+        &lt;!-- *ngIf&#x3D;&quot;selectedChipsDataArray.length &#x3D;&#x3D;&#x3D; 0&quot; --&gt;
+    &lt;/mat-chip-list&gt;
+    &lt;mat-autocomplete
+        #auto&#x3D;&quot;matAutocomplete&quot;
+        (optionSelected)&#x3D;&quot;selected($event)&quot;
+    &gt;
+        &lt;mat-option *ngFor&#x3D;&quot;let chip of this.allChipsDataArray&quot; [value]&#x3D;&quot;chip&quot;&gt;
+            {{ chip.label }}
+        &lt;/mat-option&gt;
+    &lt;/mat-autocomplete&gt;
+
+    &lt;!-- &lt;mat-autocomplete #auto&#x3D;&quot;matAutocomplete&quot; [displayWith]&#x3D;&quot;displayFn&quot;&gt;
+        &lt;mat-option
+            *ngFor&#x3D;&quot;let option of filteredChips | async&quot;
+            [value]&#x3D;&quot;option&quot;
+        &gt;
+            {{ option.label }}
+        &lt;/mat-option&gt;
+    &lt;/mat-autocomplete&gt; --&gt;
+&lt;/mat-form-field&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./tab-chips.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.example-chip-list {
+    width: 100%;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- <mat-form-field class="example-chip-list" appearance="fill"> --><!-- <mat-label>Favorite Fruits</mat-label> --><!-- <mat-chip-grid #chipGrid aria-label="Chip selection">    <mat-chip-row        *ngFor="let chip of selectedChipsDataArray"        (removed)="remove(chip)"    >        {{ chip }}        <button matChipRemove [attr.aria-label]="\'remove \' + chip">            <mat-icon>cancel</mat-icon>        </button>    </mat-chip-row></mat-chip-grid><input    placeholder="New Value..."    #drpInput    [formControl]="inputCtrl"    [matChipInputFor]="chipGrid"    [matAutocomplete]="auto"    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"    (matChipInputTokenEnd)="add($event)"/> --><mat-form-field class="example-chip-list" appearance="fill">    <mat-chip-list #chipList aria-label="Chips selection">        <mat-chip            *ngFor="let chip of selectedChipsDataArray"            (removed)="remove(chip)"        >            <mat-icon                class="icon-size-4 mr-1"                *ngIf="!!dataSetting?.isDocumentPreview && !!dataSetting?.icon"                >{{ dataSetting?.icon }}</mat-icon            >            {{ chip.label }}            <mat-icon                class="icon-size-4 mr-1 ml-1 download-icon"                *ngIf="                    !!dataSetting?.isDocumentPreview &&                    !!dataSetting?.allowToDownload                "                (click)="downloadFile(chip)"                >file_download</mat-icon            >            <button                matChipRemove                *ngIf="                    (!!dataSetting?.isDocumentPreview &&                        !!dataSetting?.allowToDelete) ||                    !dataSetting?.isDocumentPreview                "            >                <mat-icon>cancel</mat-icon>            </button>        </mat-chip>        <input            [placeholder]="dataSetting?.placeholder ?? \'New Value...\'"            #drpInput            [formControl]="inputCtrl"            [matAutocomplete]="auto"            [matChipInputFor]="chipList"            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"            (matChipInputTokenEnd)="add($event)"            [disabled]="dataSetting?.disabled ?? false"        />        <!-- *ngIf="selectedChipsDataArray.length === 0" -->    </mat-chip-list>    <mat-autocomplete        #auto="matAutocomplete"        (optionSelected)="selected($event)"    >        <mat-option *ngFor="let chip of this.allChipsDataArray" [value]="chip">            {{ chip.label }}        </mat-option>    </mat-autocomplete>    <!-- <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">        <mat-option            *ngFor="let option of filteredChips | async"            [value]="option"        >            {{ option.label }}        </mat-option>    </mat-autocomplete> --></mat-form-field></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthConfirmationRequiredComponent', 'selector': 'auth-confirmation-required'},{'name': 'AuthForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'AuthResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'AuthSignInComponent', 'selector': 'auth-sign-in'},{'name': 'AuthSignOutComponent', 'selector': 'auth-sign-out'},{'name': 'AuthSignUpComponent', 'selector': 'auth-sign-up'},{'name': 'AuthUnlockSessionComponent', 'selector': 'auth-unlock-session'},{'name': 'ButtonTemplateComponent', 'selector': 'button-template'},{'name': 'CenteredLayoutComponent', 'selector': 'centered-layout'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ClassicLayoutComponent', 'selector': 'classic-layout'},{'name': 'ClassyLayoutComponent', 'selector': 'classy-layout'},{'name': 'CompactLayoutComponent', 'selector': 'compact-layout'},{'name': 'DenseLayoutComponent', 'selector': 'dense-layout'},{'name': 'EmptyLayoutComponent', 'selector': 'empty-layout'},{'name': 'EnterpriseLayoutComponent', 'selector': 'enterprise-layout'},{'name': 'FuseAlertComponent', 'selector': 'fuse-alert'},{'name': 'FuseCardComponent', 'selector': 'fuse-card'},{'name': 'FuseConfirmationDialogComponent', 'selector': 'fuse-confirmation-dialog'},{'name': 'FuseDrawerComponent', 'selector': 'fuse-drawer'},{'name': 'FuseFullscreenComponent', 'selector': 'fuse-fullscreen'},{'name': 'FuseHighlightComponent', 'selector': 'textarea[fuse-highlight]'},{'name': 'FuseHorizontalNavigationBasicItemComponent', 'selector': 'fuse-horizontal-navigation-basic-item'},{'name': 'FuseHorizontalNavigationBranchItemComponent', 'selector': 'fuse-horizontal-navigation-branch-item'},{'name': 'FuseHorizontalNavigationComponent', 'selector': 'fuse-horizontal-navigation'},{'name': 'FuseHorizontalNavigationDividerItemComponent', 'selector': 'fuse-horizontal-navigation-divider-item'},{'name': 'FuseHorizontalNavigationSpacerItemComponent', 'selector': 'fuse-horizontal-navigation-spacer-item'},{'name': 'FuseLoadingBarComponent', 'selector': 'fuse-loading-bar'},{'name': 'FuseMasonryComponent', 'selector': 'fuse-masonry'},{'name': 'FuseVerticalNavigationAsideItemComponent', 'selector': 'fuse-vertical-navigation-aside-item'},{'name': 'FuseVerticalNavigationBasicItemComponent', 'selector': 'fuse-vertical-navigation-basic-item'},{'name': 'FuseVerticalNavigationCollapsableItemComponent', 'selector': 'fuse-vertical-navigation-collapsable-item'},{'name': 'FuseVerticalNavigationComponent', 'selector': 'fuse-vertical-navigation'},{'name': 'FuseVerticalNavigationDividerItemComponent', 'selector': 'fuse-vertical-navigation-divider-item'},{'name': 'FuseVerticalNavigationGroupItemComponent', 'selector': 'fuse-vertical-navigation-group-item'},{'name': 'FuseVerticalNavigationSpacerItemComponent', 'selector': 'fuse-vertical-navigation-spacer-item'},{'name': 'FuturisticLayoutComponent', 'selector': 'futuristic-layout'},{'name': 'GridCustomHTMLTemplateComponent', 'selector': 'app-grid-custom-htmltemplate'},{'name': 'HomeComponent', 'selector': 'Home'},{'name': 'ImageTemplateComponent', 'selector': 'image-template'},{'name': 'ImageWithNameTemplateComponent', 'selector': 'image-with-name-template'},{'name': 'LandingHomeComponent', 'selector': 'landing-home'},{'name': 'LanguagesComponent', 'selector': 'languages'},{'name': 'LayoutComponent', 'selector': 'layout'},{'name': 'LinkTemplateComponent', 'selector': 'link-template'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapdialogComponent', 'selector': 'app-mapdialog'},{'name': 'MaterialLayoutComponent', 'selector': 'material-layout'},{'name': 'MessagesComponent', 'selector': 'messages'},{'name': 'ModernLayoutComponent', 'selector': 'modern-layout'},{'name': 'NewTabQueryBuilderComponent', 'selector': 'new-tab-core-tab-query-builder'},{'name': 'NotificationsComponent', 'selector': 'notifications'},{'name': 'ScreenFilterComponent', 'selector': 'screen-filter'},{'name': 'SearchComponent', 'selector': 'search'},{'name': 'SettingsComponent', 'selector': 'settings'},{'name': 'ShortcutsComponent', 'selector': 'shortcuts'},{'name': 'StarComponent', 'selector': 'app-star'},{'name': 'TabBasicGridComponent', 'selector': 'tab-basic-grid'},{'name': 'TabBlueprintComponent', 'selector': 'app-tab-blueprint'},{'name': 'TabChildScreenRendererComponent', 'selector': 'tab-core-tab-child-screen-renderer'},{'name': 'TabChipsComponent', 'selector': 'app-tab-chips'},{'name': 'TabColorPickerComponent', 'selector': 'app-tab-color-picker'},{'name': 'TabCommentsComponent', 'selector': 'app-tab-comments'},{'name': 'TabCustomCalenderComponent', 'selector': 'tab-custom-calender'},{'name': 'TabCustomCodeEditorComponent', 'selector': 'tab-core-tab-custom-code-editor'},{'name': 'TabCustomFormBuilderComponent', 'selector': 'tab-custom-form-builder'},{'name': 'TabCustomGanttChartComponent', 'selector': 'app-tab-custom-gantt-chart'},{'name': 'TabCustomImageuploadComponent', 'selector': 'app-tab-custom-imageupload'},{'name': 'TabCustomPivotTableComponent', 'selector': 'app-tab-custom-pivot-table'},{'name': 'TabCustomPlacePickerMapComponent', 'selector': 'app-tab-custom-place-picker-map'},{'name': 'TabCustomRichtextHtmlEditorComponent', 'selector': 'app-tab-custom-richtext-html-editor'},{'name': 'TabCustomTrackMapComponent', 'selector': 'app-tab-custom-track-map'},{'name': 'TabDateRangePickerComponent', 'selector': 'app-tab-date-range-picker'},{'name': 'TabDropDownTreeComponent', 'selector': 'app-tab-dropdown-tree'},{'name': 'TabDynamicDialogComponent', 'selector': 'app-tab-dynamic-dialog'},{'name': 'TabDynamicSidebarComponent', 'selector': 'app-tab-dynamic-sidebar'},{'name': 'TabFilePreviewComponent', 'selector': 'app-tab-file-preview'},{'name': 'TabFormBuilderComponent', 'selector': 'tab-form-builder'},{'name': 'TabFormRendererComponent', 'selector': 'tab-form-renderer'},{'name': 'TabHistoryComponent', 'selector': 'app-tab-history'},{'name': 'TabIframeComponent', 'selector': 'app-tab-iframe'},{'name': 'TabPdfViewerComponent', 'selector': 'app-tab-pdf-viewer'},{'name': 'TabQueryBuilderComponent', 'selector': 'tab-core-tab-query-builder'},{'name': 'TabSkeletonComponent', 'selector': 'app-tab-skeleton'},{'name': 'TabTextBoxComponent', 'selector': 'app-tab-iframe'},{'name': 'TabTimerComponent', 'selector': 'app-tab-timer'},{'name': 'TabTimerComponentComponent', 'selector': 'app-tab-timer-component'},{'name': 'TabTransitionPreviewComponent', 'selector': 'app-tab-transition-preview'},{'name': 'TabTreeViewComponent', 'selector': 'tab-core-tab-tree-view'},{'name': 'TabWidgetComponent', 'selector': 'app-tab-widget'},{'name': 'ThinLayoutComponent', 'selector': 'thin-layout'},{'name': 'UserComponent', 'selector': 'user'},{'name': 'ViewMoreComponent', 'selector': 'view-more-search-list'}];
+    var DIRECTIVES = [{'name': 'FuseScrollbarDirective', 'selector': '[fuseScrollbar]'},{'name': 'FuseScrollResetDirective', 'selector': '[fuseScrollReset]'},{'name': 'SafeHtmlDirective', 'selector': '[appSafeHtml]'}];
+    var ACTUAL_COMPONENT = {'name': 'TabChipsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TabChipsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

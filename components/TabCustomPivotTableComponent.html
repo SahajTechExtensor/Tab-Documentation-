@@ -1,0 +1,2882 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@fuse/starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@fuse/starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TabCustomPivotTableComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                            <code>CalculatedFieldService</code>
+                            <code>ToolbarService</code>
+                            <code>ConditionalFormattingService</code>
+                            <code>FieldListService</code>
+                            <code>NumberFormattingService</code>
+                            <code>GroupingBarService</code>
+                            <code>GroupingService</code>
+                            <code>VirtualScrollService</code>
+                            <code>DrillThroughService</code>
+                            <code>PDFExportService</code>
+                            <code>ExcelExportService</code>
+                            <code>PivotChartService</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-tab-custom-pivot-table</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./tab-custom-pivot-table.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./tab-custom-pivot-table.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_unsubscribeAll" >_unsubscribeAll</a>
+                            </li>
+                            <li>
+                                <a href="#_value" >_value</a>
+                            </li>
+                            <li>
+                                <a href="#appObjectDetailsOfPivot" >appObjectDetailsOfPivot</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#cellTemplate" >cellTemplate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chartSettings" >chartSettings</a>
+                            </li>
+                            <li>
+                                <a href="#cloneDsqDetailsOfPivot" >cloneDsqDetailsOfPivot</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dataSourceSettings" >dataSourceSettings</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#debounceSubject" >debounceSubject</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#displayOption" >displayOption</a>
+                            </li>
+                            <li>
+                                <a href="#dsqDetailsOfPivot" >dsqDetailsOfPivot</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#gridSettings" >gridSettings</a>
+                            </li>
+                            <li>
+                                <a href="#isFirstTime" >isFirstTime</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#observable" >observable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                <a href="#pivotObj" >pivotObj</a>
+                            </li>
+                            <li>
+                                <a href="#reports" >reports</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setTimer" >setTimer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#toolbarOptions" >toolbarOptions</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#beforeToolbarRender" >beforeToolbarRender</a>
+                            </li>
+                            <li>
+                                <a href="#chartSeriesCreated" >chartSeriesCreated</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chartSetting" >chartSetting</a>
+                            </li>
+                            <li>
+                                <a href="#fetchReport" >fetchReport</a>
+                            </li>
+                            <li>
+                                <a href="#generateRequestTokens" >generateRequestTokens</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getPivotData" >getPivotData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#gridSetting" >gridSetting</a>
+                            </li>
+                            <li>
+                                <a href="#loadReport" >loadReport</a>
+                            </li>
+                            <li>
+                                <a href="#newReport" >newReport</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onToolbarClick" >onToolbarClick</a>
+                            </li>
+                            <li>
+                                <a href="#processToolbar" >processToolbar</a>
+                            </li>
+                            <li>
+                                <a href="#removeReport" >removeReport</a>
+                            </li>
+                            <li>
+                                <a href="#renameReport" >renameReport</a>
+                            </li>
+                            <li>
+                                <a href="#restoreDefaultState" >restoreDefaultState</a>
+                            </li>
+                            <li>
+                                <a href="#saveReport" >saveReport</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSettingsPivot" >dataSettingsPivot</a>
+                            </li>
+                            <li>
+                                <a href="#value" >value</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#formioEvent" >formioEvent</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#value" >value</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(tabGetService: TabGetService, route: ActivatedRoute)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:90</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>tabGetService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TabGetService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSettingsPivot"></a>
+                        <b>dataSettingsPivot</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:100</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <b>value</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:104</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formioEvent"></a>
+                        <b>formioEvent</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:101</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="beforeToolbarRender"></a>
+                    <span class="name">
+                        <span ><b>beforeToolbarRender</b></span>
+                        <a href="#beforeToolbarRender"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>beforeToolbarRender(args: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="152"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:152</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chartSeriesCreated"></a>
+                    <span class="name">
+                        <span ><b>chartSeriesCreated</b></span>
+                        <a href="#chartSeriesCreated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>chartSeriesCreated()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="344"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:344</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chartSetting"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>chartSetting</b></span>
+                        <a href="#chartSetting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>chartSetting()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="216"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:216</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchReport"></a>
+                    <span class="name">
+                        <span ><b>fetchReport</b></span>
+                        <a href="#fetchReport"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchReport(args: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="414"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:414</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fetches report names from the dataSettingsPivot.defaultState array and populates
+the reportName property in the args object with the retrieved report names.</p>
+<ul>
+<li>reportName: An array property to be populated with the report names.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>An object containing information about the report fetching operation, including:</li>
+<li>reportName: An array property to be populated with the report names.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateRequestTokens"></a>
+                    <span class="name">
+                        <span ><b>generateRequestTokens</b></span>
+                        <a href="#generateRequestTokens"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>generateRequestTokens(parameters)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="614"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:614</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>parameters</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>{}</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPivotData"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getPivotData</b></span>
+                        <a href="#getPivotData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPivotData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="279"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:279</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="gridSetting"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>gridSetting</b></span>
+                        <a href="#gridSetting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>gridSetting()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="186"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:186</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadReport"></a>
+                    <span class="name">
+                        <span ><b>loadReport</b></span>
+                        <a href="#loadReport"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadReport(args: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="374"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:374</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Loads a report based on the provided report name from the dataSettingsPivot.defaultState array.
+Updates the UI and pivotObj settings with the loaded report&#39;s information.</p>
+<ul>
+<li>reportName: The name of the report to be loaded.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>An object containing information about the report loading operation, including:</li>
+<li>reportName: The name of the report to be loaded.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="newReport"></a>
+                    <span class="name">
+                        <span ><b>newReport</b></span>
+                        <a href="#newReport"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>newReport()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="351"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:351</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="605"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:605</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="165"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:165</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>On init</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onToolbarClick"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>onToolbarClick</b></span>
+                        <a href="#onToolbarClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onToolbarClick(args: <a href="../undefineds/Event.html" target="_self">ClickEventArgs</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="118"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#Event" target="_self" >ClickEventArgs</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="processToolbar"></a>
+                    <span class="name">
+                        <span ><b>processToolbar</b></span>
+                        <a href="#processToolbar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>processToolbar()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="243"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:243</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeReport"></a>
+                    <span class="name">
+                        <span ><b>removeReport</b></span>
+                        <a href="#removeReport"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeReport(args: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="439"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:439</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Removes a report from the dataSettingsPivot.defaultState array and triggers the &#39;removePivotState&#39; action.</p>
+<ul>
+<li>reportName: The name of the report to be removed.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>An object containing information about the report to be removed, including:</li>
+<li>reportName: The name of the report to be removed.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="renameReport"></a>
+                    <span class="name">
+                        <span ><b>renameReport</b></span>
+                        <a href="#renameReport"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>renameReport(args: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="556"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:556</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Renames a report within the dataSettingsPivot.defaultState array and triggers the &#39;savePivotState&#39; action.</p>
+<ul>
+<li>isReportExists: A boolean indicating whether the report already exists.</li>
+<li>rename: The new name for the report.</li>
+<li>reportName: The current name of the report to be renamed.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>An object containing information about the report renaming, including:</li>
+<li>isReportExists: A boolean indicating whether the report already exists.</li>
+<li>rename: The new name for the report.</li>
+<li>reportName: The current name of the report to be renamed.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="restoreDefaultState"></a>
+                    <span class="name">
+                        <span ><b>restoreDefaultState</b></span>
+                        <a href="#restoreDefaultState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>restoreDefaultState()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="222"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:222</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveReport"></a>
+                    <span class="name">
+                        <span ><b>saveReport</b></span>
+                        <a href="#saveReport"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveReport(args: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="496"
+                                    class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:496</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Saves a report by updating or adding it to the dataSettingsPivot.defaultState array
+and triggers the &#39;savePivotState&#39; action if the report is successfully saved.</p>
+<ul>
+<li>report: The JSON representation of the report.</li>
+<li>reportName: The name of the report.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>args</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>An object containing information about the report to be saved, including:</li>
+<li>report: The JSON representation of the report.</li>
+<li>reportName: The name of the report.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_unsubscribeAll"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_unsubscribeAll</b></span>
+                        <a href="#_unsubscribeAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;any&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:90</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_value"></a>
+                    <span class="name">
+                        <span ><b>_value</b></span>
+                        <a href="#_value"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appObjectDetailsOfPivot"></a>
+                    <span class="name">
+                        <span ><b>appObjectDetailsOfPivot</b></span>
+                        <a href="#appObjectDetailsOfPivot"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cellTemplate"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>cellTemplate</b></span>
+                        <a href="#cellTemplate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chartSettings"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>chartSettings</b></span>
+                        <a href="#chartSettings"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ChartSettings</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cloneDsqDetailsOfPivot"></a>
+                    <span class="name">
+                        <span ><b>cloneDsqDetailsOfPivot</b></span>
+                        <a href="#cloneDsqDetailsOfPivot"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataSourceSettings"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>dataSourceSettings</b></span>
+                        <a href="#dataSourceSettings"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>IDataOptions</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="debounceSubject"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>debounceSubject</b></span>
+                        <a href="#debounceSubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayOption"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>displayOption</b></span>
+                        <a href="#displayOption"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>DisplayOption</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dsqDetailsOfPivot"></a>
+                    <span class="name">
+                        <span ><b>dsqDetailsOfPivot</b></span>
+                        <a href="#dsqDetailsOfPivot"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="gridSettings"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>gridSettings</b></span>
+                        <a href="#gridSettings"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>GridSettings</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isFirstTime"></a>
+                    <span class="name">
+                        <span ><b>isFirstTime</b></span>
+                        <a href="#isFirstTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="observable"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>observable</b></span>
+                        <a href="#observable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Observable()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pivotObj"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Public</span>
+                        <span ><b>pivotObj</b></span>
+                        <a href="#pivotObj"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>PivotViewComponent</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;pivotview&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:98</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reports"></a>
+                    <span class="name">
+                        <span ><b>reports</b></span>
+                        <a href="#reports"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTimer"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>setTimer</b></span>
+                        <a href="#setTimer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:89</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toolbarOptions"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>toolbarOptions</b></span>
+                        <a href="#toolbarOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#CustomToolbarItems" target="_self" >CustomToolbarItems</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <span class="name"><b>value</b><a href="#value"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>value(val: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/modules/admin/tab-custom-pivot-table/tab-custom-pivot-table.component.ts:104</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    Component,
+    OnInit,
+    ViewChild,
+    Input,
+    Output,
+    EventEmitter,
+    OnDestroy,
+} from &#x27;@angular/core&#x27;;
+import {
+    IDataOptions,
+    FieldListService,
+    CalculatedFieldService,
+    ToolbarService,
+    ConditionalFormattingService,
+    ToolbarItems,
+    DisplayOption,
+    NumberFormattingService,
+    IAxisSet,
+    GroupingBarService,
+    GroupingService,
+    VirtualScrollService,
+    DrillThroughService,
+    PDFExportService,
+    ExcelExportService,
+    PivotViewComponent,
+    IDataSet,
+    PivotChartService,
+} from &#x27;@syncfusion/ej2-angular-pivotview&#x27;;
+import { GridSettings } from &#x27;@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings&#x27;;
+import { ChartSettings } from &#x27;@syncfusion/ej2-pivotview/src/pivotview/model/chartsettings&#x27;;
+import { ExcelQueryCellInfoEventArgs } from &#x27;@syncfusion/ej2-grids&#x27;;
+import { Observable, Subject, takeUntil, take, debounceTime } from &#x27;rxjs&#x27;;
+import { TabAppFunction, TabGetService } from &#x27;@techextensor/tab-service&#x27;;
+import { cloneDeep } from &#x27;lodash&#x27;;
+import { ClickEventArgs } from &#x27;@syncfusion/ej2-angular-navigations&#x27;;
+import { FormioEvent } from &#x27;@formio/angular&#x27;;
+import { DataManager } from &#x27;@syncfusion/ej2-data&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+
+interface ApiResponse {
+    Result: IDataSet[] | DataManager | any;
+}
+
+interface CustomToolbarItem {
+    tooltipText: string;
+    id: string;
+    prefixIcon: string;
+    align: string;
+    click?: (args: ClickEventArgs) &#x3D;&gt; void;
+}
+// Define a custom interface for the toolbar item
+
+type CustomToolbarItems &#x3D; (ToolbarItems | CustomToolbarItem)[];
+@Component({
+    selector: &#x27;app-tab-custom-pivot-table&#x27;,
+    templateUrl: &#x27;./tab-custom-pivot-table.component.html&#x27;,
+    styleUrls: [&#x27;./tab-custom-pivot-table.component.css&#x27;],
+    providers: [
+        CalculatedFieldService,
+        ToolbarService,
+        ConditionalFormattingService,
+        FieldListService,
+        NumberFormattingService,
+        GroupingBarService,
+        GroupingService,
+        VirtualScrollService,
+        DrillThroughService,
+        PDFExportService,
+        ExcelExportService,
+        PivotChartService,
+    ],
+})
+export class TabCustomPivotTableComponent implements OnInit, OnDestroy {
+    public dataSourceSettings: IDataOptions;
+    public gridSettings: GridSettings;
+    public chartSettings: ChartSettings;
+    public displayOption: DisplayOption;
+    public cellTemplate: string;
+    public observable &#x3D; new Observable();
+    private debounceSubject &#x3D; new Subject();
+    public toolbarOptions: CustomToolbarItems;
+    appObjectDetailsOfPivot: any;
+    dsqDetailsOfPivot: any;
+    cloneDsqDetailsOfPivot: any;
+    _value: any;
+    isFirstTime: boolean &#x3D; true;
+    reports &#x3D; [];
+    private setTimer: any;
+    private _unsubscribeAll: Subject&lt;any&gt; &#x3D; new Subject&lt;any&gt;();
+
+    constructor(
+        private tabGetService: TabGetService,
+        private route: ActivatedRoute
+    ) {}
+
+    @ViewChild(&#x27;pivotview&#x27;, { static: false })
+    public pivotObj: PivotViewComponent;
+
+    @Input() dataSettingsPivot: any;
+    @Output() formioEvent &#x3D; new EventEmitter&lt;FormioEvent&gt;();
+
+    @Input()
+    public set value(val: any) {
+        if (val &amp;&amp; val !&#x3D; null) {
+            this._value &#x3D; val;
+        }
+              this.debounceSubject.next(1000);
+
+    }
+
+    // used for saved state and remove state
+
+    /*
+    @param args; 
+    */
+
+    public onToolbarClick(args: ClickEventArgs): void {
+        const tooltipText &#x3D; args.item.tooltipText; // tooltip text like save State and Remove state that define in toolbarOptions
+        const persistData &#x3D; this.pivotObj ? this.pivotObj.getPersistData() : &#x27;&#x27;; // get Persist data
+
+        //action
+        let action: string;
+        switch (tooltipText) {
+            case &#x27;Save State&#x27;:
+                //set action as savePivotState
+                action &#x3D; &#x27;savePivotState&#x27;;
+                break;
+            case &#x27;Remove State&#x27;:
+                //set action as removePivotState
+                action &#x3D; &#x27;removePivotState&#x27;;
+                break;
+            default:
+                return;
+        }
+
+        //saveProperties store the json data
+        const savedProperties &#x3D; JSON.parse(persistData);
+
+        // set the default state  of dataSettingPivot
+        this.dataSettingsPivot.defaultState &#x3D; savedProperties;
+        this.formioEvent.emit({
+            eventName: &#x27;customEvent&#x27;,
+            data: {
+                data: this.dataSettingsPivot?.defaultState,
+                // screenId: &#x27;01fdcc00-2683-4928-a620-589ffbbff6e5&#x27;,
+                action,
+            },
+        });
+    }
+
+    beforeToolbarRender(args: any) {
+        args.customToolbar.splice(6, 0, {
+            type: &#x27;Separator&#x27;,
+        });
+        args.customToolbar.splice(9, 0, {
+            type: &#x27;Separator&#x27;,
+        });
+    }
+
+    /**
+     * On init
+     */
+
+    ngOnInit(): void {
+        //use for change the content style for specific cell.
+        this.cellTemplate &#x3D; &#x27;&lt;span class&#x3D;&quot;tempwrap&quot;&gt;&lt;/span&gt;&#x27;;
+        // displayOption used for chart and table for combine use take  view:&#x27;Both&#x27;
+
+
+        this.debounceSubject.pipe(debounceTime(1000)).subscribe(() &#x3D;&gt; {
+                                this.getPivotData();
+
+
+        })
+
+        // Pivot ChartSetting
+        this.chartSetting();
+
+        //customize the size of column and row
+        this.gridSetting();
+
+        this.displayOption &#x3D; { view: &#x27;Both&#x27; } as DisplayOption;
+    }
+
+    public gridSetting() {
+        // Define the gridSettings object
+        this.gridSettings &#x3D; {
+            columnWidth: 120,
+            allowSelection: true,
+            rowHeight: 36,
+            selectionSettings: {
+                mode: &#x27;Cell&#x27;,
+                type: &#x27;Single&#x27;,
+                cellSelectionMode: &#x27;Box&#x27;,
+            },
+
+            // Set the number format to undefined for cells with no value in the &#x27;value&#x27; axis
+
+            excelQueryCellInfo: this.observable
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe((args) &#x3D;&gt; {
+                if (
+                    ((args as ExcelQueryCellInfoEventArgs).cell as IAxisSet)
+                        .axis &#x3D;&#x3D;&#x3D; &#x27;value&#x27; &amp;&amp;
+                    ((args as ExcelQueryCellInfoEventArgs).cell as IAxisSet)
+                        .value &#x3D;&#x3D;&#x3D; undefined
+                ) {
+                    (args as ExcelQueryCellInfoEventArgs).style.numberFormat &#x3D;
+                        undefined;
+                }
+            }) as any,
+        } as GridSettings;
+    }
+
+    public chartSetting() {
+        this.chartSettings &#x3D; {
+            chartSeries: { type: &#x27;Column&#x27; },
+        } as ChartSettings;
+    }
+    // restore default state of pivot table
+    restoreDefaultState() {
+        if (
+            this.dataSettingsPivot.defaultState &amp;&amp;
+            this.dataSettingsPivot.defaultState.length &gt; 0
+        ) {
+            this.reports &#x3D; this.dataSettingsPivot.defaultState;
+            // this.reports &#x3D; this.dataSettingsPivot.defaultState
+            let report &#x3D; JSON.parse(
+                this.dataSettingsPivot.defaultState[0].report
+            );
+            this.displayOption &#x3D; report.displayOption;
+            this.chartSettings &#x3D; report.chartSettings;
+            report.dataSourceSettings.dataSource &#x3D;
+                this.pivotObj.dataSourceSettings.dataSource;
+            this.pivotObj.dataSourceSettings &#x3D; report.dataSourceSettings;
+            this.pivotObj.displayOption &#x3D; report.displayOption;
+            this.pivotObj.currentView &#x3D; this.displayOption.primary;
+        }
+    }
+
+    // this function is used for toolbarOptions dynamically
+    processToolbar() {
+        this.toolbarOptions &#x3D; [];
+        if (this.dataSettingsPivot?.isReport) {
+            this.toolbarOptions.push(
+                &#x27;New&#x27;,
+                &#x27;Save&#x27;,
+                &#x27;SaveAs&#x27;,
+                &#x27;Rename&#x27;,
+                &#x27;Remove&#x27;,
+                &#x27;Load&#x27;
+            );
+        }
+        if (this.dataSettingsPivot?.isGrid) {
+            this.toolbarOptions.push(&#x27;Grid&#x27;);
+        }
+        if (this.dataSettingsPivot?.isChart) {
+            this.toolbarOptions.push(&#x27;Chart&#x27;);
+        }
+        if (this.dataSettingsPivot?.isExport) {
+            this.toolbarOptions.push(&#x27;Export&#x27;);
+        }
+        if (this.dataSettingsPivot?.isSubTotal) {
+            this.toolbarOptions.push(&#x27;SubTotal&#x27;);
+        }
+        if (this.dataSettingsPivot?.isGrandTotal) {
+            this.toolbarOptions.push(&#x27;GrandTotal&#x27;);
+        }
+        if (this.dataSettingsPivot?.isFieldList) {
+            this.toolbarOptions.push(&#x27;FieldList&#x27;);
+        }
+        if (this.dataSettingsPivot?.isFormatting) {
+            this.toolbarOptions.push(&#x27;Formatting&#x27;);
+        }
+    }
+
+    //this function is used for api call and set the default rows and column and set the dataSource for pivot table.
+    public getPivotData() {
+        this.dsqDetailsOfPivot &#x3D; TabAppFunction.getDataFromDataSourceQueryID(
+            this.dataSettingsPivot.dataSourceQueryId
+        );
+        this.cloneDsqDetailsOfPivot &#x3D; cloneDeep(this.dsqDetailsOfPivot);
+        const apidata &#x3D; {
+            AppObjectName: TabAppFunction.getAppObjectFromDataSourceQueryID(
+                this.dataSettingsPivot.dataSourceQueryId
+            ).ObjectName,
+            DSQName: this.cloneDsqDetailsOfPivot.QueryName,
+            Reqtokens: {},
+        };
+        if (this._value &amp;&amp; this._value.parameters !&#x3D;&#x3D; undefined) {
+                apidata.Reqtokens &#x3D; this.generateRequestTokens(this._value.parameters);
+           }
+        this.tabGetService
+            .executeRAWDSQWithName(apidata)
+            ?.pipe(take(1))
+            .subscribe((data: ApiResponse) &#x3D;&gt; {
+                const column &#x3D; [];
+                const rows &#x3D; [];
+                const values &#x3D; [];
+
+                this.processToolbar();
+
+                // Iterate through the keys in the first element of the Result array and set the rows and column
+                for (const key in data.Result[0]) {
+                    if (
+                        typeof data.Result[0][key] &#x3D;&#x3D;&#x3D; &#x27;string&#x27; ||
+                        typeof data.Result[0][key] &#x3D;&#x3D;&#x3D; &#x27;number&#x27;
+                    ) {
+                        if (column.length &#x3D;&#x3D;&#x3D; 0) {
+                            column.push({ name: key, caption: key });
+                        } else if (
+                            column[0][&#x27;caption&#x27;] !&#x3D;&#x3D; key &amp;&amp;
+                            rows.length &#x3D;&#x3D;&#x3D; 0
+                        ) {
+                            rows.push({ name: key, caption: key });
+                        } else if (
+                            column[0][&#x27;caption&#x27;] !&#x3D;&#x3D; key &amp;&amp;
+                            rows[0][&#x27;caption&#x27;] !&#x3D;&#x3D; key &amp;&amp;
+                            values.length &lt;&#x3D; 1
+                        ) {
+                            values.push({ name: key, caption: key });
+                        }
+                    }
+                }
+
+                const dataRes &#x3D; JSON.parse(JSON.stringify(data.Result));
+
+                // Set the dataSourceSettings for the pivotObj
+
+                this.pivotObj.dataSourceSettings &#x3D; {
+                    dataSource: dataRes,
+                    expandAll: false,
+                    columns: column,
+                    rows: rows,
+                    values: values,
+                    showAggregationOnValueField: false,
+                };
+                this.pivotObj.dataBind();
+                this.restoreDefaultState();
+            });
+    }
+    // for save chartSeries
+    chartSeriesCreated() {
+        this.pivotObj.chartSettings.chartSeries.legendShape &#x3D;
+            this.pivotObj.chartSettings.chartSeries.type &#x3D;&#x3D;&#x3D; &#x27;Polar&#x27;
+                ? &#x27;Rectangle&#x27;
+                : &#x27;SeriesType&#x27;;
+    }
+    // create a new report
+    newReport() {
+        this.pivotObj.setProperties(
+            {
+                dataSourceSettings: {
+                    columns: [],
+                    rows: [],
+                    values: [],
+                    filters: [],
+                },
+            },
+            false
+        );
+    }
+
+
+/**
+ * Loads a report based on the provided report name from the dataSettingsPivot.defaultState array.
+ * Updates the UI and pivotObj settings with the loaded report&#x27;s information.
+ *
+ * @param args - An object containing information about the report loading operation, including:
+ *   - reportName: The name of the report to be loaded.
+ */
+
+    loadReport(args: any) {
+
+    // Retrieve the defaultState array or initialize an empty array if it doesn&#x27;t exist.
+
+        const reportCollection &#x3D; this.dataSettingsPivot.defaultState || [];
+
+        // Find the report in the collection that matches the specified reportName.
+
+        const matchedReport &#x3D; reportCollection.find(
+            (item: any) &#x3D;&gt; item.reportName &#x3D;&#x3D;&#x3D; args.reportName
+        );
+        
+
+            // If a matching report is found, update the UI and pivotObj settings with the report information.
+
+        if (matchedReport) {
+        
+        // Parse the report JSON to extract its properties.
+
+            const report &#x3D; JSON.parse(matchedReport.report);
+
+        // Update various settings based on the loaded report.
+
+            this.displayOption &#x3D; report.displayOption;
+            this.chartSettings &#x3D; report.chartSettings;
+            report.dataSourceSettings.dataSource &#x3D;
+                this.pivotObj.dataSourceSettings.dataSource;
+            this.pivotObj.dataSourceSettings &#x3D; report.dataSourceSettings;
+            this.pivotObj.displayOption &#x3D; this.displayOption;
+            this.pivotObj.currentView &#x3D; this.displayOption.primary;
+        }
+    }
+
+/**
+ * Fetches report names from the dataSettingsPivot.defaultState array and populates
+ * the reportName property in the args object with the retrieved report names.
+ *
+ * @param args - An object containing information about the report fetching operation, including:
+ *   - reportName: An array property to be populated with the report names.
+ */
+    fetchReport(args: any) {
+    
+    // Initialize an array to store report names retrieved from the defaultState.
+
+    let reportCollection: string[] &#x3D; [];
+    
+    // Check if the defaultState array exists and has a length defined.
+
+    if (this.dataSettingsPivot?.defaultState?.length !&#x3D;&#x3D; undefined) {
+        reportCollection &#x3D; this.dataSettingsPivot.defaultState.map(
+            (item: any) &#x3D;&gt; item.reportName
+        );
+    }
+    // Populate the reportName property in the args object with the retrieved report names.
+
+    args.reportName &#x3D; reportCollection;
+}
+    
+    /**
+ * Removes a report from the dataSettingsPivot.defaultState array and triggers the &#x27;removePivotState&#x27; action.
+ *
+ * @param args - An object containing information about the report to be removed, including:
+ *   - reportName: The name of the report to be removed.
+ */
+
+    removeReport(args: any) {
+
+        // Initialize an array to store the reports collection.
+
+        let reportCollection: any[] &#x3D; [];
+
+        // Populate reportCollection with the default state if it exists.
+
+        if (
+            this.dataSettingsPivot.defaultState &amp;&amp;
+            this.dataSettingsPivot.defaultState.length !&#x3D;&#x3D; 0
+        ) {
+            reportCollection &#x3D; this.dataSettingsPivot.defaultState;
+        }
+            // Iterate through the reports collection to find and remove the specified report.
+
+        for (let i: number &#x3D; 0; i &lt; reportCollection.length; i++) {
+            if (reportCollection[i].reportName &#x3D;&#x3D;&#x3D; args.reportName) {
+                reportCollection.splice(i, 1);
+            }
+        }
+
+        // Update the defaultState with the modified reports collection.
+
+        if (
+            this.dataSettingsPivot.defaultState &amp;&amp;
+            this.dataSettingsPivot.defaultState.length !&#x3D;&#x3D; 0
+        ) {
+            this.dataSettingsPivot.defaultState &#x3D; reportCollection;
+        }
+        
+        // If the defaultState becomes empty, reset the dataSource in the pivotObj.
+
+        if (this.dataSettingsPivot.defaultState &#x3D;&#x3D; 0) {
+            this.pivotObj.dataSourceSettings.dataSource &#x3D; [];
+        }
+            // Trigger the &#x27;removePivotState&#x27; action by emitting a customEvent with the updated data.
+
+        let action &#x3D; &#x27;removePivotState&#x27;;
+        this.formioEvent.emit({
+            eventName: &#x27;customEvent&#x27;,
+            data: {
+                data: this.dataSettingsPivot?.defaultState,
+                action,
+            },
+        });
+    }
+
+ /**
+ * Saves a report by updating or adding it to the dataSettingsPivot.defaultState array
+ * and triggers the &#x27;savePivotState&#x27; action if the report is successfully saved.
+ *
+ * @param args - An object containing information about the report to be saved, including:
+ *   - report: The JSON representation of the report.
+ *   - reportName: The name of the report.
+ */
+
+    saveReport(args: any) {
+        
+        // If it is the first time saving, skip the operation and mark isFirstTime as false.
+
+        if (this.isFirstTime) {
+            this.isFirstTime &#x3D; false;
+            return;
+        }
+        let isSaved: boolean &#x3D; false;
+          
+        // Check if the necessary properties are present in the args object.
+
+        if (args.report &amp;&amp; args.reportName &amp;&amp; args.reportName !&#x3D;&#x3D; &#x27;&#x27;) {
+            let report &#x3D; JSON.parse(args.report);
+            report.dataSourceSettings.dataSource &#x3D; [];
+            report.pivotValues &#x3D; [];
+            args.report &#x3D; JSON.stringify(report);
+
+            // Iterate through existing reports to update the report if it already exists.
+
+            this.reports.map(function (item: any): any {
+                if (args.reportName &#x3D;&#x3D;&#x3D; item.reportName) {
+                    item.report &#x3D; args.report;
+                    isSaved &#x3D; true;
+                }
+            });
+        
+            // If the report does not exist, add it to the reports array.
+
+            if (!isSaved) {
+                this.reports.push(args);
+            }
+                
+            // Update the defaultState with the updated reports array.
+
+            this.dataSettingsPivot.defaultState &#x3D; this.reports;
+        }
+            // If the report is successfully saved, trigger the &#x27;savePivotState&#x27; action.
+
+        if (isSaved) {
+            let action &#x3D; &#x27;savePivotState&#x27;;
+            this.formioEvent.emit({
+                eventName: &#x27;customEvent&#x27;,
+                data: {
+                    data: this.dataSettingsPivot?.defaultState,
+                    action,
+                },
+            });
+        }
+    }
+
+
+    /**
+ * Renames a report within the dataSettingsPivot.defaultState array and triggers the &#x27;savePivotState&#x27; action.
+ *
+ * @param args - An object containing information about the report renaming, including:
+ *   - isReportExists: A boolean indicating whether the report already exists.
+ *   - rename: The new name for the report.
+ *   - reportName: The current name of the report to be renamed.
+ */
+    renameReport(args: any) {
+         // Initialize an array to store the reports collection.
+        
+         let reportsCollection: any[] &#x3D; [];
+
+        // Populate reportsCollection with the default state if it exists.
+
+        if (this.dataSettingsPivot.defaultState) {
+            reportsCollection &#x3D; this.dataSettingsPivot.defaultState;
+        }
+
+        // If the report already exists, remove the old report with the same name.
+
+        if (args.isReportExists) {
+            for (let i: number &#x3D; 0; i &lt; reportsCollection.length; i++) {
+                if (reportsCollection[i].reportName &#x3D;&#x3D;&#x3D; args.rename) {
+                    reportsCollection.splice(i, 1);
+                }
+            }
+        }
+
+        // Update the report name in the reportsCollection.
+
+        reportsCollection.map(function (item: any): any {
+            if (args.reportName &#x3D;&#x3D;&#x3D; item.reportName) {
+                item.reportName &#x3D; args.rename;
+            }
+        });
+
+        // Update the defaultStates property if the defaultState array is not empty.
+
+        if (
+            this.dataSettingsPivot.defaultState &amp;&amp;
+            this.dataSettingsPivot.defaultState.length !&#x3D;&#x3D; 0
+        ) {
+            this.dataSettingsPivot.defaultStates &#x3D; reportsCollection;
+        }
+            
+        // Emit a customEvent to trigger the &#x27;savePivotState&#x27; action with the updated data.
+
+        let action &#x3D; &#x27;savePivotState&#x27;;
+        this.formioEvent.emit({
+            eventName: &#x27;customEvent&#x27;,
+            data: {
+                data: this.dataSettingsPivot?.defaultState,
+                action,
+            },
+        });
+    }
+    ngOnDestroy(): void {
+        clearTimeout(this.setTimer);
+        // Unsubscribe from all subscriptions
+        this._unsubscribeAll.next(null);
+        this._unsubscribeAll.complete();
+    }
+
+
+// Function to generate request tokens dynamically
+generateRequestTokens(parameters) {
+  if (parameters &amp;&amp; typeof parameters &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; Object.keys(parameters).length &gt; 0) {
+        const reqTokens &#x3D; {};
+        for (const key in parameters) {
+            if (parameters.hasOwnProperty(key)) {
+                reqTokens[key] &#x3D; parameters[key];
+            }
+        }
+        return reqTokens;
+    } else {
+        return {};
+    }
+}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;meta name&#x3D;&quot;referrer&quot; content&#x3D;&quot;never&quot; /&gt;
+
+&lt;div class&#x3D;&quot;control-section&quot; id&#x3D;&quot;pivot-table-section&quot;&gt;
+    &lt;div&gt;
+        &lt;ejs-pivotview
+            #pivotview
+            [dataSourceSettings]&#x3D;&quot;dataSourceSettings&quot;
+            [chartSettings]&#x3D;&quot;chartSettings&quot;
+            [gridSettings]&#x3D;&quot;gridSettings&quot;
+            [toolbar]&#x3D;&quot;toolbarOptions&quot;
+            [displayOption]&#x3D;&quot;displayOption&quot;
+            [cellTemplate]&#x3D;&quot;cellTemplate&quot;
+            allowExcelExport&#x3D;&quot;true&quot;
+            allowConditionalFormatting&#x3D;&quot;true&quot;
+            allowPdfExport&#x3D;&quot;true&quot;
+            showToolbar&#x3D;&quot;true&quot;
+            allowCalculatedField&#x3D;&quot;true&quot;
+            enableValueSorting&#x3D;&quot;true&quot;
+            enableVirtualization&#x3D;&#x27;true&#x27; 
+            expandAll&#x3D;&quot;true&quot;
+            allowNumberFormatting&#x3D;&quot;true&quot;
+            showFieldList&#x3D;&quot;true&quot;
+            exportAllPages&#x3D;&quot;false&quot;
+            maxNodeLimitInMemberEditor&#x3D;&quot;50&quot;
+            enableVirtualization&#x3D;&quot;true&quot;
+            allowDeferLayoutUpdate&#x3D;&quot;true&quot;
+            allowDrillThrough&#x3D;&quot;true&quot;
+            showGroupingBar&#x3D;&quot;true&quot;
+            allowGrouping&#x3D;&quot;true&quot;
+            width&#x3D;&quot;100%&quot;
+            height&#x3D;&quot;600&quot;
+            (toolbarRender)&#x3D;&quot;beforeToolbarRender($event)&quot;
+            (clicked)&#x3D;&quot;onToolbarClick($event)&quot;
+            (chartSeriesCreated)&#x3D;&quot;chartSeriesCreated()&quot;
+            (newReport)&#x3D;&quot;newReport()&quot;
+            (saveReport)&#x3D;&quot;saveReport($event)&quot;
+            (fetchReport)&#x3D;&quot;fetchReport($event)&quot;
+            (loadReport)&#x3D;&quot;loadReport($event)&quot;
+            (removeReport)&#x3D;&quot;removeReport($event)&quot;
+            (renameReport)&#x3D;&quot;renameReport($event)&quot;
+        &gt;
+        &lt;/ejs-pivotview&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./tab-custom-pivot-table.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">#PivotView {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@media only screen and (max-width: 400px) {
+    #pivot-table-section {
+        overflow: auto;
+    }
+}
+
+.sb-sample-content-area {
+    min-height: 255px !important;
+}
+
+.control-section {
+    min-height: 255px !important;
+}
+
+#PivotViewcontainerwrapper {
+    height: auto !important;
+}
+
+.e-hyperlinkcell {
+    text-decoration: auto;
+}
+
+.e-hyperlinkcell:hover {
+    text-decoration: underline;
+}
+
+.university-logo {
+    border-radius: 50%;
+    margin-right: 5px;
+    width: 50px;
+    height: 50px;
+    
+}
+
+.urllink {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><meta name="referrer" content="never" /><div class="control-section" id="pivot-table-section">    <div>        <ejs-pivotview            #pivotview            [dataSourceSettings]="dataSourceSettings"            [chartSettings]="chartSettings"            [gridSettings]="gridSettings"            [toolbar]="toolbarOptions"            [displayOption]="displayOption"            [cellTemplate]="cellTemplate"            allowExcelExport="true"            allowConditionalFormatting="true"            allowPdfExport="true"            showToolbar="true"            allowCalculatedField="true"            enableValueSorting="true"            enableVirtualization=\'true\'             expandAll="true"            allowNumberFormatting="true"            showFieldList="true"            exportAllPages="false"            maxNodeLimitInMemberEditor="50"            enableVirtualization="true"            allowDeferLayoutUpdate="true"            allowDrillThrough="true"            showGroupingBar="true"            allowGrouping="true"            width="100%"            height="600"            (toolbarRender)="beforeToolbarRender($event)"            (clicked)="onToolbarClick($event)"            (chartSeriesCreated)="chartSeriesCreated()"            (newReport)="newReport()"            (saveReport)="saveReport($event)"            (fetchReport)="fetchReport($event)"            (loadReport)="loadReport($event)"            (removeReport)="removeReport($event)"            (renameReport)="renameReport($event)"        >        </ejs-pivotview>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthConfirmationRequiredComponent', 'selector': 'auth-confirmation-required'},{'name': 'AuthForgotPasswordComponent', 'selector': 'auth-forgot-password'},{'name': 'AuthResetPasswordComponent', 'selector': 'auth-reset-password'},{'name': 'AuthSignInComponent', 'selector': 'auth-sign-in'},{'name': 'AuthSignOutComponent', 'selector': 'auth-sign-out'},{'name': 'AuthSignUpComponent', 'selector': 'auth-sign-up'},{'name': 'AuthUnlockSessionComponent', 'selector': 'auth-unlock-session'},{'name': 'ButtonTemplateComponent', 'selector': 'button-template'},{'name': 'CenteredLayoutComponent', 'selector': 'centered-layout'},{'name': 'ChartComponent', 'selector': 'app-chart'},{'name': 'ClassicLayoutComponent', 'selector': 'classic-layout'},{'name': 'ClassyLayoutComponent', 'selector': 'classy-layout'},{'name': 'CompactLayoutComponent', 'selector': 'compact-layout'},{'name': 'DenseLayoutComponent', 'selector': 'dense-layout'},{'name': 'EmptyLayoutComponent', 'selector': 'empty-layout'},{'name': 'EnterpriseLayoutComponent', 'selector': 'enterprise-layout'},{'name': 'FuseAlertComponent', 'selector': 'fuse-alert'},{'name': 'FuseCardComponent', 'selector': 'fuse-card'},{'name': 'FuseConfirmationDialogComponent', 'selector': 'fuse-confirmation-dialog'},{'name': 'FuseDrawerComponent', 'selector': 'fuse-drawer'},{'name': 'FuseFullscreenComponent', 'selector': 'fuse-fullscreen'},{'name': 'FuseHighlightComponent', 'selector': 'textarea[fuse-highlight]'},{'name': 'FuseHorizontalNavigationBasicItemComponent', 'selector': 'fuse-horizontal-navigation-basic-item'},{'name': 'FuseHorizontalNavigationBranchItemComponent', 'selector': 'fuse-horizontal-navigation-branch-item'},{'name': 'FuseHorizontalNavigationComponent', 'selector': 'fuse-horizontal-navigation'},{'name': 'FuseHorizontalNavigationDividerItemComponent', 'selector': 'fuse-horizontal-navigation-divider-item'},{'name': 'FuseHorizontalNavigationSpacerItemComponent', 'selector': 'fuse-horizontal-navigation-spacer-item'},{'name': 'FuseLoadingBarComponent', 'selector': 'fuse-loading-bar'},{'name': 'FuseMasonryComponent', 'selector': 'fuse-masonry'},{'name': 'FuseVerticalNavigationAsideItemComponent', 'selector': 'fuse-vertical-navigation-aside-item'},{'name': 'FuseVerticalNavigationBasicItemComponent', 'selector': 'fuse-vertical-navigation-basic-item'},{'name': 'FuseVerticalNavigationCollapsableItemComponent', 'selector': 'fuse-vertical-navigation-collapsable-item'},{'name': 'FuseVerticalNavigationComponent', 'selector': 'fuse-vertical-navigation'},{'name': 'FuseVerticalNavigationDividerItemComponent', 'selector': 'fuse-vertical-navigation-divider-item'},{'name': 'FuseVerticalNavigationGroupItemComponent', 'selector': 'fuse-vertical-navigation-group-item'},{'name': 'FuseVerticalNavigationSpacerItemComponent', 'selector': 'fuse-vertical-navigation-spacer-item'},{'name': 'FuturisticLayoutComponent', 'selector': 'futuristic-layout'},{'name': 'GridCustomHTMLTemplateComponent', 'selector': 'app-grid-custom-htmltemplate'},{'name': 'HomeComponent', 'selector': 'Home'},{'name': 'ImageTemplateComponent', 'selector': 'image-template'},{'name': 'ImageWithNameTemplateComponent', 'selector': 'image-with-name-template'},{'name': 'LandingHomeComponent', 'selector': 'landing-home'},{'name': 'LanguagesComponent', 'selector': 'languages'},{'name': 'LayoutComponent', 'selector': 'layout'},{'name': 'LinkTemplateComponent', 'selector': 'link-template'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MapdialogComponent', 'selector': 'app-mapdialog'},{'name': 'MaterialLayoutComponent', 'selector': 'material-layout'},{'name': 'MessagesComponent', 'selector': 'messages'},{'name': 'ModernLayoutComponent', 'selector': 'modern-layout'},{'name': 'NewTabQueryBuilderComponent', 'selector': 'new-tab-core-tab-query-builder'},{'name': 'NotificationsComponent', 'selector': 'notifications'},{'name': 'ScreenFilterComponent', 'selector': 'screen-filter'},{'name': 'SearchComponent', 'selector': 'search'},{'name': 'SettingsComponent', 'selector': 'settings'},{'name': 'ShortcutsComponent', 'selector': 'shortcuts'},{'name': 'StarComponent', 'selector': 'app-star'},{'name': 'TabBasicGridComponent', 'selector': 'tab-basic-grid'},{'name': 'TabBlueprintComponent', 'selector': 'app-tab-blueprint'},{'name': 'TabChildScreenRendererComponent', 'selector': 'tab-core-tab-child-screen-renderer'},{'name': 'TabChipsComponent', 'selector': 'app-tab-chips'},{'name': 'TabColorPickerComponent', 'selector': 'app-tab-color-picker'},{'name': 'TabCommentsComponent', 'selector': 'app-tab-comments'},{'name': 'TabCustomCalenderComponent', 'selector': 'tab-custom-calender'},{'name': 'TabCustomCodeEditorComponent', 'selector': 'tab-core-tab-custom-code-editor'},{'name': 'TabCustomFormBuilderComponent', 'selector': 'tab-custom-form-builder'},{'name': 'TabCustomGanttChartComponent', 'selector': 'app-tab-custom-gantt-chart'},{'name': 'TabCustomImageuploadComponent', 'selector': 'app-tab-custom-imageupload'},{'name': 'TabCustomPivotTableComponent', 'selector': 'app-tab-custom-pivot-table'},{'name': 'TabCustomPlacePickerMapComponent', 'selector': 'app-tab-custom-place-picker-map'},{'name': 'TabCustomRichtextHtmlEditorComponent', 'selector': 'app-tab-custom-richtext-html-editor'},{'name': 'TabCustomTrackMapComponent', 'selector': 'app-tab-custom-track-map'},{'name': 'TabDateRangePickerComponent', 'selector': 'app-tab-date-range-picker'},{'name': 'TabDropDownTreeComponent', 'selector': 'app-tab-dropdown-tree'},{'name': 'TabDynamicDialogComponent', 'selector': 'app-tab-dynamic-dialog'},{'name': 'TabDynamicSidebarComponent', 'selector': 'app-tab-dynamic-sidebar'},{'name': 'TabFilePreviewComponent', 'selector': 'app-tab-file-preview'},{'name': 'TabFormBuilderComponent', 'selector': 'tab-form-builder'},{'name': 'TabFormRendererComponent', 'selector': 'tab-form-renderer'},{'name': 'TabHistoryComponent', 'selector': 'app-tab-history'},{'name': 'TabIframeComponent', 'selector': 'app-tab-iframe'},{'name': 'TabPdfViewerComponent', 'selector': 'app-tab-pdf-viewer'},{'name': 'TabQueryBuilderComponent', 'selector': 'tab-core-tab-query-builder'},{'name': 'TabSkeletonComponent', 'selector': 'app-tab-skeleton'},{'name': 'TabTextBoxComponent', 'selector': 'app-tab-iframe'},{'name': 'TabTimerComponent', 'selector': 'app-tab-timer'},{'name': 'TabTimerComponentComponent', 'selector': 'app-tab-timer-component'},{'name': 'TabTransitionPreviewComponent', 'selector': 'app-tab-transition-preview'},{'name': 'TabTreeViewComponent', 'selector': 'tab-core-tab-tree-view'},{'name': 'TabWidgetComponent', 'selector': 'app-tab-widget'},{'name': 'ThinLayoutComponent', 'selector': 'thin-layout'},{'name': 'UserComponent', 'selector': 'user'},{'name': 'ViewMoreComponent', 'selector': 'view-more-search-list'}];
+    var DIRECTIVES = [{'name': 'FuseScrollbarDirective', 'selector': '[fuseScrollbar]'},{'name': 'FuseScrollResetDirective', 'selector': '[fuseScrollReset]'},{'name': 'SafeHtmlDirective', 'selector': '[appSafeHtml]'}];
+    var ACTUAL_COMPONENT = {'name': 'TabCustomPivotTableComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TabCustomPivotTableComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
